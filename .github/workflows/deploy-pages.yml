@@ -1,0 +1,44 @@
+name: GigaRoute AI Website / GitHub Pages 배포
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'index-en.html'
+      - 'CNAME'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: gigaroute-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: GigaRoute AI 사이트 배포
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 저장소 체크아웃 / Checkout
+        uses: actions/checkout@v6
+
+      - name: GitHub Pages 설정 / Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: 정적 사이트 업로드 / Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: GitHub Pages 배포 / Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
