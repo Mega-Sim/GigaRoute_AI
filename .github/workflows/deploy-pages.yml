@@ -7,6 +7,7 @@ on:
     paths:
       - 'index*.html'
       - 'site.css'
+      - 'contact.js'
       - 'CNAME'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
