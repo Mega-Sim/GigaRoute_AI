@@ -10,6 +10,68 @@
   };
   const t = copy[locale] || copy.en;
 
+  const workspaceCopy = {
+    en: {
+      description: 'A customizable modeling and analysis workspace for cleaning CAD drawings, building graph structures, reviewing layout issues, and exporting models to AutoMod and NVIDIA Isaac Sim.',
+      pricingKicker: 'Workspace pricing', pricingTitle: 'Start with GigaRoute Workspace.', pricingIntro: 'Choose monthly flexibility or save with an annual subscription. Customization services are available for site-specific workflows and export requirements.',
+      monthly: 'Monthly', yearly: 'Annual', monthUnit: '/ month', yearUnit: '/ year', yearlyNote: 'Save USD 240 compared with monthly billing', contact: 'Contact sales'
+    },
+    ko: {
+      description: 'CAD 도면 정리, 그래프 구조 생성, 레이아웃 문제 검토와 AutoMod 및 NVIDIA Isaac Sim Export를 지원하는 커스터마이징 가능한 모델링·분석 작업 공간입니다.',
+      pricingKicker: 'Workspace 가격', pricingTitle: 'GigaRoute Workspace를 시작하세요.', pricingIntro: '월간 구독과 할인된 연간 구독 중 선택할 수 있으며, 현장별 작업 흐름과 Export 요구사항에 맞춘 커스터마이징 서비스도 제공합니다.',
+      monthly: '월간', yearly: '연간', monthUnit: '/ 월', yearUnit: '/ 년', yearlyNote: '월간 결제 대비 연간 USD 240 절감', contact: '구매 문의'
+    },
+    'zh-CN': {
+      description: '可定制的建模与分析工作空间，用于清理 CAD 图纸、构建图结构、检查布局问题，并支持导出到 AutoMod 和 NVIDIA Isaac Sim。',
+      pricingKicker: 'Workspace 价格', pricingTitle: '开始使用 GigaRoute Workspace。', pricingIntro: '可选择灵活的月度订阅或更优惠的年度订阅，并可针对现场工作流程和导出需求提供定制服务。',
+      monthly: '月付', yearly: '年付', monthUnit: '/ 月', yearUnit: '/ 年', yearlyNote: '相比月付每年节省 USD 240', contact: '联系销售'
+    },
+    es: {
+      description: 'Un espacio de modelado y análisis personalizable para depurar planos CAD, crear estructuras de grafos, revisar problemas del diseño y exportar modelos a AutoMod y NVIDIA Isaac Sim.',
+      pricingKicker: 'Precios de Workspace', pricingTitle: 'Empiece con GigaRoute Workspace.', pricingIntro: 'Elija la flexibilidad mensual o ahorre con una suscripción anual. También ofrecemos personalización para flujos de trabajo y requisitos de exportación específicos.',
+      monthly: 'Mensual', yearly: 'Anual', monthUnit: '/ mes', yearUnit: '/ año', yearlyNote: 'Ahorre USD 240 al año frente al pago mensual', contact: 'Contactar ventas'
+    },
+    ja: {
+      description: 'CAD図面の整理、グラフ構造の構築、レイアウト問題の確認に加え、AutoModおよびNVIDIA Isaac SimへのExportに対応するカスタマイズ可能なモデリング・分析ワークスペースです。',
+      pricingKicker: 'Workspace 料金', pricingTitle: 'GigaRoute Workspaceを始めましょう。', pricingIntro: '柔軟な月額プランまたは割安な年額プランを選択できます。現場固有のワークフローやExport要件に合わせたカスタマイズにも対応します。',
+      monthly: '月額', yearly: '年額', monthUnit: '/ 月', yearUnit: '/ 年', yearlyNote: '月額払いと比べて年間 USD 240 お得', contact: '購入について相談'
+    }
+  };
+  const wt = workspaceCopy[locale] || workspaceCopy.en;
+
+  const workspaceCard = document.querySelector('.card.workspace');
+  if (workspaceCard) {
+    const name = workspaceCard.querySelector('h3');
+    const description = workspaceCard.querySelector('p');
+    const tags = workspaceCard.querySelector('.tags');
+    if (name) name.textContent = 'GigaRoute Workspace (Enable Customizing)';
+    if (description) description.textContent = wt.description;
+    if (tags) {
+      ['AutoMod Export', 'NVIDIA Isaac Sim Export'].forEach(label => {
+        if (![...tags.children].some(tag => tag.textContent === label)) {
+          const tag = document.createElement('span');
+          tag.textContent = label;
+          tags.appendChild(tag);
+        }
+      });
+    }
+  }
+
+  if (!document.querySelector('#workspace-pricing')) {
+    const style = document.createElement('style');
+    style.textContent = `
+      #workspace-pricing{padding-top:30px}.pricing-heading{max-width:760px;margin-bottom:30px}.pricing-heading h2{margin:0;font-size:clamp(34px,4.8vw,58px);line-height:1.05;letter-spacing:-.055em}.pricing-heading>p:last-child{margin:18px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.pricing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.price-card{padding:30px;border:1px solid rgba(255,255,255,.9);border-radius:28px;background:rgba(255,255,255,.78);box-shadow:var(--shadow)}.price-card.featured{background:linear-gradient(145deg,rgba(231,241,239,.96),rgba(255,255,255,.88));border-color:rgba(71,111,123,.24)}.price-card h3{margin:0 0 18px;font-size:22px}.price{display:flex;align-items:flex-end;gap:9px;margin-bottom:14px}.price strong{font-size:clamp(42px,6vw,64px);line-height:.95;letter-spacing:-.055em}.price span{padding-bottom:7px;color:var(--muted);font-weight:800}.price-note{min-height:25px;margin:0 0 22px;color:var(--muted);line-height:1.55}.price-card .btn{width:100%}@media(max-width:700px){.pricing-grid{grid-template-columns:1fr}.price-card{padding:24px}.card.workspace h3{font-size:21px;line-height:1.25}}`;
+    document.head.appendChild(style);
+
+    const pricing = document.createElement('section');
+    pricing.id = 'workspace-pricing';
+    pricing.innerHTML = `<div class="wrap"><div class="pricing-heading"><p class="kicker">${wt.pricingKicker}</p><h2>${wt.pricingTitle}</h2><p>${wt.pricingIntro}</p></div><div class="pricing-grid"><article class="price-card"><h3>${wt.monthly}</h3><div class="price"><strong>USD 120</strong><span>${wt.monthUnit}</span></div><p class="price-note">&nbsp;</p><a class="btn contact-trigger" role="button" tabindex="0">${wt.contact}</a></article><article class="price-card featured"><h3>${wt.yearly}</h3><div class="price"><strong>USD 1,200</strong><span>${wt.yearUnit}</span></div><p class="price-note">${wt.yearlyNote}</p><a class="btn primary contact-trigger" role="button" tabindex="0">${wt.contact}</a></article></div></div>`;
+    const roadmap = document.querySelector('#roadmap');
+    const ctaSection = roadmap ? roadmap.nextElementSibling : null;
+    if (ctaSection) ctaSection.parentNode.insertBefore(pricing, ctaSection);
+    else document.querySelector('main')?.appendChild(pricing);
+  }
+
   const modal = document.createElement('div');
   modal.className = 'contact-modal';
   modal.hidden = true;
@@ -20,7 +82,7 @@
   const close = () => { modal.hidden = true; document.body.classList.remove('modal-open'); };
   const bind = el => { el.removeAttribute('href'); el.setAttribute('role','button'); el.setAttribute('tabindex','0'); el.classList.add('contact-trigger'); el.addEventListener('click', open); el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } }); };
 
-  document.querySelectorAll('a[href^="mailto:"]').forEach(bind);
+  document.querySelectorAll('a[href^="mailto:"], a.contact-trigger').forEach(bind);
   const links = document.querySelector('.links');
   if (links && !links.querySelector('.contact-trigger')) { const a=document.createElement('a'); a.textContent=t.nav; links.appendChild(a); bind(a); }
   const ctaButtons = document.querySelector('.cta .hero-buttons');
