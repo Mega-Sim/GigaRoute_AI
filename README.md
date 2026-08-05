@@ -23,6 +23,9 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 월간 구독: USD 120
 - 연간 구독: USD 1,200
 - 현장별 워크플로우 및 Export 요구사항에 맞춘 커스터마이징 문의 가능
+- Product 카드 하단의 Workspace 전용 상세 박스에서 가격표 상시 표시
+
+Auto Simulation, Simulation Pro, AMR & Physical AI는 각 Product 카드와 같은 색상의 하단 상세 박스를 사용하며, 현재는 준비 중 안내를 표시합니다.
 
 ## 고객지원 이메일 운영
 
@@ -46,6 +49,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-05: Product별 기존 카드와 같은 색상의 하단 상세 박스를 추가하고, Workspace에는 월간 USD 120·연간 USD 1,200 가격표를 배치했으며 나머지 제품에는 준비 중 안내를 적용했습니다.
 - 2026-08-05: GigaRoute Workspace에 `(Enable Customizing)`을 추가하고 AutoMod·NVIDIA Isaac Sim Export 설명과 월간 USD 120·연간 USD 1,200 가격표를 모든 언어 페이지에 반영했습니다.
 - 2026-08-05: 모든 언어 페이지에 다국어 Contact 모달, 이메일 복사, 업무시간·회신시간 안내를 적용하고 `mailto:` 직접 실행에 따른 외부 메일 클라이언트 실행 문제를 제거했습니다.
 - 2026-08-05: 영문 기본 홈페이지에서 Roadmap 오른쪽에 Contact 메뉴를 추가하고 `support@gigaroute.ai` 고객지원 링크 및 운영 안내를 추가했습니다.
