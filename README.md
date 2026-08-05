@@ -12,9 +12,22 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 스페인어 페이지: `index-es.html`
 - 일본어 페이지: `index-ja.html`
 - 공통 스타일: `site.css`
-- 공통 문의 UI 및 Workspace 다국어 정보: `contact.js`
+- 공통 문의 UI, Workspace 다국어 정보 및 무료 레이아웃 점검 섹션: `contact.js`
 
 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. 모든 파일은 UTF-8로 관리하며, 검색엔진 언어 구분을 위한 canonical 및 `hreflang` 링크를 포함합니다.
+
+## 무료 초기 레이아웃 점검
+
+모든 언어 페이지의 Hero 영역 바로 아래에서 DXF 기반 무료 초기 레이아웃 점검 서비스를 안내합니다.
+
+- 연결되지 않거나 누락된 경로
+- 잘못된 교차점과 분기·합류
+- 중복 또는 겹친 형상
+- 급격한 곡선과 주행 경로 품질
+- 시뮬레이션 모델링에 영향을 줄 수 있는 문제
+- 주요 문제 요약, 개선 권고 및 다음 단계 안내
+
+무료 서비스는 초기 엔지니어링 점검 범위이며, 전체 레이아웃 수정, 시뮬레이션 네트워크 생성 및 맞춤 개발은 유료 전문 서비스로 구분합니다. 신청 버튼은 공통 Contact 모달과 `support@gigaroute.ai` 문의 동선으로 연결됩니다.
 
 ## GigaRoute Workspace 판매 정보
 
@@ -45,10 +58,12 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 작업 브랜치
 
+- `feature/issue-8-free-layout-assessment`: 다국어 무료 초기 레이아웃 점검 섹션 및 문의 연결 추가
 - `feature/issue-3-consulting-auto-simulation`: Consulting 메뉴·Algorithm-Based AutoMod Modeling 소개·GigaRoute Auto Simulation 명칭 반영
 
 ## 변경 이력
 
+- 2026-08-05: 영어·한국어·중국어·스페인어·일본어 홈페이지 Hero 아래에 무료 초기 레이아웃 점검 섹션을 추가하고, 초기 점검 범위와 유료 전문 서비스의 경계를 명확히 표시했습니다.
 - 2026-08-05: Product별 기존 카드와 같은 색상의 하단 상세 박스를 추가하고, Workspace에는 월간 USD 120·연간 USD 1,200 가격표를 배치했으며 나머지 제품에는 준비 중 안내를 적용했습니다.
 - 2026-08-05: GigaRoute Workspace에 `(Enable Customizing)`을 추가하고 AutoMod·NVIDIA Isaac Sim Export 설명과 월간 USD 120·연간 USD 1,200 가격표를 모든 언어 페이지에 반영했습니다.
 - 2026-08-05: 모든 언어 페이지에 다국어 Contact 모달, 이메일 복사, 업무시간·회신시간 안내를 적용하고 `mailto:` 직접 실행에 따른 외부 메일 클라이언트 실행 문제를 제거했습니다.
