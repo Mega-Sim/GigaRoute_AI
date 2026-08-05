@@ -12,9 +12,17 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 스페인어 페이지: `index-es.html`
 - 일본어 페이지: `index-ja.html`
 - 공통 스타일: `site.css`
-- 공통 문의 UI: `contact.js`
+- 공통 문의 UI 및 Workspace 다국어 정보: `contact.js`
 
 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. 모든 파일은 UTF-8로 관리하며, 검색엔진 언어 구분을 위한 canonical 및 `hreflang` 링크를 포함합니다.
+
+## GigaRoute Workspace 판매 정보
+
+모든 언어 페이지에서 GigaRoute Workspace를 커스터마이징 가능한 제품으로 안내하며, AutoMod 및 NVIDIA Isaac Sim Export 지원 내용을 표시합니다.
+
+- 월간 구독: USD 120
+- 연간 구독: USD 1,200
+- 현장별 워크플로우 및 Export 요구사항에 맞춘 커스터마이징 문의 가능
 
 ## 고객지원 이메일 운영
 
@@ -38,6 +46,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-05: GigaRoute Workspace에 `(Enable Customizing)`을 추가하고 AutoMod·NVIDIA Isaac Sim Export 설명과 월간 USD 120·연간 USD 1,200 가격표를 모든 언어 페이지에 반영했습니다.
 - 2026-08-05: 모든 언어 페이지에 다국어 Contact 모달, 이메일 복사, 업무시간·회신시간 안내를 적용하고 `mailto:` 직접 실행에 따른 외부 메일 클라이언트 실행 문제를 제거했습니다.
 - 2026-08-05: 영문 기본 홈페이지에서 Roadmap 오른쪽에 Contact 메뉴를 추가하고 `support@gigaroute.ai` 고객지원 링크 및 운영 안내를 추가했습니다.
 - 2026-08-04: Consulting 메뉴와 Algorithm-Based AutoMod Modeling 소개를 다국어 페이지에 추가하고 GigaRoute Basic을 GigaRoute Auto Simulation으로 변경했습니다.
