@@ -12,22 +12,25 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 스페인어 페이지: `index-es.html`
 - 일본어 페이지: `index-ja.html`
 - 공통 스타일: `site.css`
+- 공통 문의 UI: `contact.js`
 
 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. 모든 파일은 UTF-8로 관리하며, 검색엔진 언어 구분을 위한 canonical 및 `hreflang` 링크를 포함합니다.
 
 ## 고객지원 이메일 운영
 
-홈페이지의 `Contact` 메뉴와 하단 고객지원 링크는 `mailto:support@gigaroute.ai`를 사용합니다. 실제 송수신을 위해서는 도메인 DNS를 관리하는 서비스에서 메일 호스팅을 연결해야 합니다.
+홈페이지의 Contact 메뉴, 하단 문의 버튼 및 Footer 이메일은 운영체제의 기본 메일 프로그램을 직접 실행하지 않습니다. 대신 홈페이지 내부의 다국어 Contact 모달을 열어 다음 정보를 제공합니다.
 
-권장 초기 구성:
+- 고객지원 이메일 `support@gigaroute.ai`
+- 이메일 주소 복사 버튼
+- 평일 업무시간 및 일반적인 회신 예상시간
+- ESC, 배경 클릭, 닫기 버튼을 통한 종료
+- PC 및 모바일 반응형 표시
 
-1. Google Workspace 또는 Microsoft 365에서 `support@gigaroute.ai` 사서함을 생성합니다.
-2. 도메인 DNS에 서비스가 안내하는 MX, SPF, DKIM 레코드를 등록합니다.
-3. DMARC 레코드는 초기에는 모니터링 정책(`p=none`)으로 시작하고 정상 송수신 확인 후 강화합니다.
-4. 대표자가 직접 확인하거나 담당자 여러 명이 필요하면 공유 사서함 또는 Google Group으로 운영합니다.
-5. 문의량이 증가하면 Freshdesk, Zendesk, Jira Service Management 등의 티켓 시스템에 해당 주소를 연결합니다.
+현재 수신 구성은 Cloudflare Email Routing을 사용합니다.
 
-단순 포워딩만 사용할 수도 있지만, 발신 주소 인증과 회신 이력 관리를 위해 독립 사서함 또는 공유 사서함 방식을 권장합니다.
+`support@gigaroute.ai` → Cloudflare Email Routing → 지정 Gmail 주소
+
+Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 삭제하지 않습니다. 무료 Email Routing은 수신 전달 기능이며, Gmail에서 회신할 경우 기본 발신 주소는 Gmail 주소로 표시될 수 있습니다. 향후 `support@gigaroute.ai` 발신이 필요하면 Google Workspace, Microsoft 365 또는 별도 SMTP 서비스를 연결합니다.
 
 ## 작업 브랜치
 
@@ -35,6 +38,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 ## 변경 이력
 
+- 2026-08-05: 모든 언어 페이지에 다국어 Contact 모달, 이메일 복사, 업무시간·회신시간 안내를 적용하고 `mailto:` 직접 실행에 따른 외부 메일 클라이언트 실행 문제를 제거했습니다.
 - 2026-08-05: 영문 기본 홈페이지에서 Roadmap 오른쪽에 Contact 메뉴를 추가하고 `support@gigaroute.ai` 고객지원 링크 및 운영 안내를 추가했습니다.
 - 2026-08-04: Consulting 메뉴와 Algorithm-Based AutoMod Modeling 소개를 다국어 페이지에 추가하고 GigaRoute Basic을 GigaRoute Auto Simulation으로 변경했습니다.
 - 2026-08-04: 루트 도메인의 기본 언어를 영어로 변경하고 한국어·중국어·스페인어·일본어 페이지와 공통 언어 선택 UI를 추가했습니다.
