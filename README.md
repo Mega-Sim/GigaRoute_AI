@@ -17,6 +17,20 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
 
+## 중국어 페이지 중국 접속 최적화 정책
+
+`index-zh.html`은 중국 본토에서 차단되거나 지연될 수 있는 외부 렌더링 리소스에 의존하지 않도록 별도로 관리합니다.
+
+- Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`)를 사용하지 않음
+- 외부 CSS/CDN, 외부 JavaScript/CDN, 외부 Web Font를 중국어 페이지의 렌더링 필수 요소로 사용하지 않음
+- 중국어 페이지에 self-only Content Security Policy를 적용하여 `font`, `style`, `script`, `connect` 외부 로드를 차단
+- 스타일과 동작은 같은 도메인의 `site.css`, `contact.js`, `favicon.png` 등 로컬 자산을 사용
+- 중국어 글꼴은 `Microsoft YaHei UI`, `Microsoft YaHei`, `PingFang SC`, `Hiragino Sans GB`, `Source Han Sans SC`, `Noto Sans CJK SC`, Arial 순의 시스템 폰트 스택을 사용하며 외부 폰트 다운로드를 요구하지 않음
+- 공통 CSS/JS를 변경하더라도 중국어 페이지에 Google 계열 리소스나 중국에서 접근이 불안정한 CDN 의존성을 추가하지 않음
+- GitHub 등 외부 사이트로 이동하는 일반 링크는 페이지 렌더링 의존성이 아니므로 유지할 수 있으나, 중국어 페이지 자체 표시와 주요 기능은 외부 사이트 접속 없이 동작해야 함
+
+2026-08-17 점검 당시 저장소에는 `fonts.googleapis.com`, `fonts.gstatic.com`, CSS `@import`, `@font-face` 기반 외부 폰트 로드가 존재하지 않았으며, Issue #15에서 중국어 페이지가 향후에도 외부 CDN을 자동으로 사용하지 못하도록 CSP를 추가했습니다.
+
 ## Public Distribution / Private Core 정책
 
 이 저장소는 **public 홈페이지 및 배포 전용 저장소**입니다. GigaRoute 제품의 C++ 핵심 소스는 여기에 저장하지 않습니다.
@@ -93,6 +107,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-17: Issue #15로 중국어 페이지에 self-only CSP와 중국어 로컬 시스템 폰트 스택을 적용하고, Google Fonts/CDN 등 중국 본토에서 차단될 수 있는 외부 렌더링 의존성을 사용하지 않는 정책을 고정했습니다.
 - 2026-08-17: Issue #14로 Auto Simulation 상위 상품명을 `Scale → Ultra`, `Enterprise → Ultimate`로 변경하고, 모든 언어 페이지에서 Free / Basic / Pro / Ultra / Ultimate 명칭을 공통 사용하도록 고정했습니다.
 - 2026-08-17: Issue #13 요청 해석을 정정해 Issue #12의 Vehicle 기준 신제품/가격표를 복구하고, 구형 4개 제품 카드 및 과거 Workspace 단독 가격 영역은 제거했습니다. English 선택은 `index-en.html`로 이동하도록 유지합니다.
 - 2026-08-17: Issue #12로 최대 동시 Vehicle 수 기준의 Auto Simulation 상품·국가별 가격 정책을 도입했습니다. 이후 Issue #14에서 상위 상품명을 Ultra / Ultimate로 확정했습니다.
