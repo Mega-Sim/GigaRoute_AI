@@ -16,6 +16,19 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. 모든 파일은 UTF-8로 관리하며, 검색엔진 언어 구분을 위한 canonical 및 `hreflang` 링크를 포함합니다.
 
+## Public Distribution / Private Core 정책
+
+이 저장소는 **public 홈페이지 및 배포 전용 저장소**입니다. GigaRoute 제품의 C++ 핵심 소스는 여기에 저장하지 않습니다.
+
+- private canonical source: `Mega-Sim/Sim_Core`
+- public website/distribution: `Mega-Sim/GigaRoute_AI`
+- `SimulationEngine`, `RouteCatalog`, Merge/Deadlock, Simulation Studio 등 핵심 구현은 private `Sim_Core`에만 유지
+- `.cpp/.hpp/.pdb/.lib/.obj/.exp/.ilk` 등 네이티브 소스·심볼·중간 산출물은 이 public 저장소에 커밋하지 않음
+- Windows EXE/DLL/ZIP 배포 파일은 Git tree에 커밋하지 않고 **GitHub Releases asset**으로만 배포
+- public release package는 private `Sim_Core`의 hardened Release staging에서 생성하며 source/debug symbol/private library를 포함하지 않음
+
+루트 `.gitignore`는 실수로 native source, debug symbols, compiler intermediates, runtime binaries가 public Git history에 들어가는 것을 방지합니다.
+
 ## 무료 초기 레이아웃 점검
 
 모든 언어 페이지의 Hero 영역 바로 아래에서 DXF 기반 무료 초기 레이아웃 점검 서비스를 안내합니다.
@@ -63,6 +76,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-17: private `Mega-Sim/Sim_Core`를 canonical product source로, public `Mega-Sim/GigaRoute_AI`를 홈페이지·배포 전용 저장소로 분리하고 native source/symbol/intermediate/binary의 Git commit 차단 정책을 추가했습니다.
 - 2026-08-05: 영어·한국어·중국어·스페인어·일본어 홈페이지 Hero 아래에 무료 초기 레이아웃 점검 섹션을 추가하고, 초기 점검 범위와 유료 전문 서비스의 경계를 명확히 표시했습니다.
 - 2026-08-05: Product별 기존 카드와 같은 색상의 하단 상세 박스를 추가하고, Workspace에는 월간 USD 120·연간 USD 1,200 가격표를 배치했으며 나머지 제품에는 준비 중 안내를 적용했습니다.
 - 2026-08-05: GigaRoute Workspace에 `(Enable Customizing)`을 추가하고 AutoMod·NVIDIA Isaac Sim Export 설명과 월간 USD 120·연간 USD 1,200 가격표를 모든 언어 페이지에 반영했습니다.
