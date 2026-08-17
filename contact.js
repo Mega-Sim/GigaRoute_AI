@@ -5,52 +5,46 @@
   const copy = {
     en: {
       contact:{nav:'Contact',button:'Contact us',title:'Contact GigaRoute AI',intro:'For product inquiries, technical support, AutoMod consulting, dealer purchases, or partnerships, contact us at the email below.',emailLabel:'Support email',copy:'Copy email',copied:'Email copied',hours:'Business hours',hoursValue:'Monday–Friday, 09:00–18:00 KST',response:'Typical response',responseValue:'Within 1 business day',close:'Close'},
-      assess:{kicker:'Free engineering review',title:'Free Initial Layout Assessment',lead:'Upload your DXF layout and receive a free initial engineering review before simulation begins.',checksTitle:'What we review',checks:['Disconnected or missing paths','Invalid intersections and junctions','Duplicate or overlapping geometry','Sharp curves and routing quality','Potential simulation modeling issues'],resultTitle:"What you'll receive",results:['Summary of key findings','Practical improvement recommendations','Guidance for next steps'],note:'The free service is an initial review. Full layout correction, network generation, and custom development are available as professional services.',cta:'Request Free Assessment'}
+      assess:{kicker:'Free engineering review',title:'Free Initial Layout Assessment',lead:'Upload your DXF layout and receive a free initial engineering review before simulation begins.',checksTitle:'What we review',checks:['Disconnected or missing paths','Invalid intersections and junctions','Duplicate or overlapping geometry','Sharp curves and routing quality','Potential simulation modeling issues'],resultTitle:"What you'll receive",results:['Summary of key findings','Practical improvement recommendations','Guidance for next steps'],note:'The free service is an initial review. Full layout correction, network generation, and custom development are available as professional services.',cta:'Request Free Assessment'},
+      workspaceDescription:'A customizable modeling and analysis workspace for cleaning CAD drawings, building graph structures, reviewing layout issues, and exporting models to AutoMod and NVIDIA Isaac Sim.'
     },
     ko: {
       contact:{nav:'문의',button:'문의하기',title:'GigaRoute AI 문의',intro:'제품 문의, 기술지원, AutoMod 컨설팅, 구매 및 협업 문의는 아래 이메일로 연락해 주세요.',emailLabel:'고객지원 이메일',copy:'이메일 복사',copied:'복사되었습니다',hours:'업무시간',hoursValue:'평일 09:00~18:00 (한국시간)',response:'일반적인 회신',responseValue:'영업일 기준 1일 이내',close:'닫기'},
-      assess:{kicker:'무료 엔지니어링 검토',title:'무료 초기 레이아웃 점검',lead:'DXF 레이아웃을 보내주시면 시뮬레이션을 시작하기 전에 주요 문제를 무료로 점검해 드립니다.',checksTitle:'점검 항목',checks:['연결되지 않거나 누락된 경로','잘못된 교차점과 분기·합류','중복되거나 겹친 형상','급격한 곡선과 주행 경로 품질','시뮬레이션 모델링에 영향을 줄 수 있는 문제'],resultTitle:'제공 결과',results:['주요 문제 요약','실무적인 개선 권고','다음 단계 안내'],note:'무료 서비스는 초기 점검을 위한 것입니다. 전체 레이아웃 수정, 네트워크 생성 및 맞춤 개발은 유료 전문 서비스로 제공됩니다.',cta:'무료 점검 신청'}
+      assess:{kicker:'무료 엔지니어링 검토',title:'무료 초기 레이아웃 점검',lead:'DXF 레이아웃을 보내주시면 시뮬레이션을 시작하기 전에 주요 문제를 무료로 점검해 드립니다.',checksTitle:'점검 항목',checks:['연결되지 않거나 누락된 경로','잘못된 교차점과 분기·합류','중복되거나 겹친 형상','급격한 곡선과 주행 경로 품질','시뮬레이션 모델링에 영향을 줄 수 있는 문제'],resultTitle:'제공 결과',results:['주요 문제 요약','실무적인 개선 권고','다음 단계 안내'],note:'무료 서비스는 초기 점검을 위한 것입니다. 전체 레이아웃 수정, 네트워크 생성 및 맞춤 개발은 유료 전문 서비스로 제공됩니다.',cta:'무료 점검 신청'},
+      workspaceDescription:'CAD 도면 정리, 그래프 구조 생성, 레이아웃 문제 검토와 AutoMod 및 NVIDIA Isaac Sim Export를 지원하는 커스터마이징 가능한 모델링·분석 작업 공간입니다.'
     },
     'zh-CN': {
       contact:{nav:'联系我们',button:'联系我们',title:'联系 GigaRoute AI',intro:'如需产品咨询、技术支持、AutoMod 咨询、经销商购买或合作，请通过以下邮箱联系我们。',emailLabel:'支持邮箱',copy:'复制邮箱',copied:'邮箱已复制',hours:'工作时间',hoursValue:'周一至周五 09:00–18:00（韩国时间）',response:'通常回复时间',responseValue:'1 个工作日内',close:'关闭'},
-      assess:{kicker:'免费工程审查',title:'免费初步布局检查',lead:'上传 DXF 布局，在开始仿真前获得免费的初步工程审查。',checksTitle:'检查内容',checks:['断开或缺失的路径','无效的交叉点与分支汇合','重复或重叠的几何图形','急弯与路径质量','可能影响仿真建模的问题'],resultTitle:'您将获得',results:['主要问题摘要','实用改进建议','下一步指导'],note:'免费服务仅用于初步审查。完整布局修正、网络生成和定制开发属于专业付费服务。',cta:'申请免费检查'}
+      assess:{kicker:'免费工程审查',title:'免费初步布局检查',lead:'上传 DXF 布局，在开始仿真前获得免费的初步工程审查。',checksTitle:'检查内容',checks:['断开或缺失的路径','无效的交叉点与分支汇合','重复或重叠的几何图形','急弯与路径质量','可能影响仿真建模的问题'],resultTitle:'您将获得',results:['主要问题摘要','实用改进建议','下一步指导'],note:'免费服务仅用于初步审查。完整布局修正、网络生成和定制开发属于专业付费服务。',cta:'申请免费检查'},
+      workspaceDescription:'可定制的建模与分析工作空间，用于清理 CAD 图纸、构建图结构、检查布局问题，并支持导出到 AutoMod 和 NVIDIA Isaac Sim。'
     },
     es: {
       contact:{nav:'Contacto',button:'Contactar',title:'Contactar con GigaRoute AI',intro:'Para consultas sobre productos, soporte técnico, consultoría AutoMod, compra mediante distribuidor o colaboraciones, escríbanos al correo indicado.',emailLabel:'Correo de soporte',copy:'Copiar correo',copied:'Correo copiado',hours:'Horario de atención',hoursValue:'Lunes a viernes, 09:00–18:00 KST',response:'Tiempo de respuesta habitual',responseValue:'En 1 día laborable',close:'Cerrar'},
-      assess:{kicker:'Revisión de ingeniería gratuita',title:'Evaluación inicial gratuita del layout',lead:'Envíe su layout DXF y reciba una revisión inicial gratuita antes de comenzar la simulación.',checksTitle:'Qué revisamos',checks:['Rutas desconectadas o ausentes','Intersecciones y uniones no válidas','Geometría duplicada o superpuesta','Curvas cerradas y calidad de rutas','Posibles problemas para el modelado de simulación'],resultTitle:'Qué recibirá',results:['Resumen de hallazgos principales','Recomendaciones prácticas de mejora','Orientación sobre los siguientes pasos'],note:'El servicio gratuito es una revisión inicial. La corrección completa del layout, la generación de redes y el desarrollo personalizado se ofrecen como servicios profesionales.',cta:'Solicitar evaluación gratuita'}
+      assess:{kicker:'Revisión de ingeniería gratuita',title:'Evaluación inicial gratuita del layout',lead:'Envíe su layout DXF y reciba una revisión inicial gratuita antes de comenzar la simulación.',checksTitle:'Qué revisamos',checks:['Rutas desconectadas o ausentes','Intersecciones y uniones no válidas','Geometría duplicada o superpuesta','Curvas cerradas y calidad de rutas','Posibles problemas para el modelado de simulación'],resultTitle:'Qué recibirá',results:['Resumen de hallazgos principales','Recomendaciones prácticas de mejora','Orientación sobre los siguientes pasos'],note:'El servicio gratuito es una revisión inicial. La corrección completa del layout, la generación de redes y el desarrollo personalizado se ofrecen como servicios profesionales.',cta:'Solicitar evaluación gratuita'},
+      workspaceDescription:'Un espacio de modelado y análisis personalizable para depurar planos CAD, crear estructuras de grafos, revisar problemas del diseño y exportar modelos a AutoMod y NVIDIA Isaac Sim.'
     },
     ja: {
       contact:{nav:'お問い合わせ',button:'お問い合わせ',title:'GigaRoute AIへのお問い合わせ',intro:'製品、技術サポート、AutoModコンサルティング、ご購入、協業については、以下のメールアドレスまでご連絡ください。',emailLabel:'サポートメール',copy:'メールアドレスをコピー',copied:'コピーしました',hours:'営業時間',hoursValue:'平日 09:00～18:00（韓国時間）',response:'通常の返信時間',responseValue:'1営業日以内',close:'閉じる'},
-      assess:{kicker:'無料エンジニアリングレビュー',title:'無料初期レイアウト診断',lead:'DXFレイアウトを送信すると、シミュレーション開始前に無料の初期エンジニアリングレビューを受けられます。',checksTitle:'確認項目',checks:['切断または欠落した経路','不正な交差点・分岐・合流','重複または重なった形状','急カーブと経路品質','シミュレーションモデリングに影響する可能性のある問題'],resultTitle:'提供内容',results:['主要な問題の要約','実務的な改善提案','次のステップのご案内'],note:'無料サービスは初期レビューを目的としています。レイアウト全体の修正、ネットワーク生成、カスタム開発は有料の専門サービスです。',cta:'無料診断を申し込む'}
+      assess:{kicker:'無料エンジニアリングレビュー',title:'無料初期レイアウト診断',lead:'DXFレイアウトを送信すると、シミュレーション開始前に無料の初期エンジニアリングレビューを受けられます。',checksTitle:'確認項目',checks:['切断または欠落した経路','不正な交差点・分岐・合流','重複または重なった形状','急カーブと経路品質','シミュレーションモデリングに影響する可能性のある問題'],resultTitle:'提供内容',results:['主要な問題の要約','実務的な改善提案','次のステップのご案内'],note:'無料サービスは初期レビューを目的としています。レイアウト全体の修正、ネットワーク生成、カスタム開発は有料の専門サービスです。',cta:'無料診断を申し込む'},
+      workspaceDescription:'CAD図面の整理、グラフ構造の構築、レイアウト問題の確認に加え、AutoModおよびNVIDIA Isaac SimへのExportに対応するカスタマイズ可能なモデリング・分析ワークスペースです。'
     }
   };
-
-  const productCopy = {
-    en:{workspaceDescription:'A customizable modeling and analysis workspace for cleaning CAD drawings, building graph structures, reviewing layout issues, and exporting models to AutoMod and NVIDIA Isaac Sim.',workspaceIncluded:'Workspace included',workspaceNote:'Workspace is included with GigaRoute Auto Simulation plans.',sales:'Contact dealer',coming:'Coming Soon',preparing:'Product details are being prepared.',pricingKicker:'Vehicle-based licensing',pricingTitle:'GigaRoute Auto Simulation Plans',pricingLead:'No license-based limits on layout objects, stations, nodes, or edges. Choose your plan only by the maximum number of vehicles you need to simulate.',launch:'Launch Price',regular:'Regular',vehicleUnit:'Vehicles',free:'Free',dealer:'Contact Dealer',dealerNote:'Pricing outside Korea and Japan is provided through authorized dealers.',included:'Workspace + 2D/3D Auto Simulation included',objectNote:'No license-based object limits'},
-    ko:{workspaceDescription:'CAD 도면 정리, 그래프 구조 생성, 레이아웃 문제 검토와 AutoMod 및 NVIDIA Isaac Sim Export를 지원하는 커스터마이징 가능한 모델링·분석 작업 공간입니다.',workspaceIncluded:'Workspace 포함',workspaceNote:'GigaRoute Workspace는 Auto Simulation 요금제에 포함됩니다.',sales:'구매 문의',coming:'준비 중',preparing:'제품 상세 기능을 준비하고 있습니다.',pricingKicker:'Vehicle 기준 라이선스',pricingTitle:'GigaRoute Auto Simulation 요금제',pricingLead:'레이아웃 Object, Station, Node, Edge 수에는 라이선스 제한을 두지 않습니다. 필요한 최대 동시 Vehicle 수만으로 요금제를 선택합니다.',launch:'출시 특별가',regular:'정가',vehicleUnit:'Vehicles',free:'무료',dealer:'딜러 문의',dealerNote:'한국과 일본 이외 지역은 현지 딜러를 통해 가격을 안내합니다.',included:'Workspace + 2D/3D Auto Simulation 포함',objectNote:'Object 수 라이선스 제한 없음'},
-    'zh-CN':{workspaceDescription:'可定制的建模与分析工作空间，用于清理 CAD 图纸、构建图结构、检查布局问题，并支持导出到 AutoMod 和 NVIDIA Isaac Sim。',workspaceIncluded:'包含 Workspace',workspaceNote:'GigaRoute Workspace 包含在 Auto Simulation 方案中。',sales:'联系经销商',coming:'即将推出',preparing:'产品详细功能正在准备中。',pricingKicker:'按 Vehicle 数量授权',pricingTitle:'GigaRoute Auto Simulation 方案',pricingLead:'布局 Object、Station、Node 和 Edge 不设许可证数量限制。只需根据需要模拟的最大 Vehicle 数选择方案。',launch:'首发价',regular:'标准价',vehicleUnit:'Vehicles',free:'免费',dealer:'联系经销商',dealerNote:'韩国和日本以外地区的价格由当地经销商提供。',included:'包含 Workspace + 2D/3D Auto Simulation',objectNote:'无基于 Object 数量的许可证限制'},
-    es:{workspaceDescription:'Un espacio de modelado y análisis personalizable para depurar planos CAD, crear estructuras de grafos, revisar problemas del diseño y exportar modelos a AutoMod y NVIDIA Isaac Sim.',workspaceIncluded:'Workspace incluido',workspaceNote:'GigaRoute Workspace está incluido en los planes de Auto Simulation.',sales:'Contactar distribuidor',coming:'Próximamente',preparing:'Los detalles del producto están en preparación.',pricingKicker:'Licencia por número de Vehicles',pricingTitle:'Planes de GigaRoute Auto Simulation',pricingLead:'Sin límites de licencia por número de objetos, estaciones, nodos o aristas del layout. Elija el plan únicamente por el número máximo de Vehicles que necesita simular.',launch:'Precio de lanzamiento',regular:'Precio regular',vehicleUnit:'Vehicles',free:'Gratis',dealer:'Contactar distribuidor',dealerNote:'Fuera de Corea y Japón, los precios se ofrecen a través de distribuidores locales.',included:'Workspace + Auto Simulation 2D/3D incluidos',objectNote:'Sin límites de licencia por objetos'},
-    ja:{workspaceDescription:'CAD図面の整理、グラフ構造の構築、レイアウト問題の確認に加え、AutoModおよびNVIDIA Isaac SimへのExportに対応するカスタマイズ可能なモデリング・分析ワークスペースです。',workspaceIncluded:'Workspaceを含む',workspaceNote:'GigaRoute WorkspaceはAuto Simulationプランに含まれます。',sales:'購入について相談',coming:'準備中',preparing:'製品の詳細機能を準備しています。',pricingKicker:'Vehicle数ベースのライセンス',pricingTitle:'GigaRoute Auto Simulation 料金プラン',pricingLead:'レイアウトのObject、Station、Node、Edge数にはライセンス上の制限を設けません。必要な最大同時Vehicle数だけでプランを選択できます。',launch:'ローンチ価格',regular:'通常価格',vehicleUnit:'Vehicles',free:'無料',dealer:'販売店へお問い合わせ',dealerNote:'韓国・日本以外の地域は現地販売店を通じて価格をご案内します。',included:'Workspace + 2D/3D Auto Simulationを含む',objectNote:'Object数によるライセンス制限なし'}
-  };
-
-  const planNames = ['Free','Basic','Pro','Scale','Enterprise'];
-  const vehicleCaps = [20,100,500,1500,3000];
-  const krwRegular = [0,129000,299000,599000,1190000];
-  const krwLaunch = [0,79000,199000,399000,799000];
-  const jpyRegular = [0,14000,33000,66000,132000];
-  const jpyLaunch = [0,8900,22000,44000,88000];
 
   const l = copy[locale] || copy.en;
   const t = l.contact;
   const a = l.assess;
-  const p = productCopy[locale] || productCopy.en;
+
+  const languageSelect = document.querySelector('.language-select');
+  if (languageSelect) {
+    [...languageSelect.options].forEach(option => {
+      if (option.textContent.trim() === 'English') option.value = 'index-en.html';
+    });
+  }
 
   const style = document.createElement('style');
   style.textContent = `
     #free-assessment{padding:18px 0 72px}.assessment-panel{padding:34px;display:grid;grid-template-columns:.92fr 1.08fr;gap:30px;border:1px solid rgba(255,255,255,.9);border-radius:32px;background:linear-gradient(145deg,rgba(231,241,239,.96),rgba(255,255,255,.82));box-shadow:var(--shadow)}.assessment-copy h2{margin:0;font-size:clamp(34px,4.6vw,56px);line-height:1.05;letter-spacing:-.055em}.assessment-lead{margin:18px 0 0;color:var(--muted);font-size:17px;line-height:1.72}.assessment-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}.assessment-note{margin:18px 0 0;color:var(--muted);font-size:12px;line-height:1.6}.assessment-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.assessment-card{padding:22px;border:1px solid var(--line);border-radius:21px;background:rgba(250,252,253,.88)}.assessment-card h3{margin:0 0 15px;font-size:18px}.assessment-card ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}.assessment-card li{position:relative;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.5}.assessment-card li:before{content:'✓';position:absolute;left:0;color:var(--brand);font-weight:900}
-    #products .cards{align-items:stretch}.product-column{display:grid;grid-template-rows:auto 1fr;gap:14px;min-width:0}.product-column>.card{width:100%;min-height:325px}.product-detail{min-height:255px;padding:24px;border:1px solid rgba(255,255,255,.88);border-radius:25px;box-shadow:0 14px 40px rgba(42,60,82,.08);overflow:hidden}.product-detail.workspace-detail{background:linear-gradient(155deg,#e7f1ef,#fff)}.product-detail.basic-detail{background:linear-gradient(155deg,#e8eff7,#fff)}.product-detail.pro-detail{background:linear-gradient(155deg,#efedf8,#fff)}.product-detail.amr-detail{background:linear-gradient(155deg,#f6efe5,#fff)}.product-detail h4{margin:0 0 18px;font-size:20px}.included-box{height:100%;min-height:205px;display:grid;place-content:center;text-align:center}.included-box strong{font-size:20px}.included-box p,.coming-box p{max-width:230px;margin:12px auto 0;color:var(--muted);font-size:14px;line-height:1.6}.coming-box{height:100%;min-height:205px;display:grid;place-content:center;text-align:center}
-    #auto-simulation-pricing{padding:0 0 86px}.pricing-panel{padding:34px;border:1px solid rgba(255,255,255,.9);border-radius:32px;background:linear-gradient(145deg,rgba(236,242,249,.97),rgba(255,255,255,.88));box-shadow:var(--shadow)}.pricing-head{display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:end;margin-bottom:26px}.pricing-head h2{margin:0;font-size:clamp(34px,4.5vw,54px);line-height:1.05;letter-spacing:-.05em}.pricing-head .pricing-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.7}.pricing-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.plan-card{position:relative;padding:20px 16px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.82);min-width:0}.plan-card.featured{border-color:rgba(55,96,145,.35);box-shadow:0 14px 34px rgba(42,60,82,.12)}.plan-card h3{margin:0 0 8px;font-size:19px}.vehicle-cap{margin:0 0 18px;color:var(--brand);font-size:13px;font-weight:900}.regular-price{min-height:20px;color:var(--muted);font-size:13px;text-decoration:line-through;text-decoration-thickness:2px}.launch-label{margin-top:5px;color:var(--brand);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.launch-price{margin-top:3px;font-size:25px;font-weight:900;letter-spacing:-.035em}.plan-card .btn{width:100%;margin-top:14px}.plan-note{margin:13px 0 0;color:var(--muted);font-size:11px;line-height:1.55}.pricing-footer{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.pricing-footer span{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.7);color:var(--muted);font-size:12px;font-weight:800}
-    @media(max-width:1050px){.assessment-panel,.pricing-head{grid-template-columns:1fr}#products .cards{grid-template-columns:repeat(2,minmax(0,1fr))}.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){#free-assessment{padding:6px 0 50px}.assessment-panel,.pricing-panel{padding:22px 18px}.assessment-grid{grid-template-columns:1fr}.assessment-actions .btn{width:100%}#products .cards,.pricing-grid{grid-template-columns:1fr}.product-detail{min-height:auto}.product-column>.card{min-height:auto}.coming-box,.included-box{min-height:150px}}
+    @media(max-width:1050px){.assessment-panel{grid-template-columns:1fr}}@media(max-width:700px){#free-assessment{padding:6px 0 50px}.assessment-panel{padding:22px 18px}.assessment-grid{grid-template-columns:1fr}.assessment-actions .btn{width:100%}}
   `;
   document.head.appendChild(style);
 
@@ -63,44 +57,22 @@
     hero.insertAdjacentElement('afterend', section);
   }
 
-  const cards = document.querySelector('#products .cards');
-  if (cards && !cards.querySelector('.product-column')) {
-    [...cards.children].forEach((card,index)=>{
-      const type=['workspace','basic','pro','amr'][index]||'basic';
-      const column=document.createElement('div'); column.className='product-column';
-      card.parentNode.insertBefore(column,card); column.appendChild(card);
-      if(type==='workspace'){
-        const name=card.querySelector('h3'), description=card.querySelector('p'), tags=card.querySelector('.tags');
-        if(name) name.textContent='GigaRoute Workspace (Enable Customizing)';
-        if(description) description.textContent=p.workspaceDescription;
-        if(tags) ['AutoMod Export','NVIDIA Isaac Sim Export'].forEach(label=>{if(![...tags.children].some(tag=>tag.textContent===label)){const tag=document.createElement('span');tag.textContent=label;tags.appendChild(tag);}});
-      }
-      const detail=document.createElement('article'); detail.className=`product-detail ${type}-detail`;
-      detail.innerHTML=type==='workspace'
-        ? `<div class="included-box"><div><strong>${p.workspaceIncluded}</strong><p>${p.workspaceNote}</p></div></div>`
-        : `<div class="coming-box"><div><strong>${p.coming}</strong><p>${p.preparing}</p></div></div>`;
-      column.appendChild(detail);
-    });
-  }
-
-  const fmt = (value,currency) => currency==='KRW' ? `₩${value.toLocaleString('ko-KR')}` : `¥${value.toLocaleString('ja-JP')}`;
-  const pricingMode = locale==='ko' ? 'KRW' : locale==='ja' ? 'JPY' : 'DEALER';
-  const plans = planNames.map((name,index)=>({name,vehicles:vehicleCaps[index],regular:pricingMode==='KRW'?krwRegular[index]:jpyRegular[index],launch:pricingMode==='KRW'?krwLaunch[index]:jpyLaunch[index]}));
-
-  if (cards && !document.querySelector('#auto-simulation-pricing')) {
-    const pricing = document.createElement('section');
-    pricing.id='auto-simulation-pricing';
-    const planHtml = plans.map((plan,index)=>{
-      const featured = plan.name==='Pro' ? ' featured' : '';
-      const priceHtml = pricingMode==='DEALER'
-        ? `<div class="launch-label">${p.dealer}</div><a class="btn ${plan.name==='Pro'?'primary ':''}contact-trigger" role="button" tabindex="0">${p.dealer}</a>`
-        : plan.name==='Free'
-          ? `<div class="launch-label">${p.launch}</div><div class="launch-price">${p.free}</div>`
-          : `<div class="regular-price">${p.regular} ${fmt(plan.regular,pricingMode)} / month</div><div class="launch-label">${p.launch}</div><div class="launch-price">${fmt(plan.launch,pricingMode)} / month</div><a class="btn ${plan.name==='Pro'?'primary ':''}contact-trigger" role="button" tabindex="0">${p.sales}</a>`;
-      return `<article class="plan-card${featured}"><h3>Auto Simulation ${plan.name}</h3><p class="vehicle-cap">Up to ${plan.vehicles.toLocaleString()} ${p.vehicleUnit}</p>${priceHtml}<p class="plan-note">${p.included}</p></article>`;
-    }).join('');
-    pricing.innerHTML=`<div class="wrap"><div class="pricing-panel"><div class="pricing-head"><div><p class="kicker">${p.pricingKicker}</p><h2>${p.pricingTitle}</h2></div><p class="pricing-lead">${p.pricingLead}${pricingMode==='DEALER'?`<br><strong>${p.dealerNote}</strong>`:''}</p></div><div class="pricing-grid">${planHtml}</div><div class="pricing-footer"><span>${p.objectNote}</span><span>${p.included}</span></div></div></div>`;
-    document.querySelector('#products').insertAdjacentElement('afterend',pricing);
+  const workspaceCard = document.querySelector('#products .card.workspace');
+  if (workspaceCard) {
+    const name = workspaceCard.querySelector('h3');
+    const description = workspaceCard.querySelector('p');
+    const tags = workspaceCard.querySelector('.tags');
+    if (name) name.textContent = 'GigaRoute Workspace (Enable Customizing)';
+    if (description) description.textContent = l.workspaceDescription;
+    if (tags) {
+      ['AutoMod Export','NVIDIA Isaac Sim Export'].forEach(label => {
+        if (![...tags.children].some(tag => tag.textContent === label)) {
+          const tag = document.createElement('span');
+          tag.textContent = label;
+          tags.appendChild(tag);
+        }
+      });
+    }
   }
 
   const modal=document.createElement('div');
