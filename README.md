@@ -11,6 +11,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 중국어(간체) 페이지: `index-zh.html`
 - 스페인어 페이지: `index-es.html`
 - 일본어 페이지: `index-ja.html`
+- 브라우저 파비콘: `favicon.png` (GigaRoute `GR` 브랜드 아이콘)
 - 공통 스타일: `site.css`
 - 공통 문의 UI, Workspace 다국어 정보 및 무료 레이아웃 점검 섹션: `contact.js`
 
@@ -76,6 +77,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-17: Issue #11로 사용자 제공 `GR` 브랜드 아이콘을 `favicon.png`에 적용하고, 루트 한국어 홈페이지에서 브라우저 탭/주소창 아이콘으로 명시적으로 사용하도록 연결했습니다.
 - 2026-08-17: Issue #10으로 루트 `index.html`의 기본 언어를 한국어로 전환하고, 기존 영문 홈페이지를 `index-en.html`에 보존했습니다. 기존 `index-ko.html` 주소와 중국어·스페인어·일본어 페이지는 유지합니다.
 - 2026-08-17: private `Mega-Sim/Sim_Core`를 canonical product source로, public `Mega-Sim/GigaRoute_AI`를 홈페이지·배포 전용 저장소로 분리하고 native source/symbol/intermediate/binary의 Git commit 차단 정책을 추가했습니다.
 - 2026-08-05: 영어·한국어·중국어·스페인어·일본어 홈페이지 Hero 아래에 무료 초기 레이아웃 점검 섹션을 추가하고, 초기 점검 범위와 유료 전문 서비스의 경계를 명확히 표시했습니다.
