@@ -64,7 +64,7 @@
 
   const productSection = document.querySelector('#products');
   if (productSection) {
-    const planNames = ['Free','Basic','Pro','Scale','Enterprise'];
+    const planNames = ['Free','Basic','Pro','Ultra','Ultimate'];
     const vehicleCaps = [20,100,500,1500,3000];
     const krwRegular = [0,129000,299000,599000,1190000];
     const krwLaunch = [0,79000,199000,399000,799000];
