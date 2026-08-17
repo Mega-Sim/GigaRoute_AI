@@ -13,7 +13,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 일본어 페이지: `index-ja.html`
 - 브라우저 파비콘: `favicon.png` (GigaRoute `GR` 브랜드 아이콘)
 - 공통 스타일: `site.css`
-- 공통 문의 UI, Workspace 다국어 정보 및 무료 레이아웃 점검 섹션: `contact.js`
+- 공통 문의 UI, 무료 레이아웃 점검, Vehicle 기준 상품·가격표: `contact.js`
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
 
@@ -43,14 +43,25 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 무료 서비스는 초기 엔지니어링 점검 범위이며, 전체 레이아웃 수정, 시뮬레이션 네트워크 생성 및 맞춤 개발은 유료 전문 서비스로 구분합니다. 신청 버튼은 공통 Contact 모달과 `support@gigaroute.ai` 문의 동선으로 연결됩니다.
 
-## 제품 영역 표시 정책
+## GigaRoute Auto Simulation 제품·가격 정책
 
-홈페이지 제품 영역은 Workspace, Auto Simulation, Simulation Pro, AMR & Physical AI의 기본 제품 카드만 유지합니다.
+홈페이지의 구형 4개 제품 카드 영역은 표시하지 않고, `GigaRoute Auto Simulation`의 Vehicle 기준 상품군을 제품 영역에 직접 표시합니다.
 
-- 기존 Auto Simulation 가격표는 표시하지 않습니다.
-- Product 카드 아래에 추가되던 `Workspace 포함` / `준비 중` 상세 박스도 표시하지 않습니다.
-- Workspace의 `(Enable Customizing)`, AutoMod Export, NVIDIA Isaac Sim Export 설명은 유지합니다.
-- 가격 및 판매 조건은 별도 정책이 확정되기 전까지 제품 카드에 고정 금액으로 표시하지 않습니다.
+| 상품 | 최대 동시 Vehicle | 한국 출시가 | 한국 정가 | 일본 출시가 | 일본 정가 |
+|---|---:|---:|---:|---:|---:|
+| Auto Simulation Free | 20 | 무료 | - | 無料 | - |
+| Auto Simulation Basic | 100 | ₩79,000/월 | ₩129,000/월 | ¥8,900/月 | ¥14,000/月 |
+| Auto Simulation Pro | 500 | ₩199,000/월 | ₩299,000/월 | ¥22,000/月 | ¥33,000/月 |
+| Auto Simulation Scale | 1,500 | ₩399,000/월 | ₩599,000/월 | ¥44,000/月 | ¥66,000/月 |
+| Auto Simulation Enterprise | 3,000 | ₩799,000/월 | ₩1,190,000/월 | ¥88,000/月 | ¥132,000/月 |
+
+- 한국어 페이지: KRW 가격 공개, 정가는 취소선으로 표시하고 Launch Price 강조
+- 일본어 페이지: JPY 가격 공개, 정가는 취소선으로 표시하고 Launch Price 강조
+- 영어·중국어·스페인어 페이지: 금액 대신 Dealer 문의 표시
+- 각 요금제에 `Workspace + 2D/3D Auto Simulation 포함` 표시
+- Layout Object / Station / Node / Edge는 라이선스상 개수 제한 없음
+- Auto Simulation Pro는 대표 상품으로 강조
+- 과거 영문 페이지에 남아 있던 `Workspace Monthly $120 / Annual $1,200` 구형 가격 섹션은 표시하지 않음
 
 ## 고객지원 이메일 운영
 
@@ -75,17 +86,10 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
-- 2026-08-17: Issue #13으로 제품 카드 아래의 가격/판매 관련 상세 박스와 Auto Simulation 가격표를 제거하고, 모든 페이지에서 English 선택 시 `index-en.html`로 이동하도록 공통 언어 선택 로직을 수정했습니다.
-- 2026-08-17: Issue #12로 도입했던 Vehicle 기준 Auto Simulation 가격표는 Issue #13 요청에 따라 홈페이지 표시에서 제거했습니다.
-- 2026-08-17: Issue #11로 사용자 제공 `GR` 브랜드 아이콘을 `favicon.png`에 적용하고, 루트 한국어 홈페이지에서 브라우저 탭/주소창 아이콘으로 명시적으로 사용하도록 연결했습니다.
-- 2026-08-17: Issue #10으로 루트 `index.html`의 기본 언어를 한국어로 전환하고, 기존 영문 홈페이지를 `index-en.html`에 보존했습니다. 기존 `index-ko.html` 주소와 중국어·스페인어·일본어 페이지는 유지합니다.
-- 2026-08-17: private `Mega-Sim/Sim_Core`를 canonical product source로, public `Mega-Sim/GigaRoute_AI`를 홈페이지·배포 전용 저장소로 분리하고 native source/symbol/intermediate/binary의 Git commit 차단 정책을 추가했습니다.
-- 2026-08-05: 영어·한국어·중국어·스페인어·일본어 홈페이지 Hero 아래에 무료 초기 레이아웃 점검 섹션을 추가하고, 초기 점검 범위와 유료 전문 서비스의 경계를 명확히 표시했습니다.
-- 2026-08-05: Product별 기존 카드와 같은 색상의 하단 상세 박스를 추가하고, Workspace에는 월간 USD 120·연간 USD 1,200 가격표를 배치했으며 나머지 제품에는 준비 중 안내를 적용했습니다. 이후 가격 정책 변경을 거쳐 Issue #13에서 추가 상세 박스 표시를 제거했습니다.
-- 2026-08-05: GigaRoute Workspace에 `(Enable Customizing)`을 추가하고 AutoMod·NVIDIA Isaac Sim Export 설명을 모든 언어 페이지에 반영했습니다.
-- 2026-08-05: 모든 언어 페이지에 다국어 Contact 모달, 이메일 복사, 업무시간·회신시간 안내를 적용하고 `mailto:` 직접 실행에 따른 외부 메일 클라이언트 실행 문제를 제거했습니다.
-- 2026-08-05: 영문 기본 홈페이지에서 Roadmap 오른쪽에 Contact 메뉴를 추가하고 `support@gigaroute.ai` 고객지원 링크 및 운영 안내를 추가했습니다.
-- 2026-08-04: Consulting 메뉴와 Algorithm-Based AutoMod Modeling 소개를 다국어 페이지에 추가하고 GigaRoute Basic을 GigaRoute Auto Simulation으로 변경했습니다.
-- 2026-08-04: 루트 도메인의 기본 언어를 영어로 변경하고 한국어·중국어·스페인어·일본어 페이지와 공통 언어 선택 UI를 추가했습니다.
+- 2026-08-17: Issue #13 해석을 정정해 Issue #12의 Vehicle 기준 Free / Basic / Pro / Scale / Enterprise 상품·가격표를 복구하고, 사용자가 삭제 요청한 구형 4개 제품 카드 영역 및 과거 Workspace USD 가격 섹션은 표시하지 않도록 수정했습니다. English 선택은 `index-en.html`로 이동하는 수정 상태를 유지합니다.
+- 2026-08-17: Issue #12로 GigaRoute Auto Simulation을 최대 동시 Vehicle 수 기준의 Free 20 / Basic 100 / Pro 500 / Scale 1,500 / Enterprise 3,000 상품군으로 구성하고, 한국은 KRW·일본은 JPY의 정가 취소선 + Launch Price를 표시하며 나머지 언어권은 Dealer 문의 정책으로 구성했습니다.
+- 2026-08-17: Issue #11로 사용자 제공 `GR` 브랜드 아이콘을 `favicon.png`에 적용했습니다.
+- 2026-08-17: Issue #10으로 루트 `index.html`의 기본 언어를 한국어로 전환하고, 기존 영문 홈페이지를 `index-en.html`에 보존했습니다.
+- 2026-08-17: private `Mega-Sim/Sim_Core`를 canonical product source로, public `Mega-Sim/GigaRoute_AI`를 홈페이지·배포 전용 저장소로 분리했습니다.
 
 홈페이지 공개·배포 원본은 `Mega-Sim/GigaRoute_AI`에서 관리하며, 제품 C++ 핵심 소스는 private `Mega-Sim/Sim_Core`에서 관리합니다.
