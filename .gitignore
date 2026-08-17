@@ -1,0 +1,45 @@
+# GigaRoute AI public site / distribution repository
+# Never commit private C/C++ source, debug symbols, import/static libraries,
+# compiler intermediates, or packaged binaries to the Git tree.
+
+# Private native source
+*.c
+*.cc
+*.cpp
+*.cxx
+*.h
+*.hh
+*.hpp
+*.hxx
+*.inl
+*.inc
+
+# Debug/symbol/intermediate artifacts
+*.pdb
+*.ipdb
+*.iobj
+*.ilk
+*.obj
+*.exp
+*.lib
+*.a
+*.la
+*.tlog
+*.lastbuildstate
+
+# Runtime binaries belong in GitHub Releases, not repository history
+*.exe
+*.dll
+*.so
+*.dylib
+*.zip
+*.7z
+*.msi
+
+# Build/staging directories
+build/
+dist/
+public_release/
+private_symbols/
+CMakeFiles/
+CMakeCache.txt
