@@ -12,9 +12,10 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 스페인어 페이지: `index-es.html`
 - 일본어 페이지: `index-ja.html`
 - 브라우저 파비콘: `favicon.png` (GigaRoute `GR` 브랜드 아이콘)
+- 파비콘 공통 보정: `contact.js`가 모든 언어 페이지에서 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 페이지별 누락과 브라우저 캐시 회귀를 방지
 - 공통 스타일: `site.css`
 - 공통 문의 UI, Auto Simulation 다국어 가격 정책 및 무료 레이아웃 점검 섹션: `contact.js`
-- 상단 `GitHub` 버튼: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo` (모든 언어 페이지 공통)
+- 상단 및 하단 CTA `GitHub` 버튼: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo` (모든 언어 페이지 공통)
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
 
@@ -105,9 +106,11 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 - `feature/issue-8-free-layout-assessment`: 다국어 무료 초기 레이아웃 점검 섹션 및 문의 연결 추가
 - `feature/issue-3-consulting-auto-simulation`: Consulting 메뉴·Algorithm-Based AutoMod Modeling 소개·GigaRoute Auto Simulation 명칭 반영
+- `noop`, `noop2`, `noop3`, `noop4`, `noop5`: 도구 오동작으로 생성된 작업 미사용 브랜치. main 변경에는 사용하지 않았으며 삭제 대상입니다.
 
 ## 변경 이력
 
+- 2026-08-18: Issue #19로 모든 언어 페이지에서 공통 `contact.js`가 상단·하단 CTA GitHub 링크를 `Mega-Sim/GigaRoute_AI_Simulation_Demo`로 강제 통일하고, `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 적용해 브라우저 탭의 GR 파비콘 누락 및 캐시 회귀를 복구했습니다.
 - 2026-08-18: Issue #18로 영어·중국어·스페인어 페이지의 `Contact Dealer` 전용 표시를 제거하고 실제 KRW 정가/출시가를 표시하도록 변경했습니다. 일본어 JPY 가격과 한국어 KRW 가격은 유지합니다.
 - 2026-08-18: Issue #17로 루트 한국어·한국어 호환·중국어·스페인어·일본어 홈페이지의 상단 우측 `GitHub` 버튼을 `Mega-Sim/GigaRoute_AI_Simulation_Demo` 저장소로 통일했습니다. 영어 페이지는 Issue #16에서 이미 동일하게 연결되어 있었습니다.
 - 2026-08-18: Issue #16으로 영어 홈페이지 상단 우측 `GitHub` 버튼을 공개 `Mega-Sim/GigaRoute_AI_Simulation_Demo` 저장소로 연결했습니다.
