@@ -69,6 +69,17 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 무료 서비스는 초기 엔지니어링 점검 범위이며, 전체 레이아웃 수정, 시뮬레이션 네트워크 생성 및 맞춤 개발은 유료 전문 서비스로 구분합니다. 신청 버튼은 공통 Contact 모달과 `support@gigaroute.ai` 문의 동선으로 연결됩니다.
 
+## Consulting 서비스 범위
+
+홈페이지 Consulting 영역은 기존 **Algorithm-Based AutoMod Modeling**을 유지하면서 다음 엔지니어링·업무 자동화 서비스를 함께 안내합니다.
+
+- **AutoMod 모델링·최적화**: 경로, 배차, 합류, 막힘, 설비 규칙 등 운영 로직을 재사용 가능한 알고리즘 구조로 모델링하고 기존 모델의 중복 로직·폴링·실행 부하를 개선
+- **CAD 작업 자동화**: 반복적인 CAD 도면 정리, 객체·TEXT 가공, 레이아웃 변환, 시뮬레이션/모델링 데이터 준비 업무 자동화
+- **Atlassian Jira 작업 자동화**: 이슈 생성, 상태 전환, 반복 프로젝트 업데이트, 엔지니어링 업무 인계 등 Jira 기반 프로젝트 운영 자동화
+- **Atlassian Confluence 작업 자동화**: 기술 문서 작성·갱신, 구조화된 보고서 생성, 프로젝트 지식 및 문서 동기화 자동화
+
+Consulting 서비스 설명은 `site.css`의 공통 다국어 표시 규칙으로 관리하며 `html[lang]`에 따라 한국어·영어·중국어(간체)·스페인어·일본어에 각각 현지화된 문구를 표시합니다. 기존 AutoMod Consulting 카드와 레이아웃은 제거하거나 변경하지 않습니다.
+
 ## GigaRoute Auto Simulation 판매 정책
 
 Auto Simulation 상품명은 모든 언어 페이지에서 아래 5개 명칭으로 **고정**합니다. 임의로 `Scale`, `Enterprise` 등 이전 명칭으로 되돌리지 않습니다.
@@ -136,6 +147,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-18: Issue #23으로 기존 Algorithm-Based AutoMod Modeling 컨설팅에 CAD 작업 자동화, Atlassian Jira 작업 자동화, Atlassian Confluence 작업 자동화를 추가하고 한국어·영어·중국어(간체)·스페인어·일본어 홈페이지에 공통 적용했습니다.
 - 2026-08-18: Issue #22로 홈페이지의 단일 GitHub 배포 링크를 `Windows` / `Linux` 버튼으로 분리했습니다. Linux는 `public-preview-526-linux` Release로 직접 연결하고, Windows는 정식 Installer 공개 전까지 Demo 저장소의 `Windows/` 배포 영역으로 연결합니다. 상단 헤더와 하단 CTA에 동일 정책을 적용했습니다.
 - 2026-08-18: Issue #21로 Auto Simulation 월 출시 특별가의 10개월분을 연간 결제 가격으로 표시하고, 모든 통화에서 `2개월 무료` 연간 할인 정책을 홈페이지 가격 카드와 README에 반영했습니다.
 - 2026-08-18: Issue #20으로 Auto Simulation 다국어 가격 표시를 한국어 KRW, 영어·스페인어 USD, 중국어 CNY, 일본어 JPY로 분리하고 `contact.js`에 통화별 price book을 추가했습니다. 이전 Issue #18의 영어·중국어·스페인어 KRW 공통 표시 정책을 폐기했습니다.
