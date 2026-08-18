@@ -26,10 +26,10 @@
   };
 
   const pricingCopy = {
-    en:{kicker:'Vehicle-based licensing',title:'GigaRoute Auto Simulation Plans',lead:'No license-based limits on layout objects, stations, nodes, or edges. Choose a plan only by the maximum number of vehicles you need to simulate.',launch:'Launch Price',regular:'Regular',vehicles:'Vehicles',free:'Free',dealer:'Contact Dealer',dealerNote:'Pricing outside Korea and Japan is provided through authorized dealers.',included:'Workspace + 2D/3D Auto Simulation included',objectNote:'No license-based object limits'},
+    en:{kicker:'Vehicle-based licensing',title:'GigaRoute Auto Simulation Plans',lead:'No license-based limits on layout objects, stations, nodes, or edges. Choose a plan only by the maximum number of vehicles you need to simulate.',launch:'Launch Price',regular:'Regular',vehicles:'Vehicles',free:'Free',dealer:'Contact Dealer',dealerNote:'Prices are shown in KRW. Contact us for purchase and regional billing options.',included:'Workspace + 2D/3D Auto Simulation included',objectNote:'No license-based object limits'},
     ko:{kicker:'Vehicle 기준 라이선스',title:'GigaRoute Auto Simulation 요금제',lead:'Layout Object, Station, Node, Edge 수에는 라이선스 제한이 없습니다. 필요한 최대 동시 Vehicle 수만으로 요금제를 선택합니다.',launch:'출시 특별가',regular:'정가',vehicles:'Vehicles',free:'무료',dealer:'구매 문의',dealerNote:'',included:'Workspace + 2D/3D Auto Simulation 포함',objectNote:'Object 수 라이선스 제한 없음'},
-    'zh-CN':{kicker:'按 Vehicle 数量授权',title:'GigaRoute Auto Simulation 方案',lead:'布局 Object、Station、Node 和 Edge 不设许可证数量限制。只需根据需要模拟的最大 Vehicle 数选择方案。',launch:'首发价',regular:'标准价',vehicles:'Vehicles',free:'免费',dealer:'联系经销商',dealerNote:'韩国和日本以外地区的价格由当地经销商提供。',included:'包含 Workspace + 2D/3D Auto Simulation',objectNote:'无基于 Object 数量的许可证限制'},
-    es:{kicker:'Licencia por número de Vehicles',title:'Planes de GigaRoute Auto Simulation',lead:'Sin límites de licencia por número de objetos, estaciones, nodos o aristas del layout. Elija el plan por el número máximo de Vehicles que necesita simular.',launch:'Precio de lanzamiento',regular:'Precio regular',vehicles:'Vehicles',free:'Gratis',dealer:'Contactar distribuidor',dealerNote:'Fuera de Corea y Japón, los precios se ofrecen a través de distribuidores locales.',included:'Workspace + Auto Simulation 2D/3D incluidos',objectNote:'Sin límites de licencia por objetos'},
+    'zh-CN':{kicker:'按 Vehicle 数量授权',title:'GigaRoute Auto Simulation 方案',lead:'布局 Object、Station、Node 和 Edge 不设许可证数量限制。只需根据需要模拟的最大 Vehicle 数选择方案。',launch:'首发价',regular:'标准价',vehicles:'Vehicles',free:'免费',dealer:'联系经销商',dealerNote:'价格以韩元（KRW）显示。购买及地区结算方式请联系我们。',included:'包含 Workspace + 2D/3D Auto Simulation',objectNote:'无基于 Object 数量的许可证限制'},
+    es:{kicker:'Licencia por número de Vehicles',title:'Planes de GigaRoute Auto Simulation',lead:'Sin límites de licencia por número de objetos, estaciones, nodos o aristas del layout. Elija el plan por el número máximo de Vehicles que necesita simular.',launch:'Precio de lanzamiento',regular:'Precio regular',vehicles:'Vehicles',free:'Gratis',dealer:'Contactar distribuidor',dealerNote:'Los precios se muestran en KRW. Contáctenos para opciones de compra y facturación regional.',included:'Workspace + Auto Simulation 2D/3D incluidos',objectNote:'Sin límites de licencia por objetos'},
     ja:{kicker:'Vehicle数ベースのライセンス',title:'GigaRoute Auto Simulation 料金プラン',lead:'レイアウトのObject、Station、Node、Edge数にはライセンス上の制限を設けません。必要な最大同時Vehicle数だけでプランを選択できます。',launch:'ローンチ価格',regular:'通常価格',vehicles:'Vehicles',free:'無料',dealer:'販売店へお問い合わせ',dealerNote:'',included:'Workspace + 2D/3D Auto Simulationを含む',objectNote:'Object数によるライセンス制限なし'}
   };
 
@@ -70,16 +70,14 @@
     const krwLaunch = [0,79000,199000,399000,799000];
     const jpyRegular = [0,14000,33000,66000,132000];
     const jpyLaunch = [0,8900,22000,44000,88000];
-    const pricingMode = locale==='ko' ? 'KRW' : locale==='ja' ? 'JPY' : 'DEALER';
+    const pricingMode = locale==='ja' ? 'JPY' : 'KRW';
     const fmt = (value,currency) => currency==='KRW' ? `₩${value.toLocaleString('ko-KR')}` : `¥${value.toLocaleString('ja-JP')}`;
     const plans = planNames.map((name,index)=>({name,vehicles:vehicleCaps[index],regular:pricingMode==='KRW'?krwRegular[index]:jpyRegular[index],launch:pricingMode==='KRW'?krwLaunch[index]:jpyLaunch[index]}));
     const planHtml = plans.map(plan=>{
       const featured = plan.name==='Pro' ? ' featured' : '';
-      const priceHtml = pricingMode==='DEALER'
-        ? `<div class="launch-label">${p.dealer}</div><a class="btn ${plan.name==='Pro'?'primary ':''}contact-trigger" role="button" tabindex="0">${p.dealer}</a>`
-        : plan.name==='Free'
-          ? `<div class="launch-label">${p.launch}</div><div class="launch-price">${p.free}</div>`
-          : `<div class="regular-price">${p.regular} ${fmt(plan.regular,pricingMode)} / month</div><div class="launch-label">${p.launch}</div><div class="launch-price">${fmt(plan.launch,pricingMode)} / month</div><a class="btn ${plan.name==='Pro'?'primary ':''}contact-trigger" role="button" tabindex="0">${t.button}</a>`;
+      const priceHtml = plan.name==='Free'
+        ? `<div class="launch-label">${p.launch}</div><div class="launch-price">${p.free}</div>`
+        : `<div class="regular-price">${p.regular} ${fmt(plan.regular,pricingMode)} / month</div><div class="launch-label">${p.launch}</div><div class="launch-price">${fmt(plan.launch,pricingMode)} / month</div><a class="btn ${plan.name==='Pro'?'primary ':''}contact-trigger" role="button" tabindex="0">${t.button}</a>`;
       return `<article class="plan-card${featured}"><h3>Auto Simulation ${plan.name}</h3><p class="vehicle-cap">Up to ${plan.vehicles.toLocaleString()} ${p.vehicles}</p>${priceHtml}<p class="plan-note">${p.included}</p></article>`;
     }).join('');
     productSection.innerHTML = `<div class="wrap"><div class="pricing-panel"><div class="pricing-head"><div><p class="kicker">${p.kicker}</p><h2>${p.title}</h2></div><p class="pricing-lead">${p.lead}${p.dealerNote?`<br><strong>${p.dealerNote}</strong>`:''}</p></div><div class="pricing-grid">${planHtml}</div><div class="pricing-footer"><span>${p.objectNote}</span><span>${p.included}</span></div></div></div>`;
