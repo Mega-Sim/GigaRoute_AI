@@ -15,7 +15,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 파비콘 공통 보정: `contact.js`가 모든 언어 페이지에서 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 페이지별 누락과 브라우저 캐시 회귀를 방지
 - 공통 스타일: `site.css`
 - 공통 문의 UI, Auto Simulation 다국어 가격 정책 및 무료 레이아웃 점검 섹션: `contact.js`
-- 상단 및 하단 CTA `GitHub` 버튼: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo` (모든 언어 페이지 공통)
+- 상단 및 하단 CTA 배포 버튼은 `Windows` / `Linux`로 분리하며, 각각 공개 Demo 저장소의 플랫폼별 배포 경로로 연결
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
 
@@ -43,6 +43,16 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - `.cpp/.hpp/.pdb/.lib/.obj/.exp/.ilk` 등 네이티브 소스·심볼·중간 산출물은 이 public 저장소에 커밋하지 않음
 - Windows EXE/DLL/ZIP 배포 파일은 Git tree에 커밋하지 않고 **GitHub Releases asset**으로만 배포
 - public release package는 private `Sim_Core`의 hardened Release staging에서 생성하며 source/debug symbol/private library를 포함하지 않음
+
+### 플랫폼별 공개 다운로드
+
+홈페이지의 배포 링크는 운영체제별로 명확히 분리합니다.
+
+- Windows: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/tree/main/Windows`
+- Linux: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-linux`
+- Linux는 현재 실제 Public Preview Release 페이지로 직접 연결합니다.
+- Windows는 정식 공개 Installer가 아직 준비 중이므로 현재 `Windows/` 배포 영역으로 연결합니다. Windows Release가 생성되면 홈페이지의 `WINDOWS_DOWNLOAD` 상수를 해당 Release URL로 교체합니다.
+- 상단 헤더와 하단 CTA 모두 공통 `contact.js`에서 `Windows` / `Linux` 버튼으로 생성하며, 좁은 화면에서는 버튼이 겹치지 않도록 wrap 가능한 레이아웃을 사용합니다.
 
 루트 `.gitignore`는 실수로 native source, debug symbols, compiler intermediates, runtime binaries가 public Git history에 들어가는 것을 방지합니다.
 
@@ -126,6 +136,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-18: Issue #22로 홈페이지의 단일 GitHub 배포 링크를 `Windows` / `Linux` 버튼으로 분리했습니다. Linux는 `public-preview-526-linux` Release로 직접 연결하고, Windows는 정식 Installer 공개 전까지 Demo 저장소의 `Windows/` 배포 영역으로 연결합니다. 상단 헤더와 하단 CTA에 동일 정책을 적용했습니다.
 - 2026-08-18: Issue #21로 Auto Simulation 월 출시 특별가의 10개월분을 연간 결제 가격으로 표시하고, 모든 통화에서 `2개월 무료` 연간 할인 정책을 홈페이지 가격 카드와 README에 반영했습니다.
 - 2026-08-18: Issue #20으로 Auto Simulation 다국어 가격 표시를 한국어 KRW, 영어·스페인어 USD, 중국어 CNY, 일본어 JPY로 분리하고 `contact.js`에 통화별 price book을 추가했습니다. 이전 Issue #18의 영어·중국어·스페인어 KRW 공통 표시 정책을 폐기했습니다.
 - 2026-08-18: Issue #19로 모든 언어 페이지에서 공통 `contact.js`가 상단·하단 CTA GitHub 링크를 `Mega-Sim/GigaRoute_AI_Simulation_Demo`로 강제 통일하고, `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 적용해 브라우저 탭의 GR 파비콘 누락 및 캐시 회귀를 복구했습니다.
