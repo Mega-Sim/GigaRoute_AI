@@ -71,6 +71,17 @@ Auto Simulation 상품명은 모든 언어 페이지에서 아래 5개 명칭으
 | Auto Simulation Ultra | 1,500 | ₩399,000 / ₩599,000 | $283 / $425 | ¥1,908 / ¥2,865 | ¥44,000 / ¥66,000 |
 | Auto Simulation Ultimate | 3,000 | ₩799,000 / ₩1,190,000 | $567 / $844 | ¥3,821 / ¥5,692 | ¥88,000 / ¥132,000 |
 
+### 연간 결제 정책
+
+유료 상품의 연간 결제는 **월 출시 특별가 10개월분 = 12개월 사용(2개월 무료, 약 16.7% 할인)**으로 표시합니다.
+
+| 상품 | KRW / year | USD / year | CNY / year | JPY / year |
+|---|---:|---:|---:|---:|
+| Auto Simulation Basic | ₩790,000 | $560 | ¥3,780 | ¥89,000 |
+| Auto Simulation Pro | ₩1,990,000 | $1,410 | ¥9,520 | ¥220,000 |
+| Auto Simulation Ultra | ₩3,990,000 | $2,830 | ¥19,080 | ¥440,000 |
+| Auto Simulation Ultimate | ₩7,990,000 | $5,670 | ¥38,210 | ¥880,000 |
+
 판매/표시 원칙:
 
 - 최종 상품명: **Free / Basic / Pro / Ultra / Ultimate**
@@ -81,6 +92,7 @@ Auto Simulation 상품명은 모든 언어 페이지에서 아래 5개 명칭으
 - 중국어(간체) 페이지: **CNY(人民币)** 가격 표시
 - 일본어 페이지: **JPY** 가격 표시
 - 유료 상품은 각 통화에서 정가를 취소선으로 표시하고 Launch Price를 강조
+- 연간 결제는 월 출시 특별가의 10개월분을 1년 가격으로 표시하고 `2개월 무료` 문구를 함께 표시
 - USD/CNY는 실시간 외부 환율 API에 의존하지 않는 고정 현지 통화 가격표로 관리하며, `contact.js`의 통화별 price book에서 독립적으로 수정
 - Layout Object / Station / Node / Edge 수에는 라이선스상 개수 제한을 두지 않음
 - 모든 요금제에 Workspace + 2D/3D Auto Simulation 포함
@@ -114,6 +126,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-18: Issue #21로 Auto Simulation 월 출시 특별가의 10개월분을 연간 결제 가격으로 표시하고, 모든 통화에서 `2개월 무료` 연간 할인 정책을 홈페이지 가격 카드와 README에 반영했습니다.
 - 2026-08-18: Issue #20으로 Auto Simulation 다국어 가격 표시를 한국어 KRW, 영어·스페인어 USD, 중국어 CNY, 일본어 JPY로 분리하고 `contact.js`에 통화별 price book을 추가했습니다. 이전 Issue #18의 영어·중국어·스페인어 KRW 공통 표시 정책을 폐기했습니다.
 - 2026-08-18: Issue #19로 모든 언어 페이지에서 공통 `contact.js`가 상단·하단 CTA GitHub 링크를 `Mega-Sim/GigaRoute_AI_Simulation_Demo`로 강제 통일하고, `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 적용해 브라우저 탭의 GR 파비콘 누락 및 캐시 회귀를 복구했습니다.
 - 2026-08-18: Issue #18로 영어·중국어·스페인어 페이지의 `Contact Dealer` 전용 표시를 제거하고 실제 KRW 정가/출시가를 표시하도록 변경했습니다. Issue #20에서 해당 KRW 공통 표시를 언어별 USD/CNY 정책으로 정정했습니다.
