@@ -1,6 +1,8 @@
 (() => {
   const EMAIL = 'support@gigaroute.ai';
   const DEMO_REPO = 'https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo';
+  const WINDOWS_DOWNLOAD = `${DEMO_REPO}/tree/main/Windows`;
+  const LINUX_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-linux`;
   const FAVICON = '/favicon.png?v=20260818-2';
   const locale = document.documentElement.lang || 'en';
 
@@ -40,9 +42,30 @@
   const a = l.assess;
   const p = pricingCopy[locale] || pricingCopy.en;
 
-  const applyBrandLinks = () => {
-    document.querySelectorAll('a[href="https://github.com/Mega-Sim/GigaRoute_AI"],a[href="https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo"]').forEach(link => {
-      if (link.classList.contains('github') || link.closest('.cta')) link.href = DEMO_REPO;
+  const makePlatformLink = (label, href, extraClass = '') => {
+    const link = document.createElement('a');
+    link.className = `btn platform-download ${extraClass}`.trim();
+    link.href = href;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = label;
+    link.setAttribute('aria-label', `${label} download`);
+    return link;
+  };
+  const applyPlatformLinks = () => {
+    document.querySelectorAll('.actions a.github').forEach(link => {
+      const windows = makePlatformLink('Windows', WINDOWS_DOWNLOAD, 'windows-download');
+      const linux = makePlatformLink('Linux', LINUX_DOWNLOAD, 'linux-download');
+      link.before(windows, linux);
+      link.remove();
+    });
+    document.querySelectorAll('.cta .hero-buttons a').forEach(link => {
+      if (link.href === 'https://github.com/Mega-Sim/GigaRoute_AI' || link.href === DEMO_REPO || link.href === `${DEMO_REPO}/`) {
+        const windows = makePlatformLink('Windows', WINDOWS_DOWNLOAD, 'windows-download');
+        const linux = makePlatformLink('Linux', LINUX_DOWNLOAD, 'linux-download');
+        link.before(windows, linux);
+        link.remove();
+      }
     });
   };
   const applyFavicon = () => {
@@ -57,7 +80,7 @@
     });
   };
   applyFavicon();
-  applyBrandLinks();
+  applyPlatformLinks();
 
   const languageSelect = document.querySelector('.language-select');
   if (languageSelect) {
@@ -68,9 +91,10 @@
 
   const style = document.createElement('style');
   style.textContent = `
+    .platform-download{min-width:82px;padding:0 13px;white-space:nowrap}.linux-download{border-color:rgba(71,111,123,.22)}
     #free-assessment{padding:18px 0 72px}.assessment-panel{padding:34px;display:grid;grid-template-columns:.92fr 1.08fr;gap:30px;border:1px solid rgba(255,255,255,.9);border-radius:32px;background:linear-gradient(145deg,rgba(231,241,239,.96),rgba(255,255,255,.82));box-shadow:var(--shadow)}.assessment-copy h2{margin:0;font-size:clamp(34px,4.6vw,56px);line-height:1.05;letter-spacing:-.055em}.assessment-lead{margin:18px 0 0;color:var(--muted);font-size:17px;line-height:1.72}.assessment-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}.assessment-note{margin:18px 0 0;color:var(--muted);font-size:12px;line-height:1.6}.assessment-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.assessment-card{padding:22px;border:1px solid var(--line);border-radius:21px;background:rgba(250,252,253,.88)}.assessment-card h3{margin:0 0 15px;font-size:18px}.assessment-card ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}.assessment-card li{position:relative;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.5}.assessment-card li:before{content:'✓';position:absolute;left:0;color:var(--brand);font-weight:900}
     #products{padding:72px 0 86px}.pricing-panel{padding:34px;border:1px solid rgba(255,255,255,.9);border-radius:32px;background:linear-gradient(145deg,rgba(236,242,249,.97),rgba(255,255,255,.88));box-shadow:var(--shadow)}.pricing-head{display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:end;margin-bottom:26px}.pricing-head h2{margin:0;font-size:clamp(34px,4.5vw,54px);line-height:1.05;letter-spacing:-.05em}.pricing-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.7}.pricing-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.plan-card{padding:20px 16px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.82);min-width:0}.plan-card.featured{border-color:rgba(55,96,145,.35);box-shadow:0 14px 34px rgba(42,60,82,.12)}.plan-card h3{margin:0 0 8px;font-size:19px}.vehicle-cap{margin:0 0 18px;color:var(--brand);font-size:13px;font-weight:900}.regular-price{min-height:20px;color:var(--muted);font-size:13px;text-decoration:line-through;text-decoration-thickness:2px}.launch-label{margin-top:5px;color:var(--brand);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.launch-price{margin-top:3px;font-size:25px;font-weight:900;letter-spacing:-.035em}.annual-price{margin-top:8px;padding-top:8px;border-top:1px solid var(--line);color:var(--brand);font-size:12px;line-height:1.45;font-weight:800}.annual-price strong{display:block;margin-top:2px;color:var(--ink);font-size:16px}.plan-card .btn{width:100%;margin-top:14px}.plan-note{margin:13px 0 0;color:var(--muted);font-size:11px;line-height:1.55}.pricing-footer{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.pricing-footer span{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.7);color:var(--muted);font-size:12px;font-weight:800}
-    @media(max-width:1050px){.assessment-panel,.pricing-head{grid-template-columns:1fr}.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){#free-assessment{padding:6px 0 50px}.assessment-panel,.pricing-panel{padding:22px 18px}.assessment-grid,.pricing-grid{grid-template-columns:1fr}.assessment-actions .btn{width:100%}}
+    @media(max-width:1050px){.assessment-panel,.pricing-head{grid-template-columns:1fr}.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.actions{width:100%;justify-content:flex-end;flex-wrap:wrap}.language-select{min-width:118px}.platform-download{min-width:0;padding:0 12px}#free-assessment{padding:6px 0 50px}.assessment-panel,.pricing-panel{padding:22px 18px}.assessment-grid,.pricing-grid{grid-template-columns:1fr}.assessment-actions .btn{width:100%}}
   `;
   document.head.appendChild(style);
 
