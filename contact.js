@@ -1,5 +1,7 @@
 (() => {
   const EMAIL = 'support@gigaroute.ai';
+  const DEMO_REPO = 'https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo';
+  const FAVICON = '/favicon.png?v=20260818-2';
   const locale = document.documentElement.lang || 'en';
 
   const copy = {
@@ -37,6 +39,25 @@
   const t = l.contact;
   const a = l.assess;
   const p = pricingCopy[locale] || pricingCopy.en;
+
+  const applyBrandLinks = () => {
+    document.querySelectorAll('a[href="https://github.com/Mega-Sim/GigaRoute_AI"],a[href="https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo"]').forEach(link => {
+      if (link.classList.contains('github') || link.closest('.cta')) link.href = DEMO_REPO;
+    });
+  };
+  const applyFavicon = () => {
+    document.querySelectorAll('link[rel="icon"],link[rel="shortcut icon"]').forEach(link => link.remove());
+    ['icon','shortcut icon'].forEach(rel => {
+      const link = document.createElement('link');
+      link.rel = rel;
+      link.type = 'image/png';
+      link.href = FAVICON;
+      if (rel === 'icon') link.sizes = '64x64';
+      document.head.appendChild(link);
+    });
+  };
+  applyFavicon();
+  applyBrandLinks();
 
   const languageSelect = document.querySelector('.language-select');
   if (languageSelect) {
