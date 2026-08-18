@@ -63,28 +63,32 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 Auto Simulation 상품명은 모든 언어 페이지에서 아래 5개 명칭으로 **고정**합니다. 임의로 `Scale`, `Enterprise` 등 이전 명칭으로 되돌리지 않습니다.
 
-| 상품 | 최대 동시 Vehicle | KRW 출시가 | KRW 정가 | 일본 출시가 | 일본 정가 |
+| 상품 | 최대 동시 Vehicle | KRW 출시가 / 정가 | USD 출시가 / 정가 | CNY 출시가 / 정가 | JPY 출시가 / 정가 |
 |---|---:|---:|---:|---:|---:|
-| Auto Simulation Free | 20 | 무료 | - | 無料 | - |
-| Auto Simulation Basic | 100 | ₩79,000/월 | ₩129,000/월 | ¥8,900/月 | ¥14,000/月 |
-| Auto Simulation Pro | 500 | ₩199,000/월 | ₩299,000/월 | ¥22,000/月 | ¥33,000/月 |
-| Auto Simulation Ultra | 1,500 | ₩399,000/월 | ₩599,000/월 | ¥44,000/月 | ¥66,000/月 |
-| Auto Simulation Ultimate | 3,000 | ₩799,000/월 | ₩1,190,000/월 | ¥88,000/月 | ¥132,000/月 |
+| Auto Simulation Free | 20 | 무료 | Free | 免费 | 無料 |
+| Auto Simulation Basic | 100 | ₩79,000 / ₩129,000 | $56 / $92 | ¥378 / ¥617 | ¥8,900 / ¥14,000 |
+| Auto Simulation Pro | 500 | ₩199,000 / ₩299,000 | $141 / $212 | ¥952 / ¥1,430 | ¥22,000 / ¥33,000 |
+| Auto Simulation Ultra | 1,500 | ₩399,000 / ₩599,000 | $283 / $425 | ¥1,908 / ¥2,865 | ¥44,000 / ¥66,000 |
+| Auto Simulation Ultimate | 3,000 | ₩799,000 / ₩1,190,000 | $567 / $844 | ¥3,821 / ¥5,692 | ¥88,000 / ¥132,000 |
 
 판매/표시 원칙:
 
 - 최종 상품명: **Free / Basic / Pro / Ultra / Ultimate**
 - Vehicle 제한: **20 / 100 / 500 / 1,500 / 3,000**
-- 한국어·영어·중국어·스페인어 페이지: KRW 실제 가격 공개, 정가는 취소선으로 표시하고 Launch Price 강조
-- 일본어 페이지: JPY 가격 공개, 정가는 취소선으로 표시하고 Launch Price 강조
-- 영어·중국어·스페인어 페이지에는 KRW 표시 가격과 함께 지역별 구매·결제 문의 안내를 표시
+- 한국어 페이지: **KRW** 가격 표시
+- 영어 페이지: **USD** 가격 표시
+- 스페인어 페이지: **USD** 가격 표시
+- 중국어(간체) 페이지: **CNY(人民币)** 가격 표시
+- 일본어 페이지: **JPY** 가격 표시
+- 유료 상품은 각 통화에서 정가를 취소선으로 표시하고 Launch Price를 강조
+- USD/CNY는 실시간 외부 환율 API에 의존하지 않는 고정 현지 통화 가격표로 관리하며, `contact.js`의 통화별 price book에서 독립적으로 수정
 - Layout Object / Station / Node / Edge 수에는 라이선스상 개수 제한을 두지 않음
 - 모든 요금제에 Workspace + 2D/3D Auto Simulation 포함
 - Auto Simulation Pro를 대표/강조 상품으로 표시
 - 구형 Workspace 월 USD 120 / 연 USD 1,200 단독 가격표는 사용하지 않음
 - 구형 Workspace / Auto Simulation / Simulation Pro / AMR 4개 제품 카드 영역은 가격표 영역으로 대체하며 다시 노출하지 않음
 
-상품명과 가격 정책은 공통 `contact.js`에서 결정하므로 한국어·영어·중국어·스페인어·일본어 페이지에 동일하게 적용합니다.
+상품명과 가격 정책은 공통 `contact.js`에서 결정하므로 한국어·영어·중국어·스페인어·일본어 페이지에 동일한 상품 구조를 유지하면서 언어별 통화만 분리합니다.
 
 ## 고객지원 이메일 운영
 
@@ -110,8 +114,9 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 변경 이력
 
+- 2026-08-18: Issue #20으로 Auto Simulation 다국어 가격 표시를 한국어 KRW, 영어·스페인어 USD, 중국어 CNY, 일본어 JPY로 분리하고 `contact.js`에 통화별 price book을 추가했습니다. 이전 Issue #18의 영어·중국어·스페인어 KRW 공통 표시 정책을 폐기했습니다.
 - 2026-08-18: Issue #19로 모든 언어 페이지에서 공통 `contact.js`가 상단·하단 CTA GitHub 링크를 `Mega-Sim/GigaRoute_AI_Simulation_Demo`로 강제 통일하고, `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 적용해 브라우저 탭의 GR 파비콘 누락 및 캐시 회귀를 복구했습니다.
-- 2026-08-18: Issue #18로 영어·중국어·스페인어 페이지의 `Contact Dealer` 전용 표시를 제거하고 실제 KRW 정가/출시가를 표시하도록 변경했습니다. 일본어 JPY 가격과 한국어 KRW 가격은 유지합니다.
+- 2026-08-18: Issue #18로 영어·중국어·스페인어 페이지의 `Contact Dealer` 전용 표시를 제거하고 실제 KRW 정가/출시가를 표시하도록 변경했습니다. Issue #20에서 해당 KRW 공통 표시를 언어별 USD/CNY 정책으로 정정했습니다.
 - 2026-08-18: Issue #17로 루트 한국어·한국어 호환·중국어·스페인어·일본어 홈페이지의 상단 우측 `GitHub` 버튼을 `Mega-Sim/GigaRoute_AI_Simulation_Demo` 저장소로 통일했습니다. 영어 페이지는 Issue #16에서 이미 동일하게 연결되어 있었습니다.
 - 2026-08-18: Issue #16으로 영어 홈페이지 상단 우측 `GitHub` 버튼을 공개 `Mega-Sim/GigaRoute_AI_Simulation_Demo` 저장소로 연결했습니다.
 - 2026-08-17: Issue #15로 중국어 페이지에 self-only CSP와 중국어 로컬 시스템 폰트 스택을 적용하고, Google Fonts/CDN 등 중국 본토에서 차단될 수 있는 외부 렌더링 의존성을 사용하지 않는 정책을 고정했습니다.
