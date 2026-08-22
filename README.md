@@ -14,7 +14,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 브라우저 파비콘: `favicon.png` (GigaRoute `GR` 브랜드 아이콘)
 - 파비콘 공통 보정: `contact.js`가 모든 언어 페이지에서 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 페이지별 누락과 브라우저 캐시 회귀를 방지
 - 공통 스타일: `site.css`
-- 공통 문의 UI, B2B 제품·영업 구조 및 무료 레이아웃 점검 섹션: `contact.js`
+- 공통 문의 UI, B2B 제품·영업 구조, 무료 레이아웃 점검 및 Simulation Engine 실측 성능 섹션: `contact.js`
 - 상단 및 하단 CTA 배포 버튼은 `Windows` / `Linux`로 분리하며, 각각 공개 Demo 저장소의 플랫폼별 배포 경로로 연결
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
@@ -68,6 +68,34 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 주요 문제 요약, 개선 권고 및 다음 단계 안내
 
 무료 서비스는 초기 엔지니어링 점검 범위이며, 전체 레이아웃 수정, 시뮬레이션 네트워크 생성 및 맞춤 개발은 유료 전문 서비스로 구분합니다. 신청 버튼은 공통 Contact 모달과 `support@gigaroute.ai` 문의 동선으로 연결됩니다.
+
+## Simulation Engine 실측 성능
+
+Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation Run에서 얻은 Simulation Engine 성능 정보를 표시합니다. 공통 `contact.js`가 한국어·영어·중국어(간체)·스페인어·일본어 문구와 동일한 지표 구조를 렌더링하므로 언어별 페이지마다 수치가 달라지지 않습니다.
+
+### 2026-08-22 실측 결과
+
+| 항목 | 실측값 |
+|---|---:|
+| Vehicle | 600대 |
+| 시뮬레이션 시간 | 10시간 / 36,000초 |
+| 실제 실행시간 | 2,163.085초 / 36분 3.085초 |
+| 실측 Realtime Factor | **16.643×** |
+| 완료 반송(Job) | 88,941 |
+| 시뮬레이션 시간당 완료 반송 | 약 8,894.1 moves/h |
+| Run mode | `mixed` — Animation ON + Ultimate Speed |
+
+### 측정 PC
+
+- CPU: **11th Gen Intel Core i5-1130G7**
+- RAM: **8.00 GB (7.70 GB 사용 가능)**
+- OS/System: **64비트 Windows, x64 기반 프로세서**
+
+홈페이지에는 성능 비교에 필요한 CPU/RAM/OS 정보만 공개합니다. 사용자 PC의 Device ID, Product ID 및 장치 이름처럼 성능 설명과 무관한 식별성 정보는 공개하지 않습니다.
+
+`16.643×`는 Animation ON과 Ultimate Speed를 한 Run에서 모두 사용한 **mixed mode 전체 실행 실측값**입니다. 따라서 순수 Ultimate Speed의 최대 성능이라고 표현하지 않으며, 도면 복잡도, 교통 밀도, Vehicle 동작, 시뮬레이션 설정과 하드웨어에 따라 실제 배속이 달라질 수 있음을 함께 표시합니다.
+
+성능 섹션은 외부 라이브러리·폰트·CDN 없이 기존 로컬 `contact.js`와 `site.css` 체계 안에서 표시되어 중국어 페이지의 self-only CSP 정책을 유지합니다.
 
 ## Consulting 서비스 범위
 
@@ -143,9 +171,11 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 - `noop`, `noop2`, `noop3`, `noop4`, `noop5`: 도구 오동작으로 생성된 작업 미사용 브랜치. main 변경에는 사용하지 않았으며 삭제 대상입니다.
 
 Issue #25 B2B 홈페이지 개편은 사용자 요청에 따라 신규 브랜치를 생성하지 않고 `main`에서 진행합니다.
+Issue #26 Simulation Engine 실측 성능 공개도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-22: Issue #26으로 600 Vehicle / 10시간 Run의 Simulation Engine 실측 성능을 홈페이지에 추가했습니다. 실측값은 실제 실행시간 2,163.085초(36분 3.085초), Realtime Factor 16.643×, 완료 반송 88,941건, 시뮬레이션 시간당 약 8,894.1 moves/h이며, 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64입니다. 공통 `contact.js`에서 한국어·영어·중국어(간체)·스페인어·일본어로 동일 지표를 렌더링하며, `mixed` mode 결과라는 조건과 성능 변동 가능성을 명시했습니다.
 - 2026-08-19: Issue #25로 공개 가격표 중심의 Auto Simulation 판매 UI를 B2B 영업형 구조로 개편했습니다. `Workspace → Auto Simulation → Simulation Studio → Enterprise & Custom` 제품 체계와 `Public Preview → Technical Fit Review → Demo / PoC → Commercial Deployment` Funnel을 공통 `contact.js`에 적용하고, 상용 가격은 공개하지 않는 견적 기반 정책으로 변경했습니다. 기존 Free/Basic/Pro/Ultra/Ultimate 다국어 가격표와 영문 Workspace 정적 가격 영역은 고객 화면에서 제거합니다.
 - 2026-08-18: Issue #24로 Consulting UI를 재구성했습니다. `Algorithm-Based AutoMod Modeling`을 `AutoMod Modeling & Simulation`으로 변경하고, CAD/Jira/Confluence 자동화를 `Engineering & Workflow Automation`이라는 별도 Consulting 패널로 만들어 AutoMod와 동일한 3개 서비스 카드 구조로 표시했습니다. 한국어·영어·중국어(간체)·스페인어·일본어 전체 페이지에 동일 구조를 적용했습니다.
 - 2026-08-18: Issue #23으로 기존 Algorithm-Based AutoMod Modeling 컨설팅에 CAD 작업 자동화, Atlassian Jira 작업 자동화, Atlassian Confluence 작업 자동화를 추가하고 한국어·영어·중국어(간체)·스페인어·일본어 홈페이지에 공통 적용했습니다. Issue #24에서 단순 텍스트 보조 블록 방식을 폐기하고 독립 Consulting 패널 구조로 재구성했습니다.
