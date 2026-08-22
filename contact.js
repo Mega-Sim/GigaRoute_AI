@@ -1,7 +1,7 @@
 (() => {
   const EMAIL = 'support@gigaroute.ai';
   const DEMO_REPO = 'https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo';
-  const WINDOWS_DOWNLOAD = `${DEMO_REPO}/tree/main/Windows`;
+  const WINDOWS_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-windows`;
   const LINUX_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-linux`;
   const FAVICON = '/favicon.png?v=20260818-2';
   const locale = document.documentElement.lang || 'en';
