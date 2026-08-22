@@ -15,7 +15,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 파비콘 공통 보정: `contact.js`가 모든 언어 페이지에서 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 페이지별 누락과 브라우저 캐시 회귀를 방지
 - 공통 스타일: `site.css`
 - 공통 문의 UI, B2B 제품·영업 구조, 무료 레이아웃 점검 및 Simulation Engine 실측 성능 섹션: `contact.js`
-- 상단 및 하단 CTA 배포 버튼은 `Windows` / `Linux`로 분리하며, 각각 공개 Demo 저장소의 플랫폼별 배포 경로로 연결
+- 상단 및 하단 CTA 배포 버튼은 `Windows` / `Linux`로 분리하며, 각각 공개 Demo 저장소의 플랫폼별 Release 페이지로 연결
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
 
@@ -48,11 +48,11 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 홈페이지의 배포 링크는 운영체제별로 명확히 분리합니다.
 
-- Windows: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/tree/main/Windows`
+- Windows: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-windows`
 - Linux: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-linux`
-- Linux는 현재 실제 Public Preview Release 페이지로 직접 연결합니다.
-- Windows는 정식 공개 Installer가 아직 준비 중이므로 현재 `Windows/` 배포 영역으로 연결합니다. Windows Release가 생성되면 홈페이지의 `WINDOWS_DOWNLOAD` 상수를 해당 Release URL로 교체합니다.
-- 상단 헤더와 하단 CTA 모두 공통 `contact.js`에서 `Windows` / `Linux` 버튼으로 생성하며, 좁은 화면에서는 버튼이 겹치지 않도록 wrap 가능한 레이아웃을 사용합니다.
+- Windows와 Linux 모두 각 플랫폼의 Public Preview Release 페이지로 직접 연결합니다.
+- 상단 헤더, 제품 카드 및 하단 CTA는 공통 `contact.js`의 `WINDOWS_DOWNLOAD` / `LINUX_DOWNLOAD` 상수를 사용하므로 모든 언어 페이지에서 동일한 Release URL을 사용합니다.
+- 좁은 화면에서는 버튼이 겹치지 않도록 기존 wrap 가능한 레이아웃을 유지합니다.
 
 루트 `.gitignore`는 실수로 native source, debug symbols, compiler intermediates, runtime binaries가 public Git history에 들어가는 것을 방지합니다.
 
@@ -172,9 +172,11 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 Issue #25 B2B 홈페이지 개편은 사용자 요청에 따라 신규 브랜치를 생성하지 않고 `main`에서 진행합니다.
 Issue #26 Simulation Engine 실측 성능 공개도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #28 Windows/Linux Release 다운로드 링크 수정도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-22: Issue #28로 홈페이지의 Windows/Linux 다운로드 버튼을 각 플랫폼의 Public Preview Release 페이지로 직접 연결했습니다. Windows는 `public-preview-526-windows`, Linux는 `public-preview-526-linux`를 사용하며, 공통 `contact.js` 상수만 변경해 상단 헤더·Auto Simulation 제품 카드·하단 CTA의 기존 UI와 레이아웃을 유지했습니다.
 - 2026-08-22: Issue #26으로 600 Vehicle / 10시간 Run의 Simulation Engine 실측 성능을 홈페이지에 추가했습니다. 실측값은 실제 실행시간 2,163.085초(36분 3.085초), Realtime Factor 16.643×, 완료 반송 88,941건, 시뮬레이션 시간당 약 8,894.1 moves/h이며, 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64입니다. 공통 `contact.js`에서 한국어·영어·중국어(간체)·스페인어·일본어로 동일 지표를 렌더링하며, `mixed` mode 결과라는 조건과 성능 변동 가능성을 명시했습니다.
 - 2026-08-19: Issue #25로 공개 가격표 중심의 Auto Simulation 판매 UI를 B2B 영업형 구조로 개편했습니다. `Workspace → Auto Simulation → Simulation Studio → Enterprise & Custom` 제품 체계와 `Public Preview → Technical Fit Review → Demo / PoC → Commercial Deployment` Funnel을 공통 `contact.js`에 적용하고, 상용 가격은 공개하지 않는 견적 기반 정책으로 변경했습니다. 기존 Free/Basic/Pro/Ultra/Ultimate 다국어 가격표와 영문 Workspace 정적 가격 영역은 고객 화면에서 제거합니다.
 - 2026-08-18: Issue #24로 Consulting UI를 재구성했습니다. `Algorithm-Based AutoMod Modeling`을 `AutoMod Modeling & Simulation`으로 변경하고, CAD/Jira/Confluence 자동화를 `Engineering & Workflow Automation`이라는 별도 Consulting 패널로 만들어 AutoMod와 동일한 3개 서비스 카드 구조로 표시했습니다. 한국어·영어·중국어(간체)·스페인어·일본어 전체 페이지에 동일 구조를 적용했습니다.
