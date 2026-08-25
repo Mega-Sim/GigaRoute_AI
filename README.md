@@ -19,6 +19,19 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
 
+## Platform 핵심 메시지
+
+Issue #29부터 공개 홈페이지의 별도 Product Roadmap 메뉴와 섹션을 제거하고, Platform 영역에서 GigaRoute AI의 대규모 시뮬레이션 기술 방향을 직접 설명합니다.
+
+- 이벤트 기반 `Simulation Engine`
+- `AI Computing`
+- 대규모 상태 처리를 위한 `Tensor Data Structure`
+- `Quantum-Inspired Optimization`
+- 실제 Quantum Computing 연동을 고려한 `Quantum-ready Computing` 구조
+- OHT·AGV·AMR 등 수천 대 규모 자동화 Vehicle을 **단일 워크스테이션에서 고속 시뮬레이션하도록 설계된 플랫폼**이라는 메시지
+
+한국어·영어·중국어(간체)·스페인어·일본어 페이지는 같은 의미와 동일한 UI 구조를 유지합니다. `Quantum Computing` 관련 표현은 현재 제품이 QPU를 필수 사용하거나 실제 양자 하드웨어에서 전체 시뮬레이션을 수행한다는 의미로 사용하지 않습니다. 현재 공개 실측 성능은 아래 `Simulation Engine 실측 성능` 섹션의 600 Vehicle / 16.643× mixed mode 결과를 기준으로 유지하며, 수천 대 표현은 대규모 실행을 위한 엔진·자료구조·계산 구조의 설계 방향과 확장성을 설명합니다.
+
 ## 중국어 페이지 중국 접속 최적화 정책
 
 `index-zh.html`은 중국 본토에서 차단되거나 지연될 수 있는 외부 렌더링 리소스에 의존하지 않도록 별도로 관리합니다.
@@ -173,9 +186,11 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 Issue #25 B2B 홈페이지 개편은 사용자 요청에 따라 신규 브랜치를 생성하지 않고 `main`에서 진행합니다.
 Issue #26 Simulation Engine 실측 성능 공개도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #28 Windows/Linux Release 다운로드 링크 수정도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #29 Roadmap 제거 및 AI·Tensor·Quantum 기반 Platform 메시지 강화도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-26: Issue #29로 모든 언어 홈페이지의 상단 Roadmap 링크와 Product Roadmap 섹션을 제거하고, Platform 영역을 `AI Computing + Tensor Data Structure + Quantum-Inspired Optimization + Quantum-ready Computing + Event-driven Simulation Engine`을 결합한 대규모 시뮬레이션 플랫폼 메시지로 개편했습니다. 수천 대 규모의 OHT·AGV·AMR 등 자동화 Vehicle을 단일 워크스테이션에서 고속 시뮬레이션하도록 설계된 방향을 강조하되, 현재 공개 실측값과 Quantum 하드웨어 적용 여부를 혼동하지 않도록 표현을 구분했습니다.
 - 2026-08-22: Issue #28로 홈페이지의 Windows/Linux 다운로드 버튼을 각 플랫폼의 Public Preview Release 페이지로 직접 연결했습니다. Windows는 `public-preview-526-windows`, Linux는 `public-preview-526-linux`를 사용하며, 공통 `contact.js` 상수만 변경해 상단 헤더·Auto Simulation 제품 카드·하단 CTA의 기존 UI와 레이아웃을 유지했습니다.
 - 2026-08-22: Issue #26으로 600 Vehicle / 10시간 Run의 Simulation Engine 실측 성능을 홈페이지에 추가했습니다. 실측값은 실제 실행시간 2,163.085초(36분 3.085초), Realtime Factor 16.643×, 완료 반송 88,941건, 시뮬레이션 시간당 약 8,894.1 moves/h이며, 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64입니다. 공통 `contact.js`에서 한국어·영어·중국어(간체)·스페인어·일본어로 동일 지표를 렌더링하며, `mixed` mode 결과라는 조건과 성능 변동 가능성을 명시했습니다.
 - 2026-08-19: Issue #25로 공개 가격표 중심의 Auto Simulation 판매 UI를 B2B 영업형 구조로 개편했습니다. `Workspace → Auto Simulation → Simulation Studio → Enterprise & Custom` 제품 체계와 `Public Preview → Technical Fit Review → Demo / PoC → Commercial Deployment` Funnel을 공통 `contact.js`에 적용하고, 상용 가격은 공개하지 않는 견적 기반 정책으로 변경했습니다. 기존 Free/Basic/Pro/Ultra/Ultimate 다국어 가격표와 영문 Workspace 정적 가격 영역은 고객 화면에서 제거합니다.
