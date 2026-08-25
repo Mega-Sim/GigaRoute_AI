@@ -29,6 +29,9 @@ Issue #29부터 공개 홈페이지의 별도 Product Roadmap 메뉴와 섹션�
 - `Quantum-Inspired Optimization`
 - 실제 Quantum Computing 연동을 고려한 `Quantum-ready Computing` 구조
 - OHT·AGV·AMR 등 수천 대 규모 자동화 Vehicle을 **단일 워크스테이션에서 고속 시뮬레이션하도록 설계된 플랫폼**이라는 메시지
+- 모델 입력과 시스템 연동은 CAD/DXF에 한정하지 않고 `JSON`, 고객별 데이터 포맷, 외부 인터페이스 등 프로젝트 요구에 맞게 커스터마이징할 수 있다는 방향
+
+Issue #30부터 첫 소개 문구도 `CAD 기반 모델링`으로 한정하지 않고 **`CAD/DXF · JSON · Custom Modeling`**을 핵심 표현으로 사용합니다. 고객이 보유한 데이터 형식이나 시스템 인터페이스가 표준 입력과 다르더라도 프로젝트 범위에 맞춰 모델 입력·변환·연동 구조를 커스터마이징할 수 있음을 명시합니다.
 
 한국어·영어·중국어(간체)·스페인어·일본어 페이지는 같은 의미와 동일한 UI 구조를 유지합니다. `Quantum Computing` 관련 표현은 현재 제품이 QPU를 필수 사용하거나 실제 양자 하드웨어에서 전체 시뮬레이션을 수행한다는 의미로 사용하지 않습니다. 현재 공개 실측 성능은 아래 `Simulation Engine 실측 성능` 섹션의 600 Vehicle / 16.643× mixed mode 결과를 기준으로 유지하며, 수천 대 표현은 대규모 실행을 위한 엔진·자료구조·계산 구조의 설계 방향과 확장성을 설명합니다.
 
@@ -124,11 +127,13 @@ Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation R
 
 ### Engineering & Workflow Automation
 
-- **CAD 작업 자동화**: 반복적인 CAD 도면 정리, 객체·TEXT 가공, 레이아웃 변환, 시뮬레이션/모델링 데이터 준비 업무 자동화
-- **Atlassian Jira 작업 자동화**: 이슈 생성, 상태 전환, 반복 프로젝트 업데이트, 엔지니어링 업무 인계 등 Jira 기반 프로젝트 운영 자동화
-- **Atlassian Confluence 작업 자동화**: 기술 문서 작성·갱신, 구조화된 보고서 생성, 프로젝트 지식 및 문서 동기화 자동화
+Issue #30부터 기존 Jira와 Confluence 개별 카드를 하나의 Atlassian 자동화 서비스로 통합하고, Office 및 일반 사무 자동화 영역을 별도 카드로 확장합니다.
 
-CAD/Jira/Confluence 자동화는 단순 텍스트 보조 블록으로 표시하지 않고 AutoMod와 동일한 `consulting-panel` + 3개 서비스 카드 구조로 표시합니다. 한국어·영어·중국어(간체)·스페인어·일본어 페이지 모두 동일한 UI 구조를 유지하고 문구만 현지화합니다.
+- **CAD 작업 자동화**: 반복적인 CAD 도면 정리, 객체·TEXT 가공, 레이아웃 변환, 시뮬레이션/모델링 데이터 준비 업무 자동화
+- **Atlassian Automation**: Jira의 이슈 생성·상태 전환·프로젝트 흐름과 Confluence의 기술 문서·보고서·프로젝트 지식 관리를 하나의 Atlassian 자동화 흐름으로 연결
+- **Office & Business Automation**: Microsoft Office의 Excel, Word, PowerPoint 등 반복 작업, 데이터 정리, 문서·보고서 생성, 파일 처리 및 고객별 다양한 사무·업무 프로세스 자동화 프로젝트 수행
+
+자동화 서비스는 기존과 동일하게 `consulting-panel` + 3개 서비스 카드 구조를 유지해 UI 레이아웃을 변경하지 않습니다. 한국어·영어·중국어(간체)·스페인어·일본어 페이지 모두 같은 서비스 구조를 사용하고 문구만 현지화합니다.
 
 ## B2B 제품 및 판매 정책
 
@@ -139,9 +144,9 @@ CAD/Jira/Confluence 자동화는 단순 텍스트 보조 블록으로 표시하�
 | 제품 | 역할 | 공개 홈페이지 CTA |
 |---|---|---|
 | GigaRoute Workspace | CAD/DXF 정리, Layout Review, Network Preparation | 무료 레이아웃 점검 / 문의 |
-| GigaRoute Auto Simulation | CAD 기반 OHT·AGV·OHS·AMHS 2D/3D 시뮬레이션 및 KPI | Windows/Linux Public Preview / 상용 라이선스 문의 |
+| GigaRoute Auto Simulation | CAD/DXF·JSON·고객 맞춤 데이터 기반 OHT·AGV·OHS·AMHS 시뮬레이션 및 KPI | Windows/Linux Public Preview / 상용 라이선스 문의 |
 | GigaRoute Simulation Studio | 상세 제어 로직, 사용자 이벤트, 재사용 가능한 모델링·시뮬레이션 로직 | Early Access 문의 |
-| Enterprise & Custom | Demo/PoC, 고객 맞춤 모델링, 연동, 마이그레이션, 엔지니어링 지원 | Demo/PoC / 영업 문의 |
+| Enterprise & Custom | Demo/PoC, 고객 맞춤 모델링, 데이터/시스템 연동, 마이그레이션, 엔지니어링 지원 | Demo/PoC / 영업 문의 |
 
 ### 상용 판매 원칙
 
@@ -187,9 +192,11 @@ Issue #25 B2B 홈페이지 개편은 사용자 요청에 따라 신규 브랜치
 Issue #26 Simulation Engine 실측 성능 공개도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #28 Windows/Linux Release 다운로드 링크 수정도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #29 Roadmap 제거 및 AI·Tensor·Quantum 기반 Platform 메시지 강화도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #30 모델 입력 범위 확장 및 업무 자동화 서비스 재구성도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-26: Issue #30으로 모든 언어 홈페이지의 첫 소개 문구를 `CAD 기반 모델링` 한정 표현에서 `CAD/DXF · JSON · Custom Modeling`으로 확장하고, 고객별 데이터 포맷과 외부 인터페이스에 맞춘 모델 입력·연동 커스터마이징 가능성을 Platform 설명에 추가했습니다. Engineering & Workflow Automation은 `CAD 작업 자동화 / Atlassian Automation / Office & Business Automation`의 3개 카드로 재구성했으며, Jira와 Confluence는 하나의 Atlassian 자동화 서비스로 통합하고 Microsoft Office 및 다양한 사무·업무 자동화 프로젝트 범위를 새로 명시했습니다.
 - 2026-08-26: Issue #29로 모든 언어 홈페이지의 상단 Roadmap 링크와 Product Roadmap 섹션을 제거하고, Platform 영역을 `AI Computing + Tensor Data Structure + Quantum-Inspired Optimization + Quantum-ready Computing + Event-driven Simulation Engine`을 결합한 대규모 시뮬레이션 플랫폼 메시지로 개편했습니다. 수천 대 규모의 OHT·AGV·AMR 등 자동화 Vehicle을 단일 워크스테이션에서 고속 시뮬레이션하도록 설계된 방향을 강조하되, 현재 공개 실측값과 Quantum 하드웨어 적용 여부를 혼동하지 않도록 표현을 구분했습니다.
 - 2026-08-22: Issue #28로 홈페이지의 Windows/Linux 다운로드 버튼을 각 플랫폼의 Public Preview Release 페이지로 직접 연결했습니다. Windows는 `public-preview-526-windows`, Linux는 `public-preview-526-linux`를 사용하며, 공통 `contact.js` 상수만 변경해 상단 헤더·Auto Simulation 제품 카드·하단 CTA의 기존 UI와 레이아웃을 유지했습니다.
 - 2026-08-22: Issue #26으로 600 Vehicle / 10시간 Run의 Simulation Engine 실측 성능을 홈페이지에 추가했습니다. 실측값은 실제 실행시간 2,163.085초(36분 3.085초), Realtime Factor 16.643×, 완료 반송 88,941건, 시뮬레이션 시간당 약 8,894.1 moves/h이며, 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64입니다. 공통 `contact.js`에서 한국어·영어·중국어(간체)·스페인어·일본어로 동일 지표를 렌더링하며, `mixed` mode 결과라는 조건과 성능 변동 가능성을 명시했습니다.
