@@ -115,25 +115,16 @@ Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation R
 
 ## Consulting 서비스 범위
 
-홈페이지 Consulting 영역은 모든 언어 페이지에서 **동등한 시각 위계의 두 개 Consulting 패널**로 구성합니다.
+Issue #31부터 Consulting 메인 제목은 **`Simulation & Work Automation`**을 사용합니다. AutoMod는 별도의 상세 컨설팅 상품이나 전용 패널로 표시하지 않고, 기존 AutoMod 모델과 관련 업무도 지원 가능하다는 의미의 짧은 안내만 유지합니다.
 
-### AutoMod Modeling & Simulation
+홈페이지의 Consulting 영역은 다음 구조를 사용합니다.
 
-- **Logic Architecture**: 경로, 배차, 합류, 막힘, 설비 규칙 등 운영 로직을 재사용 가능한 모델 구조로 설계
-- **Model Optimization**: 기존 AutoMod 모델의 중복 로직, 폴링, 불필요한 실행 부하를 검토하고 개선
-- **Scenario Engineering**: 설정형 입력, 반복 실험, 시나리오 실행과 결과 검증 구조를 구축
-
-기존 명칭 `Algorithm-Based AutoMod Modeling`은 사용하지 않고 **`AutoMod Modeling & Simulation`**으로 통일합니다.
-
-### Engineering & Workflow Automation
-
-Issue #30부터 기존 Jira와 Confluence 개별 카드를 하나의 Atlassian 자동화 서비스로 통합하고, Office 및 일반 사무 자동화 영역을 별도 카드로 확장합니다.
-
+- **Simulation 지원**: GigaRoute AI 기반 시뮬레이션을 중심으로 제공하며 기존 AutoMod 모델과 관련 업무도 지원
 - **CAD 작업 자동화**: 반복적인 CAD 도면 정리, 객체·TEXT 가공, 레이아웃 변환, 시뮬레이션/모델링 데이터 준비 업무 자동화
 - **Atlassian Automation**: Jira의 이슈 생성·상태 전환·프로젝트 흐름과 Confluence의 기술 문서·보고서·프로젝트 지식 관리를 하나의 Atlassian 자동화 흐름으로 연결
 - **Office & Business Automation**: Microsoft Office의 Excel, Word, PowerPoint 등 반복 작업, 데이터 정리, 문서·보고서 생성, 파일 처리 및 고객별 다양한 사무·업무 프로세스 자동화 프로젝트 수행
 
-자동화 서비스는 기존과 동일하게 `consulting-panel` + 3개 서비스 카드 구조를 유지해 UI 레이아웃을 변경하지 않습니다. 한국어·영어·중국어(간체)·스페인어·일본어 페이지 모두 같은 서비스 구조를 사용하고 문구만 현지화합니다.
+별도 `AutoMod Modeling & Simulation` 패널과 `Logic Architecture / Model Optimization / Scenario Engineering` 상세 카드는 Issue #31에서 제거했습니다. 업무 자동화는 기존 `consulting-panel` + 3개 서비스 카드 구조를 유지해 UI 레이아웃을 변경하지 않습니다. 한국어·영어·중국어(간체)·스페인어·일본어 페이지 모두 같은 서비스 구조를 사용하고 문구만 현지화합니다.
 
 ## B2B 제품 및 판매 정책
 
@@ -193,9 +184,11 @@ Issue #26 Simulation Engine 실측 성능 공개도 신규 브랜치 없이 `mai
 Issue #28 Windows/Linux Release 다운로드 링크 수정도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #29 Roadmap 제거 및 AI·Tensor·Quantum 기반 Platform 메시지 강화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #30 모델 입력 범위 확장 및 업무 자동화 서비스 재구성도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #31 AutoMod 상세 컨설팅 제거 및 `Simulation & Work Automation` 제목 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-26: Issue #31로 모든 언어 홈페이지의 Consulting 메인 제목을 `Simulation & Work Automation`으로 변경했습니다. 별도 `AutoMod Modeling & Simulation` 패널과 Logic Architecture / Model Optimization / Scenario Engineering 상세 카드는 제거하고, 기존 AutoMod 모델과 관련 업무도 지원한다는 짧은 안내만 남겼습니다. 기존 CAD / Atlassian / Office & Business Automation 3개 업무 자동화 카드는 유지했습니다.
 - 2026-08-26: Issue #30으로 모든 언어 홈페이지의 첫 소개 문구를 `CAD 기반 모델링` 한정 표현에서 `CAD/DXF · JSON · Custom Modeling`으로 확장하고, 고객별 데이터 포맷과 외부 인터페이스에 맞춘 모델 입력·연동 커스터마이징 가능성을 Platform 설명에 추가했습니다. Engineering & Workflow Automation은 `CAD 작업 자동화 / Atlassian Automation / Office & Business Automation`의 3개 카드로 재구성했으며, Jira와 Confluence는 하나의 Atlassian 자동화 서비스로 통합하고 Microsoft Office 및 다양한 사무·업무 자동화 프로젝트 범위를 새로 명시했습니다.
 - 2026-08-26: Issue #29로 모든 언어 홈페이지의 상단 Roadmap 링크와 Product Roadmap 섹션을 제거하고, Platform 영역을 `AI Computing + Tensor Data Structure + Quantum-Inspired Optimization + Quantum-ready Computing + Event-driven Simulation Engine`을 결합한 대규모 시뮬레이션 플랫폼 메시지로 개편했습니다. 수천 대 규모의 OHT·AGV·AMR 등 자동화 Vehicle을 단일 워크스테이션에서 고속 시뮬레이션하도록 설계된 방향을 강조하되, 현재 공개 실측값과 Quantum 하드웨어 적용 여부를 혼동하지 않도록 표현을 구분했습니다.
 - 2026-08-22: Issue #28로 홈페이지의 Windows/Linux 다운로드 버튼을 각 플랫폼의 Public Preview Release 페이지로 직접 연결했습니다. Windows는 `public-preview-526-windows`, Linux는 `public-preview-526-linux`를 사용하며, 공통 `contact.js` 상수만 변경해 상단 헤더·Auto Simulation 제품 카드·하단 CTA의 기존 UI와 레이아웃을 유지했습니다.
