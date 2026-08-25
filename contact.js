@@ -137,13 +137,6 @@
   applyPlatformLinks();
   applyPerformanceNavLink();
 
-  const languageSelect = document.querySelector('.language-select');
-  if (languageSelect) {
-    [...languageSelect.options].forEach(option => {
-      if (option.textContent.trim() === 'English') option.value = 'index-en.html';
-    });
-  }
-
   document.querySelectorAll('#pricing').forEach(section => section.remove());
 
   const style = document.createElement('style');

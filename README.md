@@ -5,33 +5,14 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 공식 도메인: https://gigaroute.ai
 - 고객지원 이메일: support@gigaroute.ai
 - 배포 방식: GitHub Pages + GitHub Actions
-- 기본 홈페이지: `index.html` (한국어)
-- 영어 페이지: `index-en.html`
-- 한국어 호환 주소: `index-ko.html`
-- 중국어(간체) 페이지: `index-zh.html`
-- 스페인어 페이지: `index-es.html`
-- 일본어 페이지: `index-ja.html`
+- 기본 홈페이지: `index.html` (한국어 단일 페이지)
 - 브라우저 파비콘: `favicon.png` (GigaRoute `GR` 브랜드 아이콘)
-- 파비콘 공통 보정: `contact.js`가 모든 언어 페이지에서 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 페이지별 누락과 브라우저 캐시 회귀를 방지
+- 파비콘 공통 보정: `contact.js`가 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 브라우저 캐시 회귀를 방지
 - 공통 스타일: `site.css`
 - 공통 문의 UI, B2B 제품·영업 구조, 무료 레이아웃 점검 및 Simulation Engine 실측 성능 섹션: `contact.js`
 - 상단 및 하단 CTA 배포 버튼은 `Windows` / `Linux`로 분리하며, 각각 공개 Demo 저장소의 플랫폼별 Release 페이지로 연결
 
-루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
-
-## 중국어 페이지 중국 접속 최적화 정책
-
-`index-zh.html`은 중국 본토에서 차단되거나 지연될 수 있는 외부 렌더링 리소스에 의존하지 않도록 별도로 관리합니다.
-
-- Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`)를 사용하지 않음
-- 외부 CSS/CDN, 외부 JavaScript/CDN, 외부 Web Font를 중국어 페이지의 렌더링 필수 요소로 사용하지 않음
-- 중국어 페이지에 self-only Content Security Policy를 적용하여 `font`, `style`, `script`, `connect` 외부 로드를 차단
-- 스타일과 동작은 같은 도메인의 `site.css`, `contact.js`, `favicon.png` 등 로컬 자산을 사용
-- 중국어 글꼴은 `Microsoft YaHei UI`, `Microsoft YaHei`, `PingFang SC`, `Hiragino Sans GB`, `Source Han Sans SC`, `Noto Sans CJK SC`, Arial 순의 시스템 폰트 스택을 사용하며 외부 폰트 다운로드를 요구하지 않음
-- 공통 CSS/JS를 변경하더라도 중국어 페이지에 Google 계열 리소스나 중국에서 접근이 불안정한 CDN 의존성을 추가하지 않음
-- GitHub 등 외부 사이트로 이동하는 일반 링크는 페이지 렌더링 의존성이 아니므로 유지할 수 있으나, 중국어 페이지 자체 표시와 주요 기능은 외부 사이트 접속 없이 동작해야 함
-
-2026-08-17 점검 당시 저장소에는 `fonts.googleapis.com`, `fonts.gstatic.com`, CSS `@import`, `@font-face` 기반 외부 폰트 로드가 존재하지 않았으며, Issue #15에서 중국어 페이지가 향후에도 외부 CDN을 자동으로 사용하지 못하도록 CSP를 추가했습니다.
+루트 도메인 `https://gigaroute.ai/`은 한국어 단일 홈페이지(`index.html`)만 표시합니다. 언어 선택 메뉴와 영어·중국어·스페인어·일본어 페이지는 제거되었습니다. 모든 파일은 UTF-8로 관리합니다.
 
 ## Public Distribution / Private Core 정책
 
@@ -51,14 +32,14 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - Windows: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-windows`
 - Linux: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-linux`
 - Windows와 Linux 모두 각 플랫폼의 Public Preview Release 페이지로 직접 연결합니다.
-- 상단 헤더, 제품 카드 및 하단 CTA는 공통 `contact.js`의 `WINDOWS_DOWNLOAD` / `LINUX_DOWNLOAD` 상수를 사용하므로 모든 언어 페이지에서 동일한 Release URL을 사용합니다.
+- 상단 헤더, 제품 카드 및 하단 CTA는 공통 `contact.js`의 `WINDOWS_DOWNLOAD` / `LINUX_DOWNLOAD` 상수를 사용합니다.
 - 좁은 화면에서는 버튼이 겹치지 않도록 기존 wrap 가능한 레이아웃을 유지합니다.
 
 루트 `.gitignore`는 실수로 native source, debug symbols, compiler intermediates, runtime binaries가 public Git history에 들어가는 것을 방지합니다.
 
 ## 무료 초기 레이아웃 점검
 
-모든 언어 페이지의 Hero 영역 바로 아래에서 DXF 기반 무료 초기 레이아웃 점검 서비스를 안내합니다.
+Hero 영역 바로 아래에서 DXF 기반 무료 초기 레이아웃 점검 서비스를 안내합니다.
 
 - 연결되지 않거나 누락된 경로
 - 잘못된 교차점과 분기·합류
@@ -95,11 +76,11 @@ Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation R
 
 `16.643×`는 Animation ON과 Ultimate Speed를 한 Run에서 모두 사용한 **mixed mode 전체 실행 실측값**입니다. 따라서 순수 Ultimate Speed의 최대 성능이라고 표현하지 않으며, 도면 복잡도, 교통 밀도, Vehicle 동작, 시뮬레이션 설정과 하드웨어에 따라 실제 배속이 달라질 수 있음을 함께 표시합니다.
 
-성능 섹션은 외부 라이브러리·폰트·CDN 없이 기존 로컬 `contact.js`와 `site.css` 체계 안에서 표시되어 중국어 페이지의 self-only CSP 정책을 유지합니다.
+성능 섹션은 외부 라이브러리·폰트·CDN 없이 기존 로컬 `contact.js`와 `site.css` 체계 안에서 표시됩니다.
 
 ## Consulting 서비스 범위
 
-홈페이지 Consulting 영역은 모든 언어 페이지에서 **동등한 시각 위계의 두 개 Consulting 패널**로 구성합니다.
+홈페이지 Consulting 영역은 **동등한 시각 위계의 두 개 Consulting 패널**로 구성합니다.
 
 ### AutoMod Modeling & Simulation
 
@@ -144,9 +125,9 @@ CAD/Jira/Confluence 자동화는 단순 텍스트 보조 블록으로 표시하�
 - 가격 숫자 대신 `Request Commercial License`, `Request Demo / PoC`, `Contact Sales`, `Request Early Access` CTA를 사용
 - 제품 C++ 핵심 소스나 내부 구현 상세는 public 홈페이지에 노출하지 않음
 
-### 다국어 표시 정책
+### 제품 UI 렌더링
 
-B2B 제품·영업 UI는 공통 `contact.js`가 한국어·영어·중국어(간체)·스페인어·일본어에 동일한 구조로 렌더링합니다. 각 언어 페이지의 기존 정적 `#products` 내용은 공통 스크립트가 런타임에서 canonical B2B 제품 구조로 교체합니다. 중국어 페이지의 외부 CDN 비의존 정책은 그대로 유지합니다.
+B2B 제품·영업 UI는 공통 `contact.js`가 렌더링합니다. `index.html`의 기존 정적 `#products` 내용은 공통 스크립트가 런타임에서 canonical B2B 제품 구조로 교체합니다.
 
 ## 고객지원 이메일 운영
 
@@ -176,6 +157,7 @@ Issue #28 Windows/Linux Release 다운로드 링크 수정도 신규 브랜치 �
 
 ## 변경 이력
 
+- 2026-08-25: 홈페이지 상단 메뉴의 `플랫폼`/`로드맵` 버튼과 `#platform`/`#roadmap` 섹션 콘텐츠를 삭제하고, 언어 선택 메뉴와 `index-en.html`/`index-es.html`/`index-ja.html`/`index-ko.html`/`index-zh.html` 외국어 페이지를 모두 제거해 `index.html`(한국어) 단일 페이지 구조로 정리했습니다. 관련 `hreflang`/`canonical` 태그, `contact.js`의 언어 선택 정규화 로직, `site.css`의 `#platform` 전용 다국어 문구 CSS도 함께 제거했습니다.
 - 2026-08-22: Issue #28로 홈페이지의 Windows/Linux 다운로드 버튼을 각 플랫폼의 Public Preview Release 페이지로 직접 연결했습니다. Windows는 `public-preview-526-windows`, Linux는 `public-preview-526-linux`를 사용하며, 공통 `contact.js` 상수만 변경해 상단 헤더·Auto Simulation 제품 카드·하단 CTA의 기존 UI와 레이아웃을 유지했습니다.
 - 2026-08-22: Issue #26으로 600 Vehicle / 10시간 Run의 Simulation Engine 실측 성능을 홈페이지에 추가했습니다. 실측값은 실제 실행시간 2,163.085초(36분 3.085초), Realtime Factor 16.643×, 완료 반송 88,941건, 시뮬레이션 시간당 약 8,894.1 moves/h이며, 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64입니다. 공통 `contact.js`에서 한국어·영어·중국어(간체)·스페인어·일본어로 동일 지표를 렌더링하며, `mixed` mode 결과라는 조건과 성능 변동 가능성을 명시했습니다.
 - 2026-08-19: Issue #25로 공개 가격표 중심의 Auto Simulation 판매 UI를 B2B 영업형 구조로 개편했습니다. `Workspace → Auto Simulation → Simulation Studio → Enterprise & Custom` 제품 체계와 `Public Preview → Technical Fit Review → Demo / PoC → Commercial Deployment` Funnel을 공통 `contact.js`에 적용하고, 상용 가격은 공개하지 않는 견적 기반 정책으로 변경했습니다. 기존 Free/Basic/Pro/Ultra/Ultimate 다국어 가격표와 영문 Workspace 정적 가격 영역은 고객 화면에서 제거합니다.
