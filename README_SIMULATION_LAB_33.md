@@ -15,6 +15,7 @@
 ## 구현 커밋
 
 - `0e9f4beda4c2c442e297602bb0a3e89f739c4c1e` — `홈페이지: GigaRoute AI 옆 Simulation LAB 서브브랜드 추가`
+- `505d5721f0ef6a7699203ecdf5c1bc794d542b1e` — `문서: Simulation LAB 적용 내용 README 기록 (#33)`
 
 ## 검증 범위
 
