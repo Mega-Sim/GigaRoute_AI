@@ -33,7 +33,7 @@ Issue #29부터 공개 홈페이지의 별도 Product Roadmap 메뉴와 섹션�
 
 Issue #30부터 첫 소개 문구도 `CAD 기반 모델링`으로 한정하지 않고 **`CAD/DXF · JSON · Custom Modeling`**을 핵심 표현으로 사용합니다. 고객이 보유한 데이터 형식이나 시스템 인터페이스가 표준 입력과 다르더라도 프로젝트 범위에 맞춰 모델 입력·변환·연동 구조를 커스터마이징할 수 있음을 명시합니다.
 
-한국어·영어·중국어(간체)·스페인어·일본어 페이지는 같은 의미와 동일한 UI 구조를 유지합니다. `Quantum Computing` 관련 표현은 현재 제품이 QPU를 필수 사용하거나 실제 양자 하드웨어에서 전체 시뮬레이션을 수행한다는 의미로 사용하지 않습니다. 현재 공개 실측 성능은 아래 `Simulation Engine 실측 성능` 섹션의 600 Vehicle / 16.643× mixed mode 결과를 기준으로 유지하며, 수천 대 표현은 대규모 실행을 위한 엔진·자료구조·계산 구조의 설계 방향과 확장성을 설명합니다.
+한국어·영어·중국어(간체)·스페인어·일본어 페이지는 같은 의미와 동일한 UI 구조를 유지합니다. `Quantum Computing` 관련 표현은 현재 제품이 QPU를 필수 사용하거나 실제 양자 하드웨어에서 전체 시뮬레이션을 수행한다는 의미로 사용하지 않습니다. 현재 공개 실측 성능은 아래 `Simulation Engine 실측 성능` 섹션의 1,100 Vehicle / 21.559× mixed mode 결과를 기준으로 유지하며, 수천 대 표현은 대규모 실행을 위한 엔진·자료구조·계산 구조의 설계 방향과 확장성을 설명합니다.
 
 ## 중국어 페이지 중국 접속 최적화 정책
 
@@ -87,19 +87,20 @@ Issue #30부터 첫 소개 문구도 `CAD 기반 모델링`으로 한정하지 �
 
 ## Simulation Engine 실측 성능
 
-Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation Run에서 얻은 Simulation Engine 성능 정보를 표시합니다. 공통 `contact.js`가 한국어·영어·중국어(간체)·스페인어·일본어 문구와 동일한 지표 구조를 렌더링하므로 언어별 페이지마다 수치가 달라지지 않습니다.
+Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation Run에서 얻은 Simulation Engine 성능 정보를 표시합니다. 공통 `contact.js`가 한국어·영어·중국어(간체)·스페인어·일본어 문구와 동일한 지표 구조를 렌더링하므로 언어별 페이지마다 수치가 달라지지 않습니다. Issue #32에서 최신 Release 실측값으로 갱신했습니다.
 
-### 2026-08-22 실측 결과
+### 2026-08-30 실측 결과
 
 | 항목 | 실측값 |
 |---|---:|
-| Vehicle | 600대 |
-| 시뮬레이션 시간 | 10시간 / 36,000초 |
-| 실제 실행시간 | 2,163.085초 / 36분 3.085초 |
-| 실측 Realtime Factor | **16.643×** |
-| 완료 반송(Job) | 88,941 |
-| 시뮬레이션 시간당 완료 반송 | 약 8,894.1 moves/h |
-| Run mode | `mixed` — Animation ON + Ultimate Speed |
+| Vehicle | 1,100대 |
+| 입력 물동량 | 18,000 moves/h |
+| 시뮬레이션 시간 | 1시간 / 3,600초 |
+| 실제 실행시간 | 166.981초 / 약 2분 47초 |
+| 실측 Realtime Factor | **21.559×** |
+| 완료 Job | 17,018 |
+| 시뮬레이션 시간당 완료 Job | 17,018 jobs/h |
+| Run mode | `mixed` |
 
 ### 측정 PC
 
@@ -109,7 +110,7 @@ Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation R
 
 홈페이지에는 성능 비교에 필요한 CPU/RAM/OS 정보만 공개합니다. 사용자 PC의 Device ID, Product ID 및 장치 이름처럼 성능 설명과 무관한 식별성 정보는 공개하지 않습니다.
 
-`16.643×`는 Animation ON과 Ultimate Speed를 한 Run에서 모두 사용한 **mixed mode 전체 실행 실측값**입니다. 따라서 순수 Ultimate Speed의 최대 성능이라고 표현하지 않으며, 도면 복잡도, 교통 밀도, Vehicle 동작, 시뮬레이션 설정과 하드웨어에 따라 실제 배속이 달라질 수 있음을 함께 표시합니다.
+`21.559×`는 1,100대 Vehicle과 18,000 moves/h 입력 부하에서 3,600초의 시뮬레이션을 166.981초에 완료한 **mixed mode 단일 Release Run 실측값**입니다. 완료 Job은 17,018건입니다. 순수 Ultimate Speed의 최대 성능 또는 다른 하드웨어·레이아웃에 대한 보장 성능으로 표현하지 않으며, 도면 복잡도, 교통 밀도, Vehicle 동작, 시뮬레이션 설정과 하드웨어에 따라 실제 배속이 달라질 수 있음을 함께 표시합니다.
 
 성능 섹션은 외부 라이브러리·폰트·CDN 없이 기존 로컬 `contact.js`와 `site.css` 체계 안에서 표시되어 중국어 페이지의 self-only CSP 정책을 유지합니다.
 
@@ -185,9 +186,11 @@ Issue #28 Windows/Linux Release 다운로드 링크 수정도 신규 브랜치 �
 Issue #29 Roadmap 제거 및 AI·Tensor·Quantum 기반 Platform 메시지 강화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #30 모델 입력 범위 확장 및 업무 자동화 서비스 재구성도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #31 AutoMod 상세 컨설팅 제거 및 `Simulation & Work Automation` 제목 변경도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #32 최신 Simulation Engine 실측 성능 갱신도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-30: Issue #32로 모든 언어 홈페이지의 Simulation Engine 공개 실측값을 최신 Release Run으로 갱신했습니다. 1,100 Vehicle, 입력 부하 18,000 moves/h, 1시간(3,600초) 시뮬레이션을 실제 166.981초에 완료해 Realtime Factor 21.559×를 기록했고, 완료 Job은 17,018건입니다. 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64이며, 공통 `contact.js`의 한국어·영어·중국어(간체)·스페인어·일본어 문구를 동일 실측값으로 업데이트했습니다. mixed mode 단일 Release Run 결과이며 레이아웃·교통·설정·하드웨어에 따라 성능이 달라질 수 있음을 함께 표시합니다.
 - 2026-08-26: Issue #31로 모든 언어 홈페이지의 Consulting 메인 제목을 `Simulation & Work Automation`으로 변경했습니다. 별도 `AutoMod Modeling & Simulation` 패널과 Logic Architecture / Model Optimization / Scenario Engineering 상세 카드는 제거하고, 기존 AutoMod 모델과 관련 업무도 지원한다는 짧은 안내만 남겼습니다. 기존 CAD / Atlassian / Office & Business Automation 3개 업무 자동화 카드는 유지했습니다.
 - 2026-08-26: Issue #30으로 모든 언어 홈페이지의 첫 소개 문구를 `CAD 기반 모델링` 한정 표현에서 `CAD/DXF · JSON · Custom Modeling`으로 확장하고, 고객별 데이터 포맷과 외부 인터페이스에 맞춘 모델 입력·연동 커스터마이징 가능성을 Platform 설명에 추가했습니다. Engineering & Workflow Automation은 `CAD 작업 자동화 / Atlassian Automation / Office & Business Automation`의 3개 카드로 재구성했으며, Jira와 Confluence는 하나의 Atlassian 자동화 서비스로 통합하고 Microsoft Office 및 다양한 사무·업무 자동화 프로젝트 범위를 새로 명시했습니다.
 - 2026-08-26: Issue #29로 모든 언어 홈페이지의 상단 Roadmap 링크와 Product Roadmap 섹션을 제거하고, Platform 영역을 `AI Computing + Tensor Data Structure + Quantum-Inspired Optimization + Quantum-ready Computing + Event-driven Simulation Engine`을 결합한 대규모 시뮬레이션 플랫폼 메시지로 개편했습니다. 수천 대 규모의 OHT·AGV·AMR 등 자동화 Vehicle을 단일 워크스테이션에서 고속 시뮬레이션하도록 설계된 방향을 강조하되, 현재 공개 실측값과 Quantum 하드웨어 적용 여부를 혼동하지 않도록 표현을 구분했습니다.
