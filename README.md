@@ -15,7 +15,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 파비콘 공통 보정: `contact.js`가 모든 언어 페이지에서 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 페이지별 누락과 브라우저 캐시 회귀를 방지
 - 공통 스타일: `site.css`
 - 공통 문의 UI, B2B 제품·영업 구조 및 Simulation Engine 실측 성능 섹션: `contact.js`
-- 상단 헤더의 Windows 다운로드는 활성 상태로 유지하고 Linux 버튼은 Issue #35부터 비활성화합니다. Auto Simulation 제품 카드와 하단 CTA의 플랫폼별 다운로드 동선은 기존대로 유지합니다.
+- 상단 헤더의 Windows 버튼은 Issue #36부터 `Mega-Sim/Sim_Core`의 `GigaRoute AI Auto Simulation 2.0 — Windows x64` 릴리즈 페이지로 연결하고, Linux 버튼은 Issue #35부터 비활성화합니다. Auto Simulation 제품 카드와 하단 CTA의 플랫폼별 다운로드 동선은 기존대로 유지합니다.
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
 
@@ -64,11 +64,12 @@ Issue #30부터 첫 소개 문구도 `CAD 기반 모델링`으로 한정하지 �
 
 홈페이지의 배포 링크는 운영체제별로 명확히 분리합니다.
 
-- Windows: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-windows`
-- Linux: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-linux`
-- 상단 헤더의 Windows 버튼은 기존 Release 페이지로 연결합니다.
+- 상단 헤더 Windows: `https://github.com/Mega-Sim/Sim_Core/releases/tag/GigaRoute_Auto_Simulation`
+- Auto Simulation 제품 카드·하단 CTA Windows: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-windows`
+- Auto Simulation 제품 카드·하단 CTA Linux: `https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo/releases/tag/public-preview-526-linux`
+- 상단 헤더의 Windows 버튼은 Issue #36부터 2026-08-31 공개된 `GigaRoute AI Auto Simulation 2.0 — Windows x64` 릴리즈 페이지로 연결합니다.
 - 상단 헤더의 Linux 버튼은 Issue #35부터 모든 언어 페이지에서 회색 비활성 상태로 표시하고 `href`/`target`을 제거하여 클릭·키보드 이동이 되지 않게 합니다.
-- Auto Simulation 제품 카드 및 하단 CTA의 Linux 다운로드 링크는 기존 Release URL을 유지합니다.
+- Auto Simulation 제품 카드 및 하단 CTA의 Windows/Linux 다운로드 링크는 기존 Public Preview Release URL을 유지합니다.
 - 좁은 화면에서는 버튼이 겹치지 않도록 기존 wrap 가능한 레이아웃을 유지합니다.
 
 루트 `.gitignore`는 실수로 native source, debug symbols, compiler intermediates, runtime binaries가 public Git history에 들어가는 것을 방지합니다.
@@ -179,9 +180,11 @@ Issue #31 AutoMod 상세 컨설팅 제거 및 `Simulation & Work Automation` 제
 Issue #32 최신 Simulation Engine 실측 성능 갱신도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #34 무료 레이아웃 점검 섹션 제거도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #35 우측 상단 Linux 다운로드 버튼 비활성화도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #36 우측 상단 Windows 버튼의 Sim_Core 2.0 릴리즈 연결도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-31: Issue #36으로 모든 언어 페이지의 우측 상단 Windows 버튼을 `Mega-Sim/Sim_Core`의 `GigaRoute AI Auto Simulation 2.0 — Windows x64` 릴리즈(`GigaRoute_Auto_Simulation`) 페이지로 연결했습니다. 제품 카드와 하단 CTA의 Windows/Linux Public Preview 링크는 기존 동선을 유지하고, 우측 상단 Linux 버튼의 Issue #35 비활성 상태도 유지합니다.
 - 2026-08-31: Issue #35로 한국어 기본/호환, 영어, 중국어(간체), 스페인어, 일본어 페이지의 우측 상단 Linux 다운로드 버튼을 비활성화했습니다. 버튼은 회색 비활성 상태로 표시하며 `href`/`target`을 제거하고 `aria-disabled=true`, `tabindex=-1`을 적용합니다. Windows 버튼과 Auto Simulation 제품 카드·하단 CTA의 Linux 다운로드 링크는 그대로 유지합니다.
 - 2026-08-31: Issue #34로 한국어·영어·중국어(간체)·스페인어·일본어 홈페이지의 `무료 초기 레이아웃 점검` 섹션과 관련 다국어 문구·전용 스타일을 공통 `contact.js`에서 제거했습니다. 기존 성능 섹션은 Hero 바로 다음에 유지하고, GigaRoute Workspace의 레이아웃 검토 CTA는 공통 Contact 모달로 연결하도록 변경했습니다.
 - 2026-08-30: Issue #32로 모든 언어 홈페이지의 Simulation Engine 공개 실측값을 최신 Release Run으로 갱신했습니다. 1,100 Vehicle, 입력 부하 18,000 moves/h, 1시간(3,600초) 시뮬레이션을 실제 166.981초에 완료해 Realtime Factor 21.559×를 기록했고, 완료 Job은 17,018건입니다. 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64이며, 공통 `contact.js`의 한국어·영어·중국어(간체)·스페인어·일본어 문구를 동일 실측값으로 업데이트했습니다. mixed mode 단일 Release Run 결과이며 레이아웃·교통·설정·하드웨어에 따라 성능이 달라질 수 있음을 함께 표시합니다.
