@@ -15,8 +15,9 @@
   <link rel="alternate" hreflang="ja" href="https://gigaroute.ai/index-ja.html">
   <link rel="alternate" hreflang="x-default" href="https://gigaroute.ai/">
   <link rel="stylesheet" href="site.css">
-  <style>.consulting-panel:after{display:none!important}.consulting-panel+.consulting-panel{margin-top:28px}</style>
+  <style>.consulting-panel:after{display:none!important}.consulting-panel+.consulting-panel{margin-top:28px}.actions .linux-download{pointer-events:none;cursor:not-allowed;opacity:.42;filter:grayscale(1)}</style>
   <script src="contact.js" defer></script>
+  <script>window.addEventListener('DOMContentLoaded',()=>{const b=document.querySelector('.actions .linux-download');if(b){b.removeAttribute('href');b.removeAttribute('target');b.setAttribute('aria-disabled','true');b.setAttribute('tabindex','-1')}})</script>
 </head>
 <body>
 <header><div class="wrap"><nav><a class="brand" href="#top"><span class="mark">GR</span>GigaRoute AI</a><div class="links"><a href="#platform">플랫폼</a><a href="#products">제품</a><a href="#consulting">컨설팅</a><a href="#workflow">워크플로우</a></div><div class="actions"><label class="sr-only" for="language-select">언어 선택</label><select id="language-select" class="language-select" aria-label="언어 선택" onchange="window.location.href=this.value"><option value="index.html">English</option><option value="index-ko.html" selected>한국어</option><option value="index-zh.html">中文</option><option value="index-es.html">Español</option><option value="index-ja.html">日本語</option></select><a class="btn github" href="https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo">GitHub</a></div></nav></div></header>
