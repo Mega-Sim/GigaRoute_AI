@@ -1,6 +1,7 @@
 (() => {
   const EMAIL = 'support@gigaroute.ai';
   const DEMO_REPO = 'https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo';
+  const HEADER_WINDOWS_DOWNLOAD = 'https://github.com/Mega-Sim/Sim_Core/releases/tag/GigaRoute_Auto_Simulation';
   const WINDOWS_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-windows`;
   const LINUX_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-linux`;
   const FAVICON = '/favicon.png?v=20260818-2';
@@ -89,7 +90,7 @@
 
   const applyPlatformLinks = () => {
     document.querySelectorAll('.actions a.github').forEach(link => {
-      const windows = makePlatformLink('Windows', WINDOWS_DOWNLOAD, 'windows-download');
+      const windows = makePlatformLink('Windows', HEADER_WINDOWS_DOWNLOAD, 'windows-download');
       const linux = makePlatformLink('Linux', LINUX_DOWNLOAD, 'linux-download');
       link.before(windows, linux);
       link.remove();
