@@ -14,7 +14,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 - 브라우저 파비콘: `favicon.png` (GigaRoute `GR` 브랜드 아이콘)
 - 파비콘 공통 보정: `contact.js`가 모든 언어 페이지에서 `/favicon.png?v=20260818-2`를 `icon`/`shortcut icon`으로 강제 적용하여 페이지별 누락과 브라우저 캐시 회귀를 방지
 - 공통 스타일: `site.css`
-- 공통 문의 UI, B2B 제품·영업 구조, 무료 레이아웃 점검 및 Simulation Engine 실측 성능 섹션: `contact.js`
+- 공통 문의 UI, B2B 제품·영업 구조 및 Simulation Engine 실측 성능 섹션: `contact.js`
 - 상단 및 하단 CTA 배포 버튼은 `Windows` / `Linux`로 분리하며, 각각 공개 Demo 저장소의 플랫폼별 Release 페이지로 연결
 
 루트 도메인 `https://gigaroute.ai/`은 한국어 홈페이지를 기본으로 표시합니다. 각 페이지 상단의 언어 선택 메뉴에서 English, 한국어, 中文, Español, 日本語 페이지로 이동할 수 있습니다. English 선택은 항상 `index-en.html`로 이동하도록 공통 스크립트에서 정규화합니다. 기존 `index-ko.html` 주소는 한국어 호환 주소로 유지합니다. 모든 파일은 UTF-8로 관리합니다.
@@ -72,22 +72,11 @@ Issue #30부터 첫 소개 문구도 `CAD 기반 모델링`으로 한정하지 �
 
 루트 `.gitignore`는 실수로 native source, debug symbols, compiler intermediates, runtime binaries가 public Git history에 들어가는 것을 방지합니다.
 
-## 무료 초기 레이아웃 점검
-
-모든 언어 페이지의 Hero 영역 바로 아래에서 DXF 기반 무료 초기 레이아웃 점검 서비스를 안내합니다.
-
-- 연결되지 않거나 누락된 경로
-- 잘못된 교차점과 분기·합류
-- 중복 또는 겹친 형상
-- 급격한 곡선과 주행 경로 품질
-- 시뮬레이션 모델링에 영향을 줄 수 있는 문제
-- 주요 문제 요약, 개선 권고 및 다음 단계 안내
-
-무료 서비스는 초기 엔지니어링 점검 범위이며, 전체 레이아웃 수정, 시뮬레이션 네트워크 생성 및 맞춤 개발은 유료 전문 서비스로 구분합니다. 신청 버튼은 공통 Contact 모달과 `support@gigaroute.ai` 문의 동선으로 연결됩니다.
-
 ## Simulation Engine 실측 성능
 
 Issue #26부터 모든 언어 홈페이지에 실제 GigaRoute Auto Simulation Run에서 얻은 Simulation Engine 성능 정보를 표시합니다. 공통 `contact.js`가 한국어·영어·중국어(간체)·스페인어·일본어 문구와 동일한 지표 구조를 렌더링하므로 언어별 페이지마다 수치가 달라지지 않습니다. Issue #32에서 최신 Release 실측값으로 갱신했습니다.
+
+Issue #34부터 기존 Hero 아래의 `무료 초기 레이아웃 점검` 섹션은 모든 언어 페이지에서 제거했습니다. Simulation Engine 실측 성능 섹션은 Hero 바로 다음에 유지하며, GigaRoute Workspace의 레이아웃 검토 CTA는 무료 서비스 앵커가 아니라 공통 문의 모달로 연결합니다.
 
 ### 2026-08-30 실측 결과
 
@@ -135,7 +124,7 @@ Issue #31부터 Consulting 메인 제목은 **`Simulation & Work Automation`**�
 
 | 제품 | 역할 | 공개 홈페이지 CTA |
 |---|---|---|
-| GigaRoute Workspace | CAD/DXF 정리, Layout Review, Network Preparation | 무료 레이아웃 점검 / 문의 |
+| GigaRoute Workspace | CAD/DXF 정리, Layout Review, Network Preparation | 레이아웃 검토 문의 |
 | GigaRoute Auto Simulation | CAD/DXF·JSON·고객 맞춤 데이터 기반 OHT·AGV·OHS·AMHS 시뮬레이션 및 KPI | Windows/Linux Public Preview / 상용 라이선스 문의 |
 | GigaRoute Simulation Studio | 상세 제어 로직, 사용자 이벤트, 재사용 가능한 모델링·시뮬레이션 로직 | Early Access 문의 |
 | Enterprise & Custom | Demo/PoC, 고객 맞춤 모델링, 데이터/시스템 연동, 마이그레이션, 엔지니어링 지원 | Demo/PoC / 영업 문의 |
@@ -176,7 +165,7 @@ Cloudflare가 관리하는 MX, SPF, DKIM 레코드는 임의로 수정하거나 
 
 ## 작업 브랜치
 
-- `feature/issue-8-free-layout-assessment`: 다국어 무료 초기 레이아웃 점검 섹션 및 문의 연결 추가
+- `feature/issue-8-free-layout-assessment`: 다국어 무료 초기 레이아웃 점검 섹션 및 문의 연결 추가(현재 홈페이지 UI에서는 Issue #34로 제거)
 - `feature/issue-3-consulting-auto-simulation`: Consulting 메뉴·Algorithm-Based AutoMod Modeling 소개·GigaRoute Auto Simulation 명칭 반영
 - `noop`, `noop2`, `noop3`, `noop4`, `noop5`: 도구 오동작으로 생성된 작업 미사용 브랜치. main 변경에는 사용하지 않았으며 삭제 대상입니다.
 
@@ -187,9 +176,11 @@ Issue #29 Roadmap 제거 및 AI·Tensor·Quantum 기반 Platform 메시지 강�
 Issue #30 모델 입력 범위 확장 및 업무 자동화 서비스 재구성도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #31 AutoMod 상세 컨설팅 제거 및 `Simulation & Work Automation` 제목 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #32 최신 Simulation Engine 실측 성능 갱신도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #34 무료 레이아웃 점검 섹션 제거도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-08-31: Issue #34로 한국어·영어·중국어(간체)·스페인어·일본어 홈페이지의 `무료 초기 레이아웃 점검` 섹션과 관련 다국어 문구·전용 스타일을 공통 `contact.js`에서 제거했습니다. 기존 성능 섹션은 Hero 바로 다음에 유지하고, GigaRoute Workspace의 레이아웃 검토 CTA는 공통 Contact 모달로 연결하도록 변경했습니다.
 - 2026-08-30: Issue #32로 모든 언어 홈페이지의 Simulation Engine 공개 실측값을 최신 Release Run으로 갱신했습니다. 1,100 Vehicle, 입력 부하 18,000 moves/h, 1시간(3,600초) 시뮬레이션을 실제 166.981초에 완료해 Realtime Factor 21.559×를 기록했고, 완료 Job은 17,018건입니다. 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64이며, 공통 `contact.js`의 한국어·영어·중국어(간체)·스페인어·일본어 문구를 동일 실측값으로 업데이트했습니다. mixed mode 단일 Release Run 결과이며 레이아웃·교통·설정·하드웨어에 따라 성능이 달라질 수 있음을 함께 표시합니다.
 - 2026-08-26: Issue #31로 모든 언어 홈페이지의 Consulting 메인 제목을 `Simulation & Work Automation`으로 변경했습니다. 별도 `AutoMod Modeling & Simulation` 패널과 Logic Architecture / Model Optimization / Scenario Engineering 상세 카드는 제거하고, 기존 AutoMod 모델과 관련 업무도 지원한다는 짧은 안내만 남겼습니다. 기존 CAD / Atlassian / Office & Business Automation 3개 업무 자동화 카드는 유지했습니다.
 - 2026-08-26: Issue #30으로 모든 언어 홈페이지의 첫 소개 문구를 `CAD 기반 모델링` 한정 표현에서 `CAD/DXF · JSON · Custom Modeling`으로 확장하고, 고객별 데이터 포맷과 외부 인터페이스에 맞춘 모델 입력·연동 커스터마이징 가능성을 Platform 설명에 추가했습니다. Engineering & Workflow Automation은 `CAD 작업 자동화 / Atlassian Automation / Office & Business Automation`의 3개 카드로 재구성했으며, Jira와 Confluence는 하나의 Atlassian 자동화 서비스로 통합하고 Microsoft Office 및 다양한 사무·업무 자동화 프로젝트 범위를 새로 명시했습니다.
@@ -213,7 +204,7 @@ Issue #32 최신 Simulation Engine 실측 성능 갱신도 신규 브랜치 없�
 - 2026-08-17: Issue #11로 사용자 제공 `GR` 브랜드 아이콘을 `favicon.png`에 적용하고, 루트 한국어 홈페이지에서 브라우저 탭/주소창 아이콘으로 명시적으로 사용하도록 연결했습니다.
 - 2026-08-17: Issue #10으로 루트 `index.html`의 기본 언어를 한국어로 전환하고, 기존 영문 홈페이지를 `index-en.html`에 보존했습니다. 기존 `index-ko.html` 주소와 중국어·스페인어·일본어 페이지는 유지합니다.
 - 2026-08-17: private `Mega-Sim/Sim_Core`를 canonical product source로, public `Mega-Sim/GigaRoute_AI`를 홈페이지·배포 전용 저장소로 분리하고 native source/symbol/intermediate/binary의 Git commit 차단 정책을 추가했습니다.
-- 2026-08-05: 영어·한국어·중국어·스페인어·일본어 홈페이지 Hero 아래에 무료 초기 레이아웃 점검 섹션을 추가하고, 초기 점검 범위와 유료 전문 서비스의 경계를 명확히 표시했습니다.
+- 2026-08-05: 영어·한국어·중국어·스페인어·일본어 홈페이지 Hero 아래에 무료 초기 레이아웃 점검 섹션을 추가하고, 초기 점검 범위와 유료 전문 서비스의 경계를 명확히 표시했습니다. Issue #34에서 현재 홈페이지 UI에서는 제거했습니다.
 - 2026-08-05: GigaRoute Workspace에 `(Enable Customizing)`을 추가하고 AutoMod·NVIDIA Isaac Sim Export 설명을 모든 언어 페이지에 반영했습니다.
 - 2026-08-05: 모든 언어 페이지에 다국어 Contact 모달, 이메일 복사, 업무시간·회신시간 안내를 적용하고 `mailto:` 직접 실행에 따른 외부 메일 클라이언트 실행 문제를 제거했습니다.
 - 2026-08-05: 영문 기본 홈페이지에서 Roadmap 오른쪽에 Contact 메뉴를 추가하고 `support@gigaroute.ai` 고객지원 링크 및 운영 안내를 추가했습니다.
