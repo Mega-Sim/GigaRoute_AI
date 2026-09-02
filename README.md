@@ -107,16 +107,22 @@ Issue #34부터 기존 Hero 아래의 `무료 초기 레이아웃 점검` 섹션
 
 ## Consulting 서비스 범위
 
-Issue #31부터 Consulting 메인 제목은 **`Simulation & Work Automation`**을 사용합니다. AutoMod는 별도의 상세 컨설팅 상품이나 전용 패널로 표시하지 않고, 기존 AutoMod 모델과 관련 업무도 지원 가능하다는 의미의 짧은 안내만 유지합니다.
+Issue #38부터 Consulting 영역의 첫 번째 패널에 **`기업 맞춤 물류·AMHS 시뮬레이터 개발`** 서비스를 표시하고, 기존 `Engineering & Workflow Automation` 패널은 내용을 유지한 채 그 아래 두 번째 패널로 배치합니다. Consulting 메인 제목 **`Simulation & Work Automation`**도 유지합니다.
 
-홈페이지의 Consulting 영역은 다음 구조를 사용합니다.
+홈페이지의 Consulting 영역은 다음 순서와 범위를 사용합니다.
 
-- **Simulation 지원**: GigaRoute AI 기반 시뮬레이션을 중심으로 제공하며 기존 AutoMod 모델과 관련 업무도 지원
-- **CAD 작업 자동화**: 반복적인 CAD 도면 정리, 객체·TEXT 가공, 레이아웃 변환, 시뮬레이션/모델링 데이터 준비 업무 자동화
-- **Atlassian Automation**: Jira의 이슈 생성·상태 전환·프로젝트 흐름과 Confluence의 기술 문서·보고서·프로젝트 지식 관리를 하나의 Atlassian 자동화 흐름으로 연결
-- **Office & Business Automation**: Microsoft Office의 Excel, Word, PowerPoint 등 반복 작업, 데이터 정리, 문서·보고서 생성, 파일 처리 및 고객별 다양한 사무·업무 프로세스 자동화 프로젝트 수행
+1. **기업 맞춤 물류·AMHS 시뮬레이터 개발**
+   - **현장 맞춤 모델링**: CAD/DXF, JSON, CSV 및 고객 데이터로 레이아웃, 설비, Station, Port, 경로와 이송 흐름을 현장 구조에 맞춰 모델링
+   - **AMHS 제어·성능 분석**: OHT·AGV·AMR·OHS의 배차, 주행, 합류, 교통 제어와 운영 규칙을 반영하고 처리량, Cycle Time, 가동률과 병목을 분석
+   - **전용 도구·시스템 연동**: 실행 화면, 시나리오·KPI 리포트와 데이터 변환 기능을 구성하고 프로젝트 요구에 따라 MCS·WCS·MES 등 외부 시스템 연동 범위를 설계
+   - 신규 구축과 기존 모델 고도화를 모두 프로젝트 범위에 맞춰 지원
+2. **Engineering & Workflow Automation**
+   - **CAD 작업 자동화**: 반복적인 CAD 도면 정리, 객체·TEXT 가공, 레이아웃 변환, 시뮬레이션/모델링 데이터 준비 업무 자동화
+   - **Atlassian Automation**: Jira의 이슈 생성·상태 전환·프로젝트 흐름과 Confluence의 기술 문서·보고서·프로젝트 지식 관리를 하나의 자동화 흐름으로 연결
+   - **Office & Business Automation**: Microsoft Office의 Excel, Word, PowerPoint 반복 작업, 데이터 정리, 문서·보고서 생성, 파일 처리 및 고객별 사무·업무 프로세스 자동화
+   - 기존 AutoMod 모델과 관련 업무도 지원 가능하다는 안내를 유지
 
-별도 `AutoMod Modeling & Simulation` 패널과 `Logic Architecture / Model Optimization / Scenario Engineering` 상세 카드는 Issue #31에서 제거했습니다. 업무 자동화는 기존 `consulting-panel` + 3개 서비스 카드 구조를 유지해 UI 레이아웃을 변경하지 않습니다. 한국어·영어·중국어(간체)·스페인어·일본어 페이지 모두 같은 서비스 구조를 사용하고 문구만 현지화합니다.
+두 패널은 `consulting-stack` 안에서 위아래로 배치합니다. 기존 업무 자동화 상세 안내 pseudo-element는 `workflow-automation` 패널에만 적용해 새 맞춤 시뮬레이터 패널에 중복 표시되지 않게 합니다. 한국어 기본/호환, 영어, 중국어(간체), 스페인어, 일본어 페이지는 동일한 구조를 사용하고 문구만 현지화합니다. 데스크톱에서는 기존 2열 패널, 모바일에서는 기존 1열 카드 구조를 유지합니다.
 
 ## B2B 제품 및 판매 정책
 
@@ -181,8 +187,11 @@ Issue #32 최신 Simulation Engine 실측 성능 갱신도 신규 브랜치 없�
 Issue #34 무료 레이아웃 점검 섹션 제거도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #35 우측 상단 Linux 다운로드 버튼 비활성화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #37 우측 상단 Windows 버튼의 Demo Releases 연결과 우측 하단 TOP 버튼 추가도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #38 기업 맞춤 물류·AMHS 시뮬레이터 개발 패널 추가와 기존 업무 자동화 패널 하단 이동도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-02: Issue #38로 Consulting 영역 최상단에 `기업 맞춤 물류·AMHS 시뮬레이터 개발` 패널을 추가하고, 현장 맞춤 모델링, OHT·AGV·AMR·OHS 제어·성능 분석, 전용 도구와 MCS·WCS·MES 연동 범위를 다국어로 안내합니다. 기존 `Engineering & Workflow Automation` 패널과 상세 안내는 삭제하지 않고 두 번째 순서로 이동했으며, 새 `consulting-stack`과 패널별 CSS 선택자로 데스크톱·모바일 반응형 구조와 중복 렌더링 방지를 유지합니다.
 
 - 2026-09-02: Issue #37로 모든 언어 페이지의 우측 상단 Windows 버튼을 `Mega-Sim/GigaRoute_AI_Simulation_Demo`의 전체 Releases 페이지로 변경했습니다. 공통 `contact.js`에 우측 하단 고정 `TOP` 버튼을 추가해 360px 이상 스크롤하면 표시하고, 클릭하면 접근성의 모션 축소 설정을 존중하면서 페이지 최상단으로 이동합니다. 기존 Linux 비활성 상태와 제품 카드·하단 CTA의 Windows/Linux Public Preview 링크는 유지합니다.
 - 2026-08-31: Issue #36으로 모든 언어 페이지의 우측 상단 Windows 버튼을 `Mega-Sim/Sim_Core`의 `GigaRoute AI Auto Simulation 2.0 — Windows x64` 릴리즈(`GigaRoute_Auto_Simulation`) 페이지로 연결했습니다. 제품 카드와 하단 CTA의 Windows/Linux Public Preview 링크는 기존 동선을 유지하고, 우측 상단 Linux 버튼의 Issue #35 비활성 상태도 유지합니다.
