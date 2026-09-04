@@ -10,3 +10,8 @@
 
 .brand:after{content:"Simulation LAB";margin-left:-4px;color:#4f5f73;font-size:14.4px;font-weight:400;letter-spacing:.07em;line-height:1;white-space:nowrap;opacity:.96}
 @media(max-width:680px){.brand{gap:10px}.brand:after{margin-left:-5px;font-size:11.4px;letter-spacing:.05em}}
+
+/* Sticky header anchor alignment: keep section content close to the header instead of stacking the full section top padding below it. */
+main{scroll-margin-top:var(--header-h,92px)}
+#platform,#consulting,#workflow{scroll-margin-top:calc(var(--header-h,92px) - 64px)}
+#products{scroll-margin-top:calc(var(--header-h,92px) - 48px)}
