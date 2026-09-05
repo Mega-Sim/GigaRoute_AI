@@ -55,3 +55,34 @@
 - `44e045a60b64fff88a124505d3ece6eb35fd401c` — `fix: 한국어 페이지 앵커 CSS 캐시 갱신 (#44)`
 
 이번 수정도 PR 요청이 아니므로 별도 Build/Test 및 GitHub Actions는 실행하지 않았습니다.
+
+---
+
+# Issue #45 — 제품 구조 단순화 / Custom AMHS Simulation 중심
+
+2026-09-05 홈페이지 제품 영역을 `기업 맞춤형 AMHS 시뮬레이션 SW` 중심으로 단순화했습니다.
+
+## 변경 내용
+
+- 상단 내비게이션의 `플랫폼` 항목을 삭제했습니다.
+- 기존 `#platform` 소개 섹션을 한국어·영어·중국어(간체)·스페인어·일본어 페이지에서 모두 삭제했습니다.
+- 제품 영역의 긴 `Public Preview → 기술 검토 → Demo/PoC → 상용 배포` 설명과 판매 Funnel UI를 제거했습니다.
+- 기존 `GigaRoute Workspace` 제품 카드를 삭제했습니다.
+- 제품 영역은 다음 3개 제품/프로젝트 카드로 단순화했습니다.
+  - `GigaRoute Auto Simulation`
+  - `GigaRoute Simulation Studio`
+  - `Enterprise & Custom`
+- 제품 소개 문구는 OHT·AGV·AMR·OHS의 레이아웃, 물동량, 배차·교통 제어, KPI를 고객 환경에 맞게 모델링·검증하는 **기업 맞춤형 AMHS 시뮬레이션 소프트웨어**를 중심으로 짧게 정리했습니다.
+- Hero 미리보기의 `Workspace` 표기도 제품 라인으로 오해되지 않도록 `Simulation`으로 변경했습니다.
+
+## 구현 구조
+
+- 기존 `contact.js`는 `#products`가 있을 때 B2B 제품/판매 구조를 동적으로 덮어쓰므로, 새 정적 제품 섹션은 `#solutions` 앵커를 사용합니다.
+- 제품 내비게이션과 Hero 제품 CTA도 `#solutions`로 연결합니다.
+- 3개 제품 카드는 `repeat(auto-fit, minmax(240px, 1fr))` 그리드를 사용해 모바일·태블릿에서 카드가 겹치거나 지나치게 좁아지지 않도록 했습니다.
+- `제품성능`, `컨설팅`, `워크플로우`, Windows/Linux 다운로드, 문의 모달은 기존 동작을 유지합니다.
+- 중국어 페이지의 self-only CSP와 로컬 자산 정책도 유지합니다.
+
+## 검증 범위
+
+이번 요청은 PR 요청이 아니므로 별도 Build/Test 및 GitHub Actions는 실행하지 않았습니다. 코드 기준으로 다국어 5개 페이지의 내비게이션, 제품 앵커, 제품 카드 수, Platform 섹션 제거 범위를 동일하게 맞췄습니다.
