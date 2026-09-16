@@ -19,6 +19,10 @@ html[lang="ko"] .hero h1 .gradient{white-space:nowrap}
 .card-top{flex-wrap:wrap;gap:8px 10px}
 .status{max-width:100%;white-space:normal;text-align:center;line-height:1.25}
 
+/* Issue #59: tighten only the vertical spacing around the Consulting panels. */
+#consulting .heading{margin-bottom:20px}
+#consulting .consulting-stack{gap:14px}
+
 /* Restore a balanced desktop split: Issue #56 gave the service cards more room by squeezing the left title column too far. */
 .consulting-panel{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
 .consulting-services{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -63,7 +67,7 @@ html[lang="ko"] .lead,html[lang="ko"] #solutions .solution-title,html[lang="ko"]
   #solutions .card p{font-size:15px;line-height:1.58;word-break:normal;overflow-wrap:break-word}
   #solutions .tags{margin-top:14px}
 
-  #consulting .heading,#workflow .heading{gap:18px;margin-bottom:24px}
+  #consulting .heading,#workflow .heading{gap:18px;margin-bottom:20px}
   #consulting .heading h2,#workflow .heading h2{font-size:clamp(34px,9vw,46px);line-height:1.08;overflow-wrap:break-word}
   #consulting .heading>p,#workflow .heading>p{font-size:15px;line-height:1.62;overflow-wrap:break-word}
 
