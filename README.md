@@ -125,6 +125,8 @@ Issue #38부터 Consulting 영역의 첫 번째 패널에 **`기업 맞춤 물�
 
 두 패널은 `consulting-stack` 안에서 위아래로 배치합니다. 기존 업무 자동화 상세 안내 pseudo-element는 `workflow-automation` 패널에만 적용해 새 맞춤 시뮬레이터 패널에 중복 표시되지 않게 합니다. 한국어 기본/호환, 영어, 중국어(간체), 스페인어, 일본어 페이지는 동일한 구조를 사용하고 문구만 현지화합니다. 데스크톱에서는 기존 2열 패널, 모바일에서는 기존 1열 카드 구조를 유지합니다.
 
+Issue #56부터 `site-fixes.css`에서 Consulting 서비스 카드의 grid item `min-width`를 0으로 고정하고, 데스크톱에서 서비스 카드 영역을 넓히며 제목을 균형 줄바꿈하도록 보정합니다. 한국어 제목은 단어 내부에서 글자 한두 개만 분리되지 않도록 `word-break: keep-all`을 사용하고, 760px 이하에서는 서비스 카드를 1열로 전환합니다. 모든 언어 HTML의 `site-fixes.css` cache-busting 버전을 함께 갱신해 데스크톱·모바일에서 동일 수정이 즉시 적용되도록 합니다.
+
 ## 제품 및 판매 정책
 
 Issue #45부터 공개 홈페이지의 제품 영역은 긴 판매 Funnel 설명보다 **기업 맞춤형 AMHS 시뮬레이션 SW의 제품 범위**를 먼저 보여주는 구조를 사용합니다. 상용 가격은 기존 정책대로 공개하지 않고 프로젝트별 견적 기반으로 운영합니다.
@@ -187,9 +189,11 @@ Issue #37 우측 상단 Windows 버튼의 Demo Releases 연결과 우측 하단 
 Issue #38 기업 맞춤 물류·AMHS 시뮬레이터 개발 패널 추가와 기존 업무 자동화 패널 하단 이동도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #39 Simulation Engine 실측 제목의 `8GB RAM` 명확화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #45 Platform/Workspace 제거 및 기업 맞춤형 AMHS 제품 구조 단순화도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #56 Consulting 카드 제목 반응형 줄바꿈·잘림 방지도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-09-16: Issue #56으로 Consulting 서비스 카드의 제목이 데스크톱에서 마지막 글자 단위로 어색하게 갈라지거나 좁은 화면에서 잘릴 수 있는 문제를 수정했습니다. 공통 `site-fixes.css`에서 카드 grid의 최소 폭, 데스크톱 좌우 비율·내부 패딩, 다국어 제목 줄바꿈을 보정하고 한국어는 단어 내부 분리를 막았습니다. 760px 이하에서는 서비스 카드를 1열로 전환하며, 모든 언어 HTML의 CSS cache-busting 버전을 `20260916-2`로 통일했습니다.
 - 2026-09-05: Issue #45로 상단 `Platform` 메뉴와 별도 Platform 섹션을 제거하고, 공개 제품 영역을 `기업 맞춤형 AMHS 시뮬레이션 SW` 중심으로 단순화했습니다. `GigaRoute Workspace` 제품 라인을 삭제하고 `GigaRoute Auto Simulation / GigaRoute Simulation Studio / Enterprise & Custom` 3개 카드만 유지했습니다. 제품 앵커는 기존 동적 B2B 판매 UI와 분리된 `#solutions`를 사용하며, 한국어·영어·중국어(간체)·스페인어·일본어에 동일 구조를 적용했습니다. 기존 Simulation Engine 성능, Consulting, Workflow, Windows/Linux 다운로드, Contact 및 중국어 CSP는 유지했습니다.
 - 2026-09-02: Issue #39로 Simulation Engine 실측 성능 제목의 `8GB`가 메모리 용량임을 즉시 알 수 있도록 한국어 문구를 `8GB RAM 사무용 노트북에서 21.559배속 실측.`으로 변경했습니다. 영어·중국어(간체)·스페인어·일본어 제목에도 RAM 또는 메모리 표기를 추가했으며, 측정 수치와 환경 정보 및 반응형 레이아웃은 변경하지 않았습니다.
 
