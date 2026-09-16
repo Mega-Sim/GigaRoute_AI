@@ -9,7 +9,7 @@
         ['약 101.9 Job/s', '실제 실행시간 기준 평균 완료 Job'],
         ['2.8분', '1.0시간 시뮬레이션 완료 시간']
       ],
-      note: '101.9 Job/s는 실측 완료 Job 17,018.0건 ÷ 실제 실행시간 167.0초로 계산한 공개용 파생 지표입니다. 원시 실측값은 17,018건 / 166.981초이며, 엔진 내부 이벤트 처리량(events/s)을 의미하지 않습니다.'
+      note: '101.9 Job/s는 공개 표기값 17,018.0건과 167.0초를 기준으로 한 파생 지표입니다. 원시 실측값은 저장소 문서에 보존하며, 엔진 내부 이벤트 처리량(events/s)을 의미하지 않습니다.'
     },
     en: {
       title: '1,100.0 AMHS vehicles at 21.6× realtime on an 8.0 GB office laptop.',
@@ -20,7 +20,7 @@
         ['~101.9 jobs/s', 'Average completed jobs per real execution second'],
         ['2.8 min', 'Wall time for a 1.0-hour simulation']
       ],
-      note: '101.9 jobs/s is the public derived figure from 17,018.0 completed jobs ÷ 167.0 seconds of displayed wall time. Raw measured values remain 17,018 jobs / 166.981 seconds. This is not an internal engine events/s measurement.'
+      note: '101.9 jobs/s is derived from the public display values of 17,018.0 completed jobs and 167.0 seconds. Raw measurements remain documented in the repository. This is not an internal engine events/s measurement.'
     },
     'zh-CN': {
       title: '仅用 8.0 GB 内存办公笔记本，以 21.6× 实时倍率模拟 1,100.0 辆 AMHS Vehicle。',
@@ -31,7 +31,7 @@
         ['约 101.9 Job/s', '按实际执行时间计算的平均完成 Job'],
         ['2.8 分钟', '完成 1.0 小时仿真的实际用时']
       ],
-      note: '公开派生值为 101.9 Job/s，按显示值 17,018.0 个 Job ÷ 167.0 秒计算。原始实测值仍保留为 17,018 个 Job / 166.981 秒；该数值不是引擎内部 events/s 指标。'
+      note: '101.9 Job/s基于公开显示值17,018.0个已完成Job和167.0秒计算。原始实测值保留在仓库文档中；该数值不是引擎内部events/s指标。'
     },
     es: {
       title: '1.100,0 Vehicles AMHS a 21,6× en un portátil de oficina con solo 8,0 GB de RAM.',
@@ -42,7 +42,7 @@
         ['~101,9 Jobs/s', 'Jobs completados de media por segundo real de ejecución'],
         ['2,8 min', 'Tiempo real para simular 1,0 hora']
       ],
-      note: 'El valor público derivado es 101,9 Jobs/s, calculado con 17.018,0 Jobs ÷ 167,0 s mostrados. Los valores medidos originales siguen siendo 17.018 Jobs / 166,981 s. No representa eventos internos del motor por segundo.'
+      note: '101,9 Jobs/s se deriva de los valores públicos mostrados: 17.018,0 Jobs completados y 167,0 s. Las mediciones originales permanecen documentadas en el repositorio. No representa eventos internos del motor por segundo.'
     },
     ja: {
       title: '8.0 GB RAMの事務用ノートPC 1台で、1,100.0台のAMHSを21.6倍速シミュレーション。',
@@ -53,7 +53,7 @@
         ['約101.9 Job/s', '実行時間基準の平均完了Job'],
         ['2.8分', '1.0時間シミュレーションの実行時間']
       ],
-      note: '公開用の派生値101.9 Job/sは、表示値17,018.0件 ÷ 167.0秒から算出しています。原始実測値は17,018件 / 166.981秒のまま保持し、エンジン内部のevents/s測定値ではありません。'
+      note: '101.9 Job/sは公開表示値17,018.0件と167.0秒を基準にした派生値です。原始実測値はリポジトリ文書に保持し、エンジン内部のevents/s測定値ではありません。'
     }
   };
 
@@ -67,6 +67,8 @@
         .replace(/21,559/g, '21,6')
         .replace(/166\.981/g, '167.0')
         .replace(/166,981/g, '167,0')
+        .replace(/18,000(?![.\d])/g, '18,000.0')
+        .replace(/18\.000(?![,\d])/g, '18.000,0')
         .replace(/17,018(?![.\d])/g, '17,018.0')
         .replace(/17\.018(?![,\d])/g, '17.018,0')
         .replace(/1,100(?![.\d])/g, '1,100.0')
@@ -74,7 +76,12 @@
         .replace(/8\.00 GB/g, '8.0 GB')
         .replace(/8,00 GB/g, '8,0 GB')
         .replace(/7\.70 GB/g, '7.7 GB')
-        .replace(/7,70 GB/g, '7,7 GB');
+        .replace(/7,70 GB/g, '7,7 GB')
+        .replace(/1시간/g, '1.0시간')
+        .replace(/1-hour/g, '1.0-hour')
+        .replace(/1 小时/g, '1.0 小时')
+        .replace(/1 hora/g, '1,0 hora')
+        .replace(/1時間/g, '1.0時間');
     });
     return true;
   };
