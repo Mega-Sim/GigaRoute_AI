@@ -127,6 +127,8 @@ Issue #38부터 Consulting 영역의 첫 번째 패널에 **`기업 맞춤 물�
 
 Issue #56부터 `site-fixes.css`에서 Consulting 서비스 카드의 grid item `min-width`를 0으로 고정하고, 데스크톱에서 서비스 카드 영역을 넓히며 제목을 균형 줄바꿈하도록 보정합니다. 한국어 제목은 단어 내부에서 글자 한두 개만 분리되지 않도록 `word-break: keep-all`을 사용하고, 760px 이하에서는 서비스 카드를 1열로 전환합니다. 모든 언어 HTML의 `site-fixes.css` cache-busting 버전을 함께 갱신해 데스크톱·모바일에서 동일 수정이 즉시 적용되도록 합니다.
 
+Issue #57에서는 Issue #56의 폭 조정으로 왼쪽 `기업 전용/맞춤 시뮬레이터 개발` 제목이 과도하게 좁아진 회귀를 복구하고, 특정 카드가 아닌 홈페이지 전체의 반응형 텍스트 안전 규칙을 재점검했습니다. Hero, 제품 카드, Consulting, 성능 Benchmark, Research, CTA, Footer의 grid/flex child에 `min-width:0`과 안전 줄바꿈을 적용하고, 태블릿/모바일에서는 서비스 카드·연구 버튼·헤더 링크가 충분히 일찍 재배치되도록 전환점을 보강합니다. 한국어 첫 화면 Hero는 `Auto Simulation`과 `Work Automation`을 각각 한 줄로 고정하되 글자 크기를 가용 폭에 맞춰 축소해 320px 이상 화면에서 `Work / Automation`처럼 분리되지 않도록 합니다. 모든 언어 페이지의 `site-fixes.css` cache-busting 버전은 `20260916-3`으로 통일합니다.
+
 ## 제품 및 판매 정책
 
 Issue #45부터 공개 홈페이지의 제품 영역은 긴 판매 Funnel 설명보다 **기업 맞춤형 AMHS 시뮬레이션 SW의 제품 범위**를 먼저 보여주는 구조를 사용합니다. 상용 가격은 기존 정책대로 공개하지 않고 프로젝트별 견적 기반으로 운영합니다.
@@ -190,9 +192,11 @@ Issue #38 기업 맞춤 물류·AMHS 시뮬레이터 개발 패널 추가와 기
 Issue #39 Simulation Engine 실측 제목의 `8GB RAM` 명확화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #45 Platform/Workspace 제거 및 기업 맞춤형 AMHS 제품 구조 단순화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #56 Consulting 카드 제목 반응형 줄바꿈·잘림 방지도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #57 홈페이지 전체 반응형 텍스트 잘림 재점검 및 Consulting/Hero 회귀 복구도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-09-16: Issue #57로 Issue #56에서 서비스 카드 영역을 넓히며 왼쪽 Consulting 제목 영역이 과도하게 좁아진 회귀를 복구하고 홈페이지 전체 반응형 텍스트를 재점검했습니다. `site-fixes.css`에서 Hero·제품·Consulting·성능 Benchmark·Research·CTA·Footer의 grid/flex 축소 허용과 안전 줄바꿈을 공통 적용했으며, 태블릿/모바일 전환점을 보강했습니다. 한국어 Hero는 `Auto Simulation` / `Work Automation`의 두 줄 구조를 유지하면서 각 문구 내부는 한 줄로 고정하고, 680px 이하에서 폰트를 추가 축소해 `Work Automation`이 `Work` / `Automation`으로 분리되지 않도록 했습니다. 한국어 기본/호환과 영어·중국어·스페인어·일본어 페이지의 `site-fixes.css` cache-busting 버전을 `20260916-3`으로 통일했습니다.
 - 2026-09-16: Issue #56으로 Consulting 서비스 카드의 제목이 데스크톱에서 마지막 글자 단위로 어색하게 갈라지거나 좁은 화면에서 잘릴 수 있는 문제를 수정했습니다. 공통 `site-fixes.css`에서 카드 grid의 최소 폭, 데스크톱 좌우 비율·내부 패딩, 다국어 제목 줄바꿈을 보정하고 한국어는 단어 내부 분리를 막았습니다. 760px 이하에서는 서비스 카드를 1열로 전환하며, 모든 언어 HTML의 CSS cache-busting 버전을 `20260916-2`로 통일했습니다.
 - 2026-09-05: Issue #45로 상단 `Platform` 메뉴와 별도 Platform 섹션을 제거하고, 공개 제품 영역을 `기업 맞춤형 AMHS 시뮬레이션 SW` 중심으로 단순화했습니다. `GigaRoute Workspace` 제품 라인을 삭제하고 `GigaRoute Auto Simulation / GigaRoute Simulation Studio / Enterprise & Custom` 3개 카드만 유지했습니다. 제품 앵커는 기존 동적 B2B 판매 UI와 분리된 `#solutions`를 사용하며, 한국어·영어·중국어(간체)·스페인어·일본어에 동일 구조를 적용했습니다. 기존 Simulation Engine 성능, Consulting, Workflow, Windows/Linux 다운로드, Contact 및 중국어 CSP는 유지했습니다.
 - 2026-09-02: Issue #39로 Simulation Engine 실측 성능 제목의 `8GB`가 메모리 용량임을 즉시 알 수 있도록 한국어 문구를 `8GB RAM 사무용 노트북에서 21.559배속 실측.`으로 변경했습니다. 영어·중국어(간체)·스페인어·일본어 제목에도 RAM 또는 메모리 표기를 추가했으며, 측정 수치와 환경 정보 및 반응형 레이아웃은 변경하지 않았습니다.
