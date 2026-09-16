@@ -1,21 +1,52 @@
 /* Shared UI refinements for Issue #46. Keep this file override-only and small. */
 
 #solutions .solution-heading{margin:0 0 26px}
-#solutions .solution-title{margin:0;color:var(--brand);font-size:clamp(36px,5vw,62px);font-weight:900;line-height:1.06;letter-spacing:-.045em;text-transform:none;word-break:keep-all;overflow-wrap:anywhere}
+#solutions .solution-title{margin:0;color:var(--brand);font-size:clamp(36px,5vw,62px);font-weight:900;line-height:1.06;letter-spacing:-.045em;text-transform:none;word-break:keep-all;overflow-wrap:break-word}
 
 /* Issue #51: keep the SCIRP action in the card header so the research card stays compact. */
 #research .research-card{position:relative;padding-right:190px}
 #research .research-link{position:absolute;top:20px;right:26px;margin-top:0;align-self:auto;white-space:nowrap}
 
-/* Issue #56: keep consulting service titles readable without clipping or orphaned Korean glyphs. */
-.consulting-panel,.consulting-panel>div,.consulting-services,.consulting-services article{min-width:0}
+/* Issue #57: site-wide responsive text safety. Grid/flex children must be allowed to shrink. */
+.hero>*,.heading>*,.cards>*,.card,.card-top>*,.consulting-panel,.consulting-panel>*,.consulting-services,.consulting-services>*,.workflow,.steps>*,.road>*,.road-item>*,.cta,.foot>*,.research-card,.research-top>*{min-width:0}
+
+.hero h1,.lead,#solutions .solution-title,.card h3,.card p,.heading h2,.heading>p,.consulting-panel h3,.consulting-panel>div:first-child p,.consulting-services h4,.consulting-services p,.step h3,.step p,.road-item h3,.road-item p,.cta h2,.cta p,.research-card h3,.research-authors,.research-abstract,.research-org{max-width:100%;overflow-wrap:break-word}
+
+.card-top{flex-wrap:wrap;gap:8px 10px}
+.status{max-width:100%;white-space:normal;text-align:center;line-height:1.25}
+
+/* Restore a balanced desktop split: Issue #56 gave the service cards more room by squeezing the left title column too far. */
+.consulting-panel{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
 .consulting-services{grid-template-columns:repeat(3,minmax(0,1fr))}
-.consulting-services h4{max-width:100%;line-height:1.28;white-space:normal;word-break:normal;overflow-wrap:anywhere;hyphens:none;text-wrap:balance}
-html[lang="ko"] .consulting-services h4{word-break:keep-all;overflow-wrap:normal}
+.consulting-panel h3{font-size:clamp(26px,2.45vw,34px);line-height:1.14;overflow-wrap:break-word;text-wrap:balance}
+.consulting-services article{min-width:0;padding-left:14px;padding-right:14px}
+.consulting-services h4{max-width:100%;margin-top:26px;font-size:clamp(15px,1.2vw,17px);line-height:1.3;white-space:normal;word-break:normal;overflow-wrap:break-word;hyphens:none;text-wrap:balance}
+
+/* Korean titles should wrap by words first, but still break as a last resort instead of clipping. */
+html[lang="ko"] .hero h1,html[lang="ko"] .lead,html[lang="ko"] #solutions .solution-title,html[lang="ko"] .card h3,html[lang="ko"] .card p,html[lang="ko"] .heading h2,html[lang="ko"] .heading>p,html[lang="ko"] .consulting-panel h3,html[lang="ko"] .consulting-panel p,html[lang="ko"] .consulting-services h4,html[lang="ko"] .consulting-services p,html[lang="ko"] .cta h2,html[lang="ko"] .cta p{word-break:keep-all;overflow-wrap:break-word}
+
+/* Dynamic benchmark content from display-fixes.js: never force a full sentence onto one line. */
+#engine-performance .performance-head,#engine-performance .performance-head h2,#engine-performance .performance-impact,#engine-performance .performance-impact-topline,#engine-performance .performance-impact-grid,#engine-performance .performance-impact-metric{min-width:0}
+#engine-performance .performance-title-line{white-space:normal!important;text-wrap:balance}
+#engine-performance .performance-head h2,#engine-performance .performance-impact-context,#engine-performance .performance-impact-metric span,#engine-performance .performance-impact-note{overflow-wrap:break-word}
+
 @media(min-width:1051px){
-  .consulting-panel{grid-template-columns:minmax(280px,.68fr) minmax(0,1.32fr);gap:24px}
-  .consulting-services article{padding-left:16px;padding-right:16px}
-  .consulting-services h4{font-size:clamp(16px,1.45vw,18px)}
+  .consulting-panel{gap:28px}
+}
+
+/* At tablet widths the header links wrap instead of becoming a clipped horizontal strip. */
+@media(max-width:1050px){
+  .links{flex-wrap:wrap;white-space:normal!important;overflow:visible!important}
+  .links a{min-width:0}
+  .consulting-panel{grid-template-columns:1fr}
+  .consulting-services{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* Research action becomes part of normal flow before its reserved right gutter gets cramped. */
+@media(max-width:900px){
+  #research .research-card{padding-right:26px}
+  #research .research-link{position:static;margin-top:8px;align-self:flex-start;white-space:normal}
+  .consulting-services{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 @media(max-width:760px){
@@ -24,20 +55,20 @@ html[lang="ko"] .consulting-services h4{word-break:keep-all;overflow-wrap:normal
   #solutions .solution-title{font-size:clamp(30px,8.5vw,42px);line-height:1.12;letter-spacing:-.035em}
   #solutions .cards{gap:12px!important}
   #solutions .card{min-height:auto;padding:20px}
-  #solutions .card h3{margin:18px 0 8px;font-size:22px;line-height:1.16;word-break:keep-all;overflow-wrap:anywhere}
-  #solutions .card p{font-size:15px;line-height:1.58;word-break:keep-all;overflow-wrap:anywhere}
+  #solutions .card h3{margin:18px 0 8px;font-size:22px;line-height:1.16;word-break:normal;overflow-wrap:break-word}
+  #solutions .card p{font-size:15px;line-height:1.58;word-break:normal;overflow-wrap:break-word}
   #solutions .tags{margin-top:14px}
 
   #consulting .heading,#workflow .heading{gap:18px;margin-bottom:24px}
-  #consulting .heading h2,#workflow .heading h2{font-size:clamp(34px,9vw,46px);line-height:1.08;word-break:keep-all;overflow-wrap:anywhere}
-  #consulting .heading>p,#workflow .heading>p{font-size:15px;line-height:1.62;word-break:keep-all;overflow-wrap:anywhere}
+  #consulting .heading h2,#workflow .heading h2{font-size:clamp(34px,9vw,46px);line-height:1.08;overflow-wrap:break-word}
+  #consulting .heading>p,#workflow .heading>p{font-size:15px;line-height:1.62;overflow-wrap:break-word}
 
   .consulting-stack{gap:18px}
-  .consulting-panel{padding:22px;gap:18px}
+  .consulting-panel{padding:22px;gap:18px;grid-template-columns:1fr}
   .consulting-panel+.consulting-panel{margin-top:0!important}
   .consulting-panel>div:first-child{padding:6px 2px}
-  .consulting-panel h3{margin:16px 0 10px;line-height:1.12;word-break:keep-all;overflow-wrap:anywhere}
-  .consulting-panel>div:first-child p{font-size:15px;line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+  .consulting-panel h3{margin:16px 0 10px;font-size:clamp(25px,7.5vw,32px);line-height:1.14}
+  .consulting-panel>div:first-child p{font-size:15px;line-height:1.6}
   .consulting-services{grid-template-columns:1fr;gap:10px}
   .consulting-services article{min-height:auto;padding:18px}
   .consulting-services h4{margin:18px 0 8px;font-size:17px;line-height:1.24}
@@ -45,16 +76,28 @@ html[lang="ko"] .consulting-services h4{word-break:keep-all;overflow-wrap:normal
   .workflow{padding:22px}
   .steps{gap:10px}
   .step{min-height:auto;padding:18px}
-  .step h3{margin:18px 0 8px;line-height:1.18;word-break:keep-all;overflow-wrap:anywhere}
-  .step p{font-size:14px;line-height:1.58;word-break:keep-all;overflow-wrap:anywhere}
+  .step h3{margin:18px 0 8px;line-height:1.18;overflow-wrap:break-word}
+  .step p{font-size:14px;line-height:1.58;overflow-wrap:break-word}
 
   #research .heading{gap:18px;margin-bottom:24px}
-  #research .heading h2{font-size:clamp(34px,9vw,46px);line-height:1.08;word-break:keep-all;overflow-wrap:anywhere}
-  #research .heading>p{font-size:15px;line-height:1.62;word-break:keep-all;overflow-wrap:anywhere}
+  #research .heading h2{font-size:clamp(34px,9vw,46px);line-height:1.08;overflow-wrap:break-word}
+  #research .heading>p{font-size:15px;line-height:1.62;overflow-wrap:break-word}
   .research-card{padding:16px 18px}
   #research .research-card{padding-right:18px}
-  #research .research-link{position:static;margin-top:8px;align-self:flex-start;white-space:normal}
-  .research-card h3{margin:8px 0 3px;line-height:1.22;word-break:keep-all;overflow-wrap:anywhere}
-  .research-abstract{margin-top:6px;font-size:13.5px;line-height:1.56;word-break:keep-all;overflow-wrap:anywhere}
+  .research-card h3{margin:8px 0 3px;line-height:1.22;overflow-wrap:break-word}
+  .research-abstract{margin-top:6px;font-size:13.5px;line-height:1.56;overflow-wrap:break-word}
+  .research-authors,.research-org{overflow-wrap:anywhere}
   .research-org{font-size:10.5px}
+
+  #engine-performance .performance-impact-grid{grid-template-columns:1fr!important}
+  #engine-performance .performance-impact-metric strong{white-space:normal!important;overflow-wrap:break-word}
+}
+
+@media(max-width:520px){
+  .card-top{align-items:flex-start}
+  .status{font-size:9px}
+  .btn{max-width:100%;white-space:normal;text-align:center;line-height:1.25;padding-top:10px;padding-bottom:10px}
+  .hero-buttons{align-items:stretch}
+  .hero-buttons .btn{flex:1 1 100%}
+  .research-tag{max-width:100%;overflow-wrap:anywhere}
 }
