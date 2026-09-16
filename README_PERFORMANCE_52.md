@@ -49,4 +49,17 @@ CPU 세대명, 제품명처럼 성능 측정 수치가 아닌 식별용 숫자�
 - `49ac44fc3c2babc54fc7fb0f2dbb23cbc5e27698` — 공개 성능 수치 소수점 한 자리 통일
 - `3bbf2e5ca0cadd378e1fbfcda93b412c7104b7ee` — 공개 수치 한 자리 규칙 및 다국어 표기 보정
 
+## Issue #53 — 외국어 페이지 동일 반영
+
+최근 성능 UI 변경은 공통 `display-fixes.js`에 영어·중국어(간체)·스페인어·일본어 문구까지 이미 구현되어 있었으나, 외국어 HTML 네 페이지가 이전 캐시 버전 `display-fixes.js?v=20260915-3`을 참조하고 있었습니다.
+
+최신 `main`의 각 외국어 HTML 본문과 기존 UI는 그대로 유지하고, 다음 네 페이지의 스크립트 참조만 `display-fixes.js?v=20260916-1`로 갱신했습니다.
+
+- `index-en.html`
+- `index-zh.html`
+- `index-es.html`
+- `index-ja.html`
+
+따라서 네 외국어 페이지에서도 8.0GB 사무용 노트북 성능 강조, 21.6×, 1,100.0대, 18,000.0 moves/h, 17,018.0 jobs/h, 167.0초, 101.9 Job/s, 2.8분 및 소수점 한 자리 공개 표기 규칙이 동일한 공통 코드로 적용됩니다.
+
 PR 요청이 아니므로 GitHub Actions Build/Test는 실행하지 않았습니다.
