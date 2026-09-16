@@ -26,7 +26,7 @@ Issue #45부터 상단 `Platform` 메뉴와 별도 Platform 소개 섹션을 제
 
 현재 공개 제품/프로젝트 구조는 다음 세 가지입니다.
 
-- `GigaRoute Auto Simulation`: 도면과 물동량을 기반으로 OHT·AGV·OHS·AMHS 흐름을 빠르게 구성하고 2D/3D 애니메이션과 KPI로 검증
+- `GigaRoute Auto Simulation`: 도면과 물동량을 기반으로 OHT·AGV·OHS·AMHS 흐름을 빠르게 구성하고 3D 애니메이션과 KPI로 검증
 - `GigaRoute Simulation Studio`: 세밀한 제어 로직, 사용자 이벤트와 반복 실험이 필요한 고객 시나리오를 위한 고급 모델링 환경
 - `Enterprise & Custom`: 현장 데이터, 운영 규칙, 제어기·업무 시스템 연동까지 프로젝트 범위에 맞춘 맞춤 개발
 
@@ -137,7 +137,7 @@ Issue #45부터 공개 홈페이지의 제품 영역은 긴 판매 Funnel 설명
 
 | 제품 | 역할 | 공개 홈페이지 상태 |
 |---|---|---|
-| GigaRoute Auto Simulation | 도면·물동량 기반 OHT·AGV·OHS·AMHS 시뮬레이션, 2D/3D 애니메이션 및 KPI | Public Preview |
+| GigaRoute Auto Simulation | 도면·물동량 기반 OHT·AGV·OHS·AMHS 시뮬레이션, 3D 애니메이션 및 KPI | Public Preview |
 | GigaRoute Simulation Studio | 상세 제어 로직, 사용자 이벤트, 반복 실험과 고급 모델링 | 개발 중 |
 | Enterprise & Custom | 고객 맞춤 모델링, 데이터/제어기/업무 시스템 연동, Demo/PoC 및 엔지니어링 | 프로젝트 |
 
@@ -193,9 +193,11 @@ Issue #39 Simulation Engine 실측 제목의 `8GB RAM` 명확화도 신규 브�
 Issue #45 Platform/Workspace 제거 및 기업 맞춤형 AMHS 제품 구조 단순화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #56 Consulting 카드 제목 반응형 줄바꿈·잘림 방지도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #57 홈페이지 전체 반응형 텍스트 잘림 재점검 및 Consulting/Hero 회귀 복구도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #58 홈페이지 전체 2D 표기 제거도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-09-16: Issue #58로 한국어 기본/호환과 영어·중국어·스페인어·일본어 홈페이지의 Auto Simulation 제품 설명에서 `2D` 표기를 제거하고 `3D 애니메이션 + KPI` 표현으로 통일했습니다. 제품 카드의 `2D / 3D` 태그도 제거해 `Large Fleet`, `KPI`만 유지하며, README의 공개 제품 설명과 제품 구조 표에서도 동일하게 `3D` 기준으로 정리했습니다.
 - 2026-09-16: Issue #57로 Issue #56에서 서비스 카드 영역을 넓히며 왼쪽 Consulting 제목 영역이 과도하게 좁아진 회귀를 복구하고 홈페이지 전체 반응형 텍스트를 재점검했습니다. `site-fixes.css`에서 Hero·제품·Consulting·성능 Benchmark·Research·CTA·Footer의 grid/flex 축소 허용과 안전 줄바꿈을 공통 적용했으며, 태블릿/모바일 전환점을 보강했습니다. 한국어 Hero는 `Auto Simulation` / `Work Automation`의 두 줄 구조를 유지하면서 각 문구 내부는 한 줄로 고정하고, 680px 이하에서 폰트를 추가 축소해 `Work Automation`이 `Work` / `Automation`으로 분리되지 않도록 했습니다. 한국어 기본/호환과 영어·중국어·스페인어·일본어 페이지의 `site-fixes.css` cache-busting 버전을 `20260916-3`으로 통일했습니다.
 - 2026-09-16: Issue #56으로 Consulting 서비스 카드의 제목이 데스크톱에서 마지막 글자 단위로 어색하게 갈라지거나 좁은 화면에서 잘릴 수 있는 문제를 수정했습니다. 공통 `site-fixes.css`에서 카드 grid의 최소 폭, 데스크톱 좌우 비율·내부 패딩, 다국어 제목 줄바꿈을 보정하고 한국어는 단어 내부 분리를 막았습니다. 760px 이하에서는 서비스 카드를 1열로 전환하며, 모든 언어 HTML의 CSS cache-busting 버전을 `20260916-2`로 통일했습니다.
 - 2026-09-05: Issue #45로 상단 `Platform` 메뉴와 별도 Platform 섹션을 제거하고, 공개 제품 영역을 `기업 맞춤형 AMHS 시뮬레이션 SW` 중심으로 단순화했습니다. `GigaRoute Workspace` 제품 라인을 삭제하고 `GigaRoute Auto Simulation / GigaRoute Simulation Studio / Enterprise & Custom` 3개 카드만 유지했습니다. 제품 앵커는 기존 동적 B2B 판매 UI와 분리된 `#solutions`를 사용하며, 한국어·영어·중국어(간체)·스페인어·일본어에 동일 구조를 적용했습니다. 기존 Simulation Engine 성능, Consulting, Workflow, Windows/Linux 다운로드, Contact 및 중국어 CSP는 유지했습니다.
@@ -215,7 +217,7 @@ Issue #57 홈페이지 전체 반응형 텍스트 잘림 재점검 및 Consultin
 - 2026-08-22: Issue #26으로 600 Vehicle / 10시간 Run의 Simulation Engine 실측 성능을 홈페이지에 추가했습니다. 실측값은 실제 실행시간 2,163.085초(36분 3.085초), Realtime Factor 16.643×, 완료 반송 88,941건, 시뮬레이션 시간당 약 8,894.1 moves/h이며, 측정 환경은 Intel Core i5-1130G7 / RAM 8 GB / Windows x64입니다. 공통 `contact.js`에서 한국어·영어·중국어(간체)·스페인어·일본어로 동일 지표를 렌더링하며, `mixed` mode 결과라는 조건과 성능 변동 가능성을 명시했습니다.
 - 2026-08-19: Issue #25로 공개 가격표 중심의 Auto Simulation 판매 UI를 B2B 영업형 구조로 개편했습니다. `Workspace → Auto Simulation → Simulation Studio → Enterprise & Custom` 제품 체계와 `Public Preview → Technical Fit Review → Demo / PoC → Commercial Deployment` Funnel을 공통 `contact.js`에 적용하고, 상용 가격은 공개하지 않는 견적 기반 정책으로 변경했습니다. 기존 Free/Basic/Pro/Ultra/Ultimate 다국어 가격표와 영문 Workspace 정적 가격 영역은 고객 화면에서 제거합니다. Issue #45에서 현재 고객 화면의 제품 구조는 3개 카드의 `#solutions`로 단순화했습니다.
 - 2026-08-18: Issue #24로 Consulting UI를 재구성했습니다. `Algorithm-Based AutoMod Modeling`을 `AutoMod Modeling & Simulation`으로 변경하고, CAD/Jira/Confluence 자동화를 `Engineering & Workflow Automation`이라는 별도 Consulting 패널로 만들어 AutoMod와 동일한 3개 서비스 카드 구조로 표시했습니다. 한국어·영어·중국어(간체)·스페인어·일본어 전체 페이지에 동일 구조를 적용했습니다.
-- 2026-08-18: Issue #23으로 기존 Algorithm-Based AutoMod Modeling 컨설팅에 CAD 작업 자동화, Atlassian Jira 작업 자동화, Atlassian Confluence 작업 자동화를 추가하고 한국어·영어·중국어(간체)·스페인어·일본어 홈페이지에 공통 적용했습니다. Issue #24에서 단순 텍스트 보조 블록 방식을 폐기하고 독립 Consulting 패널 구조로 재구성했습니다.
+- 2026-08-18: Issue #23으로 기존 Algorithm-Based AutoMod Modeling 컨설팅에 CAD 작업 자동화, Atlassian Jira 작업 자동화, Atlassian Confluence 작업 자동화를 추가하고 한국어·영어·중국어·스페인어·일본어 홈페이지에 공통 적용했습니다. Issue #24에서 단순 텍스트 보조 블록 방식을 폐기하고 독립 Consulting 패널 구조로 재구성했습니다.
 - 2026-08-18: Issue #22로 홈페이지의 단일 GitHub 배포 링크를 `Windows` / `Linux` 버튼으로 분리했습니다. Linux는 `public-preview-526-linux` Release로 직접 연결하고, Windows는 정식 Installer 공개 전까지 Demo 저장소의 `Windows/` 배포 영역으로 연결합니다. 상단 헤더와 하단 CTA에 동일 정책을 적용했습니다.
 - 2026-08-18: Issue #21로 Auto Simulation 월 출시 특별가의 10개월분을 연간 결제 가격으로 표시하고, 모든 통화에서 `2개월 무료` 연간 할인 정책을 홈페이지 가격 카드와 README에 반영했습니다. Issue #25에서 공개 가격표 정책을 폐기했습니다.
 - 2026-08-18: Issue #20으로 Auto Simulation 다국어 가격 표시를 한국어 KRW, 영어·스페인어 USD, 중국어 CNY, 일본어 JPY로 분리하고 `contact.js`에 통화별 price book을 추가했습니다. Issue #25에서 공개 가격표 자체를 폐기했습니다.
