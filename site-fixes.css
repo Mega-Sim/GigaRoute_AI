@@ -7,6 +7,17 @@
 #research .research-card{position:relative;padding-right:190px}
 #research .research-link{position:absolute;top:20px;right:26px;margin-top:0;align-self:auto;white-space:nowrap}
 
+/* Issue #56: keep consulting service titles readable without clipping or orphaned Korean glyphs. */
+.consulting-panel,.consulting-panel>div,.consulting-services,.consulting-services article{min-width:0}
+.consulting-services{grid-template-columns:repeat(3,minmax(0,1fr))}
+.consulting-services h4{max-width:100%;line-height:1.28;white-space:normal;word-break:normal;overflow-wrap:anywhere;hyphens:none;text-wrap:balance}
+html[lang="ko"] .consulting-services h4{word-break:keep-all;overflow-wrap:normal}
+@media(min-width:1051px){
+  .consulting-panel{grid-template-columns:minmax(280px,.68fr) minmax(0,1.32fr);gap:24px}
+  .consulting-services article{padding-left:16px;padding-right:16px}
+  .consulting-services h4{font-size:clamp(16px,1.45vw,18px)}
+}
+
 @media(max-width:760px){
   #solutions,#consulting,#workflow,#research{padding-top:18px;padding-bottom:58px;scroll-margin-top:calc(var(--header-h,96px) + 24px)!important}
   #solutions .solution-heading{margin-bottom:20px}
@@ -27,9 +38,9 @@
   .consulting-panel>div:first-child{padding:6px 2px}
   .consulting-panel h3{margin:16px 0 10px;line-height:1.12;word-break:keep-all;overflow-wrap:anywhere}
   .consulting-panel>div:first-child p{font-size:15px;line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
-  .consulting-services{gap:10px}
+  .consulting-services{grid-template-columns:1fr;gap:10px}
   .consulting-services article{min-height:auto;padding:18px}
-  .consulting-services h4{margin:18px 0 8px;line-height:1.18;word-break:keep-all;overflow-wrap:anywhere}
+  .consulting-services h4{margin:18px 0 8px;font-size:17px;line-height:1.24}
 
   .workflow{padding:22px}
   .steps{gap:10px}
