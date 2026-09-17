@@ -108,7 +108,7 @@ Issue #34부터 기존 Hero 아래의 `무료 초기 레이아웃 점검` 섹션
 
 ## Consulting 서비스 범위
 
-Issue #38부터 Consulting 영역의 첫 번째 패널에 **`기업 맞춤 물류·AMHS 시뮬레이터 개발`** 서비스를 표시하고, 기존 `Engineering & Workflow Automation` 패널은 내용을 유지한 채 그 아래 두 번째 패널로 배치합니다. Consulting 메인 제목 **`Simulation & Work Automation`**도 유지합니다.
+Issue #38부터 Consulting 영역의 첫 번째 패널에 **`기업 맞춤 물류·AMHS 시뮬레이터 개발`** 서비스를 표시하고, 기존 `Engineering & Workflow Automation` 패널은 내용을 유지한 채 그 아래 두 번째 패널로 배치합니다. Issue #60부터 세 번째 패널에 **`코드 리팩토링·성능 개선`**을 추가하고 한국어 기본/호환, 영어, 중국어(간체), 스페인어, 일본어 페이지에 동일 구조로 현지화합니다. Consulting 메인 제목 **`Simulation & Work Automation`**도 유지합니다.
 
 홈페이지의 Consulting 영역은 다음 순서와 범위를 사용합니다.
 
@@ -122,12 +122,18 @@ Issue #38부터 Consulting 영역의 첫 번째 패널에 **`기업 맞춤 물�
    - **Atlassian Automation**: Jira의 이슈 생성·상태 전환·프로젝트 흐름과 Confluence의 기술 문서·보고서·프로젝트 지식 관리를 하나의 자동화 흐름으로 연결
    - **Office & Business Automation**: Microsoft Office의 Excel, Word, PowerPoint 반복 작업, 데이터 정리, 문서·보고서 생성, 파일 처리 및 고객별 사무·업무 프로세스 자동화
    - 기존 AutoMod 모델과 관련 업무도 지원 가능하다는 안내를 유지
+3. **코드 리팩토링·성능 개선**
+   - **코드 구조 리팩토링**: 중복 코드, 과도한 결합, 복잡한 의존성과 유지보수 비용이 큰 구조를 분석해 모듈 경계와 책임을 정리
+   - **성능·리소스 최적화**: 프로파일링과 실행 데이터를 기반으로 CPU, 메모리, I/O, 처리 지연과 병목 구간을 분석해 실행 성능과 자원 효율을 개선
+   - **경량화·레거시 고도화**: 불필요한 기능·의존성·배포 용량을 줄이고 오래된 코드와 빌드 구조를 정비해 실행 환경과 장기 유지보수성을 개선
 
-두 패널은 `consulting-stack` 안에서 위아래로 배치합니다. 기존 업무 자동화 상세 안내 pseudo-element는 `workflow-automation` 패널에만 적용해 새 맞춤 시뮬레이터 패널에 중복 표시되지 않게 합니다. 한국어 기본/호환, 영어, 중국어(간체), 스페인어, 일본어 페이지는 동일한 구조를 사용하고 문구만 현지화합니다. 데스크톱에서는 기존 2열 패널, 모바일에서는 기존 1열 카드 구조를 유지합니다.
+세 패널은 `consulting-stack` 안에서 위아래로 배치합니다. 기존 업무 자동화 상세 안내 pseudo-element는 `workflow-automation` 패널에만 적용해 맞춤 시뮬레이터 및 Software Optimization 패널에 중복 표시되지 않게 합니다. 한국어 기본/호환, 영어, 중국어(간체), 스페인어, 일본어 페이지는 동일한 구조를 사용하고 문구만 현지화합니다. 데스크톱에서는 기존 2열 패널, 모바일에서는 기존 1열 카드 구조를 유지합니다.
 
 Issue #56부터 `site-fixes.css`에서 Consulting 서비스 카드의 grid item `min-width`를 0으로 고정하고, 데스크톱에서 서비스 카드 영역을 넓히며 제목을 균형 줄바꿈하도록 보정합니다. 한국어 제목은 단어 내부에서 글자 한두 개만 분리되지 않도록 `word-break: keep-all`을 사용하고, 760px 이하에서는 서비스 카드를 1열로 전환합니다. 모든 언어 HTML의 `site-fixes.css` cache-busting 버전을 함께 갱신해 데스크톱·모바일에서 동일 수정이 즉시 적용되도록 합니다.
 
 Issue #57에서는 Issue #56의 폭 조정으로 왼쪽 `기업 전용/맞춤 시뮬레이터 개발` 제목이 과도하게 좁아진 회귀를 복구하고, 특정 카드가 아닌 홈페이지 전체의 반응형 텍스트 안전 규칙을 재점검했습니다. Hero, 제품 카드, Consulting, 성능 Benchmark, Research, CTA, Footer의 grid/flex child에 `min-width:0`과 안전 줄바꿈을 적용하고, 태블릿/모바일에서는 서비스 카드·연구 버튼·헤더 링크가 충분히 일찍 재배치되도록 전환점을 보강합니다. 한국어 첫 화면 Hero는 `Auto Simulation`과 `Work Automation`을 각각 한 줄로 고정하되 글자 크기를 가용 폭에 맞춰 축소해 320px 이상 화면에서 `Work / Automation`처럼 분리되지 않도록 합니다. 모든 언어 페이지의 `site-fixes.css` cache-busting 버전은 `20260916-3`으로 통일합니다.
+
+Issue #60에서는 모든 Consulting 서비스 카드의 `01/02/03` 번호와 제목을 같은 행에 배치해 제목 전용 행을 제거하고, 설명 본문은 다음 행 전체 폭을 사용합니다. 카드의 고정 최소 높이도 공통 override에서 해제해 실제 콘텐츠 높이에 맞춰 세로 공간이 줄어들도록 했으며 모바일 1열에서도 동일한 번호+제목 구조를 유지합니다. 한국어 기본/호환과 영어·중국어(간체)·스페인어·일본어 페이지의 Software Optimization 패널을 동일하게 제공하고 `site-fixes.css` cache-busting 버전을 `20260917-1`로 통일합니다.
 
 ## 제품 및 판매 정책
 
@@ -194,9 +200,11 @@ Issue #45 Platform/Workspace 제거 및 기업 맞춤형 AMHS 제품 구조 단�
 Issue #56 Consulting 카드 제목 반응형 줄바꿈·잘림 방지도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #57 홈페이지 전체 반응형 텍스트 잘림 재점검 및 Consulting/Hero 회귀 복구도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #58 홈페이지 전체 2D 표기 제거도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #60 Consulting 성능 개선 문구·서비스 카드 한 줄 배치 및 다국어 동기화도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
 
+- 2026-09-17: Issue #60으로 Consulting의 `코드 리팩토링·경량화` 명칭을 `코드 리팩토링·성능 개선`으로 변경하고, `01/02/03` 번호와 각 서비스 제목을 같은 행에 배치해 카드 내부 제목 전용 행을 줄였습니다. 공통 스타일을 모든 Consulting 서비스 카드에 적용했으며, 영어·중국어(간체)·스페인어·일본어에도 Software Optimization 세 번째 패널을 현지화해 한국어 페이지와 구조를 통일했습니다. 모든 언어 HTML의 `site-fixes.css` cache-busting 버전은 `20260917-1`입니다.
 - 2026-09-16: Issue #58로 한국어 기본/호환과 영어·중국어·스페인어·일본어 홈페이지의 Auto Simulation 제품 설명에서 `2D` 표기를 제거하고 `3D 애니메이션 + KPI` 표현으로 통일했습니다. 제품 카드의 `2D / 3D` 태그도 제거해 `Large Fleet`, `KPI`만 유지하며, README의 공개 제품 설명과 제품 구조 표에서도 동일하게 `3D` 기준으로 정리했습니다.
 - 2026-09-16: Issue #57로 Issue #56에서 서비스 카드 영역을 넓히며 왼쪽 Consulting 제목 영역이 과도하게 좁아진 회귀를 복구하고 홈페이지 전체 반응형 텍스트를 재점검했습니다. `site-fixes.css`에서 Hero·제품·Consulting·성능 Benchmark·Research·CTA·Footer의 grid/flex 축소 허용과 안전 줄바꿈을 공통 적용했으며, 태블릿/모바일 전환점을 보강했습니다. 한국어 Hero는 `Auto Simulation` / `Work Automation`의 두 줄 구조를 유지하면서 각 문구 내부는 한 줄로 고정하고, 680px 이하에서 폰트를 추가 축소해 `Work Automation`이 `Work` / `Automation`으로 분리되지 않도록 했습니다. 한국어 기본/호환과 영어·중국어·스페인어·일본어 페이지의 `site-fixes.css` cache-busting 버전을 `20260916-3`으로 통일했습니다.
 - 2026-09-16: Issue #56으로 Consulting 서비스 카드의 제목이 데스크톱에서 마지막 글자 단위로 어색하게 갈라지거나 좁은 화면에서 잘릴 수 있는 문제를 수정했습니다. 공통 `site-fixes.css`에서 카드 grid의 최소 폭, 데스크톱 좌우 비율·내부 패딩, 다국어 제목 줄바꿈을 보정하고 한국어는 단어 내부 분리를 막았습니다. 760px 이하에서는 서비스 카드를 1열로 전환하며, 모든 언어 HTML의 CSS cache-busting 버전을 `20260916-2`로 통일했습니다.

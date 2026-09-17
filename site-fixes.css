@@ -30,6 +30,12 @@ html[lang="ko"] .hero h1 .gradient{white-space:nowrap}
 .consulting-services article{min-width:0;padding-left:14px;padding-right:14px}
 .consulting-services h4{max-width:100%;margin-top:26px;font-size:clamp(15px,1.2vw,17px);line-height:1.3;white-space:normal;word-break:normal;overflow-wrap:break-word;hyphens:none;text-wrap:balance}
 
+/* Issue #60: place each service number and title on the same row to remove one title row without clipping. */
+.consulting-services article{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"number title" "body body";align-content:start;align-items:start;column-gap:10px;row-gap:0;min-height:0}
+.consulting-services article>b{grid-area:number;align-self:baseline;padding-top:1px;white-space:nowrap}
+.consulting-services article>h4{grid-area:title;margin:0;font-size:clamp(15px,1.2vw,17px);line-height:1.3}
+.consulting-services article>p{grid-area:body;margin-top:12px}
+
 /* Korean titles should wrap by words first, but still break as a last resort instead of clipping. */
 html[lang="ko"] .lead,html[lang="ko"] #solutions .solution-title,html[lang="ko"] .card h3,html[lang="ko"] .card p,html[lang="ko"] .heading h2,html[lang="ko"] .heading>p,html[lang="ko"] .consulting-panel h3,html[lang="ko"] .consulting-panel p,html[lang="ko"] .consulting-services h4,html[lang="ko"] .consulting-services p,html[lang="ko"] .cta h2,html[lang="ko"] .cta p{word-break:keep-all;overflow-wrap:break-word}
 
@@ -79,7 +85,8 @@ html[lang="ko"] .lead,html[lang="ko"] #solutions .solution-title,html[lang="ko"]
   .consulting-panel>div:first-child p{font-size:15px;line-height:1.6}
   .consulting-services{grid-template-columns:1fr;gap:10px}
   .consulting-services article{min-height:auto;padding:18px}
-  .consulting-services h4{margin:18px 0 8px;font-size:17px;line-height:1.24}
+  .consulting-services h4{margin:0;font-size:17px;line-height:1.24}
+  .consulting-services article>p{margin-top:10px}
 
   .workflow{padding:22px}
   .steps{gap:10px}
