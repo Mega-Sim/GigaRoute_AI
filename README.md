@@ -213,8 +213,11 @@ Issue #71 제품·제품 성능 섹션 상하 순서 변경도 신규 브랜치 
 Issue #72 한국어 홈페이지 Tutorial 메뉴 및 YouTube 임베드 플레이어 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #73 한국어 홈페이지 최신 구조의 외국어 동기화 및 외국어 Tutorial YouTube 임베드 적용도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #74 제품 카드의 `GigaRoute Auto Simulation`·`GigaRoute Simulation Studio` 명칭을 `GR Auto Simulation`·`GR Simulation Studio`로 축약하는 변경도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #75 History의 SCCB 표현 제거·SW 변경점 관리 문구 변경, AutoMod Dijkstra 구현 모델 명칭 정리 및 Hungarian 작업 할당 알고리즘 구현 모델 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-28: Issue #75로 History의 Atlassian API 기반 SW 설명에서 `SCCB` 표현을 제거하고 `SW 변경점 관리`로 변경했습니다. Dijkstra 항목 제목은 `AutoMod Simulator 내 Dijkstra 경로 탐색 알고리즘 구현 모델 개발`로 정리하고, 바로 아래에 `업계 표준 AutoMod Simulator 내 Hungarian 작업 할당 알고리즘 구현 모델 개발` 항목을 추가했습니다. 한국어·영어·중국어·스페인어·일본어 History 구조를 동일하게 동기화했으며 기존 UI/CSS는 변경하지 않았습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260928-1`로 갱신했습니다.
 
 - 2026-09-27: Issue #74로 한국어·영어·중국어·스페인어·일본어의 제품 카드 제목을 `GigaRoute Auto Simulation` → `GR Auto Simulation`, `GigaRoute Simulation Studio` → `GR Simulation Studio`로 변경했습니다. 제품 설명·태그·상태·레이아웃은 유지했으며 공통 `contact.js`의 다국어 제품 데이터도 동일하게 변경했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-9`로 갱신했습니다.
 
