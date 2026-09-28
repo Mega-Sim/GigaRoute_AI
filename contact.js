@@ -43,7 +43,7 @@
         {date:'Software Development',title:'CAD drawing-to-simulation layout conversion automation SW development'},
         {date:'Software Development',title:'CAD text information input/output automation SW development'},
         {date:'Software Development',title:'Atlassian API-based SW change and issue-management automation SW development',desc:'Developed software using Jira and Confluence APIs to automate issue data, documentation, reviews, and repetitive SW change-management workflows in a consistent process.'},
-        {date:'Simulation SW',title:'AutoMod Simulator Dijkstra pathfinding algorithm implementation model development',desc:'Implemented a Dijkstra shortest-path algorithm in AutoMod to calculate efficient routes across logistics networks and apply them to simulation routing logic.'},
+        {date:'Simulation SW',title:'Industry-standard AutoMod Simulator Dijkstra pathfinding algorithm implementation model development',desc:'Implemented a Dijkstra shortest-path algorithm in AutoMod to calculate efficient routes across logistics networks and apply them to simulation routing logic.'},
         {date:'Simulation SW',title:'Industry-standard AutoMod Simulator Hungarian job-assignment algorithm implementation model development'}
       ]
     },
@@ -60,7 +60,7 @@
         {date:'SW 개발',title:'CAD 도면 시뮬레이션 레이아웃 변환 자동화 SW 기능 개발'},
         {date:'SW 개발',title:'CAD 텍스트 정보 입력/출력 자동화 SW 개발'},
         {date:'SW 개발',title:'Atlassian API 기반 SW 변경점·이슈관리 자동화 SW 개발',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SW 변경점 관리 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
-        {date:'Simulation SW',title:'AutoMod Simulator 내 Dijkstra 경로 탐색 알고리즘 구현 모델 개발',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'},
+        {date:'Simulation SW',title:'업계 표준 AutoMod Simulator 내 Dijkstra 경로 탐색 알고리즘 구현 모델 개발',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'},
         {date:'Simulation SW',title:'업계 표준 AutoMod Simulator 내 Hungarian 작업 할당 알고리즘 구현 모델 개발'}
       ]
     },
@@ -77,7 +77,7 @@
         {date:'软件开发',title:'CAD 图纸仿真布局转换自动化软件功能开发'},
         {date:'软件开发',title:'CAD 文本信息输入/输出自动化软件开发'},
         {date:'软件开发',title:'基于 Atlassian API 的软件变更点·问题管理自动化软件开发',desc:'通过 Jira 与 Confluence API 连接问题数据、文档、评审和软件变更管理的重复业务，构建一致的自动化工作流程。'},
-        {date:'仿真软件',title:'AutoMod Simulator 内 Dijkstra 路径搜索算法实现模型开发',desc:'在 AutoMod 中实现 Dijkstra 最短路径算法，用于物流网络的高效路径计算并应用于仿真路由逻辑。'},
+        {date:'仿真软件',title:'行业标准 AutoMod Simulator 内 Dijkstra 路径搜索算法实现模型开发',desc:'在 AutoMod 中实现 Dijkstra 最短路径算法，用于物流网络的高效路径计算并应用于仿真路由逻辑。'},
         {date:'仿真软件',title:'行业标准 AutoMod Simulator 内 Hungarian 任务分配算法实现模型开发'}
       ]
     },
@@ -94,7 +94,7 @@
         {date:'Desarrollo SW',title:'Desarrollo de función SW para conversión automática de planos CAD a layouts de simulación'},
         {date:'Desarrollo SW',title:'Desarrollo de SW para automatizar la entrada/salida de información de texto CAD'},
         {date:'Desarrollo SW',title:'Desarrollo de SW de automatización de gestión de cambios e incidencias basado en Atlassian API',desc:'Se desarrolló software que integra las API de Jira y Confluence para automatizar datos de incidencias, documentación, revisiones y tareas repetitivas de gestión de cambios de software.'},
-        {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo de búsqueda de rutas Dijkstra en AutoMod Simulator',desc:'Se implementó el algoritmo de ruta mínima de Dijkstra en AutoMod para calcular rutas eficientes en redes logísticas y aplicarlas a la lógica de enrutamiento de la simulación.'},
+        {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo de búsqueda de rutas Dijkstra en AutoMod Simulator, estándar del sector',desc:'Se implementó el algoritmo de ruta mínima de Dijkstra en AutoMod para calcular rutas eficientes en redes logísticas y aplicarlas a la lógica de enrutamiento de la simulación.'},
         {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo Hungarian para asignación de trabajos en AutoMod Simulator, estándar del sector'}
       ]
     },
@@ -111,7 +111,7 @@
         {date:'SW開発',title:'CAD 図面からシミュレーションレイアウトへの変換自動化 SW 機能開発'},
         {date:'SW開発',title:'CAD テキスト情報の入力／出力自動化 SW 開発'},
         {date:'SW開発',title:'Atlassian API ベースの SW 変更点・課題管理自動化 SW 開発',desc:'Jira・Confluence API を連携し、課題データ、文書、レビュー、SW 変更点管理の反復業務を一つの流れで自動化するソフトウェアを開発しました。'},
-        {date:'Simulation SW',title:'AutoMod Simulator 内 Dijkstra 経路探索アルゴリズム実装モデル開発',desc:'AutoMod に Dijkstra 最短経路探索アルゴリズムを実装し、物流ネットワークの効率的な経路計算とシミュレーションのルーティングロジックに適用しました。'},
+        {date:'Simulation SW',title:'業界標準 AutoMod Simulator 内 Dijkstra 経路探索アルゴリズム実装モデル開発',desc:'AutoMod に Dijkstra 最短経路探索アルゴリズムを実装し、物流ネットワークの効率的な経路計算とシミュレーションのルーティングロジックに適用しました。'},
         {date:'Simulation SW',title:'業界標準 AutoMod Simulator 内 Hungarian 作業割当アルゴリズム実装モデル開発'}
       ]
     }
