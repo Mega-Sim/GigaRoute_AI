@@ -124,6 +124,20 @@
     });
   };
 
+  const applyHistoryNavLink = () => {
+    const links = document.querySelector('.links');
+    if (!links || links.querySelector('a[data-history-nav]')) return;
+    const product = links.querySelector('a[href="#solutions"], a[href="#products"]');
+    if (!product) return;
+    const link = document.createElement('a');
+    link.href = 'https://github.com/Mega-Sim/GigaRoute_AI/commits/main';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.dataset.historyNav = '1';
+    link.textContent = 'History';
+    product.insertAdjacentElement('afterend', link);
+  };
+
   const applyPerformanceNavLink = () => {
     const links = document.querySelector('.links');
     if (!links || links.querySelector('a[href="#engine-performance"]')) return;
@@ -155,6 +169,7 @@
 
   applyFavicon();
   applyPlatformLinks();
+  applyHistoryNavLink();
   applyPerformanceNavLink();
   applyBackToTopButton();
 
