@@ -42,11 +42,12 @@ CAD/DXF뿐 아니라 JSON, 고객별 데이터 포맷과 외부 인터페이스 
 
 - Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`)를 사용하지 않음
 - 외부 CSS/CDN, 외부 JavaScript/CDN, 외부 Web Font를 중국어 페이지의 렌더링 필수 요소로 사용하지 않음
-- 중국어 페이지에 self-only Content Security Policy를 적용하여 `font`, `style`, `script`, `connect` 외부 로드를 차단
+- 중국어 페이지의 핵심 렌더링은 로컬 자산 중심 CSP를 유지하여 `font`, `style`, `script`, `connect` 외부 로드를 차단
 - 스타일과 동작은 같은 도메인의 `site.css`, `contact.js`, `favicon.png` 등 로컬 자산을 사용
 - 중국어 글꼴은 `Microsoft YaHei UI`, `Microsoft YaHei`, `PingFang SC`, `Hiragino Sans GB`, `Source Han Sans SC`, `Noto Sans CJK SC`, Arial 순의 시스템 폰트 스택을 사용하며 외부 폰트 다운로드를 요구하지 않음
-- 공통 CSS/JS를 변경하더라도 중국어 페이지에 Google 계열 리소스나 중국에서 접근이 불안정한 CDN 의존성을 추가하지 않음
-- GitHub 등 외부 사이트로 이동하는 일반 링크는 페이지 렌더링 의존성이 아니므로 유지할 수 있으나, 중국어 페이지 자체 표시와 주요 기능은 외부 사이트 접속 없이 동작해야 함
+- 공통 CSS/JS를 변경하더라도 중국어 페이지에 Google 계열 리소스나 임의의 외부 CDN 의존성을 추가하지 않음
+- Issue #73부터 Tutorial 영상 재생에 한해 CSP `frame-src`에서 `https://www.youtube-nocookie.com` iframe을 명시적으로 허용함. 이 예외는 영상 프레임에만 적용하며 외부 font/style/script/connect 허용으로 확장하지 않음
+- GitHub 등 외부 사이트로 이동하는 일반 링크는 유지할 수 있으며, 핵심 홈페이지 UI는 외부 리소스 없이 표시되고 Tutorial 영상 재생만 YouTube 연결을 필요로 함
 
 2026-08-17 점검 당시 저장소에는 `fonts.googleapis.com`, `fonts.gstatic.com`, CSS `@import`, `@font-face` 기반 외부 폰트 로드가 존재하지 않았으며, Issue #15에서 중국어 페이지가 향후에도 외부 CDN을 자동으로 사용하지 못하도록 CSP를 추가했습니다.
 
@@ -210,8 +211,12 @@ Issue #69 History 경력 날짜·개발 Reference 명칭 및 추가 SW 개발 Re
 Issue #70 History 개발 Reference에 GigaRoute AI 시뮬레이터·CAD 텍스트 자동화 항목 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #71 제품·제품 성능 섹션 상하 순서 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #72 한국어 홈페이지 Tutorial 메뉴 및 YouTube 임베드 플레이어 추가도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #73 한국어 홈페이지 최신 구조의 외국어 동기화 및 외국어 Tutorial YouTube 임베드 적용도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-27: Issue #73으로 현재 한국어 홈페이지의 최신 History 구성과 Tutorial 기능을 영어·중국어·스페인어·일본어 페이지에 동기화했습니다. 외국어 History에는 설립 목적, 물류 자동화 시뮬레이션 10년 경력, 서보 모터 모션 제어 SW 개발 3년 경력과 최신 개발 Reference 항목들을 각 언어로 현지화했습니다. 각 외국어 페이지의 Research 오른쪽에 Tutorial 메뉴를 추가하고 Research 다음에 16:9 YouTube 임베드 섹션을 배치했으며, 외국어 영상은 `https://www.youtube.com/watch?v=mysnlxS4J7Y`를 사용합니다. 중국어 CSP는 외부 font/style/script/connect 차단을 유지하면서 Tutorial 재생용 `youtube-nocookie.com` frame만 허용했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-8`로 통일했고, 외국어 페이지의 `site-fixes.css`는 Tutorial 스타일을 포함하는 `20260927-1`을 사용합니다.
+
 
 - 2026-09-27: Issue #72로 한국어 기본/호환 홈페이지의 상단 `연구` 메뉴 오른쪽에 `튜토리얼` 메뉴를 추가하고 Research 바로 다음에 Tutorial 섹션을 배치했습니다. `https://www.youtube.com/watch?v=ck6IVnY7RAo` 영상은 privacy-enhanced YouTube embed(`youtube-nocookie.com`)로 16:9 반응형 플레이어에 표시되어 홈페이지 안에서 재생할 수 있으며, 원본 YouTube로 이동하는 보조 링크도 제공합니다. 중국어 페이지의 self-only 외부 리소스 차단 정책은 변경하지 않았습니다. 한국어 페이지의 `site-fixes.css` 캐시 버전은 `20260927-1`로 갱신했습니다.
 
