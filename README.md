@@ -203,8 +203,11 @@ Issue #58 홈페이지 전체 2D 표기 제거도 신규 브랜치 없이 `main`
 Issue #60 Consulting 성능 개선 문구·서비스 카드 한 줄 배치 및 다국어 동기화도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #64 History 제목 확대·보조 문구 제거·설립/개발 이력 구분선 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #65 History 타이틀 축소·GigaRoute AI 그라데이션·개발 History 구분 제목 추가도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #66 History 제목의 GigaRoute `g` 하강부 잘림 수정도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-27: Issue #66으로 History 제목의 `GigaRoute AI`에서 소문자 `g` 하강부가 잘리는 문제를 수정했습니다. 제목 크기는 유지하고 `.history-head h2`의 line-height를 1.12로 늘렸으며 gradient span 하단에 `.08em` 여유를 추가했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전을 `20260927-2`로 갱신했습니다.
 
 - 2026-09-27: Issue #65로 History 메인 제목을 기존 대비 약 30% 축소한 `GigaRoute AI History`로 변경했습니다. `GigaRoute AI`에는 Hero의 `Work Automation`과 동일한 그라데이션 스타일을 재사용하고 `History`는 기본 진한 텍스트 색을 유지합니다. 설립 카드와 개발 이력 카드 사이의 구분선 아래에는 `개발 History` 제목을 추가했으며, 기존 이력 카드 내용은 유지했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전을 `20260927-1`로 갱신했습니다.
 
