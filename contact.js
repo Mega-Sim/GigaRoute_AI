@@ -23,7 +23,7 @@
 
   const developmentHistoryLabel = {
     en: 'Development History',
-    ko: '개발 History',
+    ko: '개발 Reference',
     'zh-CN': '开发 History',
     es: 'History de desarrollo',
     ja: '開発 History'
@@ -46,8 +46,10 @@
       lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
       items:[
         {date:'2026.07.20',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화와 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
-        {date:'~ 2026.07.02',title:'물류 자동화 시뮬레이션 10년 경력',group:'career'},
-        {date:'~ 2026.07.02',title:'서보 모터 모션 제어 SW 개발 3년 경력',group:'career'},
+        {date:'~ 2026.07.20',title:'물류 자동화 시뮬레이션 10년 경력',group:'career'},
+        {date:'~ 2026.07.20',title:'서보 모터 모션 제어 SW 개발 3년 경력',group:'career'},
+        {date:'SW 개발',title:'서보 모터/드라이브 축별 FW, 파라미터 등 Maintenance SW 개발'},
+        {date:'SW 개발',title:'CAD 도면 시뮬레이션 레이아웃 변환 자동화 SW 기능 개발'},
         {date:'SW 개발',title:'Atlassian API 기반 SW 변경점·이슈관리 자동화 SW 개발',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SCCB 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
         {date:'Simulation SW',title:'업계 표준 AutoMod Simulator에 자체 Dijkstra 경로 탐색 알고리즘 구현',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'}
       ]
