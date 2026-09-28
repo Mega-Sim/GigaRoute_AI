@@ -285,7 +285,8 @@
     const machineHtml = perf.machine.map(spec => `<div class="performance-spec"><b>${spec[0]}</b><span>${spec[1]}</span></div>`).join('');
     const shotHtml = perf.shotCaption ? `<figure class="performance-shot"><a href="1.PNG" target="_blank" rel="noopener"><img src="1.PNG" alt="${perf.kicker}" loading="lazy"></a><figcaption>${perf.shotCaption}</figcaption></figure>` : '';
     section.innerHTML = `<div class="wrap"><div class="performance-panel"><div class="performance-head"><div><p class="kicker">${perf.kicker}</p><h2>${perf.title}</h2></div><p class="performance-lead">${perf.lead}</p></div>${shotHtml}<div class="performance-grid">${metricsHtml}</div><div class="performance-machine"><h3>${perf.machineTitle}</h3><div class="performance-specs">${machineHtml}</div><p class="performance-note">${perf.note}</p></div></div></div>`;
-    hero.insertAdjacentElement('afterend', section);
+    const solutionsSection = document.querySelector('#solutions');
+    (solutionsSection || hero).insertAdjacentElement('afterend', section);
   }
 
   if (hero && history && !document.querySelector('#history')) {
