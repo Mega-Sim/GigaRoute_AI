@@ -45,9 +45,9 @@
       title:'GigaRoute AI 개발 이력',
       lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
       items:[
-        {date:'2026.07.20',title:'GigaRoute AI 설립',desc:'2026년 7월 20일 GigaRoute AI를 설립했습니다.'},
-        {date:'SW 개발',title:'Atlassian API 기반 업무 자동화 SW',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SCCB 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
-        {date:'Simulation SW',title:'AutoMod Dijkstra 경로 탐색 알고리즘 구현',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'}
+        {date:'2026.07.20',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화와 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
+        {date:'SW 개발',title:'Atlassian API 기반 SW 변경점·이슈관리 자동화 SW 개발',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SCCB 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
+        {date:'Simulation SW',title:'업계 표준 AutoMod Simulator에 자체 Dijkstra 경로 탐색 알고리즘 구현',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'}
       ]
     },
     'zh-CN': {
