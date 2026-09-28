@@ -209,8 +209,11 @@ Issue #68 History에 물류 자동화 시뮬레이션·서보 모션 제어 경�
 Issue #69 History 경력 날짜·개발 Reference 명칭 및 추가 SW 개발 Reference 반영도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #70 History 개발 Reference에 GigaRoute AI 시뮬레이터·CAD 텍스트 자동화 항목 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #71 제품·제품 성능 섹션 상하 순서 변경도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #72 한국어 홈페이지 Tutorial 메뉴 및 YouTube 임베드 플레이어 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-27: Issue #72로 한국어 기본/호환 홈페이지의 상단 `연구` 메뉴 오른쪽에 `튜토리얼` 메뉴를 추가하고 Research 바로 다음에 Tutorial 섹션을 배치했습니다. `https://www.youtube.com/watch?v=ck6IVnY7RAo` 영상은 privacy-enhanced YouTube embed(`youtube-nocookie.com`)로 16:9 반응형 플레이어에 표시되어 홈페이지 안에서 재생할 수 있으며, 원본 YouTube로 이동하는 보조 링크도 제공합니다. 중국어 페이지의 self-only 외부 리소스 차단 정책은 변경하지 않았습니다. 한국어 페이지의 `site-fixes.css` 캐시 버전은 `20260927-1`로 갱신했습니다.
 
 - 2026-09-27: Issue #71로 홈페이지의 제품(`#solutions`)과 제품 성능(`#engine-performance`) 섹션 상하 순서를 변경했습니다. 제품 성능 섹션은 이제 제품 섹션 바로 뒤에 렌더링되며 History 및 나머지 섹션 순서와 기존 내용·스타일·앵커 동작은 유지합니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-7`로 갱신했습니다.
 
