@@ -21,6 +21,59 @@
     ja: 'ページ上部へ戻る'
   }[locale] || 'Back to top';
 
+  const historyCopy = {
+    en: {
+      kicker:'HISTORY',
+      title:'Built from engineering work.',
+      lead:'GigaRoute AI records the engineering milestones behind its simulation and automation software.',
+      items:[
+        {date:'2026.07.20',title:'GigaRoute AI founded',desc:'GigaRoute AI was established on July 20, 2026.'},
+        {date:'Software Development',title:'Atlassian API-based Automation Software',desc:'Developed workflow automation software using Jira and Confluence APIs to connect issue data, documentation, reviews, and repetitive SCCB operations into a consistent process.'},
+        {date:'Simulation Engineering',title:'Dijkstra Pathfinding for AutoMod',desc:'Implemented the Dijkstra shortest-path algorithm in an AutoMod simulator to calculate efficient routes across the transport network and support routing logic for simulation models.'}
+      ]
+    },
+    ko: {
+      kicker:'HISTORY',
+      title:'GigaRoute AI 개발 이력',
+      lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
+      items:[
+        {date:'2026.07.20',title:'GigaRoute AI 설립',desc:'2026년 7월 20일 GigaRoute AI를 설립했습니다.'},
+        {date:'SW 개발',title:'Atlassian API 기반 업무 자동화 SW',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SCCB 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
+        {date:'Simulation SW',title:'AutoMod Dijkstra 경로 탐색 알고리즘 구현',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'}
+      ]
+    },
+    'zh-CN': {
+      kicker:'HISTORY',
+      title:'GigaRoute AI 开发历程',
+      lead:'记录 GigaRoute AI 在仿真与业务自动化软件方面的重要开发里程碑。',
+      items:[
+        {date:'2026.07.20',title:'GigaRoute AI 成立',desc:'GigaRoute AI 于 2026 年 7 月 20 日成立。'},
+        {date:'软件开发',title:'基于 Atlassian API 的业务自动化软件',desc:'通过 Jira 与 Confluence API 连接问题数据、文档、评审和 SCCB 重复业务，构建一致的自动化工作流程。'},
+        {date:'仿真软件',title:'AutoMod Dijkstra 路径搜索算法',desc:'在 AutoMod 仿真器中实现 Dijkstra 最短路径算法，用于物流网络路径计算与仿真路由逻辑。'}
+      ]
+    },
+    es: {
+      kicker:'HISTORY',
+      title:'Historia de desarrollo de GigaRoute AI',
+      lead:'Principales hitos de software en simulación y automatización de procesos.',
+      items:[
+        {date:'2026.07.20',title:'Fundación de GigaRoute AI',desc:'GigaRoute AI se fundó el 20 de julio de 2026.'},
+        {date:'Desarrollo SW',title:'Software de automatización basado en API de Atlassian',desc:'Se desarrolló software que integra las API de Jira y Confluence para automatizar datos de incidencias, documentación, revisiones y tareas repetitivas de SCCB.'},
+        {date:'Software de simulación',title:'Algoritmo de rutas Dijkstra en AutoMod',desc:'Se implementó el algoritmo de ruta mínima de Dijkstra en un simulador AutoMod para calcular rutas eficientes y aplicarlas a la lógica de enrutamiento de la simulación.'}
+      ]
+    },
+    ja: {
+      kicker:'HISTORY',
+      title:'GigaRoute AI 開発履歴',
+      lead:'シミュレーションと業務自動化に関する主なソフトウェア開発実績を記録します。',
+      items:[
+        {date:'2026.07.20',title:'GigaRoute AI 設立',desc:'2026年7月20日に GigaRoute AI を設立しました。'},
+        {date:'SW開発',title:'Atlassian API ベース業務自動化ソフトウェア',desc:'Jira・Confluence API を連携し、課題データ、文書、レビュー、SCCB の反復業務を一つの流れで自動化するソフトウェアを開発しました。'},
+        {date:'Simulation SW',title:'AutoMod Dijkstra 経路探索アルゴリズム',desc:'AutoMod シミュレータに Dijkstra 最短経路探索アルゴリズムを実装し、搬送ネットワークの経路計算とシミュレーションのルーティングロジックに適用しました。'}
+      ]
+    }
+  }[locale] || null;
+
   const copy = {
     en: {
       contact:{nav:'Contact',button:'Contact Sales',title:'Contact GigaRoute AI',intro:'For commercial licenses, product demos, PoC projects, technical support, AutoMod consulting, enterprise deployment, or partnerships, contact us at the email below.',emailLabel:'Business & support email',copy:'Copy email',copied:'Email copied',hours:'Business hours',hoursValue:'Monday–Friday, 09:00–18:00 KST',response:'Typical response',responseValue:'Within 1 business day',close:'Close'},
@@ -83,6 +136,7 @@
   const t = l.contact;
   const perf = l.performance;
   const p = l.product;
+  const history = historyCopy || historyCopy.en;
 
   const makePlatformLink = (label, href, extraClass = '') => {
     const link = document.createElement('a');
@@ -130,9 +184,7 @@
     const product = links.querySelector('a[href="#solutions"], a[href="#products"]');
     if (!product) return;
     const link = document.createElement('a');
-    link.href = 'https://github.com/Mega-Sim/GigaRoute_AI/commits/main';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
+    link.href = '#history';
     link.dataset.historyNav = '1';
     link.textContent = 'History';
     product.insertAdjacentElement('beforebegin', link);
@@ -187,9 +239,10 @@
     .platform-download{min-width:82px;padding:0 13px;white-space:nowrap}.linux-download{border-color:rgba(71,111,123,.22)}
     .back-to-top{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:900;display:grid;place-items:center;width:52px;height:52px;padding:0;border:1px solid rgba(55,96,145,.28);border-radius:50%;background:rgba(255,255,255,.94);color:var(--brand);box-shadow:0 14px 34px rgba(42,60,82,.2);font:900 12px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.08em;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease}.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover{border-color:rgba(55,96,145,.52);background:#fff;transform:translateY(-2px)}.back-to-top:focus-visible{outline:3px solid rgba(55,96,145,.28);outline-offset:3px}
     .sales-hint{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 12px;border:1px solid rgba(55,96,145,.16);border-radius:999px;background:rgba(255,255,255,.7);color:var(--muted);font-size:12px;font-weight:800;line-height:1.4}.sales-hint:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(55,96,145,.10)}
+    #history{padding:18px 0 86px;scroll-margin-top:calc(var(--header-h,96px) + 24px)}.history-panel{padding:36px;border:1px solid rgba(255,255,255,.92);border-radius:32px;background:linear-gradient(145deg,rgba(247,250,252,.98),rgba(236,243,249,.95));box-shadow:var(--shadow)}.history-head{display:grid;grid-template-columns:1fr .9fr;gap:30px;align-items:end}.history-head h2{margin:0;font-size:clamp(34px,4.5vw,54px);line-height:1.05;letter-spacing:-.05em}.history-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.72}.history-list{display:grid;gap:12px;margin-top:28px}.history-item{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding:22px 24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.86)}.history-date{color:var(--brand);font-size:12px;font-weight:950;letter-spacing:.035em;line-height:1.5}.history-item h3{margin:0;font-size:20px;letter-spacing:-.025em}.history-item p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
     #engine-performance{padding:18px 0 86px;scroll-margin-top:calc(var(--header-h,96px) + 24px)}.performance-panel{padding:36px;border:1px solid rgba(255,255,255,.92);border-radius:32px;background:linear-gradient(145deg,rgba(232,240,250,.98),rgba(247,251,250,.95));box-shadow:var(--shadow)}.performance-head{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:end}.performance-head h2{margin:0;font-size:clamp(34px,4.5vw,54px);line-height:1.05;letter-spacing:-.05em}.performance-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.72}.performance-shot{margin:24px 0 0;padding:0}.performance-shot a{display:block;overflow:hidden;border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 34px rgba(42,60,82,.12);transition:transform .18s ease,box-shadow .18s ease}.performance-shot a:hover{transform:translateY(-2px);box-shadow:0 20px 44px rgba(42,60,82,.18)}.performance-shot a:focus-visible{outline:3px solid rgba(55,96,145,.32);outline-offset:3px}.performance-shot img{display:block;width:100%;height:auto;cursor:pointer}.performance-shot figcaption{margin:10px 2px 0;color:var(--muted);font-size:12px;font-weight:750;line-height:1.5}.performance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}.performance-metric{min-width:0;padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.86)}.performance-metric strong{display:block;color:var(--ink);font-size:clamp(25px,3.2vw,38px);line-height:1;letter-spacing:-.045em;white-space:nowrap}.performance-metric span{display:block;margin-top:9px;color:var(--muted);font-size:12px;font-weight:800;line-height:1.45}.performance-machine{margin-top:14px;padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.72)}.performance-machine h3{margin:0 0 14px;font-size:17px}.performance-specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.performance-spec{min-width:0;padding:13px 14px;border-radius:14px;background:rgba(246,249,252,.92)}.performance-spec b{display:block;color:var(--brand);font-size:10px;letter-spacing:.055em;text-transform:uppercase}.performance-spec span{display:block;margin-top:6px;color:var(--ink);font-size:12px;font-weight:800;line-height:1.45;overflow-wrap:anywhere}.performance-note{margin:15px 0 0;color:var(--muted);font-size:11px;line-height:1.65}
     #products{padding:72px 0 86px}.b2b-panel{padding:36px;border:1px solid rgba(255,255,255,.9);border-radius:32px;background:linear-gradient(145deg,rgba(236,242,249,.97),rgba(255,255,255,.9));box-shadow:var(--shadow)}.b2b-head{display:grid;grid-template-columns:1fr .9fr;gap:30px;align-items:end;margin-bottom:28px}.b2b-head h2{margin:0;font-size:clamp(34px,4.5vw,54px);line-height:1.05;letter-spacing:-.05em}.b2b-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.72}.b2b-quote-note{margin-top:12px;color:var(--ink);font-size:13px;font-weight:850;line-height:1.55}.b2b-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.b2b-card{display:flex;flex-direction:column;min-width:0;padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.84)}.b2b-card.featured{border-color:rgba(55,96,145,.34);box-shadow:0 16px 36px rgba(42,60,82,.12);background:linear-gradient(155deg,rgba(255,255,255,.98),rgba(235,243,250,.92))}.b2b-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.b2b-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:rgba(55,96,145,.09);color:var(--brand);font-weight:950;letter-spacing:-.04em}.b2b-status{padding:6px 9px;border:1px solid rgba(55,96,145,.15);border-radius:999px;background:rgba(255,255,255,.78);color:var(--brand);font-size:10px;font-weight:950;letter-spacing:.045em;text-transform:uppercase}.b2b-card h3{margin:0;font-size:23px;letter-spacing:-.025em}.b2b-subtitle{margin:6px 0 0;color:var(--brand);font-size:12px;font-weight:900}.b2b-desc{margin:15px 0 0;color:var(--muted);font-size:14px;line-height:1.65}.b2b-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.b2b-tags span{padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:rgba(248,250,252,.92);color:var(--muted);font-size:11px;font-weight:800}.b2b-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px}.b2b-actions .btn{min-height:42px}.b2b-actions .platform-download{min-width:74px}.sales-flow{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}.sales-flow h3{margin:0 0 15px;font-size:18px}.sales-flow-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.sales-step{padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.7)}.sales-step b{display:block;color:var(--brand);font-size:11px;letter-spacing:.08em}.sales-step strong{display:block;margin-top:8px;font-size:14px}.sales-step p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
-    @media(max-width:1050px){.performance-head,.b2b-head{grid-template-columns:1fr}.performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.performance-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.sales-flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.actions{width:100%;justify-content:flex-end;flex-wrap:wrap}.language-select{min-width:118px}.platform-download{min-width:0;padding:0 12px}.back-to-top{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:46px;height:46px}#engine-performance{padding:6px 0 58px}.performance-panel,.b2b-panel{padding:22px 18px}.performance-grid,.performance-specs,.b2b-grid,.sales-flow-grid{grid-template-columns:1fr}.b2b-actions .contact-trigger{width:100%}.performance-metric strong{white-space:normal}.sales-hint{border-radius:16px}}@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+    @media(max-width:1050px){.history-head,.performance-head,.b2b-head{grid-template-columns:1fr}.performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.performance-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.sales-flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.actions{width:100%;justify-content:flex-end;flex-wrap:wrap}.language-select{min-width:118px}.platform-download{min-width:0;padding:0 12px}.back-to-top{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:46px;height:46px}#history,#engine-performance{padding:6px 0 58px}.history-panel,.performance-panel,.b2b-panel{padding:22px 18px}.history-item{grid-template-columns:1fr;gap:8px;padding:18px}.performance-grid,.performance-specs,.b2b-grid,.sales-flow-grid{grid-template-columns:1fr}.b2b-actions .contact-trigger{width:100%}.performance-metric strong{white-space:normal}.sales-hint{border-radius:16px}}@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
   `;
   document.head.appendChild(style);
 
@@ -218,6 +271,14 @@
     const machineHtml = perf.machine.map(spec => `<div class="performance-spec"><b>${spec[0]}</b><span>${spec[1]}</span></div>`).join('');
     const shotHtml = perf.shotCaption ? `<figure class="performance-shot"><a href="1.PNG" target="_blank" rel="noopener"><img src="1.PNG" alt="${perf.kicker}" loading="lazy"></a><figcaption>${perf.shotCaption}</figcaption></figure>` : '';
     section.innerHTML = `<div class="wrap"><div class="performance-panel"><div class="performance-head"><div><p class="kicker">${perf.kicker}</p><h2>${perf.title}</h2></div><p class="performance-lead">${perf.lead}</p></div>${shotHtml}<div class="performance-grid">${metricsHtml}</div><div class="performance-machine"><h3>${perf.machineTitle}</h3><div class="performance-specs">${machineHtml}</div><p class="performance-note">${perf.note}</p></div></div></div>`;
+    hero.insertAdjacentElement('afterend', section);
+  }
+
+  if (hero && history && !document.querySelector('#history')) {
+    const section = document.createElement('section');
+    section.id = 'history';
+    const itemsHtml = history.items.map(item => `<article class="history-item"><div class="history-date">${item.date}</div><div><h3>${item.title}</h3><p>${item.desc}</p></div></article>`).join('');
+    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><div><p class="kicker">${history.kicker}</p><h2>${history.title}</h2></div><p class="history-lead">${history.lead}</p></div><div class="history-list">${itemsHtml}</div></div></div>`;
     hero.insertAdjacentElement('afterend', section);
   }
 
