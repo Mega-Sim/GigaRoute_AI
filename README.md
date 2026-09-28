@@ -26,8 +26,8 @@ Issue #45부터 상단 `Platform` 메뉴와 별도 Platform 소개 섹션을 제
 
 현재 공개 제품/프로젝트 구조는 다음 세 가지입니다.
 
-- `GigaRoute Auto Simulation`: 도면과 물동량을 기반으로 OHT·AGV·OHS·AMHS 흐름을 빠르게 구성하고 3D 애니메이션과 KPI로 검증
-- `GigaRoute Simulation Studio`: 세밀한 제어 로직, 사용자 이벤트와 반복 실험이 필요한 고객 시나리오를 위한 고급 모델링 환경
+- `GR Auto Simulation`: 도면과 물동량을 기반으로 OHT·AGV·OHS·AMHS 흐름을 빠르게 구성하고 3D 애니메이션과 KPI로 검증
+- `GR Simulation Studio`: 세밀한 제어 로직, 사용자 이벤트와 반복 실험이 필요한 고객 시나리오를 위한 고급 모델링 환경
 - `Enterprise & Custom`: 현장 데이터, 운영 규칙, 제어기·업무 시스템 연동까지 프로젝트 범위에 맞춘 맞춤 개발
 
 `GigaRoute Workspace`는 Issue #45부터 공개 제품 라인에서 삭제했습니다. Hero의 제품 CTA와 상단 제품 메뉴는 `#solutions`로 연결하며, 이 앵커는 `contact.js`의 기존 `#products` 동적 B2B 판매 UI가 현재 제품 섹션을 덮어쓰지 않도록 분리한 canonical 제품 영역입니다.
@@ -144,8 +144,8 @@ Issue #45부터 공개 홈페이지의 제품 영역은 긴 판매 Funnel 설명
 
 | 제품 | 역할 | 공개 홈페이지 상태 |
 |---|---|---|
-| GigaRoute Auto Simulation | 도면·물동량 기반 OHT·AGV·OHS·AMHS 시뮬레이션, 3D 애니메이션 및 KPI | Public Preview |
-| GigaRoute Simulation Studio | 상세 제어 로직, 사용자 이벤트, 반복 실험과 고급 모델링 | 개발 중 |
+| GR Auto Simulation | 도면·물동량 기반 OHT·AGV·OHS·AMHS 시뮬레이션, 3D 애니메이션 및 KPI | Public Preview |
+| GR Simulation Studio | 상세 제어 로직, 사용자 이벤트, 반복 실험과 고급 모델링 | 개발 중 |
 | Enterprise & Custom | 고객 맞춤 모델링, 데이터/제어기/업무 시스템 연동, Demo/PoC 및 엔지니어링 | 프로젝트 |
 
 ### 상용 판매 원칙
@@ -212,8 +212,11 @@ Issue #70 History 개발 Reference에 GigaRoute AI 시뮬레이터·CAD 텍스�
 Issue #71 제품·제품 성능 섹션 상하 순서 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #72 한국어 홈페이지 Tutorial 메뉴 및 YouTube 임베드 플레이어 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #73 한국어 홈페이지 최신 구조의 외국어 동기화 및 외국어 Tutorial YouTube 임베드 적용도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #74 제품 카드의 `GigaRoute Auto Simulation`·`GigaRoute Simulation Studio` 명칭을 `GR Auto Simulation`·`GR Simulation Studio`로 축약하는 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-27: Issue #74로 한국어·영어·중국어·스페인어·일본어의 제품 카드 제목을 `GigaRoute Auto Simulation` → `GR Auto Simulation`, `GigaRoute Simulation Studio` → `GR Simulation Studio`로 변경했습니다. 제품 설명·태그·상태·레이아웃은 유지했으며 공통 `contact.js`의 다국어 제품 데이터도 동일하게 변경했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-9`로 갱신했습니다.
 
 - 2026-09-27: Issue #73으로 현재 한국어 홈페이지의 최신 History 구성과 Tutorial 기능을 영어·중국어·스페인어·일본어 페이지에 동기화했습니다. 외국어 History에는 설립 목적, 물류 자동화 시뮬레이션 10년 경력, 서보 모터 모션 제어 SW 개발 3년 경력과 최신 개발 Reference 항목들을 각 언어로 현지화했습니다. 각 외국어 페이지의 Research 오른쪽에 Tutorial 메뉴를 추가하고 Research 다음에 16:9 YouTube 임베드 섹션을 배치했으며, 외국어 영상은 `https://www.youtube.com/watch?v=mysnlxS4J7Y`를 사용합니다. 중국어 CSP는 외부 font/style/script/connect 차단을 유지하면서 Tutorial 재생용 `youtube-nocookie.com` frame만 허용했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-8`로 통일했고, 외국어 페이지의 `site-fixes.css`는 Tutorial 스타일을 포함하는 `20260927-1`을 사용합니다.
 
