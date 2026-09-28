@@ -216,8 +216,11 @@ Issue #74 제품 카드의 `GigaRoute Auto Simulation`·`GigaRoute Simulation St
 Issue #75 History의 SCCB 표현 제거·SW 변경점 관리 문구 변경, AutoMod Dijkstra 구현 모델 명칭 정리 및 Hungarian 작업 할당 알고리즘 구현 모델 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #76 History Dijkstra 항목에도 Hungarian과 동일하게 `업계 표준 AutoMod Simulator` 표현을 적용하고 다국어 문구를 동기화하는 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #77 History의 서보 Maintenance SW 항목 바로 아래에 `서보 Fault Trace 로그 분석 자동화 SW 개발`과 `OHT 4축(Driving, Hoist, Slide) 모션 적용 모델 개발`을 추가하고 다국어 페이지를 동기화하는 변경도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 적용 AutoMod 모델 개발`로 변경하고 `Simulation SW`로 분류하여 History 최하단으로 이동하며 다국어 페이지를 동기화하는 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-28: Issue #78로 History의 `OHT 4축(Driving, Hoist, Slide) 모션 적용 모델 개발` 항목을 기존 SW 개발 영역에서 제거하고, 제목을 `OHT 4축(Driving, Hoist, Slide) 모션 적용 AutoMod 모델 개발`로 변경했습니다. 분류는 `Simulation SW`로 바꾸고 Dijkstra·Hungarian 항목 다음인 History 최하단으로 이동했습니다. 영어·중국어·스페인어·일본어도 동일 의미와 위치로 동기화했으며 기존 UI/CSS는 변경하지 않았습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260928-4`로 갱신했습니다.
 
 - 2026-09-28: Issue #77로 History의 `서보 모터/드라이브 축별 FW, 파라미터 등 Maintenance SW 개발` 바로 아래에 `서보 Fault Trace 로그 분석 자동화 SW 개발`, `OHT 4축(Driving, Hoist, Slide) 모션 적용 모델 개발` 항목을 순서대로 추가했습니다. 영어·중국어·스페인어·일본어 페이지도 동일 순서와 의미로 동기화했으며 기존 UI/CSS는 변경하지 않았습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260928-3`으로 갱신했습니다.
 
