@@ -135,7 +135,7 @@
     link.rel = 'noopener noreferrer';
     link.dataset.historyNav = '1';
     link.textContent = 'History';
-    product.insertAdjacentElement('afterend', link);
+    product.insertAdjacentElement('beforebegin', link);
   };
 
   const applyPerformanceNavLink = () => {
