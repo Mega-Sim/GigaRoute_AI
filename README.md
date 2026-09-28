@@ -208,8 +208,11 @@ Issue #67 History 설립·SW 변경점 이슈관리·AutoMod Dijkstra 이력 문
 Issue #68 History에 물류 자동화 시뮬레이션·서보 모션 제어 경력 박스 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #69 History 경력 날짜·개발 Reference 명칭 및 추가 SW 개발 Reference 반영도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #70 History 개발 Reference에 GigaRoute AI 시뮬레이터·CAD 텍스트 자동화 항목 추가도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #71 제품·제품 성능 섹션 상하 순서 변경도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-27: Issue #71로 홈페이지의 제품(`#solutions`)과 제품 성능(`#engine-performance`) 섹션 상하 순서를 변경했습니다. 제품 성능 섹션은 이제 제품 섹션 바로 뒤에 렌더링되며 History 및 나머지 섹션 순서와 기존 내용·스타일·앵커 동작은 유지합니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-7`로 갱신했습니다.
 
 - 2026-09-27: Issue #70으로 한국어 History의 `개발 Reference` 맨 위에 `GigaRoute AI 물류 자동화 시뮬레이터 개발` 항목을 추가하고, CAD 관련 Reference에 `CAD 텍스트 정보 입력/출력 자동화 SW 개발` 항목을 추가했습니다. 두 항목 모두 별도 설명 문구 없이 제목만 표시하며 기존 Reference 순서와 레이아웃을 유지합니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-6`으로 갱신했습니다.
 
