@@ -22,22 +22,28 @@
   }[locale] || 'Back to top';
 
   const developmentHistoryLabel = {
-    en: 'Development History',
+    en: 'Development Reference',
     ko: '개발 Reference',
-    'zh-CN': '开发 History',
-    es: 'History de desarrollo',
-    ja: '開発 History'
-  }[locale] || 'Development History';
+    'zh-CN': '开发 Reference',
+    es: 'Referencias de desarrollo',
+    ja: '開発 Reference'
+  }[locale] || 'Development Reference';
 
   const historyCopy = {
     en: {
       kicker:'HISTORY',
-      title:'Built from engineering work.',
+      title:'GigaRoute AI History',
       lead:'GigaRoute AI records the engineering milestones behind its simulation and automation software.',
       items:[
-        {date:'2026.07.20',title:'GigaRoute AI founded',desc:'GigaRoute AI was established on July 20, 2026.'},
-        {date:'Software Development',title:'Atlassian API-based Automation Software',desc:'Developed workflow automation software using Jira and Confluence APIs to connect issue data, documentation, reviews, and repetitive SCCB operations into a consistent process.'},
-        {date:'Simulation Engineering',title:'Dijkstra Pathfinding for AutoMod',desc:'Implemented the Dijkstra shortest-path algorithm in an AutoMod simulator to calculate efficient routes across the transport network and support routing logic for simulation models.'}
+        {date:'2026.07.20',title:'GigaRoute AI founded',desc:'Founded to localize logistics simulation technology and to develop and supply high-performance, ultra-large-scale simulators integrated with AI technologies.'},
+        {date:'~ 2026.07.20',title:'10 years of logistics automation simulation experience',group:'career'},
+        {date:'~ 2026.07.20',title:'3 years of servo motor motion-control SW development experience',group:'career'},
+        {date:'Simulation SW',title:'GigaRoute AI logistics automation simulator development'},
+        {date:'Software Development',title:'Maintenance SW development for per-axis servo motor/drive firmware, parameters, and related functions'},
+        {date:'Software Development',title:'CAD drawing-to-simulation layout conversion automation SW development'},
+        {date:'Software Development',title:'CAD text information input/output automation SW development'},
+        {date:'Software Development',title:'Atlassian API-based SW change and issue-management automation SW development',desc:'Developed software using Jira and Confluence APIs to automate issue data, documentation, reviews, and repetitive SCCB workflows in a consistent process.'},
+        {date:'Simulation SW',title:'In-house Dijkstra pathfinding algorithm implemented in the industry-standard AutoMod Simulator',desc:'Implemented a Dijkstra shortest-path algorithm in AutoMod to calculate efficient routes across logistics networks and apply them to simulation routing logic.'}
       ]
     },
     ko: {
@@ -61,29 +67,47 @@
       title:'GigaRoute AI 开发历程',
       lead:'记录 GigaRoute AI 在仿真与业务自动化软件方面的重要开发里程碑。',
       items:[
-        {date:'2026.07.20',title:'GigaRoute AI 成立',desc:'GigaRoute AI 于 2026 年 7 月 20 日成立。'},
-        {date:'软件开发',title:'基于 Atlassian API 的业务自动化软件',desc:'通过 Jira 与 Confluence API 连接问题数据、文档、评审和 SCCB 重复业务，构建一致的自动化工作流程。'},
-        {date:'仿真软件',title:'AutoMod Dijkstra 路径搜索算法',desc:'在 AutoMod 仿真器中实现 Dijkstra 最短路径算法，用于物流网络路径计算与仿真路由逻辑。'}
+        {date:'2026.07.20',title:'GigaRoute AI 成立',desc:'为实现物流仿真器国产化，并开发、供应融合 AI 技术的高性能、超大规模仿真器而成立。'},
+        {date:'~ 2026.07.20',title:'物流自动化仿真 10 年经验',group:'career'},
+        {date:'~ 2026.07.20',title:'伺服电机运动控制软件开发 3 年经验',group:'career'},
+        {date:'仿真软件',title:'GigaRoute AI 物流自动化仿真器开发'},
+        {date:'软件开发',title:'伺服电机/驱动器各轴固件、参数等 Maintenance 软件开发'},
+        {date:'软件开发',title:'CAD 图纸仿真布局转换自动化软件功能开发'},
+        {date:'软件开发',title:'CAD 文本信息输入/输出自动化软件开发'},
+        {date:'软件开发',title:'基于 Atlassian API 的软件变更点·问题管理自动化软件开发',desc:'通过 Jira 与 Confluence API 连接问题数据、文档、评审和 SCCB 重复业务，构建一致的自动化工作流程。'},
+        {date:'仿真软件',title:'在行业标准 AutoMod Simulator 中实现自主 Dijkstra 路径搜索算法',desc:'在 AutoMod 中实现 Dijkstra 最短路径算法，用于物流网络的高效路径计算并应用于仿真路由逻辑。'}
       ]
     },
     es: {
       kicker:'HISTORY',
-      title:'Historia de desarrollo de GigaRoute AI',
+      title:'Historia de GigaRoute AI',
       lead:'Principales hitos de software en simulación y automatización de procesos.',
       items:[
-        {date:'2026.07.20',title:'Fundación de GigaRoute AI',desc:'GigaRoute AI se fundó el 20 de julio de 2026.'},
-        {date:'Desarrollo SW',title:'Software de automatización basado en API de Atlassian',desc:'Se desarrolló software que integra las API de Jira y Confluence para automatizar datos de incidencias, documentación, revisiones y tareas repetitivas de SCCB.'},
-        {date:'Software de simulación',title:'Algoritmo de rutas Dijkstra en AutoMod',desc:'Se implementó el algoritmo de ruta mínima de Dijkstra en un simulador AutoMod para calcular rutas eficientes y aplicarlas a la lógica de enrutamiento de la simulación.'}
+        {date:'2026.07.20',title:'Fundación de GigaRoute AI',desc:'Fundada para localizar la tecnología de simulación logística y desarrollar y suministrar simuladores de alto rendimiento y escala ultragrande integrados con tecnologías de IA.'},
+        {date:'~ 2026.07.20',title:'10 años de experiencia en simulación de automatización logística',group:'career'},
+        {date:'~ 2026.07.20',title:'3 años de experiencia en desarrollo de SW de control de movimiento de servomotores',group:'career'},
+        {date:'SW de simulación',title:'Desarrollo del simulador de automatización logística GigaRoute AI'},
+        {date:'Desarrollo SW',title:'Desarrollo de SW de mantenimiento para firmware y parámetros por eje de servomotores/accionamientos'},
+        {date:'Desarrollo SW',title:'Desarrollo de función SW para conversión automática de planos CAD a layouts de simulación'},
+        {date:'Desarrollo SW',title:'Desarrollo de SW para automatizar la entrada/salida de información de texto CAD'},
+        {date:'Desarrollo SW',title:'Desarrollo de SW de automatización de gestión de cambios e incidencias basado en Atlassian API',desc:'Se desarrolló software que integra las API de Jira y Confluence para automatizar datos de incidencias, documentación, revisiones y tareas repetitivas de SCCB.'},
+        {date:'SW de simulación',title:'Implementación de un algoritmo Dijkstra propio en AutoMod Simulator, estándar del sector',desc:'Se implementó el algoritmo de ruta mínima de Dijkstra en AutoMod para calcular rutas eficientes en redes logísticas y aplicarlas a la lógica de enrutamiento de la simulación.'}
       ]
     },
     ja: {
       kicker:'HISTORY',
-      title:'GigaRoute AI 開発履歴',
+      title:'GigaRoute AI History',
       lead:'シミュレーションと業務自動化に関する主なソフトウェア開発実績を記録します。',
       items:[
-        {date:'2026.07.20',title:'GigaRoute AI 設立',desc:'2026年7月20日に GigaRoute AI を設立しました。'},
-        {date:'SW開発',title:'Atlassian API ベース業務自動化ソフトウェア',desc:'Jira・Confluence API を連携し、課題データ、文書、レビュー、SCCB の反復業務を一つの流れで自動化するソフトウェアを開発しました。'},
-        {date:'Simulation SW',title:'AutoMod Dijkstra 経路探索アルゴリズム',desc:'AutoMod シミュレータに Dijkstra 最短経路探索アルゴリズムを実装し、搬送ネットワークの経路計算とシミュレーションのルーティングロジックに適用しました。'}
+        {date:'2026.07.20',title:'GigaRoute AI 設立',desc:'物流シミュレータの国産化と、AI 技術を融合した高性能・超大規模シミュレータの開発・供給を目的に設立しました。'},
+        {date:'~ 2026.07.20',title:'物流自動化シミュレーション 10 年の経験',group:'career'},
+        {date:'~ 2026.07.20',title:'サーボモータ・モーション制御 SW 開発 3 年の経験',group:'career'},
+        {date:'Simulation SW',title:'GigaRoute AI 物流自動化シミュレータ開発'},
+        {date:'SW開発',title:'サーボモータ／ドライブ各軸の FW・パラメータ等 Maintenance SW 開発'},
+        {date:'SW開発',title:'CAD 図面からシミュレーションレイアウトへの変換自動化 SW 機能開発'},
+        {date:'SW開発',title:'CAD テキスト情報の入力／出力自動化 SW 開発'},
+        {date:'SW開発',title:'Atlassian API ベースの SW 変更点・課題管理自動化 SW 開発',desc:'Jira・Confluence API を連携し、課題データ、文書、レビュー、SCCB の反復業務を一つの流れで自動化するソフトウェアを開発しました。'},
+        {date:'Simulation SW',title:'業界標準 AutoMod Simulator に独自 Dijkstra 経路探索アルゴリズムを実装',desc:'AutoMod に Dijkstra 最短経路探索アルゴリズムを実装し、物流ネットワークの効率的な経路計算とシミュレーションのルーティングロジックに適用しました。'}
       ]
     }
   }[locale] || null;
