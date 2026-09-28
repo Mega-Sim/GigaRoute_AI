@@ -206,8 +206,11 @@ Issue #65 History 타이틀 축소·GigaRoute AI 그라데이션·개발 History
 Issue #66 History 제목의 GigaRoute `g` 하강부 잘림 수정도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #67 History 설립·SW 변경점 이슈관리·AutoMod Dijkstra 이력 문구 수정도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #68 History에 물류 자동화 시뮬레이션·서보 모션 제어 경력 박스 추가도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #69 History 경력 날짜·개발 Reference 명칭 및 추가 SW 개발 Reference 반영도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-27: Issue #69로 한국어 History의 경력 박스 날짜를 `~ 2026.07.20`으로 변경하고 `개발 History`를 `개발 Reference`로 변경했습니다. 개발 Reference 바로 아래에 `서보 모터/드라이브 축별 FW, 파라미터 등 Maintenance SW 개발`, `CAD 도면 시뮬레이션 레이아웃 변환 자동화 SW 기능 개발` 제목 전용 박스를 추가했으며 별도 설명 문구는 넣지 않았습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-5`로 갱신했습니다.
 
 - 2026-09-27: Issue #68로 한국어 History의 GigaRoute AI 설립 박스 아래에 `물류 자동화 시뮬레이션 10년 경력`, `서보 모터 모션 제어 SW 개발 3년 경력` 박스를 추가했습니다. 두 항목은 날짜를 `~ 2026.07.02`로 표시하고 설명 문구는 렌더링하지 않으며, 기존 `개발 History` 구분선과 개발 이력은 그 아래에 유지합니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-4`로 갱신했습니다.
 
