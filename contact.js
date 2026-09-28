@@ -136,7 +136,7 @@
   const t = l.contact;
   const perf = l.performance;
   const p = l.product;
-  const history = historyCopy || historyCopy.en;
+  const history = historyCopy;
 
   const makePlatformLink = (label, href, extraClass = '') => {
     const link = document.createElement('a');
