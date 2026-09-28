@@ -204,8 +204,11 @@ Issue #60 Consulting 성능 개선 문구·서비스 카드 한 줄 배치 및 �
 Issue #64 History 제목 확대·보조 문구 제거·설립/개발 이력 구분선 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #65 History 타이틀 축소·GigaRoute AI 그라데이션·개발 History 구분 제목 추가도 신규 브랜치 없이 `main`에서 진행합니다.
 Issue #66 History 제목의 GigaRoute `g` 하강부 잘림 수정도 신규 브랜치 없이 `main`에서 진행합니다.
+Issue #67 History 설립·SW 변경점 이슈관리·AutoMod Dijkstra 이력 문구 수정도 신규 브랜치 없이 `main`에서 진행합니다.
 
 ## 변경 이력
+
+- 2026-09-27: Issue #67로 한국어 History 문구를 수정했습니다. 설립 설명은 물류 시뮬레이터 국산화와 AI 기술 융합 기반의 고성능·초대형 시뮬레이터 개발·공급 목적을 명시하도록 변경했고, SW 개발 제목은 `Atlassian API 기반 SW 변경점·이슈관리 자동화 SW 개발`, Simulation SW 제목은 `업계 표준 AutoMod Simulator에 자체 Dijkstra 경로 탐색 알고리즘 구현`으로 변경했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260927-3`으로 갱신했습니다.
 
 - 2026-09-27: Issue #66으로 History 제목의 `GigaRoute AI`에서 소문자 `g` 하강부가 잘리는 문제를 수정했습니다. 제목 크기는 유지하고 `.history-head h2`의 line-height를 1.12로 늘렸으며 gradient span 하단에 `.08em` 여유를 추가했습니다. 모든 언어 페이지의 `contact.js` 캐시 버전을 `20260927-2`로 갱신했습니다.
 
