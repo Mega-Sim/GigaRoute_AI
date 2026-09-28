@@ -46,6 +46,8 @@
       lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
       items:[
         {date:'2026.07.20',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화와 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
+        {date:'~ 2026.07.02',title:'물류 자동화 시뮬레이션 10년 경력',group:'career'},
+        {date:'~ 2026.07.02',title:'서보 모터 모션 제어 SW 개발 3년 경력',group:'career'},
         {date:'SW 개발',title:'Atlassian API 기반 SW 변경점·이슈관리 자동화 SW 개발',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SCCB 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
         {date:'Simulation SW',title:'업계 표준 AutoMod Simulator에 자체 Dijkstra 경로 탐색 알고리즘 구현',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'}
       ]
@@ -285,10 +287,11 @@
   if (hero && history && !document.querySelector('#history')) {
     const section = document.createElement('section');
     section.id = 'history';
-    const itemHtml = item => `<article class="history-item"><div class="history-date">${item.date}</div><div><h3>${item.title}</h3><p>${item.desc}</p></div></article>`;
+    const itemHtml = item => `<article class="history-item"><div class="history-date">${item.date}</div><div><h3>${item.title}</h3>${item.desc ? `<p>${item.desc}</p>` : ''}</div></article>`;
     const foundingHtml = history.items.length ? itemHtml(history.items[0]) : '';
-    const developmentItemsHtml = history.items.slice(1).map(itemHtml).join('');
-    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><h2><span class="gradient history-brand">GigaRoute AI</span><span>History</span></h2></div><div class="history-list">${foundingHtml}<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${developmentHistoryLabel}</h3>${developmentItemsHtml}</div></div></div>`;
+    const careerItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'career').map(itemHtml).join('');
+    const developmentItemsHtml = history.items.filter((item, index) => index > 0 && item.group !== 'career').map(itemHtml).join('');
+    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><h2><span class="gradient history-brand">GigaRoute AI</span><span>History</span></h2></div><div class="history-list">${foundingHtml}${careerItemsHtml}<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${developmentHistoryLabel}</h3>${developmentItemsHtml}</div></div></div>`;
     hero.insertAdjacentElement('afterend', section);
   }
 
