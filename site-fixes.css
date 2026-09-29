@@ -171,3 +171,8 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
   .hero h1.hero-platform-title,html[lang="ko"] .hero h1.hero-platform-title{line-height:1.17;padding-bottom:.14em}
   .hero h1.hero-platform-title .hero-title-line+.hero-title-line{margin-top:.08em}
 }
+
+
+/* Issue #95: keep the video section label compact after its large title is removed. */
+.tutorial-heading{margin-bottom:12px}
+@media(max-width:760px){.tutorial-heading{margin-bottom:12px}}
