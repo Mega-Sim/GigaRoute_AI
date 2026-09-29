@@ -343,3 +343,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-09-29: Issue #95로 동영상 섹션의 큰 Tutorial 제목을 제거하고, 작은 동영상 라벨과 플레이어 사이 여백을 간결하게 조정했습니다.
 
 - 2026-09-29: Issue #96으로 개발 Reference에 AutoMod TCP/IP 통신 연결 병렬 모델 개발 이력을 Hungarian 작업 할당 모델 뒤, OHT 4축 모델 앞에 추가했습니다.
+
+- 2026-09-29: Issue #97로 개발 Reference 아래에 같은 구분선과 Education & Conference 섹션을 추가하고, Yaskawa·AutoMod·Siemens Plant Simulation 교육 이력 3건을 반영했습니다.

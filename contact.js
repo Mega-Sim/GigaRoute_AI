@@ -29,6 +29,14 @@
     ja: '開発 Reference'
   }[locale] || 'Development Reference';
 
+  const educationHistoryLabel = {
+    en: 'Education & Conference',
+    ko: 'Education & Conference',
+    'zh-CN': '教育与会议',
+    es: 'Educación y conferencias',
+    ja: '教育・カンファレンス'
+  }[locale] || 'Education & Conference';
+
   const historyCopy = {
     en: {
       kicker:'HISTORY',
@@ -47,7 +55,10 @@
         {date:'Simulation SW',title:'Industry-standard AutoMod Simulator Dijkstra pathfinding algorithm implementation model development',desc:'Implemented a Dijkstra shortest-path algorithm in AutoMod to calculate efficient routes across logistics networks and apply them to simulation routing logic.'},
         {date:'Simulation SW',title:'Industry-standard AutoMod Simulator Hungarian job-assignment algorithm implementation model development'},
         {date:'Simulation SW',title:'AutoMod TCP/IP communication-connected parallel model development'},
-        {date:'Simulation SW',title:'AutoMod model development applying OHT 4-axis (Driving, Hoist, Slide) motion'}
+        {date:'Simulation SW',title:'AutoMod model development applying OHT 4-axis (Driving, Hoist, Slide) motion'},
+        {date:'Education & Conference',title:'Yaskawa Korea servo motor · drive training completed',group:'education'},
+        {date:'Education & Conference',title:'AutoMod Simulator Beginner and Advanced training completed',group:'education'},
+        {date:'Education & Conference',title:'Siemens Plant Simulation introduction review and training completed',group:'education'}
       ]
     },
     ko: {
@@ -68,7 +79,10 @@
         {date:'Simulation SW',title:'업계 표준 AutoMod Simulator 내 Dijkstra 경로 탐색 알고리즘 구현 모델 개발',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'},
         {date:'Simulation SW',title:'업계 표준 AutoMod Simulator 내 Hungarian 작업 할당 알고리즘 구현 모델 개발'},
         {date:'Simulation SW',title:'AutoMod TCP/IP 통신 연결 병렬 모델 개발'},
-        {date:'Simulation SW',title:'OHT 4축(Driving, Hoist, Slide) 모션 적용 AutoMod 모델 개발'}
+        {date:'Simulation SW',title:'OHT 4축(Driving, Hoist, Slide) 모션 적용 AutoMod 모델 개발'},
+        {date:'Education & Conference',title:'한국 Yaskawa 서보 모터∙드라이브 교육 이수',group:'education'},
+        {date:'Education & Conference',title:'AutoMod 시뮬레이터 Beginner, Advanced 교육 이수',group:'education'},
+        {date:'Education & Conference',title:'Siemens Plant Simulation 도입 검토 및 교육 이수',group:'education'}
       ]
     },
     'zh-CN': {
@@ -88,7 +102,10 @@
         {date:'仿真软件',title:'行业标准 AutoMod Simulator 内 Dijkstra 路径搜索算法实现模型开发',desc:'在 AutoMod 中实现 Dijkstra 最短路径算法，用于物流网络的高效路径计算并应用于仿真路由逻辑。'},
         {date:'仿真软件',title:'行业标准 AutoMod Simulator 内 Hungarian 任务分配算法实现模型开发'},
         {date:'仿真软件',title:'AutoMod TCP/IP 通信连接并行模型开发'},
-        {date:'仿真软件',title:'OHT 4轴（Driving、Hoist、Slide）运动应用 AutoMod 模型开发'}
+        {date:'仿真软件',title:'OHT 4轴（Driving、Hoist、Slide）运动应用 AutoMod 模型开发'},
+        {date:'教育与会议',title:'完成韩国安川伺服电机·驱动器培训',group:'education'},
+        {date:'教育与会议',title:'完成 AutoMod Simulator Beginner、Advanced 培训',group:'education'},
+        {date:'教育与会议',title:'完成 Siemens Plant Simulation 导入评估及培训',group:'education'}
       ]
     },
     es: {
@@ -108,7 +125,10 @@
         {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo de búsqueda de rutas Dijkstra en AutoMod Simulator, estándar del sector',desc:'Se implementó el algoritmo de ruta mínima de Dijkstra en AutoMod para calcular rutas eficientes en redes logísticas y aplicarlas a la lógica de enrutamiento de la simulación.'},
         {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo Hungarian para asignación de trabajos en AutoMod Simulator, estándar del sector'},
         {date:'SW de simulación',title:'Desarrollo de modelo paralelo conectado mediante TCP/IP en AutoMod'},
-        {date:'SW de simulación',title:'Desarrollo de modelo AutoMod con aplicación de movimiento OHT de 4 ejes (Driving, Hoist, Slide)'}
+        {date:'SW de simulación',title:'Desarrollo de modelo AutoMod con aplicación de movimiento OHT de 4 ejes (Driving, Hoist, Slide)'},
+        {date:'Educación y conferencias',title:'Formación completada de motores servo y variadores Yaskawa Korea',group:'education'},
+        {date:'Educación y conferencias',title:'Formación completada de AutoMod Simulator Beginner y Advanced',group:'education'},
+        {date:'Educación y conferencias',title:'Evaluación de adopción y formación completada de Siemens Plant Simulation',group:'education'}
       ]
     },
     ja: {
@@ -128,7 +148,10 @@
         {date:'Simulation SW',title:'業界標準 AutoMod Simulator 内 Dijkstra 経路探索アルゴリズム実装モデル開発',desc:'AutoMod に Dijkstra 最短経路探索アルゴリズムを実装し、物流ネットワークの効率的な経路計算とシミュレーションのルーティングロジックに適用しました。'},
         {date:'Simulation SW',title:'業界標準 AutoMod Simulator 内 Hungarian 作業割当アルゴリズム実装モデル開発'},
         {date:'Simulation SW',title:'AutoMod TCP/IP通信接続並列モデル開発'},
-        {date:'Simulation SW',title:'OHT 4軸（Driving, Hoist, Slide）モーション適用 AutoMod モデル開発'}
+        {date:'Simulation SW',title:'OHT 4軸（Driving, Hoist, Slide）モーション適用 AutoMod モデル開発'},
+        {date:'教育・カンファレンス',title:'韓国Yaskawa サーボモーター・ドライブ教育修了',group:'education'},
+        {date:'教育・カンファレンス',title:'AutoMod Simulator Beginner・Advanced 教育修了',group:'education'},
+        {date:'教育・カンファレンス',title:'Siemens Plant Simulation 導入検討・教育修了',group:'education'}
       ]
     }
   }[locale] || null;
@@ -340,8 +363,10 @@
     const itemHtml = (item, isDevelopment = false, isFounding = false) => `<article class="history-item${isDevelopment ? ' history-item--development' : ''}${isFounding ? ' history-item--founding' : ''}">${isDevelopment ? '' : `<div class="history-date">${item.date}</div>`}<div><h3>${isFounding ? `<span class="gradient history-title-accent">${item.title}</span>` : item.title}</h3>${isDevelopment || !item.desc ? '' : `<p>${item.desc}</p>`}</div></article>`;
     const foundingHtml = history.items.length ? itemHtml(history.items[0], false, true) : '';
     const careerItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'career').map(item => itemHtml(item)).join('');
-    const developmentItemsHtml = history.items.filter((item, index) => index > 0 && item.group !== 'career').map(item => itemHtml(item, true)).join('');
-    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><h2><span class="gradient history-brand">GigaRoute AI</span><span>History</span></h2></div><div class="history-list">${foundingHtml}${careerItemsHtml}<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${developmentHistoryLabel}</h3>${developmentItemsHtml}</div></div></div>`;
+    const developmentItemsHtml = history.items.filter((item, index) => index > 0 && item.group !== 'career' && item.group !== 'education').map(item => itemHtml(item, true)).join('');
+    const educationItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'education').map(item => itemHtml(item, true)).join('');
+    const educationSectionHtml = educationItemsHtml ? `<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${educationHistoryLabel}</h3>${educationItemsHtml}` : '';
+    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><h2><span class="gradient history-brand">GigaRoute AI</span><span>History</span></h2></div><div class="history-list">${foundingHtml}${careerItemsHtml}<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${developmentHistoryLabel}</h3>${developmentItemsHtml}${educationSectionHtml}</div></div></div>`;
     hero.insertAdjacentElement('afterend', section);
   }
 
