@@ -349,3 +349,6 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-09-29: Issue #98로 History의 업계 표준 표현을 제거하고, Dijkstra·Hungarian·TCP/IP·OHT·교육 이력의 AutoMod 표기를 AutoMod Simulator로 통일했습니다.
 
 - 2026-09-29: Issue #99로 GigaRoute AI 물류 자동화 시뮬레이터 개발 이력을 설립 항목과 같은 그라데이션 색으로 강조했습니다.
+
+
+- 2026-09-29: Issue #100으로 History의 `GigaRoute AI 설립`과 `GigaRoute AI 물류 자동화 시뮬레이터 개발` 두 강조 제목만 21–22px로 소폭 확대하고, 청록·블루·보라 그라데이션을 더 선명하게 조정했습니다. 나머지 History 항목의 크기와 레이아웃은 유지했습니다.
