@@ -34,6 +34,12 @@ Issue #81부터 모든 언어 홈페이지의 Research 논문 카드는 개인 �
 - 현재 영상의 제목, 재생 영역, YouTube 링크와 레이아웃은 유지합니다.
 - 다중 영상 구성과 최종 섹션 명칭은 별도 변경에서 결정합니다.
 
+## Hero 메시지 및 Development Reference 표시 정책
+
+- 한국어 기본 페이지(`index.html`)와 한국어 전용 페이지(`index-ko.html`)의 Hero 문구는 `Simulation on Your Laptop` 및 `Digital Twin on Your Tablet`으로 표기합니다.
+- 화면 너비 680px 이하에서는 해당 Hero 제목만 반응형 크기·균형 줄바꿈·긴 단어 분할을 적용해 가로 잘림을 방지합니다.
+- Development Reference 카드에서는 작은 분류표기를 숨기고, 설립·경력 이력의 날짜·기간과 각 Reference의 제목·설명은 유지합니다.
+
 ## 홈페이지 제품 메시지
 
 Issue #45부터 상단 `Platform` 메뉴와 별도 Platform 소개 섹션을 제거하고, 제품 영역을 **기업 맞춤형 AMHS 시뮬레이션 소프트웨어** 중심으로 단순화합니다.
