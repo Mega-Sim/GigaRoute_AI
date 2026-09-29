@@ -55,8 +55,8 @@
       lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
       items:[
         {date:'2026.07.30',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화와 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
-        {date:'2017 ~',title:'물류 자동화 시뮬레이션',group:'career'},
-        {date:'2017 ~',title:'서보 모터 모션 제어 SW 개발',group:'career'},
+        {date:'2017 ~',title:'반도체 ∙ 배터리 생산 시스템 물류 자동화 시뮬레이션',group:'career'},
+        {date:'2017 ~',title:'다축 서보 모터 ∙ 드라이브 모션 제어 SW 개발',group:'career'},
         {date:'Simulation SW',title:'GigaRoute AI 물류 자동화 시뮬레이터 개발'},
         {date:'SW 개발',title:'서보 모터/드라이브 축별 FW, 파라미터 등 Maintenance SW 개발'},
         {date:'SW 개발',title:'서보 Fault Trace 로그 분석 자동화 SW 개발'},

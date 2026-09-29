@@ -246,6 +246,8 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 
 ## 변경 이력
 
+- 2026-09-29: Issue #86으로 한국어 History의 `2017 ~` 경력 두 항목을 `반도체 ∙ 배터리 생산 시스템 물류 자동화 시뮬레이션`, `다축 서보 모터 ∙ 드라이브 모션 제어 SW 개발`로 상세화했습니다. 카드의 날짜·순서·스타일은 유지했으며, 모든 언어 페이지의 `contact.js` 캐시 버전을 `20260929-7`로 갱신했습니다.
+
 - 2026-09-28: Issue #78로 History의 `OHT 4축(Driving, Hoist, Slide) 모션 적용 모델 개발` 항목을 기존 SW 개발 영역에서 제거하고, 제목을 `OHT 4축(Driving, Hoist, Slide) 모션 적용 AutoMod 모델 개발`로 변경했습니다. 분류는 `Simulation SW`로 바꾸고 Dijkstra·Hungarian 항목 다음인 History 최하단으로 이동했습니다. 영어·중국어·스페인어·일본어도 동일 의미와 위치로 동기화했으며 기존 UI/CSS는 변경하지 않았습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260928-4`로 갱신했습니다.
 
 - 2026-09-28: Issue #77로 History의 `서보 모터/드라이브 축별 FW, 파라미터 등 Maintenance SW 개발` 바로 아래에 `서보 Fault Trace 로그 분석 자동화 SW 개발`, `OHT 4축(Driving, Hoist, Slide) 모션 적용 모델 개발` 항목을 순서대로 추가했습니다. 영어·중국어·스페인어·일본어 페이지도 동일 순서와 의미로 동기화했으며 기존 UI/CSS는 변경하지 않았습니다. 모든 언어 페이지의 `contact.js` 캐시 버전은 `20260928-3`으로 갱신했습니다.
