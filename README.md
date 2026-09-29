@@ -358,3 +358,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-09-29: Issue #102로 성능 섹션의 핵심 헤드라인을 데스크톱 28–42px, 모바일 26–36px로 추가 축소했습니다. Issue #101에서 확대한 벤치마크 사양 라벨과 성능 수치·카드 구성은 유지했습니다.
 
 - 2026-09-29: Issue #103으로 Education & Conference 섹션 맨 위에 `NACSI 인지기술 딥러닝 강화학습 Conference 참가` 이력을 추가하고, 다국어 페이지에도 동일 항목을 현지화해 반영했습니다. 기존 Yaskawa·AutoMod Simulator·Siemens Plant Simulation 교육 이력과 카드 스타일·순서는 유지했습니다.
+
+- 2026-09-30: Issue #104로 `Education & Conference` 아래에 `Social Contribution` 섹션을 추가하고, 2023년부터 한이음 IT 인재육성 멘토 활동, 2022년부터 굿네이버스 여학생 위생 키트 후원, 2015년 재능 기부 무료 학습지도 및 화성시장 표창 이력을 반영했습니다. 기존 History 카드 스타일과 구분선을 재사용하고 다국어 페이지에도 동일 사회공헌 이력을 반영했습니다.
