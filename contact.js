@@ -56,6 +56,7 @@
         {date:'Simulation SW',title:'AutoMod Simulator Hungarian job-assignment algorithm implementation model development'},
         {date:'Simulation SW',title:'AutoMod Simulator TCP/IP communication-connected parallel model development'},
         {date:'Simulation SW',title:'AutoMod Simulator model development applying OHT 4-axis (Driving, Hoist, Slide) motion'},
+        {date:'Education & Conference',title:'Participated in NACSI Cognitive Technology, Deep Learning & Reinforcement Learning Conference',group:'education'},
         {date:'Education & Conference',title:'Yaskawa Korea servo motor · drive training completed',group:'education'},
         {date:'Education & Conference',title:'AutoMod Simulator Beginner and Advanced training completed',group:'education'},
         {date:'Education & Conference',title:'Siemens Plant Simulation introduction review and training completed',group:'education'}
@@ -80,6 +81,7 @@
         {date:'Simulation SW',title:'AutoMod Simulator 내 Hungarian 작업 할당 알고리즘 구현 모델 개발'},
         {date:'Simulation SW',title:'AutoMod Simulator TCP/IP 통신 연결 병렬 모델 개발'},
         {date:'Simulation SW',title:'OHT 4축(Driving, Hoist, Slide) 모션 적용 AutoMod Simulator 모델 개발'},
+        {date:'Education & Conference',title:'NACSI 인지기술 딥러닝 강화학습 Conference 참가',group:'education'},
         {date:'Education & Conference',title:'한국 Yaskawa 서보 모터∙드라이브 교육 이수',group:'education'},
         {date:'Education & Conference',title:'AutoMod Simulator Beginner, Advanced 교육 이수',group:'education'},
         {date:'Education & Conference',title:'Siemens Plant Simulation 도입 검토 및 교육 이수',group:'education'}
@@ -103,6 +105,7 @@
         {date:'仿真软件',title:'AutoMod Simulator 内 Hungarian 任务分配算法实现模型开发'},
         {date:'仿真软件',title:'AutoMod Simulator TCP/IP 通信连接并行模型开发'},
         {date:'仿真软件',title:'OHT 4轴（Driving、Hoist、Slide）运动应用 AutoMod Simulator 模型开发'},
+        {date:'教育与会议',title:'参加 NACSI 认知技术、深度学习、强化学习 Conference',group:'education'},
         {date:'教育与会议',title:'完成韩国安川伺服电机·驱动器培训',group:'education'},
         {date:'教育与会议',title:'完成 AutoMod Simulator Beginner、Advanced 培训',group:'education'},
         {date:'教育与会议',title:'完成 Siemens Plant Simulation 导入评估及培训',group:'education'}
@@ -126,6 +129,7 @@
         {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo Hungarian para asignación de trabajos en AutoMod Simulator'},
         {date:'SW de simulación',title:'Desarrollo de modelo paralelo conectado mediante TCP/IP en AutoMod Simulator'},
         {date:'SW de simulación',title:'Desarrollo de modelo AutoMod Simulator con aplicación de movimiento OHT de 4 ejes (Driving, Hoist, Slide)'},
+        {date:'Educación y conferencias',title:'Participación en NACSI Conference de tecnología cognitiva, aprendizaje profundo y aprendizaje por refuerzo',group:'education'},
         {date:'Educación y conferencias',title:'Formación completada de motores servo y variadores Yaskawa Korea',group:'education'},
         {date:'Educación y conferencias',title:'Formación completada de AutoMod Simulator Beginner y Advanced',group:'education'},
         {date:'Educación y conferencias',title:'Evaluación de adopción y formación completada de Siemens Plant Simulation',group:'education'}
@@ -149,6 +153,7 @@
         {date:'Simulation SW',title:'AutoMod Simulator 内 Hungarian 作業割当アルゴリズム実装モデル開発'},
         {date:'Simulation SW',title:'AutoMod Simulator TCP/IP通信接続並列モデル開発'},
         {date:'Simulation SW',title:'OHT 4軸（Driving, Hoist, Slide）モーション適用 AutoMod Simulator モデル開発'},
+        {date:'教育・カンファレンス',title:'NACSI 認知技術・ディープラーニング・強化学習 Conference 参加',group:'education'},
         {date:'教育・カンファレンス',title:'韓国Yaskawa サーボモーター・ドライブ教育修了',group:'education'},
         {date:'教育・カンファレンス',title:'AutoMod Simulator Beginner・Advanced 教育修了',group:'education'},
         {date:'教育・カンファレンス',title:'Siemens Plant Simulation 導入検討・教育修了',group:'education'}
