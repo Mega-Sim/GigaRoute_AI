@@ -140,3 +140,7 @@ html[lang="ko"] .lead,html[lang="ko"] #solutions .solution-title,html[lang="ko"]
   .tutorial-player{border-radius:20px}
 }
 
+/* Issue #83: keep the desktop Hero preview visually secondary to the copy. */
+.hero .preview{width:min(100%,440px);justify-self:end}
+.hero .preview .app{min-height:460px}
+@media(max-width:1050px){.hero .preview{width:100%;justify-self:stretch}.hero .preview .app{min-height:520px}}

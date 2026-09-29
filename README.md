@@ -39,6 +39,7 @@ Issue #81부터 모든 언어 홈페이지의 Research 논문 카드는 개인 �
 - 한국어 기본 페이지(`index.html`)와 한국어 전용 페이지(`index-ko.html`)의 Hero 문구는 `Simulation on Your Laptop` 및 `Digital Twin on Your Tablet`으로 표기합니다.
 - 화면 너비 680px 이하에서는 해당 Hero 제목만 반응형 크기·균형 줄바꿈·긴 단어 분할을 적용해 가로 잘림을 방지합니다.
 - Development Reference 카드에서는 작은 분류표기를 숨기고, 설립·경력 이력의 날짜·기간과 각 Reference의 제목·설명은 유지합니다.
+- 데스크톱 Hero의 오른쪽 프리뷰는 본문보다 작게 표시하고, 1050px 이하의 1열 레이아웃에서는 전체 폭으로 복원합니다.
 
 ## 홈페이지 제품 메시지
 
