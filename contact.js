@@ -36,6 +36,7 @@
     es: 'Educación y conferencias',
     ja: '教育・カンファレンス'
   }[locale] || 'Education & Conference';
+  const socialContributionHistoryLabel = 'Social Contribution';
 
   const historyCopy = {
     en: {
@@ -59,7 +60,10 @@
         {date:'Education & Conference',title:'Participated in NACSI Cognitive Technology, Deep Learning & Reinforcement Learning Conference',group:'education'},
         {date:'Education & Conference',title:'Yaskawa Korea servo motor · drive training completed',group:'education'},
         {date:'Education & Conference',title:'AutoMod Simulator Beginner and Advanced training completed',group:'education'},
-        {date:'Education & Conference',title:'Siemens Plant Simulation introduction review and training completed',group:'education'}
+        {date:'Education & Conference',title:'Siemens Plant Simulation introduction review and training completed',group:'education'},
+        {date:'Social Contribution',title:'2023 ~ HANIUM IT talent development mentoring',group:'social'},
+        {date:'Social Contribution',title:'2022 ~ Sponsored hygiene kits for girls through Good Neighbors',group:'social'},
+        {date:'Social Contribution',title:'2015 Volunteer free academic tutoring; received a commendation from the Mayor of Hwaseong',group:'social'}
       ]
     },
     ko: {
@@ -84,7 +88,10 @@
         {date:'Education & Conference',title:'NACSI 인지기술 딥러닝 강화학습 Conference 참가',group:'education'},
         {date:'Education & Conference',title:'한국 Yaskawa 서보 모터∙드라이브 교육 이수',group:'education'},
         {date:'Education & Conference',title:'AutoMod Simulator Beginner, Advanced 교육 이수',group:'education'},
-        {date:'Education & Conference',title:'Siemens Plant Simulation 도입 검토 및 교육 이수',group:'education'}
+        {date:'Education & Conference',title:'Siemens Plant Simulation 도입 검토 및 교육 이수',group:'education'},
+        {date:'Social Contribution',title:'2023 ~ 한이음 IT 인재육성 멘토 활동',group:'social'},
+        {date:'Social Contribution',title:'2022 ~ 굿네이버스 여학생 위생 키트 후원',group:'social'},
+        {date:'Social Contribution',title:'2015 재능 기부 무료 학습지도, 화성시장 표창',group:'social'}
       ]
     },
     'zh-CN': {
@@ -108,7 +115,10 @@
         {date:'教育与会议',title:'参加 NACSI 认知技术、深度学习、强化学习 Conference',group:'education'},
         {date:'教育与会议',title:'完成韩国安川伺服电机·驱动器培训',group:'education'},
         {date:'教育与会议',title:'完成 AutoMod Simulator Beginner、Advanced 培训',group:'education'},
-        {date:'教育与会议',title:'完成 Siemens Plant Simulation 导入评估及培训',group:'education'}
+        {date:'教育与会议',title:'完成 Siemens Plant Simulation 导入评估及培训',group:'education'},
+        {date:'Social Contribution',title:'2023 ~ HANIUM IT 人才培养导师活动',group:'social'},
+        {date:'Social Contribution',title:'2022 ~ 通过 Good Neighbors 赞助女学生卫生用品包',group:'social'},
+        {date:'Social Contribution',title:'2015 才能捐赠免费学习辅导，获华城市长表彰',group:'social'}
       ]
     },
     es: {
@@ -132,7 +142,10 @@
         {date:'Educación y conferencias',title:'Participación en NACSI Conference de tecnología cognitiva, aprendizaje profundo y aprendizaje por refuerzo',group:'education'},
         {date:'Educación y conferencias',title:'Formación completada de motores servo y variadores Yaskawa Korea',group:'education'},
         {date:'Educación y conferencias',title:'Formación completada de AutoMod Simulator Beginner y Advanced',group:'education'},
-        {date:'Educación y conferencias',title:'Evaluación de adopción y formación completada de Siemens Plant Simulation',group:'education'}
+        {date:'Educación y conferencias',title:'Evaluación de adopción y formación completada de Siemens Plant Simulation',group:'education'},
+        {date:'Social Contribution',title:'2023 ~ Mentoría para el desarrollo de talento TI en HANIUM',group:'social'},
+        {date:'Social Contribution',title:'2022 ~ Patrocinio de kits de higiene para alumnas a través de Good Neighbors',group:'social'},
+        {date:'Social Contribution',title:'2015 Tutoría académica gratuita como voluntariado; reconocimiento del alcalde de Hwaseong',group:'social'}
       ]
     },
     ja: {
@@ -156,7 +169,10 @@
         {date:'教育・カンファレンス',title:'NACSI 認知技術・ディープラーニング・強化学習 Conference 参加',group:'education'},
         {date:'教育・カンファレンス',title:'韓国Yaskawa サーボモーター・ドライブ教育修了',group:'education'},
         {date:'教育・カンファレンス',title:'AutoMod Simulator Beginner・Advanced 教育修了',group:'education'},
-        {date:'教育・カンファレンス',title:'Siemens Plant Simulation 導入検討・教育修了',group:'education'}
+        {date:'教育・カンファレンス',title:'Siemens Plant Simulation 導入検討・教育修了',group:'education'},
+        {date:'Social Contribution',title:'2023 ~ HANIUM IT人材育成メンター活動',group:'social'},
+        {date:'Social Contribution',title:'2022 ~ グッドネーバーズ 女子学生向け衛生キット支援',group:'social'},
+        {date:'Social Contribution',title:'2015 才能寄付による無料学習指導、華城市長表彰',group:'social'}
       ]
     }
   }[locale] || null;
@@ -368,10 +384,12 @@
     const itemHtml = (item, isDevelopment = false, isFounding = false, isHighlight = false) => `<article class="history-item${isDevelopment ? ' history-item--development' : ''}${isFounding ? ' history-item--founding' : ''}${isHighlight ? ' history-item--highlight' : ''}">${isDevelopment ? '' : `<div class="history-date">${item.date}</div>`}<div><h3>${isFounding || isHighlight ? `<span class="gradient history-title-accent">${item.title}</span>` : item.title}</h3>${isDevelopment || !item.desc ? '' : `<p>${item.desc}</p>`}</div></article>`;
     const foundingHtml = history.items.length ? itemHtml(history.items[0], false, true) : '';
     const careerItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'career').map(item => itemHtml(item)).join('');
-    const developmentItemsHtml = history.items.filter((item, index) => index > 0 && item.group !== 'career' && item.group !== 'education').map(item => itemHtml(item, true, false, item.highlight === true)).join('');
+    const developmentItemsHtml = history.items.filter((item, index) => index > 0 && item.group !== 'career' && item.group !== 'education' && item.group !== 'social').map(item => itemHtml(item, true, false, item.highlight === true)).join('');
     const educationItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'education').map(item => itemHtml(item, true)).join('');
     const educationSectionHtml = educationItemsHtml ? `<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${educationHistoryLabel}</h3>${educationItemsHtml}` : '';
-    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><h2><span class="gradient history-brand">GigaRoute AI</span><span>History</span></h2></div><div class="history-list">${foundingHtml}${careerItemsHtml}<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${developmentHistoryLabel}</h3>${developmentItemsHtml}${educationSectionHtml}</div></div></div>`;
+    const socialItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'social').map(item => itemHtml(item, true)).join('');
+    const socialSectionHtml = socialItemsHtml ? `<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${socialContributionHistoryLabel}</h3>${socialItemsHtml}` : '';
+    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><h2><span class="gradient history-brand">GigaRoute AI</span><span>History</span></h2></div><div class="history-list">${foundingHtml}${careerItemsHtml}<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${developmentHistoryLabel}</h3>${developmentItemsHtml}${educationSectionHtml}${socialSectionHtml}</div></div></div>`;
     hero.insertAdjacentElement('afterend', section);
   }
 
