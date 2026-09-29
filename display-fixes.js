@@ -122,7 +122,7 @@
       style.id = 'performance-impact-style';
       style.textContent = `
         #engine-performance .performance-head{display:block!important}
-        #engine-performance .performance-head h2{max-width:none!important;margin:0;font-size:clamp(34px,3.45vw,48px);line-height:1.12;letter-spacing:-.045em;word-break:keep-all}
+        #engine-performance .performance-head h2{max-width:none!important;margin:0;font-size:clamp(28px,3vw,42px);line-height:1.14;letter-spacing:-.045em;word-break:keep-all}
         #engine-performance .performance-title-line{display:block;white-space:nowrap}
         #engine-performance .performance-impact{margin-top:28px;padding:22px;border:1px solid rgba(55,96,145,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(225,238,250,.94));box-shadow:0 16px 36px rgba(42,60,82,.10)}
         #engine-performance .performance-impact-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
@@ -134,7 +134,7 @@
         #engine-performance .performance-impact-metric span{display:block;margin-top:8px;color:var(--ink);font-size:12px;font-weight:850;line-height:1.45}
         #engine-performance .performance-impact-note{margin:12px 2px 0;color:var(--muted);font-size:10.5px;line-height:1.55}
         @media(max-width:900px){#engine-performance .performance-title-line{white-space:normal}}
-        @media(max-width:760px){#engine-performance .performance-head h2{font-size:clamp(29px,7.2vw,40px);line-height:1.16}#engine-performance .performance-impact{padding:16px;margin-top:20px}#engine-performance .performance-impact-grid{grid-template-columns:1fr}#engine-performance .performance-impact-metric strong{white-space:normal}}
+        @media(max-width:760px){#engine-performance .performance-head h2{font-size:clamp(26px,6.4vw,36px);line-height:1.18}#engine-performance .performance-impact{padding:16px;margin-top:20px}#engine-performance .performance-impact-grid{grid-template-columns:1fr}#engine-performance .performance-impact-metric strong{white-space:normal}}
       `;
       document.head.appendChild(style);
     }

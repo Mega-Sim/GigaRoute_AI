@@ -354,3 +354,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-09-29: Issue #100으로 History의 `GigaRoute AI 설립`과 `GigaRoute AI 물류 자동화 시뮬레이터 개발` 두 강조 제목만 21–22px로 소폭 확대하고, 청록·블루·보라 그라데이션을 더 선명하게 조정했습니다. 나머지 History 항목의 크기와 레이아웃은 유지했습니다.
 
 - 2026-09-29: Issue #101로 성능 섹션의 1,100대 AMHS 21.6배속 헤드라인을 소폭 축소하고, `8.0GB OFFICE LAPTOP BENCHMARK` 및 CPU·RAM·GPU·Windows 기준 사양 라벨을 13px로 확대해 읽기 쉽게 조정했습니다. 공개 성능 수치와 카드 구성은 유지했습니다.
+
+- 2026-09-29: Issue #102로 성능 섹션의 핵심 헤드라인을 데스크톱 28–42px, 모바일 26–36px로 추가 축소했습니다. Issue #101에서 확대한 벤치마크 사양 라벨과 성능 수치·카드 구성은 유지했습니다.
