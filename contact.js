@@ -331,7 +331,7 @@
   if (hero && history && !document.querySelector('#history')) {
     const section = document.createElement('section');
     section.id = 'history';
-    const itemHtml = (item, isDevelopment = false) => `<article class="history-item${isDevelopment ? ' history-item--development' : ''}>${isDevelopment ? '' : `<div class="history-date">${item.date}</div>`}<div><h3>${item.title}</h3>${item.desc ? `<p>${item.desc}</p>` : ''}</div></article>`;
+    const itemHtml = (item, isDevelopment = false) => `<article class="history-item${isDevelopment ? ' history-item--development' : ''}">${isDevelopment ? '' : `<div class="history-date">${item.date}</div>`}<div><h3>${item.title}</h3>${item.desc ? `<p>${item.desc}</p>` : ''}</div></article>`;
     const foundingHtml = history.items.length ? itemHtml(history.items[0]) : '';
     const careerItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'career').map(itemHtml).join('');
     const developmentItemsHtml = history.items.filter((item, index) => index > 0 && item.group !== 'career').map(item => itemHtml(item, true)).join('');
