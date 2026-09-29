@@ -154,3 +154,10 @@ html[lang="ko"] .hero h1.hero-platform-title .hero-title-line{max-inline-size:no
 /* Issue #89: Hero preview renders the supplied image alone; no dashboard chrome or metric text. */
 .hero .preview .app{display:block;min-height:0}
 .hero .preview .canvas{min-height:0;aspect-ratio:4/3;border:0;border-radius:24px}
+
+
+/* Issue #91: keep mobile header navigation compact. */
+@media(max-width:680px){
+  .links{flex-wrap:nowrap!important;width:100%;overflow-x:auto!important;white-space:nowrap!important}
+  .links a[href="#tutorial"],.links .contact-trigger{display:none!important}
+}
