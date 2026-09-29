@@ -327,3 +327,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 
 홈페이지 공개·배포 원본은 `Mega-Sim/GigaRoute_AI`에서 관리하며, 제품 C++ 핵심 소스는 private `Mega-Sim/Sim_Core`에서 관리합니다.
 - 2026-09-29: Issue #89로 모든 언어 홈페이지의 Hero 오른쪽 프리뷰에서 앱 사이드바·상단 상태·하단 지표 텍스트를 제거하고 `hero-preview.png` 한 장만 표시하도록 정리했습니다. 좌측 Hero 콘텐츠와 기존 반응형 2열/1열 전환은 유지했습니다.
+
+- 2026-09-29: Issue #89 후속 조정으로 Hero 우측 이미지 영역의 데스크톱 최대 폭을 440px에서 580px로 넓히고, 한국어 Hero의 좌우 열을 동일 비율로 조정했습니다. 이미지는 자르지 않고 기존 비율을 유지합니다.

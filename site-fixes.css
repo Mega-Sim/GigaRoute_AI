@@ -141,12 +141,12 @@ html[lang="ko"] .lead,html[lang="ko"] #solutions .solution-title,html[lang="ko"]
 }
 
 /* Issue #83: keep the desktop Hero preview visually secondary to the copy. */
-.hero .preview{width:min(100%,440px);justify-self:end}
+.hero .preview{width:100%;max-width:580px;justify-self:end}
 .hero .preview .app{min-height:460px}
 @media(max-width:1050px){.hero .preview{width:100%;justify-self:stretch}.hero .preview .app{min-height:520px}}
 
 /* Issue #83: keep each desktop platform message on its own visual line. */
-html[lang="ko"] .hero{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px}
+html[lang="ko"] .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px}
 html[lang="ko"] .hero h1.hero-platform-title{font-size:clamp(32px,3.2vw,42px);line-height:1.05;letter-spacing:-.055em;white-space:normal;overflow-wrap:normal}
 html[lang="ko"] .hero h1.hero-platform-title .hero-title-line{max-inline-size:none;white-space:nowrap;text-wrap:nowrap}
 @media(max-width:1050px){html[lang="ko"] .hero{grid-template-columns:1fr;gap:62px}html[lang="ko"] .hero h1.hero-platform-title .hero-title-line{max-inline-size:100%;white-space:normal;text-wrap:balance}}
