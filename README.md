@@ -341,3 +341,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-09-29: Issue #94로 논문 카드의 아주대학교 AI Robotics LAB 관련 표현을 공동 협업에서 도움을 받음으로 바로잡았습니다.
 
 - 2026-09-29: Issue #95로 동영상 섹션의 큰 Tutorial 제목을 제거하고, 작은 동영상 라벨과 플레이어 사이 여백을 간결하게 조정했습니다.
+
+- 2026-09-29: Issue #96으로 개발 Reference에 AutoMod TCP/IP 통신 연결 병렬 모델 개발 이력을 Hungarian 작업 할당 모델 뒤, OHT 4축 모델 앞에 추가했습니다.
