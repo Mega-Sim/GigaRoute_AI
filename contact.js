@@ -62,6 +62,7 @@
         {date:'SW 개발',title:'서보 Fault Trace 로그 분석 자동화 SW 개발'},
         {date:'SW 개발',title:'CAD 도면 시뮬레이션 레이아웃 변환 자동화 SW 기능 개발'},
         {date:'SW 개발',title:'CAD 텍스트 정보 입력/출력 자동화 SW 개발'},
+        {date:'SW 개발',title:'CAD Symbol 배치 자동화 SW 개발'},
         {date:'SW 개발',title:'Atlassian API 기반 SW 변경점·이슈관리 자동화 SW 개발',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SW 변경점 관리 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
         {date:'Simulation SW',title:'업계 표준 AutoMod Simulator 내 Dijkstra 경로 탐색 알고리즘 구현 모델 개발',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'},
         {date:'Simulation SW',title:'업계 표준 AutoMod Simulator 내 Hungarian 작업 할당 알고리즘 구현 모델 개발'},
