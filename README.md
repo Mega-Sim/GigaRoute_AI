@@ -347,3 +347,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-09-29: Issue #97로 개발 Reference 아래에 같은 구분선과 Education & Conference 섹션을 추가하고, Yaskawa·AutoMod·Siemens Plant Simulation 교육 이력 3건을 반영했습니다.
 
 - 2026-09-29: Issue #98로 History의 업계 표준 표현을 제거하고, Dijkstra·Hungarian·TCP/IP·OHT·교육 이력의 AutoMod 표기를 AutoMod Simulator로 통일했습니다.
+
+- 2026-09-29: Issue #99로 GigaRoute AI 물류 자동화 시뮬레이터 개발 이력을 설립 항목과 같은 그라데이션 색으로 강조했습니다.
