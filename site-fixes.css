@@ -161,3 +161,13 @@ html[lang="ko"] .hero h1.hero-platform-title .hero-title-line{max-inline-size:no
   .links{flex-wrap:nowrap!important;width:100%;overflow-x:auto!important;white-space:nowrap!important}
   .links a[href="#tutorial"],.links .contact-trigger{display:none!important}
 }
+
+
+/* Issue #93: give the platform Hero title breathing room and keep descenders visible. */
+.hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12em}
+.hero h1.hero-platform-title .hero-title-line+.hero-title-line{margin-top:.06em}
+html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12em}
+@media(max-width:680px){
+  .hero h1.hero-platform-title,html[lang="ko"] .hero h1.hero-platform-title{line-height:1.17;padding-bottom:.14em}
+  .hero h1.hero-platform-title .hero-title-line+.hero-title-line{margin-top:.08em}
+}
