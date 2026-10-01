@@ -44,7 +44,7 @@
       title:'GigaRoute AI History',
       lead:'GigaRoute AI records the engineering milestones behind its simulation and automation software.',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI founded',desc:'Founded to localize logistics simulation technology and to develop and supply high-performance, ultra-large-scale simulators integrated with AI technologies.'},
+        {date:'2026.07.30',title:'GigaRoute AI founded',desc:'Founded with the goal of localizing logistics simulation technology while developing and supplying high-performance, ultra-large-scale simulators integrated with AI technologies.'},
         {date:'~ 2026.07.20',title:'10 years of logistics automation simulation experience',group:'career'},
         {date:'~ 2026.07.20',title:'3 years of servo motor motion-control SW development experience',group:'career'},
         {date:'Simulation SW',title:'GigaRoute AI logistics automation simulator development',highlight:true},
@@ -71,7 +71,7 @@
       title:'GigaRoute AI 개발 이력',
       lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화와 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
+        {date:'2026.07.30',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화를 목표로 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
         {date:'2017 ~',title:'반도체 ∙ 배터리 생산 시스템 물류 자동화 시뮬레이션',group:'career'},
         {date:'2017 ~',title:'다축 서보 모터 ∙ 드라이브 모션 제어 SW 개발',group:'career'},
         {date:'Simulation SW',title:'GigaRoute AI 물류 자동화 시뮬레이터 개발',highlight:true},
@@ -99,7 +99,7 @@
       title:'GigaRoute AI 开发历程',
       lead:'记录 GigaRoute AI 在仿真与业务自动化软件方面的重要开发里程碑。',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI 成立',desc:'为实现物流仿真器国产化，并开发、供应融合 AI 技术的高性能、超大规模仿真器而成立。'},
+        {date:'2026.07.30',title:'GigaRoute AI 成立',desc:'以实现物流仿真器国产化为目标，开发、供应融合 AI 技术的高性能、超大规模仿真器而成立。'},
         {date:'~ 2026.07.20',title:'物流自动化仿真 10 年经验',group:'career'},
         {date:'~ 2026.07.20',title:'伺服电机运动控制软件开发 3 年经验',group:'career'},
         {date:'仿真软件',title:'GigaRoute AI 物流自动化仿真器开发',highlight:true},
@@ -126,7 +126,7 @@
       title:'Historia de GigaRoute AI',
       lead:'Principales hitos de software en simulación y automatización de procesos.',
       items:[
-        {date:'2026.07.30',title:'Fundación de GigaRoute AI',desc:'Fundada para localizar la tecnología de simulación logística y desarrollar y suministrar simuladores de alto rendimiento y escala ultragrande integrados con tecnologías de IA.'},
+        {date:'2026.07.30',title:'Fundación de GigaRoute AI',desc:'Fundada con el objetivo de localizar la tecnología de simulación logística mientras desarrolla y suministra simuladores de alto rendimiento y escala ultragrande integrados con tecnologías de IA.'},
         {date:'~ 2026.07.20',title:'10 años de experiencia en simulación de automatización logística',group:'career'},
         {date:'~ 2026.07.20',title:'3 años de experiencia en desarrollo de SW de control de movimiento de servomotores',group:'career'},
         {date:'SW de simulación',title:'Desarrollo del simulador de automatización logística GigaRoute AI',highlight:true},
@@ -153,7 +153,7 @@
       title:'GigaRoute AI History',
       lead:'シミュレーションと業務自動化に関する主なソフトウェア開発実績を記録します。',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI 設立',desc:'物流シミュレータの国産化と、AI 技術を融合した高性能・超大規模シミュレータの開発・供給を目的に設立しました。'},
+        {date:'2026.07.30',title:'GigaRoute AI 設立',desc:'物流シミュレータの国産化を目標に、AI 技術を融合した高性能・超大規模シミュレータの開発・供給を目的に設立しました。'},
         {date:'~ 2026.07.20',title:'物流自動化シミュレーション 10 年の経験',group:'career'},
         {date:'~ 2026.07.20',title:'サーボモータ・モーション制御 SW 開発 3 年の経験',group:'career'},
         {date:'Simulation SW',title:'GigaRoute AI 物流自動化シミュレータ開発',highlight:true},
