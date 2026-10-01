@@ -176,3 +176,6 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
 /* Issue #95: keep the video section label compact after its large title is removed. */
 .tutorial-heading{margin-bottom:12px}
 @media(max-width:760px){.tutorial-heading{margin-bottom:12px}}
+
+/* Edge/Windows: background-clip:text가 글꼴 content-area까지만 칠해 g 하강부가 잘리는 문제 방지 (레이아웃 영향 없음) */
+.gradient{padding-bottom:.22em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
