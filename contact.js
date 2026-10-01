@@ -62,7 +62,7 @@
         {date:'Education & Conference',title:'AutoMod Simulator Beginner and Advanced training completed',group:'education'},
         {date:'Education & Conference',title:'Siemens Plant Simulation introduction review and training completed',group:'education'},
         {date:'2023 ~',title:'HANIUM IT talent development mentoring',group:'social'},
-        {date:'2022 ~',title:'Sponsored hygiene kits for girls through Good Neighbors',group:'social'},
+        {date:'2022 ~',title:'Sponsored hygiene kits for young women through Good Neighbors',group:'social'},
         {date:'2015',title:'Volunteer free academic tutoring; received a commendation from the Mayor of Hwaseong',group:'social'}
       ]
     },
@@ -90,7 +90,7 @@
         {date:'Education & Conference',title:'AutoMod Simulator Beginner, Advanced 교육 이수',group:'education'},
         {date:'Education & Conference',title:'Siemens Plant Simulation 도입 검토 및 교육 이수',group:'education'},
         {date:'2023 ~',title:'한이음 IT 인재육성 멘토 활동',group:'social'},
-        {date:'2022 ~',title:'굿네이버스 여학생 위생 키트 후원',group:'social'},
+        {date:'2022 ~',title:'굿네이버스 여성 청소년 위생 키트 후원',group:'social'},
         {date:'2015',title:'재능 기부 무료 학습지도, 화성시장 표창',group:'social'}
       ]
     },
@@ -117,7 +117,7 @@
         {date:'教育与会议',title:'完成 AutoMod Simulator Beginner、Advanced 培训',group:'education'},
         {date:'教育与会议',title:'完成 Siemens Plant Simulation 导入评估及培训',group:'education'},
         {date:'2023 ~',title:'HANIUM IT 人才培养导师活动',group:'social'},
-        {date:'2022 ~',title:'通过 Good Neighbors 赞助女学生卫生用品包',group:'social'},
+        {date:'2022 ~',title:'通过 Good Neighbors 赞助女性青少年卫生用品包',group:'social'},
         {date:'2015',title:'才能捐赠免费学习辅导，获华城市长表彰',group:'social'}
       ]
     },
@@ -144,7 +144,7 @@
         {date:'Educación y conferencias',title:'Formación completada de AutoMod Simulator Beginner y Advanced',group:'education'},
         {date:'Educación y conferencias',title:'Evaluación de adopción y formación completada de Siemens Plant Simulation',group:'education'},
         {date:'2023 ~',title:'Mentoría para el desarrollo de talento TI en HANIUM',group:'social'},
-        {date:'2022 ~',title:'Patrocinio de kits de higiene para alumnas a través de Good Neighbors',group:'social'},
+        {date:'2022 ~',title:'Patrocinio de kits de higiene para jóvenes mujeres a través de Good Neighbors',group:'social'},
         {date:'2015',title:'Tutoría académica gratuita como voluntariado; reconocimiento del alcalde de Hwaseong',group:'social'}
       ]
     },
@@ -171,7 +171,7 @@
         {date:'教育・カンファレンス',title:'AutoMod Simulator Beginner・Advanced 教育修了',group:'education'},
         {date:'教育・カンファレンス',title:'Siemens Plant Simulation 導入検討・教育修了',group:'education'},
         {date:'2023 ~',title:'HANIUM IT人材育成メンター活動',group:'social'},
-        {date:'2022 ~',title:'グッドネーバーズ 女子学生向け衛生キット支援',group:'social'},
+        {date:'2022 ~',title:'グッドネーバーズ 女性青少年向け衛生キット支援',group:'social'},
         {date:'2015',title:'才能寄付による無料学習指導、華城市長表彰',group:'social'}
       ]
     }
