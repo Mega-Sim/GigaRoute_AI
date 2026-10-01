@@ -366,3 +366,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-09-30: Issue #105로 `Social Contribution` 카드의 날짜 열을 130px에서 110px로 줄여 검은 제목을 왼쪽으로 당겼고, `Development Reference` 이하의 일반 검은 이력 제목(교육·사회공헌 포함)을 14–16px로 추가 축소했습니다. `GigaRoute AI 물류 자동화 시뮬레이터 개발` 강조 제목은 기존 크기와 그라데이션을 유지했습니다. 다국어 페이지의 `contact.js` 캐시 버전도 갱신했습니다.
 
 - 2026-10-02: Windows Edge에서 그라데이션 글자(`background-clip:text`)의 `g` 하강부가 아래쪽이 잘려 보이던 문제를 수정했습니다. `.gradient`와 History의 `GigaRoute AI` 제목·강조 제목에 하단 padding(음수 margin으로 레이아웃 보정)을 추가해 배경 그라데이션이 하강부까지 칠해지도록 했으며, 모든 언어 페이지의 `contact.js`·`site-fixes.css` 캐시 버전을 `20261002-1`로 갱신했습니다.
+
+- 2026-10-02: Consulting 섹션의 workflow-automation 패널을 업데이트했습니다. 패널 제목을 "Engineering & Workflow Automation"에서 "AI 업무 자동화 S/W 개발" (또는 각 언어 현지화)으로 변경하고, 01 항목을 "업무 지원 AI 에이전트 개발" (또는 각 언어 현지화)으로, 02 항목을 CAD와 Atlassian을 병합해 "CAD 및 개발 도구 자동화" (또는 각 언어 현지화)로 변경했습니다. 모든 언어 페이지(한국어, 영어, 중국어, 스페인어, 일본어)에 동일 구조를 적용했습니다.
