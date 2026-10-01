@@ -359,7 +359,7 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 
 - 2026-09-29: Issue #103으로 Education & Conference 섹션 맨 위에 `NACSI 인지기술 딥러닝 강화학습 Conference 참가` 이력을 추가하고, 다국어 페이지에도 동일 항목을 현지화해 반영했습니다. 기존 Yaskawa·AutoMod Simulator·Siemens Plant Simulation 교육 이력과 카드 스타일·순서는 유지했습니다.
 
-- 2026-09-30: Issue #104로 `Education & Conference` 아래에 `Social Contribution` 섹션을 추가하고, 2023년부터 한이음 IT 인재육성 멘토 활동, 2022년부터 굿네이버스 여학생 위생 키트 후원, 2015년 재능 기부 무료 학습지도 및 화성시장 표창 이력을 반영했습니다. 기존 History 카드 스타일과 구분선을 재사용하고 다국어 페이지에도 동일 사회공헌 이력을 반영했습니다.
+- 2026-09-30: Issue #104로 `Education & Conference` 아래에 `Social Contribution` 섹션을 추가하고, 2023년부터 한이음 IT 인재육성 멘토 활동, 2022년부터 굿네이버스 여성 청소년 위생 키트 후원, 2015년 재능 기부 무료 학습지도 및 화성시장 표창 이력을 반영했습니다. 기존 History 카드 스타일과 구분선을 재사용하고 다국어 페이지에도 동일 사회공헌 이력을 반영했습니다.
 
 - 2026-09-30: Issue #104 후속 수정으로 `Social Contribution` 3개 항목을 기존 경력 History 카드와 동일한 `날짜(왼쪽) + 이력 제목(오른쪽)` 2열 스타일로 변경했습니다. `2023 ~`, `2022 ~`, `2015`를 날짜 열로 분리하고 사회공헌 제목에서는 연도를 제거했으며, 다국어 페이지의 `contact.js` 캐시 버전도 갱신했습니다.
 

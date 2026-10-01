@@ -44,7 +44,7 @@
       title:'GigaRoute AI History',
       lead:'GigaRoute AI records the engineering milestones behind its simulation and automation software.',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI founded',desc:'Founded to localize logistics simulation technology and to develop and supply high-performance, ultra-large-scale simulators integrated with AI technologies.'},
+        {date:'2026.07.30',title:'GigaRoute AI founded',desc:'Founded with the goal of localizing logistics simulation technology while developing and supplying high-performance, ultra-large-scale simulators integrated with AI technologies.'},
         {date:'~ 2026.07.20',title:'10 years of logistics automation simulation experience',group:'career'},
         {date:'~ 2026.07.20',title:'3 years of servo motor motion-control SW development experience',group:'career'},
         {date:'Simulation SW',title:'GigaRoute AI logistics automation simulator development',highlight:true},
@@ -62,7 +62,7 @@
         {date:'Education & Conference',title:'AutoMod Simulator Beginner and Advanced training completed',group:'education'},
         {date:'Education & Conference',title:'Siemens Plant Simulation introduction review and training completed',group:'education'},
         {date:'2023 ~',title:'HANIUM IT talent development mentoring',group:'social'},
-        {date:'2022 ~',title:'Sponsored hygiene kits for girls through Good Neighbors',group:'social'},
+        {date:'2022 ~',title:'Sponsored hygiene kits for young women through Good Neighbors',group:'social'},
         {date:'2015',title:'Volunteer free academic tutoring; received a commendation from the Mayor of Hwaseong',group:'social'}
       ]
     },
@@ -71,7 +71,7 @@
       title:'GigaRoute AI 개발 이력',
       lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화와 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
+        {date:'2026.07.30',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화를 목표로 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
         {date:'2017 ~',title:'반도체 ∙ 배터리 생산 시스템 물류 자동화 시뮬레이션',group:'career'},
         {date:'2017 ~',title:'다축 서보 모터 ∙ 드라이브 모션 제어 SW 개발',group:'career'},
         {date:'Simulation SW',title:'GigaRoute AI 물류 자동화 시뮬레이터 개발',highlight:true},
@@ -90,7 +90,7 @@
         {date:'Education & Conference',title:'AutoMod Simulator Beginner, Advanced 교육 이수',group:'education'},
         {date:'Education & Conference',title:'Siemens Plant Simulation 도입 검토 및 교육 이수',group:'education'},
         {date:'2023 ~',title:'한이음 IT 인재육성 멘토 활동',group:'social'},
-        {date:'2022 ~',title:'굿네이버스 여학생 위생 키트 후원',group:'social'},
+        {date:'2022 ~',title:'굿네이버스 여성 청소년 위생 키트 후원',group:'social'},
         {date:'2015',title:'재능 기부 무료 학습지도, 화성시장 표창',group:'social'}
       ]
     },
@@ -99,7 +99,7 @@
       title:'GigaRoute AI 开发历程',
       lead:'记录 GigaRoute AI 在仿真与业务自动化软件方面的重要开发里程碑。',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI 成立',desc:'为实现物流仿真器国产化，并开发、供应融合 AI 技术的高性能、超大规模仿真器而成立。'},
+        {date:'2026.07.30',title:'GigaRoute AI 成立',desc:'以实现物流仿真器国产化为目标，开发、供应融合 AI 技术的高性能、超大规模仿真器而成立。'},
         {date:'~ 2026.07.20',title:'物流自动化仿真 10 年经验',group:'career'},
         {date:'~ 2026.07.20',title:'伺服电机运动控制软件开发 3 年经验',group:'career'},
         {date:'仿真软件',title:'GigaRoute AI 物流自动化仿真器开发',highlight:true},
@@ -117,7 +117,7 @@
         {date:'教育与会议',title:'完成 AutoMod Simulator Beginner、Advanced 培训',group:'education'},
         {date:'教育与会议',title:'完成 Siemens Plant Simulation 导入评估及培训',group:'education'},
         {date:'2023 ~',title:'HANIUM IT 人才培养导师活动',group:'social'},
-        {date:'2022 ~',title:'通过 Good Neighbors 赞助女学生卫生用品包',group:'social'},
+        {date:'2022 ~',title:'通过 Good Neighbors 赞助女性青少年卫生用品包',group:'social'},
         {date:'2015',title:'才能捐赠免费学习辅导，获华城市长表彰',group:'social'}
       ]
     },
@@ -126,7 +126,7 @@
       title:'Historia de GigaRoute AI',
       lead:'Principales hitos de software en simulación y automatización de procesos.',
       items:[
-        {date:'2026.07.30',title:'Fundación de GigaRoute AI',desc:'Fundada para localizar la tecnología de simulación logística y desarrollar y suministrar simuladores de alto rendimiento y escala ultragrande integrados con tecnologías de IA.'},
+        {date:'2026.07.30',title:'Fundación de GigaRoute AI',desc:'Fundada con el objetivo de localizar la tecnología de simulación logística mientras desarrolla y suministra simuladores de alto rendimiento y escala ultragrande integrados con tecnologías de IA.'},
         {date:'~ 2026.07.20',title:'10 años de experiencia en simulación de automatización logística',group:'career'},
         {date:'~ 2026.07.20',title:'3 años de experiencia en desarrollo de SW de control de movimiento de servomotores',group:'career'},
         {date:'SW de simulación',title:'Desarrollo del simulador de automatización logística GigaRoute AI',highlight:true},
@@ -144,7 +144,7 @@
         {date:'Educación y conferencias',title:'Formación completada de AutoMod Simulator Beginner y Advanced',group:'education'},
         {date:'Educación y conferencias',title:'Evaluación de adopción y formación completada de Siemens Plant Simulation',group:'education'},
         {date:'2023 ~',title:'Mentoría para el desarrollo de talento TI en HANIUM',group:'social'},
-        {date:'2022 ~',title:'Patrocinio de kits de higiene para alumnas a través de Good Neighbors',group:'social'},
+        {date:'2022 ~',title:'Patrocinio de kits de higiene para jóvenes mujeres a través de Good Neighbors',group:'social'},
         {date:'2015',title:'Tutoría académica gratuita como voluntariado; reconocimiento del alcalde de Hwaseong',group:'social'}
       ]
     },
@@ -153,7 +153,7 @@
       title:'GigaRoute AI History',
       lead:'シミュレーションと業務自動化に関する主なソフトウェア開発実績を記録します。',
       items:[
-        {date:'2026.07.30',title:'GigaRoute AI 設立',desc:'物流シミュレータの国産化と、AI 技術を融合した高性能・超大規模シミュレータの開発・供給を目的に設立しました。'},
+        {date:'2026.07.30',title:'GigaRoute AI 設立',desc:'物流シミュレータの国産化を目標に、AI 技術を融合した高性能・超大規模シミュレータの開発・供給を目的に設立しました。'},
         {date:'~ 2026.07.20',title:'物流自動化シミュレーション 10 年の経験',group:'career'},
         {date:'~ 2026.07.20',title:'サーボモータ・モーション制御 SW 開発 3 年の経験',group:'career'},
         {date:'Simulation SW',title:'GigaRoute AI 物流自動化シミュレータ開発',highlight:true},
@@ -171,7 +171,7 @@
         {date:'教育・カンファレンス',title:'AutoMod Simulator Beginner・Advanced 教育修了',group:'education'},
         {date:'教育・カンファレンス',title:'Siemens Plant Simulation 導入検討・教育修了',group:'education'},
         {date:'2023 ~',title:'HANIUM IT人材育成メンター活動',group:'social'},
-        {date:'2022 ~',title:'グッドネーバーズ 女子学生向け衛生キット支援',group:'social'},
+        {date:'2022 ~',title:'グッドネーバーズ 女性青少年向け衛生キット支援',group:'social'},
         {date:'2015',title:'才能寄付による無料学習指導、華城市長表彰',group:'social'}
       ]
     }
