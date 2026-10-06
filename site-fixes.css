@@ -205,3 +205,7 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
 #history .history-head h2,#solutions .solution-title,#consulting .heading h2,#research .heading h2{font-size:clamp(26px,7.4vw,34px)}
 }
 .cta h2{font-size:clamp(30px,4vw,48px);line-height:1.14;letter-spacing:-.05em}
+.performance-section-heading{margin:0 0 20px}
+.performance-section-heading .kicker{margin-bottom:10px}
+.performance-section-heading h2{margin:0;font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.045em;word-break:keep-all;overflow-wrap:break-word}
+@media(max-width:760px){.performance-section-heading h2{font-size:clamp(26px,7.4vw,34px)}}

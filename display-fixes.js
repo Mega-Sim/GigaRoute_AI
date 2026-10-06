@@ -224,9 +224,30 @@
 
   const applyPerformanceFixes = () => {
     addSolutionsKicker();
+    addPerformanceTitle();
     const rounded = roundPublicPerformance();
     const enhanced = enhancePerformance();
     return rounded && enhanced;
+  };
+
+  const perfTitles = {
+    ko: '8.0GB 노트북 실측 성능과 AutoMod 비교',
+    en: 'Measured Performance and AutoMod Comparison',
+    'zh-CN': '实测性能与 AutoMod 对比',
+    es: 'Rendimiento medido y comparación con AutoMod',
+    ja: '実測性能と AutoMod 比較'
+  };
+
+  const addPerformanceTitle = () => {
+    const section = document.querySelector('#engine-performance');
+    const panel = section?.querySelector('.performance-panel');
+    if (!panel || section.querySelector('.performance-section-heading')) return;
+    const lang = document.documentElement.lang || 'en';
+    const nav = document.querySelector('.links a[href="#engine-performance"]');
+    const head = document.createElement('div');
+    head.className = 'performance-section-heading';
+    head.innerHTML = `<p class="kicker">${nav ? nav.textContent.trim() : ''}</p><h2>${perfTitles[lang] || perfTitles.en}</h2>`;
+    panel.insertAdjacentElement('beforebegin', head);
   };
 
   const addSolutionsKicker = () => {
