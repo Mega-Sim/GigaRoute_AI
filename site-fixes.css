@@ -179,3 +179,29 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
 
 /* Edge/Windows: background-clip:text가 글꼴 content-area까지만 칠해 g 하강부가 잘리는 문제 방지 (레이아웃 영향 없음) */
 .gradient{padding-bottom:.22em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* Layout consistency pass: unify section headers, vertical rhythm and card alignment. Override-only. */
+#history .history-head h2,#solutions .solution-title,#consulting .heading h2,#research .heading h2{font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.045em}
+#solutions .solution-title{color:var(--ink)}
+#solutions .solution-heading .kicker{margin-bottom:10px}
+#history,#solutions,#consulting,#research,#tutorial,main>section:last-of-type{padding-top:56px;padding-bottom:56px}
+#engine-performance{padding:0 0 56px}
+#consulting .heading,#research .heading{align-items:end;margin-bottom:24px}
+#history .history-head{margin-bottom:22px}
+#history .history-item:not(.history-item--development){grid-template-columns:128px minmax(0,1fr);column-gap:18px}
+.consulting-services article{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.consulting-services article b{display:block}
+.consulting-services article h4{margin:0;text-wrap:pretty;word-break:keep-all}
+.consulting-services article p{margin:4px 0 0}
+#research .research-top{flex-direction:column;align-items:flex-start;gap:8px}
+#research .research-card h3{margin:0}
+#research .research-org{font-size:12px;gap:8px}
+#research .research-card{gap:6px}
+.tutorial-heading .kicker{margin-bottom:12px}
+@media(max-width:760px){
+#history,#solutions,#consulting,#research,#tutorial,main>section:last-of-type{padding-top:36px;padding-bottom:36px}
+#engine-performance{padding-bottom:36px}
+#history .history-item:not(.history-item--development){grid-template-columns:92px minmax(0,1fr);column-gap:10px}
+#history .history-head h2,#solutions .solution-title,#consulting .heading h2,#research .heading h2{font-size:clamp(26px,7.4vw,34px)}
+}
+.cta h2{font-size:clamp(30px,4vw,48px);line-height:1.14;letter-spacing:-.05em}

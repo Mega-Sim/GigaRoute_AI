@@ -223,9 +223,21 @@
   };
 
   const applyPerformanceFixes = () => {
+    addSolutionsKicker();
     const rounded = roundPublicPerformance();
     const enhanced = enhancePerformance();
     return rounded && enhanced;
+  };
+
+  const addSolutionsKicker = () => {
+    const head = document.querySelector('#solutions .solution-heading');
+    if (!head || head.querySelector('.kicker')) return;
+    const nav = document.querySelector('.links a[href="#solutions"]');
+    if (!nav) return;
+    const kicker = document.createElement('p');
+    kicker.className = 'kicker';
+    kicker.textContent = nav.textContent.trim();
+    head.prepend(kicker);
   };
 
   const apply = () => {
