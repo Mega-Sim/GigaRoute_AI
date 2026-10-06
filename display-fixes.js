@@ -176,19 +176,19 @@
       style.id = 'performance-impact-style';
       style.textContent = `
         #engine-performance .performance-head{display:block!important}
-        #engine-performance .performance-head h2{max-width:none!important;margin:0;font-size:clamp(28px,3vw,42px);line-height:1.14;letter-spacing:-.045em;word-break:keep-all}
+        #engine-performance .performance-head{padding:22px;border:1px solid rgba(55,96,145,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(225,238,250,.94));box-shadow:0 16px 36px rgba(42,60,82,.10)}#engine-performance .performance-head .kicker{margin:0 0 8px;color:var(--brand);font-size:13px;font-weight:950;letter-spacing:.08em}#engine-performance .performance-head h2{max-width:none!important;margin:0;color:var(--deep);font-size:clamp(20px,2.2vw,26px);font-weight:900;line-height:1.3;letter-spacing:-.04em;word-break:keep-all}
         #engine-performance .performance-title-line{display:block;white-space:nowrap}
-        #engine-performance .performance-impact{margin-top:28px;padding:22px;border:1px solid rgba(55,96,145,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(225,238,250,.94));box-shadow:0 16px 36px rgba(42,60,82,.10)}
+        #engine-performance .performance-impact{margin-top:18px;padding:22px;border:1px solid rgba(55,96,145,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(225,238,250,.94));box-shadow:0 16px 36px rgba(42,60,82,.10)}
         #engine-performance .performance-impact-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
         #engine-performance .performance-impact-eyebrow{color:var(--brand);font-size:13px;font-weight:950;letter-spacing:.08em}
         #engine-performance .performance-impact-context{color:var(--muted);font-size:13px;font-weight:850;line-height:1.45}
         #engine-performance .performance-impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
         #engine-performance .performance-impact-metric{min-width:0;padding:18px;border-radius:16px;background:rgba(255,255,255,.90);border:1px solid rgba(55,96,145,.12)}
-        #engine-performance .performance-impact-metric strong{display:block;color:var(--brand);font-size:clamp(26px,3vw,40px);line-height:1;letter-spacing:-.045em;white-space:nowrap}
-        #engine-performance .performance-impact-metric span{display:block;margin-top:8px;color:var(--ink);font-size:12px;font-weight:850;line-height:1.45}
+        #engine-performance .performance-impact-metric strong{display:block;color:var(--deep);font-size:clamp(20px,2.2vw,28px);font-weight:950;line-height:1;letter-spacing:-.04em;white-space:nowrap}
+        #engine-performance .performance-impact-metric span{display:block;margin-top:8px;color:var(--ink);font-size:13px;font-weight:900;line-height:1.45}
         #engine-performance .performance-impact-note{margin:12px 2px 0;color:var(--muted);font-size:10.5px;line-height:1.55}
         #engine-performance .performance-compare{margin-top:18px;padding:26px 22px 20px;border:1px solid rgba(55,96,145,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(225,238,250,.94));box-shadow:0 16px 36px rgba(42,60,82,.10)}
-        #engine-performance .pc-head h3{margin:0;color:var(--deep);font-size:clamp(20px,2.2vw,26px);letter-spacing:-.04em}
+        #engine-performance .pc-head h3{margin:0;color:var(--deep);font-size:clamp(20px,2.2vw,26px);font-weight:900;line-height:1.3;letter-spacing:-.04em}
         #engine-performance .pc-head p{margin:6px 0 0;color:var(--muted);font-size:13px;font-weight:800}
         #engine-performance .pc-charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
         #engine-performance .pc-card{margin:0;padding:18px 18px 14px;border-radius:18px;background:rgba(255,255,255,.92);border:1px solid rgba(55,96,145,.12)}
