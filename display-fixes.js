@@ -58,11 +58,11 @@
   };
 
   const compareCopy = {
-    'ko': {title: 'AutoMod 와 성능 비교 결과', sub: 'AutoMod 대비 · 1시간 시뮬레이션 Run 시 실제 소요 시간', c1: '반도체 OHT 500대 · 8,000 Job/hr', c2: '반도체 OHT 1,100대 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '초', fail: '실행 불가', na: '측정 불가', cut: '소요 시간 96.5% 단축', note: '* 사내 비교 측정 자료 기준이며 AutoMod 1,100대 조건은 실행되지 않아 측정하지 못했습니다.'},
-    'en': {title: 'Performance Comparison with AutoMod', sub: 'vs. AutoMod · actual wall time for a 1-hour simulation run', c1: 'Semiconductor OHT 500 vehicles · 8,000 jobs/hr', c2: 'Semiconductor OHT 1,100 vehicles · 18,000 jobs/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: 'sec', fail: 'Could not run', na: 'Not measurable', cut: '96.5% less run time', note: '* Based on internal comparison measurements. The 1,100-vehicle case could not be run in AutoMod, so no value was measured.'},
-    'zh-CN': {title: '与 AutoMod 的性能对比结果', sub: '对比 AutoMod · 运行1小时仿真的实际耗时', c1: '半导体 OHT 500台 · 8,000 Job/hr', c2: '半导体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '无法运行', na: '无法测量', cut: '耗时减少 96.5%', note: '* 基于内部对比测量数据。AutoMod 在 1,100 台条件下无法运行,因此未取得测量值。'},
-    'es': {title: 'Resultados de la comparación de rendimiento con AutoMod', sub: 'Frente a AutoMod · tiempo real de una simulación de 1 hora', c1: 'OHT de semiconductores, 500 vehículos · 8.000 Jobs/h', c2: 'OHT de semiconductores, 1.100 vehículos · 18.000 Jobs/h', a: 'AutoMod', g: 'GigaRoute AI', unit: 's', fail: 'No se pudo ejecutar', na: 'No medible', cut: '96,5 % menos de tiempo', note: '* Basado en mediciones comparativas internas. El caso de 1.100 vehículos no pudo ejecutarse en AutoMod, por lo que no hay valor medido.'},
-    'ja': {title: 'AutoMod との性能比較結果', sub: 'AutoMod 比 · 1時間シミュレーション実行の実所要時間', c1: '半導体 OHT 500台 · 8,000 Job/hr', c2: '半導体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '実行不可', na: '測定不可', cut: '所要時間 96.5% 短縮', note: '* 社内比較測定に基づきます。AutoMod は 1,100台条件を実行できず、測定値がありません。'},
+    'ko': {title: 'AutoMod 와 성능 비교 결과', cap: '시뮬레이션 1시간의 실제 소요 시간 비교', sub: 'AutoMod 대비 · 1시간 시뮬레이션 Run 시 실제 소요 시간', c1: '반도체 OHT 500대 · 8,000 Job/hr', c2: '반도체 OHT 1,100대 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '초', fail: '실행 불가', na: '측정 불가', cut: '소요 시간 96.5% 단축', note: '* 사내 비교 측정 자료 기준이며 AutoMod 1,100대 조건은 실행되지 않아 측정하지 못했습니다.'},
+    'en': {title: 'Performance Comparison with AutoMod', cap: 'Actual run time for 1 hour of simulation', sub: 'vs. AutoMod · actual wall time for a 1-hour simulation run', c1: 'Semiconductor OHT 500 vehicles · 8,000 jobs/hr', c2: 'Semiconductor OHT 1,100 vehicles · 18,000 jobs/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: 'sec', fail: 'Could not run', na: 'Not measurable', cut: '96.5% less run time', note: '* Based on internal comparison measurements. The 1,100-vehicle case could not be run in AutoMod, so no value was measured.'},
+    'zh-CN': {title: '与 AutoMod 的性能对比结果', cap: '1小时仿真的实际耗时对比', sub: '对比 AutoMod · 运行1小时仿真的实际耗时', c1: '半导体 OHT 500台 · 8,000 Job/hr', c2: '半导体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '无法运行', na: '无法测量', cut: '耗时减少 96.5%', note: '* 基于内部对比测量数据。AutoMod 在 1,100 台条件下无法运行,因此未取得测量值。'},
+    'es': {title: 'Resultados de la comparación de rendimiento con AutoMod', cap: 'Tiempo real de ejecución para 1 hora de simulación', sub: 'Frente a AutoMod · tiempo real de una simulación de 1 hora', c1: 'OHT de semiconductores, 500 vehículos · 8.000 Jobs/h', c2: 'OHT de semiconductores, 1.100 vehículos · 18.000 Jobs/h', a: 'AutoMod', g: 'GigaRoute AI', unit: 's', fail: 'No se pudo ejecutar', na: 'No medible', cut: '96,5 % menos de tiempo', note: '* Basado en mediciones comparativas internas. El caso de 1.100 vehículos no pudo ejecutarse en AutoMod, por lo que no hay valor medido.'},
+    'ja': {title: 'AutoMod との性能比較結果', cap: '1時間シミュレーションの実所要時間比較', sub: 'AutoMod 比 · 1時間シミュレーション実行の実所要時間', c1: '半導体 OHT 500台 · 8,000 Job/hr', c2: '半導体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '実行不可', na: '測定不可', cut: '所要時間 96.5% 短縮', note: '* 社内比較測定に基づきます。AutoMod は 1,100台条件を実行できず、測定値がありません。'},
   };
 
   const buildCompare = (c) => {
@@ -78,7 +78,7 @@
         <div class="pc-head"><h3>${c.title}</h3><p>${c.sub}</p></div>
         <div class="pc-charts">
           <figure class="pc-card" aria-label="${c.c1}">
-            <figcaption>${c.c1}</figcaption>
+            <figcaption>${c.c1}<span>${c.cap}</span></figcaption>
             <div class="pc-plot">${axis}
               ${bar('is-old', 100, `2,854<small>${c.unit}</small>`, c.a)}
               ${bar('is-new', 3.8, `100<small>${c.unit}</small>`, c.g)}
@@ -86,7 +86,7 @@
             </div>
           </figure>
           <figure class="pc-card" aria-label="${c.c2}">
-            <figcaption>${c.c2}</figcaption>
+            <figcaption>${c.c2}<span>${c.cap}</span></figcaption>
             <div class="pc-plot">${axis}
               ${bar('is-old is-fail', 100, `<span class="pc-x">✕</span>`, c.a, `<b>${c.fail}</b><b>${c.na}</b>`)}
               ${bar('is-new', 5.6, `167<small>${c.unit}</small>`, c.g)}
@@ -192,6 +192,7 @@
         #engine-performance .pc-charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
         #engine-performance .pc-card{margin:0;padding:18px 18px 14px;border-radius:18px;background:rgba(255,255,255,.92);border:1px solid rgba(55,96,145,.12)}
         #engine-performance .pc-card figcaption{color:var(--ink);font-size:14px;font-weight:900;text-align:center;letter-spacing:-.02em}
+        #engine-performance .pc-card figcaption span{display:block;margin-top:6px;color:var(--brand);font-size:13px;font-weight:900;letter-spacing:-.02em}
         #engine-performance .pc-plot{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px;height:290px;margin-top:16px;padding:30px 14px 0}
         #engine-performance .pc-grid{position:absolute;inset:30px 0 34px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
         #engine-performance .pc-grid i{display:block;border-top:1px dashed rgba(41,75,88,.14)}
