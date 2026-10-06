@@ -191,8 +191,8 @@
         #engine-performance .pc-head p{margin:6px 0 0;color:var(--muted);font-size:13px;font-weight:800}
         #engine-performance .pc-charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
         #engine-performance .pc-card{margin:0;padding:18px 18px 14px;border-radius:18px;background:rgba(255,255,255,.92);border:1px solid rgba(55,96,145,.12)}
-        #engine-performance .pc-card figcaption{color:var(--ink);font-size:14px;font-weight:900;text-align:center;letter-spacing:-.02em}
-        #engine-performance .pc-card figcaption span{display:block;margin-top:6px;color:var(--brand);font-size:13px;font-weight:900;letter-spacing:-.02em}
+        #engine-performance .pc-card figcaption{color:var(--ink);font-size:17px;font-weight:900;text-align:center;letter-spacing:-.02em}
+        #engine-performance .pc-card figcaption span{display:block;margin-top:6px;color:var(--brand);font-size:16px;font-weight:900;letter-spacing:-.02em}
         #engine-performance .pc-plot{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px;height:290px;margin-top:16px;padding:30px 14px 0}
         #engine-performance .pc-grid{position:absolute;inset:30px 0 34px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
         #engine-performance .pc-grid i{display:block;border-top:1px dashed rgba(41,75,88,.14)}
