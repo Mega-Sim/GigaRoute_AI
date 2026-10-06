@@ -75,7 +75,7 @@
     const axis = '<div class="pc-grid" aria-hidden="true"><i></i><i></i><i></i><i></i></div>';
     return `
       <div class="performance-compare">
-        <div class="pc-head"><h3>${c.title}</h3><p>${c.sub}</p></div>
+        <div class="pc-head"><h3>${c.title}</h3></div>
         <div class="pc-charts">
           <figure class="pc-card" aria-label="${c.c1}">
             <figcaption>${c.c1}<span>${c.cap}</span></figcaption>
