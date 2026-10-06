@@ -58,11 +58,11 @@
   };
 
   const compareCopy = {
-    'ko': {title: '시뮬레이션 속도 비교', sub: 'AutoMod 대비 · 1시간 시뮬레이션 Run 시 실제 소요 시간', c1: '반도체 OHT 500대 · 8,000 Job/hr', c2: '반도체 OHT 1,100대 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '초', fail: '실행 불가', na: '측정 불가', cut: '소요 시간 96.5% 단축', note: '* 사내 비교 측정 자료 기준이며 AutoMod 1,100대 조건은 실행되지 않아 측정하지 못했습니다.'},
-    'en': {title: 'Simulation Speed Comparison', sub: 'vs. AutoMod · actual wall time for a 1-hour simulation run', c1: 'Semiconductor OHT 500 vehicles · 8,000 jobs/hr', c2: 'Semiconductor OHT 1,100 vehicles · 18,000 jobs/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: 'sec', fail: 'Could not run', na: 'Not measurable', cut: '96.5% less run time', note: '* Based on internal comparison measurements. The 1,100-vehicle case could not be run in AutoMod, so no value was measured.'},
-    'zh-CN': {title: '仿真速度对比', sub: '对比 AutoMod · 运行1小时仿真的实际耗时', c1: '半导体 OHT 500台 · 8,000 Job/hr', c2: '半导体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '无法运行', na: '无法测量', cut: '耗时减少 96.5%', note: '* 基于内部对比测量数据。AutoMod 在 1,100 台条件下无法运行,因此未取得测量值。'},
-    'es': {title: 'Comparación de velocidad de simulación', sub: 'Frente a AutoMod · tiempo real de una simulación de 1 hora', c1: 'OHT de semiconductores, 500 vehículos · 8.000 Jobs/h', c2: 'OHT de semiconductores, 1.100 vehículos · 18.000 Jobs/h', a: 'AutoMod', g: 'GigaRoute AI', unit: 's', fail: 'No se pudo ejecutar', na: 'No medible', cut: '96,5 % menos de tiempo', note: '* Basado en mediciones comparativas internas. El caso de 1.100 vehículos no pudo ejecutarse en AutoMod, por lo que no hay valor medido.'},
-    'ja': {title: 'シミュレーション速度比較', sub: 'AutoMod 比 · 1時間シミュレーション実行の実所要時間', c1: '半導体 OHT 500台 · 8,000 Job/hr', c2: '半導体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '実行不可', na: '測定不可', cut: '所要時間 96.5% 短縮', note: '* 社内比較測定に基づきます。AutoMod は 1,100台条件を実行できず、測定値がありません。'},
+    'ko': {title: 'AutoMod 와 성능 비교 결과', sub: 'AutoMod 대비 · 1시간 시뮬레이션 Run 시 실제 소요 시간', c1: '반도체 OHT 500대 · 8,000 Job/hr', c2: '반도체 OHT 1,100대 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '초', fail: '실행 불가', na: '측정 불가', cut: '소요 시간 96.5% 단축', note: '* 사내 비교 측정 자료 기준이며 AutoMod 1,100대 조건은 실행되지 않아 측정하지 못했습니다.'},
+    'en': {title: 'Performance Comparison with AutoMod', sub: 'vs. AutoMod · actual wall time for a 1-hour simulation run', c1: 'Semiconductor OHT 500 vehicles · 8,000 jobs/hr', c2: 'Semiconductor OHT 1,100 vehicles · 18,000 jobs/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: 'sec', fail: 'Could not run', na: 'Not measurable', cut: '96.5% less run time', note: '* Based on internal comparison measurements. The 1,100-vehicle case could not be run in AutoMod, so no value was measured.'},
+    'zh-CN': {title: '与 AutoMod 的性能对比结果', sub: '对比 AutoMod · 运行1小时仿真的实际耗时', c1: '半导体 OHT 500台 · 8,000 Job/hr', c2: '半导体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '无法运行', na: '无法测量', cut: '耗时减少 96.5%', note: '* 基于内部对比测量数据。AutoMod 在 1,100 台条件下无法运行,因此未取得测量值。'},
+    'es': {title: 'Resultados de la comparación de rendimiento con AutoMod', sub: 'Frente a AutoMod · tiempo real de una simulación de 1 hora', c1: 'OHT de semiconductores, 500 vehículos · 8.000 Jobs/h', c2: 'OHT de semiconductores, 1.100 vehículos · 18.000 Jobs/h', a: 'AutoMod', g: 'GigaRoute AI', unit: 's', fail: 'No se pudo ejecutar', na: 'No medible', cut: '96,5 % menos de tiempo', note: '* Basado en mediciones comparativas internas. El caso de 1.100 vehículos no pudo ejecutarse en AutoMod, por lo que no hay valor medido.'},
+    'ja': {title: 'AutoMod との性能比較結果', sub: 'AutoMod 比 · 1時間シミュレーション実行の実所要時間', c1: '半導体 OHT 500台 · 8,000 Job/hr', c2: '半導体 OHT 1,100台 · 18,000 Job/hr', a: 'AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '実行不可', na: '測定不可', cut: '所要時間 96.5% 短縮', note: '* 社内比較測定に基づきます。AutoMod は 1,100台条件を実行できず、測定値がありません。'},
   };
 
   const buildCompare = (c) => {
@@ -154,14 +154,13 @@
         </div>
         <div class="performance-impact-grid">${metrics}</div>
         <p class="performance-impact-note">${copy.note}</p>`;
-      head.insertAdjacentElement('afterend', block);
+      head.appendChild(block);
     }
 
     if (!section.querySelector('.performance-compare')) {
       const holder = document.createElement('div');
       holder.innerHTML = buildCompare(compareCopy[lang] || compareCopy.en).trim();
-      const anchor = section.querySelector('.performance-impact');
-      anchor.insertAdjacentElement('afterend', holder.firstChild);
+      head.insertAdjacentElement('afterend', holder.firstChild);
       const compare = section.querySelector('.performance-compare');
       if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver((es) => es.forEach(e => {
@@ -178,7 +177,7 @@
         #engine-performance .performance-head{display:block!important}
         #engine-performance .performance-head{padding:22px;border:1px solid rgba(55,96,145,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(225,238,250,.94));box-shadow:0 16px 36px rgba(42,60,82,.10)}#engine-performance .performance-head .kicker{margin:0 0 8px;color:var(--brand);font-size:13px;font-weight:950;letter-spacing:.08em}#engine-performance .performance-head h2{max-width:none!important;margin:0;color:var(--deep);font-size:clamp(20px,2.2vw,26px);font-weight:900;line-height:1.3;letter-spacing:-.04em;word-break:keep-all}
         #engine-performance .performance-title-line{display:block;white-space:nowrap}
-        #engine-performance .performance-impact{margin-top:18px;padding:22px;border:1px solid rgba(55,96,145,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(225,238,250,.94));box-shadow:0 16px 36px rgba(42,60,82,.10)}
+        #engine-performance .performance-impact{margin-top:18px;padding:16px 0 0;border-top:1px solid rgba(55,96,145,.16)}
         #engine-performance .performance-impact-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
         #engine-performance .performance-impact-eyebrow{color:var(--brand);font-size:13px;font-weight:950;letter-spacing:.08em}
         #engine-performance .performance-impact-context{color:var(--muted);font-size:13px;font-weight:850;line-height:1.45}
