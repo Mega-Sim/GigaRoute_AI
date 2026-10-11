@@ -34,6 +34,7 @@ Issue #81부터 모든 언어 홈페이지의 Research 논문 카드는 개인 �
 - 기존 한국어·외국어 첫 번째 영상과 원본 보기 링크를 삭제하거나 변경하지 않고 두 번째 영상 `https://www.youtube.com/watch?v=B8tfKIzPRUc`를 추가했습니다.
 - 새 영상은 기존 16:9 반응형 iframe 아래에 배치하며, 원본 YouTube 링크와 `youtube-nocookie.com` 임베드를 제공합니다. 중국어 페이지는 기존 CSP 예외 범위 내에서 재생합니다.
 - 기존 헤더 반응형 규칙과 다른 섹션 및 기능은 유지합니다.
+- 2026-10-11: Issue #111에서 한국어 기본 페이지(`index.html`) 및 한국어 호환 페이지(`index-ko.html`)의 YouTube 섹션에 세 번째 영상 `https://www.youtube.com/watch?v=oZ1RYRDkgpc`를 추가했습니다. 기존 두 영상과 원본 링크는 그대로 유지하고, 세 번째 영상도 기존 16:9 반응형 플레이어 및 원본 보기 링크를 재사용합니다. 공통 CSS/JS와 다른 언어 페이지는 변경하지 않습니다.
 
 ## Hero 메시지 및 Development Reference 표시 정책
 
