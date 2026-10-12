@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Actions | GigaRoute AI Help</title>
 <meta name="description" content="GRS reference: Actions (30 entries).">
 <link rel="canonical" href="https://gigaroute.ai/help/actions.html">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
-<link rel="stylesheet" href="/help/help.css">
+<link rel="stylesheet" href="/help/help.css?v=20261012-1">
+<script src="/help/help.js?v=20261012-1" defer></script>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="navr"><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></div></nav></div></header>
 <main><div class="wrap">
-<p class="crumbs"><a href="/help/">Help</a> / Actions</p><h1>Actions</h1><p class="lead">30 entries, for example: print, wait, wait_until, set, inc, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><input id="f" class="filter" type="search" placeholder="Filter this page" aria-label="Filter this page">
-<p class="sub">Core Actions</p><article class="topic" id="print" data-search="print writes grs output to the script print log and the studio realtime log."><h3><a href="#print">print</a></h3><dl><dt>Purpose</dt><dd>Writes GRS output to the Script Print log and the Studio realtime log.</dd><dt>Syntax</dt><dd><pre>print(value, ...)</pre></dd><dt>Example</dt><dd><pre>print(&quot;vehicle&quot;, vehicle.id, vehicle.phase);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Arguments are rendered in order.</dd><dt>Related</dt><dd>Model Logic log</dd></dl></article>
+<p class="crumbs"><a href="/help/">Help</a> / Actions</p><h1>Actions</h1><p class="lead">30 entries, for example: print, wait, wait_until, set, inc, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><p class="sub">Core Actions</p><article class="topic" id="print" data-search="print writes grs output to the script print log and the studio realtime log."><h3><a href="#print">print</a></h3><dl><dt>Purpose</dt><dd>Writes GRS output to the Script Print log and the Studio realtime log.</dd><dt>Syntax</dt><dd><pre>print(value, ...)</pre></dd><dt>Example</dt><dd><pre>print(&quot;vehicle&quot;, vehicle.id, vehicle.phase);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Arguments are rendered in order.</dd><dt>Related</dt><dd>Model Logic log</dd></dl></article>
 <article class="topic" id="wait" data-search="wait suspends the current process until the requested simulation time has elapsed."><h3><a href="#wait">wait</a></h3><dl><dt>Purpose</dt><dd>Suspends the current process until the requested simulation time has elapsed.</dd><dt>Syntax</dt><dd><pre>wait(seconds)</pre></dd><dt>Example</dt><dd><pre>wait(0.25);</pre><span class="badge">compiler-checked</span></dd><dt>Related</dt><dd>wait_until</dd></dl></article>
 <article class="topic" id="wait-until" data-search="wait_until suspends the current process on the runtime wait-channel path until the condition can be re-evaluated after a wake."><h3><a href="#wait-until">wait_until</a></h3><dl><dt>Purpose</dt><dd>Suspends the current process on the runtime wait-channel path until the condition can be re-evaluated after a wake.</dd><dt>Syntax</dt><dd><pre>wait_until(condition)</pre></dd><dt>Example</dt><dd><pre>wait_until(counter &gt;= 10);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>There is no periodic condition polling. Prefer explicit event/resource/order-list coordination for high-volume models.</dd><dt>Related</dt><dd>wait, order, Resource</dd></dl></article>
 <article class="topic" id="set" data-search="set assigns a grs symbol or supported writable entity/attribute target."><h3><a href="#set">set</a></h3><dl><dt>Purpose</dt><dd>Assigns a GRS symbol or supported writable entity/attribute target.</dd><dt>Syntax</dt><dd><pre>set(target, value)</pre></dd><dt>Example</dt><dd><pre>set(vehicle.current_schedjob, job);</pre><span class="badge">compiler-checked</span></dd><dt>Related</dt><dd>inc, dec, ScheduleJob</dd></dl></article>
@@ -72,7 +73,6 @@ release(resource)</pre></dd><dt>Example</dt><dd><pre>free(R_MACHINE);</pre><span
 ...
 free(WIP_RESOURCE)</pre></dd><dt>Example</dt><dd><pre>get(R_ST01_WIP);
 free(R_ST01_WIP);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Resource capacity is the authoritative capacity in this pattern. Station occupancy/reservation is physical Vehicle occupancy and is intentionally not treated as the same value.</dd><dt>Related</dt><dd>use, get, reserve, free, resource.capacity, station_occupancy_count</dd></dl></article>
-<script>(function(){var i=document.getElementById('f');if(!i)return;i.addEventListener('input',function(){var q=i.value.trim().toLowerCase();document.querySelectorAll('.topic').forEach(function(e){e.hidden=q&&e.dataset.search.indexOf(q)<0;});});})();</script>
 </div></main>
 <footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
 </body>
