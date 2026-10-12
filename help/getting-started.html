@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Getting Started | GigaRoute AI Help</title>
 <meta name="description" content="GRS reference: Getting Started (10 entries).">
 <link rel="canonical" href="https://gigaroute.ai/help/getting-started.html">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
-<link rel="stylesheet" href="/help/help.css">
+<link rel="stylesheet" href="/help/help.css?v=20261012-1">
+<script src="/help/help.js?v=20261012-1" defer></script>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="navr"><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></div></nav></div></header>
 <main><div class="wrap">
-<p class="crumbs"><a href="/help/">Help</a> / Getting Started</p><h1>Getting Started</h1><p class="lead">10 entries, for example: Studio model modules, Studio Station binding, GRS file, Vehicle runtime type, Vehicle asset, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><input id="f" class="filter" type="search" placeholder="Filter this page" aria-label="Filter this page">
-<article class="topic" id="studio-model-modules" data-search="studio model modules runs newly authored oht, amr and conveyor modules together, including conveyor-only models."><h3><a href="#studio-model-modules">Studio model modules</a></h3><dl><dt>Purpose</dt><dd>Runs newly authored OHT, AMR and Conveyor modules together, including Conveyor-only models.</dd><dt>Syntax</dt><dd><pre>begin model.module event
+<p class="crumbs"><a href="/help/">Help</a> / Getting Started</p><h1>Getting Started</h1><p class="lead">10 entries, for example: Studio model modules, Studio Station binding, GRS file, Vehicle runtime type, Vehicle asset, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><article class="topic" id="studio-model-modules" data-search="studio model modules runs newly authored oht, amr and conveyor modules together, including conveyor-only models."><h3><a href="#studio-model-modules">Studio model modules</a></h3><dl><dt>Purpose</dt><dd>Runs newly authored OHT, AMR and Conveyor modules together, including Conveyor-only models.</dd><dt>Syntax</dt><dd><pre>begin model.module event
     set(module_id, &quot;belt_alpha&quot;); set(runtime_kind, &quot;conveyor&quot;); ...
 end</pre></dd><dt>Example</dt><dd><pre>begin model.module event
     set(module_id, &quot;belt_alpha&quot;);
@@ -88,7 +89,6 @@ call Conveyor_System_Initialize()
 call Process_Complete()</pre></dd><dt>Example</dt><dd><pre>begin Process_Complete event
     print &quot;process complete&quot;
 end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Existing camelCase model declarations/calls remain compatible through one unambiguous case/underscore-insensitive alias. Canonical dotted hooks such as model.init, vehicle.pickup_complete, conveyor.blocked and equipment.load_arrived are unchanged. Existing snake_case runtime built-ins keep their implementation names; Help displays the same callable in readable Pascal_Underscore form.</dd><dt>Related</dt><dd>Runtime Function Index, Native OHT / ASRS Functions, Example Model Functions, Model Functions (current source)</dd></dl></article>
-<script>(function(){var i=document.getElementById('f');if(!i)return;i.addEventListener('input',function(){var q=i.value.trim().toLowerCase();document.querySelectorAll('.topic').forEach(function(e){e.hidden=q&&e.dataset.search.indexOf(q)<0;});});})();</script>
 </div></main>
 <footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
 </body>
