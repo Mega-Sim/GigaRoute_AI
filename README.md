@@ -385,3 +385,6 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-10-02: Consulting 섹션의 workflow-automation 패널을 업데이트했습니다. 패널 제목을 "Engineering & Workflow Automation"에서 "AI 업무 자동화 S/W 개발" (또는 각 언어 현지화)으로 변경하고, 01 항목을 "업무 지원 AI 에이전트 개발" (또는 각 언어 현지화)으로, 02 항목을 CAD와 Atlassian을 병합해 "CAD 및 개발 도구 자동화" (또는 각 언어 현지화)로 변경했습니다. 모든 언어 페이지(한국어, 영어, 중국어, 스페인어, 일본어)에 동일 구조를 적용했습니다.
 
 - 2026-10-10: Issue #109로 메인 Hero 이미지가 실제 GigaRoute AI 공장 시뮬레이션 화면(사용자가 제공한 `ChatGPT Image...png` 원본)을 기반으로 제작한 `hero-preview-20261010.avif`로 교체되었습니다. 기존 `hero-preview.png`는 보존하고, 모든 언어 HTML의 이미지 경로만 변경했습니다. 이미지의 680×408 리사이즈는 홈페이지 전송 최적화 목적이며 UI 구조·이미지 영역·제품 링크는 수정하지 않았습니다.
+
+
+- 2026-10-12: 상단 `YouTube` 메뉴를 `/youtube/` 독립 페이지로 연결하고, YouTube 영상을 데스크톱 2열·모바일 1열 카드 레이아웃으로 제공하도록 추가했습니다.
