@@ -390,3 +390,5 @@ Issue #78 History의 OHT 4축 항목을 `OHT 4축(Driving, Hoist, Slide) 모션 
 - 2026-10-12: 상단 `YouTube` 메뉴를 `/youtube/` 독립 페이지로 연결하고, YouTube 영상을 데스크톱 2열·모바일 1열 카드 레이아웃으로 제공하도록 추가했습니다.
 
 - 2026-10-12: YouTube 메뉴를 Help와 동일하게 현재 탭의 `/youtube/` 독립 페이지로 이동하도록 정리하고, 외부 `YouTube에서 보기` 링크를 제거했습니다. 영상 제목은 1,100 OHT Auto Simulation, OHT Side & Under Buffer, Wafer FOUP AS/RS Stocker & OHT Simulation으로 갱신했습니다.
+
+- 2026-10-12: 상단 제품 메뉴를 펼침 구조로 변경했습니다. 클릭 시 `제품 라인업`과 기존 `제품성능` 앵커를 순서대로 표시하며, 제품 성능은 독립 상단 메뉴에서 제거했습니다. 한국어 홈페이지의 `연구` 메뉴 표기는 `Research`로 변경했습니다.
