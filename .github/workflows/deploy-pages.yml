@@ -10,6 +10,10 @@ on:
       - 'site-fixes.css'
       - 'contact.js'
       - 'display-fixes.js'
+      - 'help/**'
+      - 'llms.txt'
+      - 'robots.txt'
+      - 'sitemap.xml'
       - 'CNAME'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:

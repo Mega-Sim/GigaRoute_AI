@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Events | GigaRoute AI Help</title>
+<meta name="description" content="GRS reference: Events (16 entries).">
+<link rel="canonical" href="https://gigaroute.ai/help/events.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="alternate" type="text/markdown" href="/help/syntax.md">
+<link rel="stylesheet" href="/help/help.css">
+</head>
+<body>
+<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div></nav></div></header>
+<main><div class="wrap">
+<p class="crumbs"><a href="/help/">Help</a> / Events</p><h1>Events</h1><p class="lead">16 entries, for example: Conveyor job lifecycle, model.init, vehicle.init, dispatch.request, job.selected, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><input id="f" class="filter" type="search" placeholder="Filter this page" aria-label="Filter this page">
+<article class="topic" id="conveyor-job-lifecycle" data-search="conveyor job lifecycle receives actual creation, movement, blocked, exit-ready, downstream-release and completion callbacks from the conveyor job."><h3><a href="#conveyor-job-lifecycle">Conveyor job lifecycle</a></h3><dl><dt>Purpose</dt><dd>Receives actual creation, movement, blocked, exit-ready, downstream-release and completion callbacks from the Conveyor job.</dd><dt>Syntax</dt><dd><pre>begin conveyor.job_created event
+    ...
+end
+begin conveyor.job_moved event
+    ...
+end
+begin conveyor.blocked event
+    ...
+end
+begin conveyor.exit event
+    ...
+end
+begin conveyor.released event
+    ...
+end
+begin conveyor.job_completed event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin conveyor.exit event
+    print(module_id, load_id);
+    call_transport(&quot;floor_fleet&quot;, load_id, &quot;Floor_Pick&quot;, &quot;Floor_Drop&quot;);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Use request from &lt;entry&gt; to &lt;exit&gt; to enqueue real work. every schedules its first request after the specified interval. lifecycle symbols identify the module, Job, Load and actual microsecond timestamp and remain available after a wait. conveyor.exit is the stop-distance handoff-ready boundary; conveyor.released fires after downstream acceptance. conveyor.job_completed remains the ordinary completion boundary.</dd><dt>Related</dt><dd>Studio model modules, every_event, request_transport, call_transport</dd></dl></article>
+<article class="topic" id="model-init" data-search="model.init runs once when an applied scripted simulation run starts."><h3><a href="#model-init">model.init</a></h3><dl><dt>Purpose</dt><dd>Runs once when an applied scripted simulation run starts.</dd><dt>Syntax</dt><dd><pre>begin model.init event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin model.init event
+    print(&quot;start&quot;);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Authoritative run-start binding.</dd><dt>Related</dt><dd>vehicle.init</dd></dl></article>
+<article class="topic" id="vehicle-init" data-search="vehicle.init runs once for each vehicle when the scripted run is activated."><h3><a href="#vehicle-init">vehicle.init</a></h3><dl><dt>Purpose</dt><dd>Runs once for each Vehicle when the scripted run is activated.</dd><dt>Syntax</dt><dd><pre>begin vehicle.init event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.init event
+    print(vehicle.id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The current Vehicle actor is available through vehicle.*.</dd><dt>Related</dt><dd>model.init, dispatch.request</dd></dl></article>
+<article class="topic" id="dispatch-request" data-search="dispatch.request runs at an idle dispatch-request boundary, including initial activation."><h3><a href="#dispatch-request">dispatch.request</a></h3><dl><dt>Purpose</dt><dd>Runs at an Idle dispatch-request boundary, including initial activation.</dd><dt>Syntax</dt><dd><pre>begin dispatch.request event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin dispatch.request event
+    print(vehicle.id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The ScheduleJob queue guard executes before ordinary dispatch-request logic.</dd><dt>Related</dt><dd>dispatch, claim</dd></dl></article>
+<article class="topic" id="job-selected" data-search="job.selected runs once when a live schedulejob becomes a vehicle&#x27;s current_schedjob."><h3><a href="#job-selected">job.selected</a></h3><dl><dt>Purpose</dt><dd>Runs once when a live ScheduleJob becomes a Vehicle&#x27;s current_schedjob.</dd><dt>Syntax</dt><dd><pre>begin job.selected event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin job.selected event
+    print(this.id, this.type, this.vehicle, this.location);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Implemented. The event actor is the ScheduleJob handle. Re-setting the same current job does not fire again. preempt() fires only when it actually changes the current job.</dd><dt>Related</dt><dd>ScheduleJob, vehicle.current_schedjob, preempt, job.finished</dd></dl></article>
+<article class="topic" id="job-finished" data-search="job.finished runs when the committed physical job has fully completed and the vehicle reaches the authoritative idle handoff."><h3><a href="#job-finished">job.finished</a></h3><dl><dt>Purpose</dt><dd>Runs when the committed physical job has fully completed and the Vehicle reaches the authoritative Idle handoff.</dd><dt>Syntax</dt><dd><pre>begin job.finished event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin job.finished event
+    print(this.id, this.type, this.vehicle, this.load);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Implemented. This is later than vehicle.setdown: configured Setdown dwell must finish first. The event actor is the completed ScheduleJob handle.</dd><dt>Related</dt><dd>vehicle.setdown, ScheduleJob, Load, job.selected</dd></dl></article>
+<article class="topic" id="vehicle-pickup" data-search="vehicle.pickup fires when a vehicle reaches the physical pickup boundary."><h3><a href="#vehicle-pickup">vehicle.pickup</a></h3><dl><dt>Purpose</dt><dd>Fires when a Vehicle reaches the physical Pickup boundary.</dd><dt>Syntax</dt><dd><pre>begin vehicle.pickup event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.pickup event
+    print(vehicle.station);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>A claimed Load becomes onboard at physical Pickup.</dd><dt>Related</dt><dd>vehicle.setdown, Load</dd></dl></article>
+<article class="topic" id="vehicle-setdown" data-search="vehicle.setdown fires when a vehicle reaches the setdown arrival boundary."><h3><a href="#vehicle-setdown">vehicle.setdown</a></h3><dl><dt>Purpose</dt><dd>Fires when a Vehicle reaches the Setdown arrival boundary.</dd><dt>Syntax</dt><dd><pre>begin vehicle.setdown event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.setdown event
+    print(vehicle.destination);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The Load remains onboard through configured Setdown dwell and unloads at the following Idle handoff.</dd><dt>Related</dt><dd>vehicle.pickup, Load, job.finished</dd></dl></article>
+<article class="topic" id="vehicle-start-move" data-search="vehicle.start_move fires at the first real linear movement in retrieving/moving after speed exceeds the meaningful threshold."><h3><a href="#vehicle-start-move">vehicle.start_move</a></h3><dl><dt>Purpose</dt><dd>Fires at the first real linear movement in Retrieving/Moving after speed exceeds the meaningful threshold.</dd><dt>Syntax</dt><dd><pre>begin vehicle.start_move event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.start_move event
+    print(vehicle.id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The internal 0.001 mm/s wake probe is excluded; the event threshold is &gt;0.01 mm/s.</dd><dt>Related</dt><dd>vehicle.speed_change, vehicle.resume</dd></dl></article>
+<article class="topic" id="vehicle-speed-change" data-search="vehicle.speed_change fires when physical motion speed changes meaningfully, including acceleration/deceleration, sensor brake/stop and curve-speed transitions."><h3><a href="#vehicle-speed-change">vehicle.speed_change</a></h3><dl><dt>Purpose</dt><dd>Fires when physical motion speed changes meaningfully, including acceleration/deceleration, Sensor BRAKE/STOP and curve-speed transitions.</dd><dt>Syntax</dt><dd><pre>begin vehicle.speed_change event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.speed_change event
+    print(vehicle.phase);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>First-class physical event. Empty handlers are optimized out of the physical hot path.</dd><dt>Related</dt><dd>vehicle.start_move, vehicle.resume</dd></dl></article>
+<article class="topic" id="vehicle-resume" data-search="vehicle.resume fires when a vehicle that previously moved resumes real movement after stopping."><h3><a href="#vehicle-resume">vehicle.resume</a></h3><dl><dt>Purpose</dt><dd>Fires when a Vehicle that previously moved resumes real movement after stopping.</dd><dt>Syntax</dt><dd><pre>begin vehicle.resume event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.resume event
+    print(vehicle.id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Uses an authoritative physical speed transition.</dd><dt>Related</dt><dd>vehicle.start_move, vehicle.speed_change</dd></dl></article>
+<article class="topic" id="vehicle-approach-destination" data-search="vehicle.approach_destination fires on the first real movement within the final route segment toward the destination."><h3><a href="#vehicle-approach-destination">vehicle.approach_destination</a></h3><dl><dt>Purpose</dt><dd>Fires on the first real movement within the final route segment toward the destination.</dd><dt>Syntax</dt><dd><pre>begin vehicle.approach_destination event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.approach_destination event
+    print(vehicle.destination);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>No arbitrary distance polling threshold is used.</dd><dt>Related</dt><dd>station.pass.&lt;station&gt;</dd></dl></article>
+<article class="topic" id="station-pass-station" data-search="station.pass.&lt;station&gt; fires when a vehicle physically crosses the named station control point."><h3><a href="#station-pass-station">station.pass.&lt;station&gt;</a></h3><dl><dt>Purpose</dt><dd>Fires when a Vehicle physically crosses the named Station control point.</dd><dt>Syntax</dt><dd><pre>begin station.pass.ST01 event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin station.pass.ST01 event
+    print(vehicle.id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Only Stations with non-empty handlers are watched. Repeat visits fire again per route occurrence.</dd><dt>Related</dt><dd>vehicle.approach_destination</dd></dl></article>
+<article class="topic" id="conveyor-exit" data-search="conveyor.exit fires when the conveyor job reaches an exit-ready handoff boundary."><h3><a href="#conveyor-exit">conveyor.exit</a></h3><dl><dt>Purpose</dt><dd>Fires when the Conveyor job reaches an exit-ready handoff boundary.</dd><dt>Syntax</dt><dd><pre>begin conveyor.exit event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin conveyor.exit event
+    print(load_id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>This is an implemented callback. With stop-distance/backpressure flow it is the point where downstream call_transport can be issued.</dd><dt>Related</dt><dd>conveyor.blocked, conveyor.released, conveyor.job_completed, call_transport</dd></dl></article>
+<article class="topic" id="conveyor-blocked" data-search="conveyor.blocked fires when the conveyor job enters its actual blocked/backpressure state."><h3><a href="#conveyor-blocked">conveyor.blocked</a></h3><dl><dt>Purpose</dt><dd>Fires when the Conveyor job enters its actual blocked/backpressure state.</dd><dt>Syntax</dt><dd><pre>begin conveyor.blocked event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin conveyor.blocked event
+    print(load_id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>This callback is emitted from the Conveyor runtime state transition; no synthetic polling timer is used.</dd><dt>Related</dt><dd>conveyor.exit, conveyor.released, conveyor.job_completed</dd></dl></article>
+<article class="topic" id="conveyor-released" data-search="conveyor.released fires after a blocked/exit-ready conveyor load is accepted by the downstream owner."><h3><a href="#conveyor-released">conveyor.released</a></h3><dl><dt>Purpose</dt><dd>Fires after a blocked/exit-ready Conveyor Load is accepted by the downstream owner.</dd><dt>Syntax</dt><dd><pre>begin conveyor.released event
+    ...
+end</pre></dd><dt>Example</dt><dd><pre>begin conveyor.released event
+    print(load_id);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Related</dt><dd>conveyor.blocked, conveyor.exit, call_transport</dd></dl></article>
+<script>(function(){var i=document.getElementById('f');if(!i)return;i.addEventListener('input',function(){var q=i.value.trim().toLowerCase();document.querySelectorAll('.topic').forEach(function(e){e.hidden=q&&e.dataset.search.indexOf(q)<0;});});})();</script>
+</div></main>
+<footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
+</body>
+</html>

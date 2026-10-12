@@ -442,11 +442,12 @@
 
   document.querySelectorAll('a[href^="mailto:"],a.contact-trigger').forEach(bind);
   const links = document.querySelector('.links');
-  if (links && !links.querySelector('.contact-trigger')) {
+  if (links && !links.querySelector('a[data-help-nav]')) {
     const el = document.createElement('a');
-    el.textContent = t.nav;
+    el.href = '/help/';
+    el.dataset.helpNav = '1';
+    el.textContent = 'Help';
     links.appendChild(el);
-    bind(el);
   }
   const ctaButtons = document.querySelector('.cta .hero-buttons');
   if (ctaButtons && !ctaButtons.querySelector('.contact-trigger')) {
