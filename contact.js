@@ -13,6 +13,13 @@
     es: 'Rendimiento',
     ja: '製品性能'
   }[locale] || 'Performance';
+  const productLineupNavLabel = {
+    en: 'Product Lineup',
+    ko: '제품 라인업',
+    'zh-CN': '产品阵容',
+    es: 'Gama de productos',
+    ja: '製品ラインアップ'
+  }[locale] || 'Product Lineup';
   const backToTopLabel = {
     en: 'Back to top',
     ko: '맨 위로',
@@ -293,15 +300,75 @@
     product.insertAdjacentElement('beforebegin', link);
   };
 
-  const applyPerformanceNavLink = () => {
+  const applyProductNavigation = () => {
     const links = document.querySelector('.links');
-    if (!links || links.querySelector('a[href="#engine-performance"]')) return;
-    const consulting = links.querySelector('a[href="#consulting"]');
-    if (!consulting) return;
-    const link = document.createElement('a');
-    link.href = '#engine-performance';
-    link.textContent = performanceNavLabel;
-    consulting.before(link);
+    const product = links && links.querySelector('a[href="#solutions"], a[href="#products"]');
+    if (!links || !product || links.querySelector('.product-nav')) return;
+
+    if (!document.getElementById('product-navigation-style')) {
+      const style = document.createElement('style');
+      style.id = 'product-navigation-style';
+      style.textContent = `
+        .product-nav{position:relative;display:inline-flex;align-items:center}
+        .product-nav-toggle{display:inline-flex;align-items:center;gap:5px;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-weight:inherit;line-height:inherit;cursor:pointer}
+        .product-nav-toggle::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .16s ease}
+        .product-nav.is-open .product-nav-toggle::after{transform:rotate(225deg) translate(-1px,-2px)}
+        .product-nav-menu{position:absolute;top:calc(100% + 11px);left:-10px;z-index:80;display:grid;min-width:162px;padding:8px;border:1px solid rgba(31,51,74,.13);border-radius:14px;background:rgba(255,255,255,.98);box-shadow:0 16px 38px rgba(42,60,82,.16)}
+        .product-nav-menu[hidden]{display:none}
+        .product-nav-menu a{padding:8px 10px;border-radius:9px;white-space:nowrap;color:var(--ink);text-decoration:none}
+        .product-nav-menu a:hover,.product-nav-menu a:focus-visible{background:#eef3f6;outline:none}
+        @media(max-width:680px){.links.product-menu-open{overflow:visible!important}.product-nav-menu{left:0}}
+      `;
+      document.head.appendChild(style);
+    }
+
+    const wrapper = document.createElement('span');
+    wrapper.className = 'product-nav';
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'product-nav-toggle';
+    toggle.textContent = product.textContent.trim();
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'product-navigation-menu');
+
+    const menu = document.createElement('span');
+    menu.id = 'product-navigation-menu';
+    menu.className = 'product-nav-menu';
+    menu.hidden = true;
+
+    const lineup = document.createElement('a');
+    lineup.href = '#solutions';
+    lineup.textContent = productLineupNavLabel;
+    const performance = document.createElement('a');
+    performance.href = '#engine-performance';
+    performance.textContent = performanceNavLabel;
+    menu.append(lineup, performance);
+
+    const close = () => {
+      wrapper.classList.remove('is-open');
+      links.classList.remove('product-menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+    };
+    const setOpen = (open) => {
+      wrapper.classList.toggle('is-open', open);
+      links.classList.toggle('product-menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      menu.hidden = !open;
+    };
+
+    toggle.addEventListener('click', () => setOpen(menu.hidden));
+    menu.addEventListener('click', close);
+    document.addEventListener('click', event => { if (!wrapper.contains(event.target)) close(); });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !menu.hidden) {
+        close();
+        toggle.focus();
+      }
+    });
+
+    product.replaceWith(wrapper);
+    wrapper.append(toggle, menu);
   };
 
   const applyBackToTopButton = () => {
@@ -325,7 +392,7 @@
   applyFavicon();
   applyPlatformLinks();
   applyHistoryNavLink();
-  applyPerformanceNavLink();
+  applyProductNavigation();
   applyBackToTopButton();
 
   const languageSelect = document.querySelector('.language-select');
