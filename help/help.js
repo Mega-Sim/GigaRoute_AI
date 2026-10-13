@@ -14,7 +14,7 @@
   function loadKo() {
     if (ko) return Promise.resolve(ko);
     if (!koPending) {
-      koPending = fetch('/help/ko.json?v=20261013-1').then(function (r) { return r.json(); }).then(function (j) { ko = j; return ko; });
+      koPending = fetch('/help/ko.json?v=20261013-2').then(function (r) { return r.json(); }).then(function (j) { ko = j; return ko; });
     }
     return koPending;
   }
@@ -207,8 +207,7 @@
       b.addEventListener('click', function () { applyLang(x[0], true); });
       sw.appendChild(b);
     });
-    var links = navr.querySelector('.links');
-    if (links && links.nextSibling) navr.insertBefore(sw, links.nextSibling); else navr.appendChild(sw);
+    navr.appendChild(sw);
   }
   function initialLang() {
     var q = location.search.match(/[?&]lang=(en|ko)\b/);
