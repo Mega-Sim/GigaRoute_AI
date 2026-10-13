@@ -14,7 +14,7 @@
   function loadKo() {
     if (ko) return Promise.resolve(ko);
     if (!koPending) {
-      koPending = fetch('/help/ko.json?v=20261013-2').then(function (r) { return r.json(); }).then(function (j) { ko = j; return ko; });
+      koPending = fetch('/help/ko.json?v=20261013-3').then(function (r) { return r.json(); }).then(function (j) { ko = j; return ko; });
     }
     return koPending;
   }
@@ -196,8 +196,8 @@
     });
   }
   function buildSwitch() {
-    var navr = document.querySelector('.navr');
-    if (!navr) return;
+    var h1 = document.querySelector('main h1');
+    if (!h1) return;
     var sw = document.createElement('div');
     sw.className = 'langsw'; sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Language / 언어');
     [['en', 'EN'], ['ko', '한국어']].forEach(function (x) {
@@ -207,13 +207,17 @@
       b.addEventListener('click', function () { applyLang(x[0], true); });
       sw.appendChild(b);
     });
-    navr.appendChild(sw);
+    var bar = document.createElement('div');
+    bar.className = 'titlebar';
+    h1.parentNode.insertBefore(bar, h1);
+    bar.appendChild(h1);
+    bar.appendChild(sw);
   }
   function initialLang() {
     var q = location.search.match(/[?&]lang=(en|ko)\b/);
     if (q) return [q[1], true];
     try { var s = localStorage.getItem(STORE); if (s === 'en' || s === 'ko') return [s, false]; } catch (e) { /* 무시 */ }
-    return [/^ko\b/i.test(navigator.language || '') ? 'ko' : 'en', false];
+    return ['en', false];
   }
   buildSwitch();
   var init = initialLang();
