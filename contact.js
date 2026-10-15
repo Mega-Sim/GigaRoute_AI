@@ -28,162 +28,6 @@
     ja: 'ページ上部へ戻る'
   }[locale] || 'Back to top';
 
-  const developmentHistoryLabel = {
-    en: 'Development Reference',
-    ko: '개발 Reference',
-    'zh-CN': '开发 Reference',
-    es: 'Referencias de desarrollo',
-    ja: '開発 Reference'
-  }[locale] || 'Development Reference';
-
-  const educationHistoryLabel = {
-    en: 'Education & Conference',
-    ko: 'Education & Conference',
-    'zh-CN': '教育与会议',
-    es: 'Educación y conferencias',
-    ja: '教育・カンファレンス'
-  }[locale] || 'Education & Conference';
-  const socialContributionHistoryLabel = 'Social Contribution';
-
-  const historyCopy = {
-    en: {
-      kicker:'HISTORY',
-      title:'GigaRoute AI History',
-      lead:'GigaRoute AI records the engineering milestones behind its simulation and automation software.',
-      items:[
-        {date:'2026.07.30',title:'GigaRoute AI founded',desc:'Founded with the goal of localizing logistics simulation technology while developing and supplying high-performance, ultra-large-scale simulators integrated with AI technologies.'},
-        {date:'~ 2026.07.20',title:'10 years of logistics automation simulation experience',group:'career'},
-        {date:'~ 2026.07.20',title:'3 years of servo motor motion-control SW development experience',group:'career'},
-        {date:'Simulation SW',title:'GigaRoute AI logistics automation simulator development',highlight:true},
-        {date:'Software Development',title:'Maintenance SW development for per-axis servo motor/drive firmware, parameters, and related functions'},
-        {date:'Software Development',title:'Servo Fault Trace log analysis automation SW development'},
-        {date:'Software Development',title:'CAD drawing-to-simulation layout conversion automation SW development'},
-        {date:'Software Development',title:'CAD text information input/output automation SW development'},
-        {date:'Software Development',title:'Atlassian API-based SW change and issue-management automation SW development',desc:'Developed software using Jira and Confluence APIs to automate issue data, documentation, reviews, and repetitive SW change-management workflows in a consistent process.'},
-        {date:'Simulation SW',title:'AutoMod Simulator Dijkstra pathfinding algorithm implementation model development',desc:'Implemented a Dijkstra shortest-path algorithm in AutoMod to calculate efficient routes across logistics networks and apply them to simulation routing logic.'},
-        {date:'Simulation SW',title:'AutoMod Simulator Hungarian job-assignment algorithm implementation model development'},
-        {date:'Simulation SW',title:'AutoMod Simulator TCP/IP communication-connected parallel model development'},
-        {date:'Simulation SW',title:'AutoMod Simulator model development applying OHT 4-axis (Driving, Hoist, Slide) motion'},
-        {date:'Education & Conference',title:'Participated in NACSI Cognitive Technology, Deep Learning & Reinforcement Learning Conference',group:'education'},
-        {date:'Education & Conference',title:'Yaskawa Korea servo motor · drive training completed',group:'education'},
-        {date:'Education & Conference',title:'AutoMod Simulator Beginner and Advanced training completed',group:'education'},
-        {date:'Education & Conference',title:'Siemens Plant Simulation introduction review and training completed',group:'education'},
-        {date:'2023 ~',title:'HANIUM IT talent development mentoring',group:'social'},
-        {date:'2022 ~',title:'Sponsored hygiene kits for young women through Good Neighbors',group:'social'},
-        {date:'2015',title:'Volunteer free academic tutoring; received a commendation from the Mayor of Hwaseong',group:'social'}
-      ]
-    },
-    ko: {
-      kicker:'HISTORY',
-      title:'GigaRoute AI 개발 이력',
-      lead:'시뮬레이션과 업무 자동화 분야에서 축적한 주요 소프트웨어 개발 이력을 기록합니다.',
-      items:[
-        {date:'2026.07.30',title:'GigaRoute AI 설립',desc:'물류 시뮬레이터 국산화를 목표로 AI 기술을 융합한 고성능·초대형 시뮬레이터 개발·공급을 위해 설립했습니다.'},
-        {date:'2017 ~',title:'반도체 ∙ 배터리 생산 시스템 물류 자동화 시뮬레이션',group:'career'},
-        {date:'2017 ~',title:'다축 서보 모터 ∙ 드라이브 모션 제어 SW 개발',group:'career'},
-        {date:'Simulation SW',title:'GigaRoute AI 물류 자동화 시뮬레이터 개발',highlight:true},
-        {date:'SW 개발',title:'서보 모터/드라이브 축별 FW, 파라미터 등 Maintenance SW 개발'},
-        {date:'SW 개발',title:'서보 Fault Trace 로그 분석 자동화 SW 개발'},
-        {date:'SW 개발',title:'CAD 도면 시뮬레이션 레이아웃 변환 자동화 SW 기능 개발'},
-        {date:'SW 개발',title:'CAD 텍스트 정보 입력/출력 자동화 SW 개발'},
-        {date:'SW 개발',title:'CAD Symbol 배치 자동화 SW 개발'},
-        {date:'SW 개발',title:'Atlassian API 기반 SW 변경점·이슈관리 자동화 SW 개발',desc:'Jira·Confluence API를 연동해 이슈 데이터, 문서, 리뷰와 SW 변경점 관리 업무의 반복 작업을 하나의 흐름으로 자동화하는 소프트웨어를 개발했습니다.'},
-        {date:'Simulation SW',title:'AutoMod Simulator 내 Dijkstra 경로 탐색 알고리즘 구현 모델 개발',desc:'AutoMod 시뮬레이터에 Dijkstra 최단 경로 탐색 알고리즘을 구현해 물류 네트워크의 효율적인 경로 계산과 시뮬레이션 라우팅 로직에 적용했습니다.'},
-        {date:'Simulation SW',title:'AutoMod Simulator 내 Hungarian 작업 할당 알고리즘 구현 모델 개발'},
-        {date:'Simulation SW',title:'AutoMod Simulator TCP/IP 통신 연결 병렬 모델 개발'},
-        {date:'Simulation SW',title:'OHT 4축(Driving, Hoist, Slide) 모션 적용 AutoMod Simulator 모델 개발'},
-        {date:'Education & Conference',title:'NACSI 인지기술 딥러닝 강화학습 Conference 참가',group:'education'},
-        {date:'Education & Conference',title:'한국 Yaskawa 서보 모터∙드라이브 교육 이수',group:'education'},
-        {date:'Education & Conference',title:'AutoMod Simulator Beginner, Advanced 교육 이수',group:'education'},
-        {date:'Education & Conference',title:'Siemens Plant Simulation 도입 검토 및 교육 이수',group:'education'},
-        {date:'2023 ~',title:'한이음 IT 인재육성 멘토 활동',group:'social'},
-        {date:'2022 ~',title:'굿네이버스 여성 청소년 위생 키트 후원',group:'social'},
-        {date:'2015',title:'재능 기부 무료 학습지도, 화성시장 표창',group:'social'}
-      ]
-    },
-    'zh-CN': {
-      kicker:'HISTORY',
-      title:'GigaRoute AI 开发历程',
-      lead:'记录 GigaRoute AI 在仿真与业务自动化软件方面的重要开发里程碑。',
-      items:[
-        {date:'2026.07.30',title:'GigaRoute AI 成立',desc:'以实现物流仿真器国产化为目标，开发、供应融合 AI 技术的高性能、超大规模仿真器而成立。'},
-        {date:'~ 2026.07.20',title:'物流自动化仿真 10 年经验',group:'career'},
-        {date:'~ 2026.07.20',title:'伺服电机运动控制软件开发 3 年经验',group:'career'},
-        {date:'仿真软件',title:'GigaRoute AI 物流自动化仿真器开发',highlight:true},
-        {date:'软件开发',title:'伺服电机/驱动器各轴固件、参数等 Maintenance 软件开发'},
-        {date:'软件开发',title:'伺服 Fault Trace 日志分析自动化软件开发'},
-        {date:'软件开发',title:'CAD 图纸仿真布局转换自动化软件功能开发'},
-        {date:'软件开发',title:'CAD 文本信息输入/输出自动化软件开发'},
-        {date:'软件开发',title:'基于 Atlassian API 的软件变更点·问题管理自动化软件开发',desc:'通过 Jira 与 Confluence API 连接问题数据、文档、评审和软件变更管理的重复业务，构建一致的自动化工作流程。'},
-        {date:'仿真软件',title:'AutoMod Simulator 内 Dijkstra 路径搜索算法实现模型开发',desc:'在 AutoMod 中实现 Dijkstra 最短路径算法，用于物流网络的高效路径计算并应用于仿真路由逻辑。'},
-        {date:'仿真软件',title:'AutoMod Simulator 内 Hungarian 任务分配算法实现模型开发'},
-        {date:'仿真软件',title:'AutoMod Simulator TCP/IP 通信连接并行模型开发'},
-        {date:'仿真软件',title:'OHT 4轴（Driving、Hoist、Slide）运动应用 AutoMod Simulator 模型开发'},
-        {date:'教育与会议',title:'参加 NACSI 认知技术、深度学习、强化学习 Conference',group:'education'},
-        {date:'教育与会议',title:'完成韩国安川伺服电机·驱动器培训',group:'education'},
-        {date:'教育与会议',title:'完成 AutoMod Simulator Beginner、Advanced 培训',group:'education'},
-        {date:'教育与会议',title:'完成 Siemens Plant Simulation 导入评估及培训',group:'education'},
-        {date:'2023 ~',title:'HANIUM IT 人才培养导师活动',group:'social'},
-        {date:'2022 ~',title:'通过 Good Neighbors 赞助女性青少年卫生用品包',group:'social'},
-        {date:'2015',title:'才能捐赠免费学习辅导，获华城市长表彰',group:'social'}
-      ]
-    },
-    es: {
-      kicker:'HISTORY',
-      title:'Historia de GigaRoute AI',
-      lead:'Principales hitos de software en simulación y automatización de procesos.',
-      items:[
-        {date:'2026.07.30',title:'Fundación de GigaRoute AI',desc:'Fundada con el objetivo de localizar la tecnología de simulación logística mientras desarrolla y suministra simuladores de alto rendimiento y escala ultragrande integrados con tecnologías de IA.'},
-        {date:'~ 2026.07.20',title:'10 años de experiencia en simulación de automatización logística',group:'career'},
-        {date:'~ 2026.07.20',title:'3 años de experiencia en desarrollo de SW de control de movimiento de servomotores',group:'career'},
-        {date:'SW de simulación',title:'Desarrollo del simulador de automatización logística GigaRoute AI',highlight:true},
-        {date:'Desarrollo SW',title:'Desarrollo de SW de mantenimiento para firmware y parámetros por eje de servomotores/accionamientos'},
-        {date:'Desarrollo SW',title:'Desarrollo de SW para automatización del análisis de registros Servo Fault Trace'},
-        {date:'Desarrollo SW',title:'Desarrollo de función SW para conversión automática de planos CAD a layouts de simulación'},
-        {date:'Desarrollo SW',title:'Desarrollo de SW para automatizar la entrada/salida de información de texto CAD'},
-        {date:'Desarrollo SW',title:'Desarrollo de SW de automatización de gestión de cambios e incidencias basado en Atlassian API',desc:'Se desarrolló software que integra las API de Jira y Confluence para automatizar datos de incidencias, documentación, revisiones y tareas repetitivas de gestión de cambios de software.'},
-        {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo de búsqueda de rutas Dijkstra en AutoMod Simulator',desc:'Se implementó el algoritmo de ruta mínima de Dijkstra en AutoMod para calcular rutas eficientes en redes logísticas y aplicarlas a la lógica de enrutamiento de la simulación.'},
-        {date:'SW de simulación',title:'Desarrollo de un modelo de implementación del algoritmo Hungarian para asignación de trabajos en AutoMod Simulator'},
-        {date:'SW de simulación',title:'Desarrollo de modelo paralelo conectado mediante TCP/IP en AutoMod Simulator'},
-        {date:'SW de simulación',title:'Desarrollo de modelo AutoMod Simulator con aplicación de movimiento OHT de 4 ejes (Driving, Hoist, Slide)'},
-        {date:'Educación y conferencias',title:'Participación en NACSI Conference de tecnología cognitiva, aprendizaje profundo y aprendizaje por refuerzo',group:'education'},
-        {date:'Educación y conferencias',title:'Formación completada de motores servo y variadores Yaskawa Korea',group:'education'},
-        {date:'Educación y conferencias',title:'Formación completada de AutoMod Simulator Beginner y Advanced',group:'education'},
-        {date:'Educación y conferencias',title:'Evaluación de adopción y formación completada de Siemens Plant Simulation',group:'education'},
-        {date:'2023 ~',title:'Mentoría para el desarrollo de talento TI en HANIUM',group:'social'},
-        {date:'2022 ~',title:'Patrocinio de kits de higiene para jóvenes mujeres a través de Good Neighbors',group:'social'},
-        {date:'2015',title:'Tutoría académica gratuita como voluntariado; reconocimiento del alcalde de Hwaseong',group:'social'}
-      ]
-    },
-    ja: {
-      kicker:'HISTORY',
-      title:'GigaRoute AI History',
-      lead:'シミュレーションと業務自動化に関する主なソフトウェア開発実績を記録します。',
-      items:[
-        {date:'2026.07.30',title:'GigaRoute AI 設立',desc:'物流シミュレータの国産化を目標に、AI 技術を融合した高性能・超大規模シミュレータの開発・供給を目的に設立しました。'},
-        {date:'~ 2026.07.20',title:'物流自動化シミュレーション 10 年の経験',group:'career'},
-        {date:'~ 2026.07.20',title:'サーボモータ・モーション制御 SW 開発 3 年の経験',group:'career'},
-        {date:'Simulation SW',title:'GigaRoute AI 物流自動化シミュレータ開発',highlight:true},
-        {date:'SW開発',title:'サーボモータ／ドライブ各軸の FW・パラメータ等 Maintenance SW 開発'},
-        {date:'SW開発',title:'サーボ Fault Trace ログ解析自動化 SW 開発'},
-        {date:'SW開発',title:'CAD 図面からシミュレーションレイアウトへの変換自動化 SW 機能開発'},
-        {date:'SW開発',title:'CAD テキスト情報の入力／出力自動化 SW 開発'},
-        {date:'SW開発',title:'Atlassian API ベースの SW 変更点・課題管理自動化 SW 開発',desc:'Jira・Confluence API を連携し、課題データ、文書、レビュー、SW 変更点管理の反復業務を一つの流れで自動化するソフトウェアを開発しました。'},
-        {date:'Simulation SW',title:'AutoMod Simulator 内 Dijkstra 経路探索アルゴリズム実装モデル開発',desc:'AutoMod に Dijkstra 最短経路探索アルゴリズムを実装し、物流ネットワークの効率的な経路計算とシミュレーションのルーティングロジックに適用しました。'},
-        {date:'Simulation SW',title:'AutoMod Simulator 内 Hungarian 作業割当アルゴリズム実装モデル開発'},
-        {date:'Simulation SW',title:'AutoMod Simulator TCP/IP通信接続並列モデル開発'},
-        {date:'Simulation SW',title:'OHT 4軸（Driving, Hoist, Slide）モーション適用 AutoMod Simulator モデル開発'},
-        {date:'教育・カンファレンス',title:'NACSI 認知技術・ディープラーニング・強化学習 Conference 参加',group:'education'},
-        {date:'教育・カンファレンス',title:'韓国Yaskawa サーボモーター・ドライブ教育修了',group:'education'},
-        {date:'教育・カンファレンス',title:'AutoMod Simulator Beginner・Advanced 教育修了',group:'education'},
-        {date:'教育・カンファレンス',title:'Siemens Plant Simulation 導入検討・教育修了',group:'education'},
-        {date:'2023 ~',title:'HANIUM IT人材育成メンター活動',group:'social'},
-        {date:'2022 ~',title:'グッドネーバーズ 女性青少年向け衛生キット支援',group:'social'},
-        {date:'2015',title:'才能寄付による無料学習指導、華城市長表彰',group:'social'}
-      ]
-    }
-  }[locale] || null;
-
   const copy = {
     en: {
       contact:{nav:'Contact',button:'Contact Sales',title:'Contact GigaRoute AI',intro:'For commercial licenses, product demos, PoC projects, technical support, AutoMod consulting, enterprise deployment, or partnerships, contact us at the email below.',emailLabel:'Business & support email',copy:'Copy email',copied:'Email copied',hours:'Business hours',hoursValue:'Monday–Friday, 09:00–18:00 KST',response:'Typical response',responseValue:'Within 1 business day',close:'Close'},
@@ -246,7 +90,6 @@
   const t = l.contact;
   const perf = l.performance;
   const p = l.product;
-  const history = historyCopy;
 
   const makePlatformLink = (label, href, extraClass = '') => {
     const link = document.createElement('a');
@@ -288,13 +131,21 @@
     });
   };
 
+  const historyPageHref = {
+    en: '/history/index-en.html',
+    ko: '/history/',
+    'zh-CN': '/history/index-zh.html',
+    es: '/history/index-es.html',
+    ja: '/history/index-ja.html'
+  }[locale] || '/history/index-en.html';
+
   const applyHistoryNavLink = () => {
     const links = document.querySelector('.links');
     if (!links || links.querySelector('a[data-history-nav]')) return;
     const product = links.querySelector('a[href="#solutions"], a[href="#products"]');
     if (!product) return;
     const link = document.createElement('a');
-    link.href = '#history';
+    link.href = historyPageHref;
     link.dataset.historyNav = '1';
     link.textContent = 'History';
     product.insertAdjacentElement('beforebegin', link);
@@ -409,10 +260,9 @@
     .platform-download{min-width:82px;padding:0 13px;white-space:nowrap}.linux-download{border-color:rgba(71,111,123,.22)}
     .back-to-top{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:900;display:grid;place-items:center;width:52px;height:52px;padding:0;border:1px solid rgba(55,96,145,.28);border-radius:50%;background:rgba(255,255,255,.94);color:var(--brand);box-shadow:0 14px 34px rgba(42,60,82,.2);font:900 12px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.08em;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease}.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover{border-color:rgba(55,96,145,.52);background:#fff;transform:translateY(-2px)}.back-to-top:focus-visible{outline:3px solid rgba(55,96,145,.28);outline-offset:3px}
     .sales-hint{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 12px;border:1px solid rgba(55,96,145,.16);border-radius:999px;background:rgba(255,255,255,.7);color:var(--muted);font-size:12px;font-weight:800;line-height:1.4}.sales-hint:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(55,96,145,.10)}
-    #history{padding:12px 0 64px;scroll-margin-top:calc(var(--header-h,96px) + 24px)}.history-panel{padding:28px;border:1px solid rgba(255,255,255,.92);border-radius:32px;background:linear-gradient(145deg,rgba(247,250,252,.98),rgba(236,243,249,.95));box-shadow:var(--shadow)}.history-head{display:block}.history-head h2{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:.18em;font-size:clamp(30px,3.5vw,43px);line-height:1.1;letter-spacing:-.055em}.history-brand{display:inline-block;padding-bottom:.24em;margin-bottom:-.16em}.history-list{display:grid;gap:8px;margin-top:24px}.history-divider{height:1px;margin:8px 4px 0;border:0;background:linear-gradient(90deg,transparent,rgba(71,111,123,.48) 12%,rgba(71,111,123,.48) 88%,transparent)}.history-development-title{margin:0 4px 2px;font-size:clamp(20px,2.2vw,27px);line-height:1.12;letter-spacing:-.045em;color:var(--ink)}.history-item{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;padding:16px 20px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.86)}.history-item--social{grid-template-columns:110px minmax(0,1fr)}.history-item--development{grid-template-columns:1fr}.history-item--founding .history-title-accent,.history-item--highlight .history-title-accent{display:inline-block;padding-bottom:.22em;margin-bottom:-.22em;background:linear-gradient(100deg,#00aebe 0%,#2277f2 48%,#913ee8 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 7px rgba(34,119,242,.18))}.history-item--founding h3,.history-item--highlight h3{font-size:clamp(21px,1.8vw,22px);line-height:1.2;letter-spacing:-.035em}.history-date{color:var(--brand);font-size:11px;font-weight:950;letter-spacing:.035em;line-height:1.5}.history-item--founding .history-date{font-size:12px}.history-item h3{margin:0;font-size:clamp(16px,1.45vw,18px);letter-spacing:-.025em}.history-item--development:not(.history-item--highlight) h3,.history-item--social h3{font-size:clamp(14px,1.15vw,16px)}.history-item--founding h3{font-size:20px}.history-item p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.65}
     #engine-performance{padding:18px 0 86px;scroll-margin-top:calc(var(--header-h,96px) + 24px)}.performance-panel{padding:36px;border:1px solid rgba(255,255,255,.92);border-radius:32px;background:linear-gradient(145deg,rgba(232,240,250,.98),rgba(247,251,250,.95));box-shadow:var(--shadow)}.performance-head{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:end}.performance-head h2{margin:0;font-size:clamp(34px,4.5vw,54px);line-height:1.05;letter-spacing:-.05em}.performance-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.72}.performance-shot{margin:24px 0 0;padding:0}.performance-shot a{display:block;overflow:hidden;border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 34px rgba(42,60,82,.12);transition:transform .18s ease,box-shadow .18s ease}.performance-shot a:hover{transform:translateY(-2px);box-shadow:0 20px 44px rgba(42,60,82,.18)}.performance-shot a:focus-visible{outline:3px solid rgba(55,96,145,.32);outline-offset:3px}.performance-shot img{display:block;width:100%;height:auto;cursor:pointer}.performance-shot figcaption{margin:10px 2px 0;color:var(--muted);font-size:12px;font-weight:750;line-height:1.5}.performance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}.performance-metric{min-width:0;padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.86)}.performance-metric strong{display:block;color:var(--ink);font-size:clamp(25px,3.2vw,38px);line-height:1;letter-spacing:-.045em;white-space:nowrap}.performance-metric span{display:block;margin-top:9px;color:var(--muted);font-size:12px;font-weight:800;line-height:1.45}.performance-machine{margin-top:14px;padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.72)}.performance-machine h3{margin:0 0 14px;font-size:17px}.performance-specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.performance-spec{min-width:0;padding:13px 14px;border-radius:14px;background:rgba(246,249,252,.92)}.performance-spec b{display:block;color:var(--brand);font-size:10px;letter-spacing:.055em;text-transform:uppercase}.performance-spec span{display:block;margin-top:6px;color:var(--ink);font-size:12px;font-weight:800;line-height:1.45;overflow-wrap:anywhere}.performance-note{margin:15px 0 0;color:var(--muted);font-size:11px;line-height:1.65}
     #products{padding:72px 0 86px}.b2b-panel{padding:36px;border:1px solid rgba(255,255,255,.9);border-radius:32px;background:linear-gradient(145deg,rgba(236,242,249,.97),rgba(255,255,255,.9));box-shadow:var(--shadow)}.b2b-head{display:grid;grid-template-columns:1fr .9fr;gap:30px;align-items:end;margin-bottom:28px}.b2b-head h2{margin:0;font-size:clamp(34px,4.5vw,54px);line-height:1.05;letter-spacing:-.05em}.b2b-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.72}.b2b-quote-note{margin-top:12px;color:var(--ink);font-size:13px;font-weight:850;line-height:1.55}.b2b-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.b2b-card{display:flex;flex-direction:column;min-width:0;padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.84)}.b2b-card.featured{border-color:rgba(55,96,145,.34);box-shadow:0 16px 36px rgba(42,60,82,.12);background:linear-gradient(155deg,rgba(255,255,255,.98),rgba(235,243,250,.92))}.b2b-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.b2b-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:rgba(55,96,145,.09);color:var(--brand);font-weight:950;letter-spacing:-.04em}.b2b-status{padding:6px 9px;border:1px solid rgba(55,96,145,.15);border-radius:999px;background:rgba(255,255,255,.78);color:var(--brand);font-size:10px;font-weight:950;letter-spacing:.045em;text-transform:uppercase}.b2b-card h3{margin:0;font-size:23px;letter-spacing:-.025em}.b2b-subtitle{margin:6px 0 0;color:var(--brand);font-size:12px;font-weight:900}.b2b-desc{margin:15px 0 0;color:var(--muted);font-size:14px;line-height:1.65}.b2b-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.b2b-tags span{padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:rgba(248,250,252,.92);color:var(--muted);font-size:11px;font-weight:800}.b2b-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px}.b2b-actions .btn{min-height:42px}.b2b-actions .platform-download{min-width:74px}.sales-flow{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}.sales-flow h3{margin:0 0 15px;font-size:18px}.sales-flow-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.sales-step{padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.7)}.sales-step b{display:block;color:var(--brand);font-size:11px;letter-spacing:.08em}.sales-step strong{display:block;margin-top:8px;font-size:14px}.sales-step p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
-    @media(max-width:1050px){.history-head,.performance-head,.b2b-head{grid-template-columns:1fr}.performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.performance-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.sales-flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.actions{width:100%;justify-content:flex-end;flex-wrap:wrap}.language-select{min-width:118px}.platform-download{min-width:0;padding:0 12px}.back-to-top{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:46px;height:46px}#history{padding:6px 0 46px}#engine-performance{padding:6px 0 58px}.history-panel{padding:18px 14px}.performance-panel,.b2b-panel{padding:22px 18px}.history-item{grid-template-columns:92px minmax(0,1fr);gap:10px;padding:14px 16px;align-items:start}.history-item--development{grid-template-columns:1fr}.performance-grid,.performance-specs,.b2b-grid,.sales-flow-grid{grid-template-columns:1fr}.b2b-actions .contact-trigger{width:100%}.performance-metric strong{white-space:normal}.sales-hint{border-radius:16px}}@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+    @media(max-width:1050px){.performance-head,.b2b-head{grid-template-columns:1fr}.performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.performance-specs{grid-template-columns:repeat(2,minmax(0,1fr))}.sales-flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.actions{width:100%;justify-content:flex-end;flex-wrap:wrap}.language-select{min-width:118px}.platform-download{min-width:0;padding:0 12px}.back-to-top{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:46px;height:46px}#engine-performance{padding:6px 0 58px}.performance-panel,.b2b-panel{padding:22px 18px}.performance-grid,.performance-specs,.b2b-grid,.sales-flow-grid{grid-template-columns:1fr}.b2b-actions .contact-trigger{width:100%}.performance-metric strong{white-space:normal}.sales-hint{border-radius:16px}}@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
   `;
   document.head.appendChild(style);
 
@@ -443,21 +293,6 @@
     section.innerHTML = `<div class="wrap"><div class="performance-panel"><div class="performance-head"><div><p class="kicker">${perf.kicker}</p><h2>${perf.title}</h2></div><p class="performance-lead">${perf.lead}</p></div>${shotHtml}<div class="performance-grid">${metricsHtml}</div><div class="performance-machine"><h3>${perf.machineTitle}</h3><div class="performance-specs">${machineHtml}</div><p class="performance-note">${perf.note}</p></div></div></div>`;
     const solutionsSection = document.querySelector('#solutions');
     (solutionsSection || hero).insertAdjacentElement('afterend', section);
-  }
-
-  if (hero && history && !document.querySelector('#history')) {
-    const section = document.createElement('section');
-    section.id = 'history';
-    const itemHtml = (item, isDevelopment = false, isFounding = false, isHighlight = false) => `<article class="history-item${isDevelopment ? ' history-item--development' : ''}${isFounding ? ' history-item--founding' : ''}${isHighlight ? ' history-item--highlight' : ''}">${isDevelopment ? '' : `<div class="history-date">${item.date}</div>`}<div><h3>${isFounding || isHighlight ? `<span class="gradient history-title-accent">${item.title}</span>` : item.title}</h3>${isDevelopment || !item.desc ? '' : `<p>${item.desc}</p>`}</div></article>`;
-    const foundingHtml = history.items.length ? itemHtml(history.items[0], false, true) : '';
-    const careerItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'career').map(item => itemHtml(item)).join('');
-    const developmentItemsHtml = history.items.filter((item, index) => index > 0 && item.group !== 'career' && item.group !== 'education' && item.group !== 'social').map(item => itemHtml(item, true, false, item.highlight === true)).join('');
-    const educationItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'education').map(item => itemHtml(item, true)).join('');
-    const educationSectionHtml = educationItemsHtml ? `<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${educationHistoryLabel}</h3>${educationItemsHtml}` : '';
-    const socialItemsHtml = history.items.filter((item, index) => index > 0 && item.group === 'social').map(item => itemHtml(item).replace('class="history-item"','class="history-item history-item--social"')).join('');
-    const socialSectionHtml = socialItemsHtml ? `<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${socialContributionHistoryLabel}</h3>${socialItemsHtml}` : '';
-    section.innerHTML = `<div class="wrap"><div class="history-panel"><div class="history-head"><h2><span class="gradient history-brand">GigaRoute AI</span><span>History</span></h2></div><div class="history-list">${foundingHtml}${careerItemsHtml}<div class="history-divider" aria-hidden="true"></div><h3 class="history-development-title">${developmentHistoryLabel}</h3>${developmentItemsHtml}${educationSectionHtml}${socialSectionHtml}</div></div></div>`;
-    hero.insertAdjacentElement('afterend', section);
   }
 
   const productSection = document.querySelector('#products');

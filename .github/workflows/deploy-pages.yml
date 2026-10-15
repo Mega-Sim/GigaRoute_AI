@@ -12,6 +12,7 @@ on:
       - 'display-fixes.js'
       - 'help/**'
       - 'youtube/**'
+      - 'history/**'
       - 'llms.txt'
       - 'robots.txt'
       - 'sitemap.xml'
