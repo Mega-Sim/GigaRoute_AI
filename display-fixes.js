@@ -1,9 +1,9 @@
 (() => {
   const impactCopy = {
     ko: {
-      titleLines: ['8.0GB RAM 사무용 노트북 하나로', '1,100대 AMHS를 21.6배속 시뮬레이션.'],
-      eyebrow: '8.0GB OFFICE LAPTOP BENCHMARK',
-      context: '11th Gen Intel Core i5-1130G7 · 8.0GB RAM · 내장 GPU · Windows x64',
+      titleLines: ['사무용 노트북 하나로', '1,100대 AMHS를 21.6배속 시뮬레이션.'],
+      eyebrow: 'OFFICE LAPTOP BENCHMARK',
+      context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6초', '실제 1.0초 동안 진행되는 시뮬레이션 시간'],
         ['약 101.9 Job/s', '실제 실행시간 기준 평균 완료 Job'],
@@ -12,9 +12,9 @@
       note: '101.9 Job/s는 공개 표기값 17,018.0건과 167.0초를 기준으로 한 파생 지표입니다. 원시 실측값은 저장소 문서에 보존하며, 엔진 내부 이벤트 처리량(events/s)을 의미하지 않습니다.'
     },
     en: {
-      titleLines: ['One 8.0 GB RAM office laptop.', '1,100 AMHS vehicles at 21.6× simulation speed.'],
-      eyebrow: '8.0 GB OFFICE LAPTOP BENCHMARK',
-      context: '11th Gen Intel Core i5-1130G7 · 8.0 GB RAM · integrated GPU · Windows x64',
+      titleLines: ['One office laptop.', '1,100 AMHS vehicles at 21.6× simulation speed.'],
+      eyebrow: 'OFFICE LAPTOP BENCHMARK',
+      context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6 sec', 'Simulated time advanced per 1.0 real second'],
         ['~101.9 jobs/s', 'Average completed jobs per real execution second'],
@@ -23,9 +23,9 @@
       note: '101.9 jobs/s is derived from the public display values of 17,018.0 completed jobs and 167.0 seconds. Raw measurements remain documented in the repository. This is not an internal engine events/s measurement.'
     },
     'zh-CN': {
-      titleLines: ['仅用一台 8.0 GB RAM 办公笔记本电脑', '即可对 1,100 台 AMHS 进行 21.6× 倍速仿真。'],
-      eyebrow: '8.0 GB 办公笔记本实测',
-      context: '11th Gen Intel Core i5-1130G7 · 8.0 GB RAM · 集成显卡 · Windows x64',
+      titleLines: ['仅用一台办公笔记本电脑', '即可对 1,100 台 AMHS 进行 21.6× 倍速仿真。'],
+      eyebrow: '办公笔记本实测',
+      context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6 秒', '每 1.0 秒实际时间推进的仿真时间'],
         ['约 101.9 Job/s', '按实际执行时间计算的平均完成 Job'],
@@ -34,9 +34,9 @@
       note: '101.9 Job/s基于公开显示值17,018.0个已完成Job和167.0秒计算。原始实测值保留在仓库文档中；该数值不是引擎内部events/s指标。'
     },
     es: {
-      titleLines: ['Un portátil de oficina con 8,0 GB de RAM.', '1.100 AMHS a una velocidad de simulación de 21,6×.'],
-      eyebrow: 'BENCHMARK EN PORTÁTIL DE OFICINA DE 8,0 GB',
-      context: '11th Gen Intel Core i5-1130G7 · 8,0 GB RAM · GPU integrada · Windows x64',
+      titleLines: ['Un portátil de oficina.', '1.100 AMHS a una velocidad de simulación de 21,6×.'],
+      eyebrow: 'BENCHMARK EN PORTÁTIL DE OFICINA',
+      context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21,6 s', 'Tiempo simulado avanzado por cada 1,0 segundo real'],
         ['~101,9 Jobs/s', 'Jobs completados de media por segundo real de ejecución'],
@@ -45,9 +45,9 @@
       note: '101,9 Jobs/s se deriva de los valores públicos mostrados: 17.018,0 Jobs completados y 167,0 s. Las mediciones originales permanecen documentadas en el repositorio. No representa eventos internos del motor por segundo.'
     },
     ja: {
-      titleLines: ['8.0 GB RAM搭載の事務用ノートPC 1台で', '1,100台のAMHSを21.6倍速シミュレーション。'],
-      eyebrow: '8.0 GB 事務用ノートPC 実測',
-      context: '11th Gen Intel Core i5-1130G7 · 8.0 GB RAM · 内蔵GPU · Windows x64',
+      titleLines: ['事務用ノートPC 1台で', '1,100台のAMHSを21.6倍速シミュレーション。'],
+      eyebrow: '事務用ノートPC 実測',
+      context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6秒', '実時間1.0秒で進むシミュレーション時間'],
         ['約101.9 Job/s', '実行時間基準の平均完了Job'],
@@ -232,7 +232,7 @@
   };
 
   const perfTitles = {
-    ko: '8.0GB 노트북 실측 성능과 AutoMod 비교',
+    ko: '노트북 실측 성능과 AutoMod 비교',
     en: 'Measured Performance and AutoMod Comparison',
     'zh-CN': '实测性能与 AutoMod 对比',
     es: 'Rendimiento medido y comparación con AutoMod',
