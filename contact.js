@@ -1,7 +1,7 @@
 (() => {
   const EMAIL = 'support@gigaroute.ai';
   const DEMO_REPO = 'https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo';
-  const HEADER_WINDOWS_DOWNLOAD = `${DEMO_REPO}/releases`;
+  const HEADER_FREE_TRIAL = `${DEMO_REPO}/releases`;
   const WINDOWS_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-windows`;
   const LINUX_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-linux`;
   const FAVICON = '/favicon.png?v=20260818-2';
@@ -261,9 +261,9 @@
 
   const applyPlatformLinks = () => {
     document.querySelectorAll('.actions a.github').forEach(link => {
-      const windows = makePlatformLink('Windows', HEADER_WINDOWS_DOWNLOAD, 'windows-download');
-      const linux = makePlatformLink('Linux', LINUX_DOWNLOAD, 'linux-download');
-      link.before(windows, linux);
+      const trial = makePlatformLink('Free Trial', HEADER_FREE_TRIAL, 'free-trial');
+      trial.setAttribute('aria-label', 'Free Trial');
+      link.before(trial);
       link.remove();
     });
     document.querySelectorAll('.cta .hero-buttons a').forEach(link => {
