@@ -1,8 +1,8 @@
 (() => {
   const impactCopy = {
     ko: {
-      titleLines: ['사무용 노트북 하나로', '1,100대 AMHS를 21.6배속 시뮬레이션.'],
-      eyebrow: 'OFFICE LAPTOP BENCHMARK',
+      titleLines: ['No GPU 사무용 노트북 하나로', '1,100대 AMHS를 21.6배속 시뮬레이션.'],
+      eyebrow: 'No GPU OFFICE LAPTOP BENCHMARK',
       context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6초', '실제 1.0초 동안 진행되는 시뮬레이션 시간'],
@@ -12,8 +12,8 @@
       note: '101.9 Job/s는 공개 표기값 17,018.0건과 167.0초를 기준으로 한 파생 지표입니다. 원시 실측값은 저장소 문서에 보존하며, 엔진 내부 이벤트 처리량(events/s)을 의미하지 않습니다.'
     },
     en: {
-      titleLines: ['One office laptop.', '1,100 AMHS vehicles at 21.6× simulation speed.'],
-      eyebrow: 'OFFICE LAPTOP BENCHMARK',
+      titleLines: ['One No GPU office laptop.', '1,100 AMHS vehicles at 21.6× simulation speed.'],
+      eyebrow: 'No GPU OFFICE LAPTOP BENCHMARK',
       context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6 sec', 'Simulated time advanced per 1.0 real second'],
@@ -23,8 +23,8 @@
       note: '101.9 jobs/s is derived from the public display values of 17,018.0 completed jobs and 167.0 seconds. Raw measurements remain documented in the repository. This is not an internal engine events/s measurement.'
     },
     'zh-CN': {
-      titleLines: ['仅用一台办公笔记本电脑', '即可对 1,100 台 AMHS 进行 21.6× 倍速仿真。'],
-      eyebrow: '办公笔记本实测',
+      titleLines: ['仅用一台 No GPU 办公笔记本电脑', '即可对 1,100 台 AMHS 进行 21.6× 倍速仿真。'],
+      eyebrow: 'No GPU 办公笔记本实测',
       context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6 秒', '每 1.0 秒实际时间推进的仿真时间'],
@@ -34,8 +34,8 @@
       note: '101.9 Job/s基于公开显示值17,018.0个已完成Job和167.0秒计算。原始实测值保留在仓库文档中；该数值不是引擎内部events/s指标。'
     },
     es: {
-      titleLines: ['Un portátil de oficina.', '1.100 AMHS a una velocidad de simulación de 21,6×.'],
-      eyebrow: 'BENCHMARK EN PORTÁTIL DE OFICINA',
+      titleLines: ['Un portátil de oficina No GPU.', '1.100 AMHS a una velocidad de simulación de 21,6×.'],
+      eyebrow: 'BENCHMARK EN PORTÁTIL DE OFICINA No GPU',
       context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21,6 s', 'Tiempo simulado avanzado por cada 1,0 segundo real'],
@@ -45,8 +45,8 @@
       note: '101,9 Jobs/s se deriva de los valores públicos mostrados: 17.018,0 Jobs completados y 167,0 s. Las mediciones originales permanecen documentadas en el repositorio. No representa eventos internos del motor por segundo.'
     },
     ja: {
-      titleLines: ['事務用ノートPC 1台で', '1,100台のAMHSを21.6倍速シミュレーション。'],
-      eyebrow: '事務用ノートPC 実測',
+      titleLines: ['No GPU 事務用ノートPC 1台で', '1,100台のAMHSを21.6倍速シミュレーション。'],
+      eyebrow: 'No GPU 事務用ノートPC 実測',
       context: '11th Gen Intel Core i5-1130G7 · No GPU · Windows x64',
       metrics: [
         ['21.6秒', '実時間1.0秒で進むシミュレーション時間'],
@@ -232,7 +232,7 @@
   };
 
   const perfTitles = {
-    ko: '노트북 실측 성능과 AutoMod 비교',
+    ko: 'No GPU 노트북 실측 성능과 AutoMod 비교',
     en: 'Measured Performance and AutoMod Comparison',
     'zh-CN': '实测性能与 AutoMod 对比',
     es: 'Rendimiento medido y comparación con AutoMod',
