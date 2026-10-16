@@ -57,8 +57,16 @@
     }
   };
 
+  const laptopHeading = {
+    ko: 'No GPU 사무용 노트북 실측 성능',
+    en: 'Measured Performance on a No GPU Office Laptop',
+    'zh-CN': 'No GPU 办公笔记本实测性能',
+    es: 'Rendimiento medido en un portátil de oficina sin GPU',
+    ja: 'No GPU 事務用ノートPC 実測性能'
+  };
+
   const compareCopy = {
-    'ko': {title: '업계표준 AutoMod 와 성능 비교 결과', cap: '시뮬레이션 1시간의 실제 소요 시간 비교', sub: '업계표준 AutoMod 대비 · 1시간 시뮬레이션 Run 시 실제 소요 시간', c1: '반도체 OHT 500대 · 8,000 Job/hr', c2: '반도체 OHT 1,100대 · 18,000 Job/hr', a: '업계표준 AutoMod', g: 'GigaRoute AI', unit: '초', fail: '실행 불가', na: '측정 불가', cut: '소요 시간 96.5% 단축', note: '* 사내 비교 측정 자료 기준이며 업계표준 AutoMod 1,100대 조건은 실행되지 않아 측정하지 못했습니다.'},
+    'ko': {title: '업계표준 시뮬레이터 AutoMod 와 성능 비교 결과', cap: '시뮬레이션 1시간의 실제 소요 시간 비교', sub: '업계표준 AutoMod 대비 · 1시간 시뮬레이션 Run 시 실제 소요 시간', c1: '반도체 OHT 500대 · 8,000 Job/hr', c2: '반도체 OHT 1,100대 · 18,000 Job/hr', a: '업계표준 AutoMod', g: 'GigaRoute AI', unit: '초', fail: '실행 불가', na: '측정 불가', cut: '소요 시간 96.5% 단축', note: '* 사내 비교 측정 자료 기준이며 업계표준 AutoMod 1,100대 조건은 실행되지 않아 측정하지 못했습니다.'},
     'en': {title: 'Performance Comparison with industry-standard AutoMod', cap: 'Actual run time for 1 hour of simulation', sub: 'vs. industry-standard AutoMod · actual wall time for a 1-hour simulation run', c1: 'Semiconductor OHT 500 vehicles · 8,000 jobs/hr', c2: 'Semiconductor OHT 1,100 vehicles · 18,000 jobs/hr', a: 'industry-standard AutoMod', g: 'GigaRoute AI', unit: 'sec', fail: 'Could not run', na: 'Not measurable', cut: '96.5% less run time', note: '* Based on internal comparison measurements. The 1,100-vehicle case could not be run in industry-standard AutoMod, so no value was measured.'},
     'zh-CN': {title: '与 行业标准 AutoMod 的性能对比结果', cap: '1小时仿真的实际耗时对比', sub: '对比 行业标准 AutoMod · 运行1小时仿真的实际耗时', c1: '半导体 OHT 500台 · 8,000 Job/hr', c2: '半导体 OHT 1,100台 · 18,000 Job/hr', a: '行业标准 AutoMod', g: 'GigaRoute AI', unit: '秒', fail: '无法运行', na: '无法测量', cut: '耗时减少 96.5%', note: '* 基于内部对比测量数据。行业标准 AutoMod 在 1,100 台条件下无法运行,因此未取得测量值。'},
     'es': {title: 'Resultados de la comparación de rendimiento con AutoMod, estándar de la industria,', cap: 'Tiempo real de ejecución para 1 hora de simulación', sub: 'Frente a AutoMod, estándar de la industria, · tiempo real de una simulación de 1 hora', c1: 'OHT de semiconductores, 500 vehículos · 8.000 Jobs/h', c2: 'OHT de semiconductores, 1.100 vehículos · 18.000 Jobs/h', a: 'AutoMod, estándar de la industria,', g: 'GigaRoute AI', unit: 's', fail: 'No se pudo ejecutar', na: 'No medible', cut: '96,5 % menos de tiempo', note: '* Basado en mediciones comparativas internas. El caso de 1.100 vehículos no pudo ejecutarse en AutoMod, estándar de la industria,, por lo que no hay valor medido.'},
@@ -131,9 +139,8 @@
     const heading = head?.querySelector('h2');
     if (!head || !heading) return false;
 
-    heading.innerHTML = copy.titleLines
-      .map(line => `<span class="performance-title-line">${line}</span>`)
-      .join('');
+    head.querySelector('.kicker')?.remove();
+    heading.innerHTML = `<span class="performance-title-line">${laptopHeading[lang] || laptopHeading.en}</span>`;
 
     section.querySelector('.performance-lead')?.remove();
     section.querySelector('.performance-grid')?.remove();
@@ -149,7 +156,6 @@
         </article>`).join('');
       block.innerHTML = `
         <div class="performance-impact-topline">
-          <span class="performance-impact-eyebrow">${copy.eyebrow}</span>
           <span class="performance-impact-context">${copy.context}</span>
         </div>
         <div class="performance-impact-grid">${metrics}</div>
