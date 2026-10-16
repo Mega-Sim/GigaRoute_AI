@@ -233,3 +233,6 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
 #engine-performance .performance-panel .pc-head p{display:none}
 #engine-performance .performance-panel .pc-charts{margin-top:0}
 #engine-performance .performance-panel .performance-shot-title{margin-top:34px}
+/* 실측 지표 박스: 설명(검정 글자)을 위로, 큰 수치를 아래로 바꾸고 설명 글자를 키움 */
+#engine-performance .performance-panel .performance-impact-metric{display:flex;flex-direction:column-reverse;justify-content:flex-end}
+#engine-performance .performance-panel .performance-impact-metric span{margin:0 0 12px;font-size:16px;line-height:1.4}
