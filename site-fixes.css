@@ -220,3 +220,7 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
 #solutions .solution-title{font-size:clamp(32px,3.2vw,42px);font-weight:700;line-height:1.1}
 #solutions .card .tags span{font-size:17px}
 @media(max-width:760px){#solutions .card .tags span{font-size:16px}}
+/* 제품 라인업: 제품성능 섹션과 동일하게 라벨(kicker)을 큰 제목으로, 부제(solution-title)를 작은 글자로 표시 */
+#solutions .solution-heading .kicker{font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.045em}
+#solutions .solution-title{font-size:13px;font-weight:900;line-height:1.5;letter-spacing:0;color:var(--ink)}
+@media(max-width:760px){#solutions .solution-heading .kicker{font-size:clamp(26px,7.4vw,34px)}#solutions .solution-title{font-size:13px;line-height:1.5;letter-spacing:0}}
