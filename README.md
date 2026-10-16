@@ -6,7 +6,7 @@ GigaRoute AI 공식 홈페이지 공개 저장소입니다.
 
 ## 하위 페이지 공통 상단 메뉴 (기본값)
 
-History·YouTube·Help 등 홈 외 모든 페이지의 상단 메뉴는 `site-nav.js` + `site-nav.css`로 렌더링합니다. 왼쪽 로고, 가운데 `History · YouTube · Help`, 오른쪽 `Home` 한 개가 기본 구성입니다. **새 페이지를 만들 때는 `<head>`에 `<link rel="stylesheet" href="/site-nav.css">`, `<body>` 시작에 `<header data-site-nav></header><script src="/site-nav.js"></script>`만 넣으면 됩니다.** 메뉴를 개별 페이지에 직접 작성하지 않습니다. 언어별 링크·라벨은 `site-nav.js`의 `T` 표 한 곳에서 관리합니다.
+History·YouTube·Help 등 홈 외 모든 페이지의 상단 메뉴는 `site-nav.js` + `site-nav.css`로 렌더링합니다. 왼쪽 로고, 가운데 홈페이지와 같은 `History · 제품 · 컨설팅 · Research · YouTube · Help`, 오른쪽 `Home` 한 개가 기본 구성입니다. **새 페이지를 만들 때는 `<head>`에 `<link rel="stylesheet" href="/site-nav.css">`, `<body>` 시작에 `<header data-site-nav></header><script src="/site-nav.js"></script>`만 넣으면 됩니다.** 메뉴를 개별 페이지에 직접 작성하지 않습니다. 언어별 링크·라벨은 `site-nav.js`의 `T` 표 한 곳에서 관리합니다.
 
 - 공식 도메인: https://gigaroute.ai
 - 고객지원 이메일: support@gigaroute.ai
