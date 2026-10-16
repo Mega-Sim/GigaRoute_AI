@@ -4,11 +4,11 @@
   if (!header) return;
   var lang = document.documentElement.lang || 'en';
   var T = {
-    ko: { home: '/', hist: '/history/', yt: '/youtube/', help: '도움말', homeLabel: '홈' },
-    en: { home: '/index-en.html', hist: '/history/index-en.html', yt: '/youtube/index-en.html', help: 'Help', homeLabel: 'Home' },
-    es: { home: '/index-es.html', hist: '/history/index-es.html', yt: '/youtube/index-en.html', help: 'Ayuda', homeLabel: 'Inicio' },
-    ja: { home: '/index-ja.html', hist: '/history/index-ja.html', yt: '/youtube/index-en.html', help: 'ヘルプ', homeLabel: 'ホーム' },
-    'zh-CN': { home: '/index-zh.html', hist: '/history/index-zh.html', yt: '/youtube/index-en.html', help: '帮助', homeLabel: '首页' }
+    ko: { home: '/', hist: '/history/', yt: '/youtube/', help: 'Help', homeLabel: '홈', prod: '제품', cons: '컨설팅', res: 'Research' },
+    en: { home: '/index-en.html', hist: '/history/index-en.html', yt: '/youtube/index-en.html', help: 'Help', homeLabel: 'Home', prod: 'Products', cons: 'Consulting', res: 'Research' },
+    es: { home: '/index-es.html', hist: '/history/index-es.html', yt: '/youtube/index-en.html', help: 'Help', homeLabel: 'Inicio', prod: 'Productos', cons: 'Consultoría', res: 'Investigación' },
+    ja: { home: '/index-ja.html', hist: '/history/index-ja.html', yt: '/youtube/index-en.html', help: 'Help', homeLabel: 'ホーム', prod: '製品', cons: 'コンサルティング', res: '研究' },
+    'zh-CN': { home: '/index-zh.html', hist: '/history/index-zh.html', yt: '/youtube/index-en.html', help: 'Help', homeLabel: '首页', prod: '产品', cons: '咨询', res: '研究' }
   };
   var t = T[lang] || T.en;
   var home = header.getAttribute('data-site-nav-home') || t.home;
@@ -20,7 +20,7 @@
   }
   header.innerHTML = '<div class="wrap"><nav>' +
     '<a class="brand" href="' + home + '"><span class="mark">GR</span>GigaRoute AI</a>' +
-    '<div class="links">' + link('history', t.hist, 'History') + link('youtube', t.yt, 'YouTube') + link('help', '/help/', t.help) + '</div>' +
+    '<div class="links">' + link('history', t.hist, 'History') + link('', home + '#solutions', t.prod) + link('', home + '#consulting', t.cons) + link('', home + '#research', t.res) + link('youtube', t.yt, 'YouTube') + link('help', '/help/', t.help) + '</div>' +
     '<div class="nav-right"><a class="nav-home" href="' + home + '">' + t.homeLabel + '</a></div></nav></div>';
   if (search) header.querySelector('.nav-right').insertAdjacentElement('afterbegin', search);
 })();
