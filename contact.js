@@ -7,12 +7,12 @@
   const FAVICON = '/favicon.png?v=20260818-2';
   const locale = document.documentElement.lang || 'en';
   const performanceNavLabel = {
-    en: 'Performance',
-    ko: '제품성능',
-    'zh-CN': '产品性能',
-    es: 'Rendimiento',
-    ja: '製品性能'
-  }[locale] || 'Performance';
+    en: 'Simulation Performance',
+    ko: '시뮬레이션 성능',
+    'zh-CN': '仿真性能',
+    es: 'Rendimiento de simulación',
+    ja: 'シミュレーション性能'
+  }[locale] || 'Simulation Performance';
   const productLineupNavLabel = {
     en: 'Product Lineup',
     ko: '제품 라인업',
