@@ -212,3 +212,7 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
 .performance-section-heading .kicker{margin-bottom:10px}
 .performance-section-heading h2{margin:0;font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.045em;word-break:keep-all;overflow-wrap:break-word}
 @media(max-width:760px){.performance-section-heading h2{font-size:clamp(26px,7.4vw,34px)}}
+/* 제품성능·전문 컨설팅·연구 섹션: 작은 라벨(kicker)과 큰 제목(h2)의 글자 크기 교환 */
+.performance-section-heading .kicker,#consulting .heading .kicker,#research .heading .kicker{font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.045em}
+.performance-section-heading h2,#consulting .heading h2,#research .heading h2{font-size:13px;font-weight:900;line-height:1.5;letter-spacing:0}
+@media(max-width:760px){.performance-section-heading .kicker,#consulting .heading .kicker,#research .heading .kicker{font-size:clamp(26px,7.4vw,34px)}}
