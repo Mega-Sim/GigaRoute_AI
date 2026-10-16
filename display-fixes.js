@@ -65,6 +65,14 @@
     ja: 'No GPU 事務用ノートPC 実測性能'
   };
 
+  const laptopCondition = {
+    ko: 'Vehicle 1,100대, 18,000 회/시간',
+    en: '1,100 vehicles, 18,000 moves/hr',
+    'zh-CN': 'Vehicle 1,100台，18,000次/小时',
+    es: '1.100 vehículos, 18.000 movimientos/h',
+    ja: 'Vehicle 1,100台、18,000回/時間'
+  };
+
   const shotHeading = {
     ko: '실제 시뮬레이션 성능 측정 UI',
     en: 'Actual Simulation Performance Measurement UI',
@@ -148,7 +156,7 @@
     if (!head || !heading) return false;
 
     head.querySelector('.kicker')?.remove();
-    heading.innerHTML = `<span class="performance-title-line">${laptopHeading[lang] || laptopHeading.en}</span>`;
+    heading.innerHTML = `<span class="performance-title-line">${laptopHeading[lang] || laptopHeading.en}<span class="performance-title-sub"> - ${laptopCondition[lang] || laptopCondition.en}</span></span>`;
 
     section.querySelector('.performance-lead')?.remove();
     section.querySelector('.performance-grid')?.remove();
@@ -166,8 +174,7 @@
         <div class="performance-impact-topline">
           <span class="performance-impact-context">${copy.context}</span>
         </div>
-        <div class="performance-impact-grid">${metrics}</div>
-        <p class="performance-impact-note">${copy.note}</p>`;
+        <div class="performance-impact-grid">${metrics}</div>`;
       head.appendChild(block);
     }
 
