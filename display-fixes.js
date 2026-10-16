@@ -65,6 +65,14 @@
     ja: 'No GPU 事務用ノートPC 実測性能'
   };
 
+  const shotHeading = {
+    ko: '실제 시뮬레이션 성능 측정 UI',
+    en: 'Actual Simulation Performance Measurement UI',
+    'zh-CN': '实际仿真性能测量界面',
+    es: 'Interfaz real de medición del rendimiento de simulación',
+    ja: '実際のシミュレーション性能測定UI'
+  };
+
   const compareCopy = {
     'ko': {title: '업계표준 시뮬레이터 AutoMod 와 성능 비교 결과', cap: '시뮬레이션 1시간의 실제 소요 시간 비교', sub: '업계표준 AutoMod 대비 · 1시간 시뮬레이션 Run 시 실제 소요 시간', c1: '반도체 OHT 500대 · 8,000 Job/hr', c2: '반도체 OHT 1,100대 · 18,000 Job/hr', a: '업계표준 AutoMod', g: 'GigaRoute AI', unit: '초', fail: '실행 불가', na: '측정 불가', cut: '소요 시간 96.5% 단축', note: '* 사내 비교 측정 자료 기준이며 업계표준 AutoMod 1,100대 조건은 실행되지 않아 측정하지 못했습니다.'},
     'en': {title: 'Performance Comparison with industry-standard AutoMod', cap: 'Actual run time for 1 hour of simulation', sub: 'vs. industry-standard AutoMod · actual wall time for a 1-hour simulation run', c1: 'Semiconductor OHT 500 vehicles · 8,000 jobs/hr', c2: 'Semiconductor OHT 1,100 vehicles · 18,000 jobs/hr', a: 'industry-standard AutoMod', g: 'GigaRoute AI', unit: 'sec', fail: 'Could not run', na: 'Not measurable', cut: '96.5% less run time', note: '* Based on internal comparison measurements. The 1,100-vehicle case could not be run in industry-standard AutoMod, so no value was measured.'},
@@ -174,6 +182,14 @@
         }), { threshold: .25 });
         io.observe(compare);
       } else compare.classList.add('in');
+    }
+
+    const shot = section.querySelector('.performance-shot');
+    if (shot && !section.querySelector('.performance-shot-title')) {
+      const title = document.createElement('h3');
+      title.className = 'performance-shot-title';
+      title.textContent = shotHeading[lang] || shotHeading.en;
+      shot.insertAdjacentElement('beforebegin', title);
     }
 
     if (!document.querySelector('#performance-impact-style')) {
