@@ -231,10 +231,31 @@
     button.setAttribute('aria-label', backToTopLabel);
     button.title = backToTopLabel;
     const syncVisibility = () => button.classList.toggle('is-visible', window.scrollY > 360);
+    let scrollFrame = 0;
+    const cancelTopScroll = () => {
+      if (!scrollFrame) return;
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = 0;
+    };
     button.addEventListener('click', () => {
-      const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-      window.scrollTo({top: 0, behavior});
+      cancelTopScroll();
+      const startY = window.scrollY;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || startY === 0) {
+        window.scrollTo({top: 0, behavior: 'instant'});
+        return;
+      }
+      // 기존 smooth 스크롤 대비 30% 빠르게: 거리 기반 기본 시간에 0.7배 적용
+      const duration = Math.min(1200, 400 + startY * 0.3) * 0.7;
+      const startTime = performance.now();
+      const step = (now) => {
+        const p = Math.min(1, (now - startTime) / duration);
+        const eased = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        window.scrollTo({top: startY * (1 - eased), behavior: 'instant'});
+        scrollFrame = p < 1 ? requestAnimationFrame(step) : 0;
+      };
+      scrollFrame = requestAnimationFrame(step);
     });
+    ['wheel', 'touchstart', 'keydown'].forEach((type) => window.addEventListener(type, cancelTopScroll, {passive: true}));
     window.addEventListener('scroll', syncVisibility, {passive: true});
     document.body.appendChild(button);
     syncVisibility();
