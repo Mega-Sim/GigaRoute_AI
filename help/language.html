@@ -11,9 +11,11 @@
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
 <link rel="stylesheet" href="/help/help.css?v=20261013-3">
 <script src="/help/help.js?v=20261013-3" defer></script>
+<link rel="stylesheet" href="/site-nav.css?v=20261016-1">
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="navr"><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></div></nav></div></header>
+<header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
+<script src="/site-nav.js"></script>
 <main><div class="wrap">
 <p class="crumbs"><a href="/help/">Help</a> / Language basics</p><h1>GRS language basics</h1><p class="lead">GRS (GigaRoute Script) is the script language of GigaRoute Simulation Studio Model Logic. Every code sample on this page was run through the GRS compiler front end; the samples marked as errors are rejected by it.</p><h2>Source files</h2><p>GRS source files use the .grs extension and UTF-8 text. A program is a set of event blocks; a Studio Model Logic file is plain GRS source.</p><h2>Two block styles</h2><p>Logic is declared with events. A block is written either with braces or with begin ... end; both compile to the same event model. Blocks must span several lines: the compiler rejects a block written on one line.</p><p class="sub">Brace style &mdash; compiles</p><pre>event model.init {
     print(&quot;hello&quot;);

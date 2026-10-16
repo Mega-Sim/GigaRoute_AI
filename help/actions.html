@@ -11,9 +11,11 @@
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
 <link rel="stylesheet" href="/help/help.css?v=20261013-3">
 <script src="/help/help.js?v=20261013-3" defer></script>
+<link rel="stylesheet" href="/site-nav.css?v=20261016-1">
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="navr"><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></div></nav></div></header>
+<header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
+<script src="/site-nav.js"></script>
 <main><div class="wrap">
 <p class="crumbs"><a href="/help/">Help</a> / Actions</p><h1>Actions</h1><p class="lead">30 entries, for example: print, wait, wait_until, set, inc, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><p class="sub">Core Actions</p><article class="topic" id="print" data-search="print writes grs output to the script print log and the studio realtime log."><h3><a href="#print">print</a></h3><dl><dt>Purpose</dt><dd>Writes GRS output to the Script Print log and the Studio realtime log.</dd><dt>Syntax</dt><dd><pre>print(value, ...)</pre></dd><dt>Example</dt><dd><pre>print(&quot;vehicle&quot;, vehicle.id, vehicle.phase);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Arguments are rendered in order.</dd><dt>Related</dt><dd>Model Logic log</dd></dl></article>
 <article class="topic" id="wait" data-search="wait suspends the current process until the requested simulation time has elapsed."><h3><a href="#wait">wait</a></h3><dl><dt>Purpose</dt><dd>Suspends the current process until the requested simulation time has elapsed.</dd><dt>Syntax</dt><dd><pre>wait(seconds)</pre></dd><dt>Example</dt><dd><pre>wait(0.25);</pre><span class="badge">compiler-checked</span></dd><dt>Related</dt><dd>wait_until</dd></dl></article>

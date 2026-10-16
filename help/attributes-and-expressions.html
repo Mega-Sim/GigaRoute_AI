@@ -11,9 +11,11 @@
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
 <link rel="stylesheet" href="/help/help.css?v=20261013-3">
 <script src="/help/help.js?v=20261013-3" defer></script>
+<link rel="stylesheet" href="/site-nav.css?v=20261016-1">
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="navr"><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></div></nav></div></header>
+<header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
+<script src="/site-nav.js"></script>
 <main><div class="wrap">
 <p class="crumbs"><a href="/help/">Help</a> / Attributes and Expressions</p><h1>Attributes and Expressions</h1><p class="lead">17 entries, for example: vehicle.id, vehicle.station / from / destination, vehicle.phase / status, vehicle.schedjobs, vehicle.current_schedjob, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><p class="sub">Vehicle Attributes</p><article class="topic" id="vehicle-id" data-search="vehicle.id dense vehicle identifier for the current vehicle actor."><h3><a href="#vehicle-id">vehicle.id</a></h3><dl><dt>Purpose</dt><dd>Dense Vehicle identifier for the current Vehicle actor.</dd><dt>Syntax</dt><dd><pre>vehicle.id</pre></dd><dt>Example</dt><dd><pre>print(vehicle.id);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Read-only physical identity.</dd><dt>Related</dt><dd>vehicle.station, vehicle.phase</dd></dl></article>
 <article class="topic" id="vehicle-station-from-destination" data-search="vehicle.station / from / destination reads the current station, job source and job destination of the vehicle."><h3><a href="#vehicle-station-from-destination">vehicle.station / from / destination</a></h3><dl><dt>Purpose</dt><dd>Reads the current Station, job source and job destination of the Vehicle.</dd><dt>Syntax</dt><dd><pre>vehicle.station
