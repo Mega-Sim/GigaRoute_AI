@@ -13,7 +13,7 @@
 <script src="/help/help.js?v=20261013-3" defer></script>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="navr"><div class="links"><a href="/">Home</a><a href="/help/" aria-current="page">Help</a></div></div></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="/"><span class="mark">GR</span>GigaRoute AI</a><div class="navr"><div class="links"><a href="/history/">History</a><a href="/youtube/">YouTube</a><a href="/help/" aria-current="page">Help</a><a href="/">Home</a></div></div></nav></div></header>
 <main><div class="wrap">
 <h1>GigaRoute AI Help</h1><p class="lead">Reference for GRS (GigaRoute Script), the script language used for Model Logic in GigaRoute Simulation Studio. 344 entries are generated from the Help window of the product.</p><div class="searchbox big"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference: wait, vehicle.pickup, claim ... (한글 검색 가능)" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div><noscript><p class="lead">Search needs JavaScript. Without it, open the sections below or <a href="/help/syntax.md">syntax.md</a>.</p></noscript><h2>Start here</h2><p>A GRS program is a set of <b>events</b>. An event such as <code>model.init</code> runs when something happens in the simulation (here: when a run starts), and its body is a list of statements. This is the smallest complete program:</p><pre>event model.init {
     print(&quot;hello&quot;);
