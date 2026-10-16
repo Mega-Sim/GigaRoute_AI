@@ -216,3 +216,7 @@ html[lang="ko"] .hero h1.hero-platform-title{line-height:1.16;padding-bottom:.12
 .performance-section-heading .kicker,#consulting .heading .kicker,#research .heading .kicker{font-size:clamp(28px,3.4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.045em}
 .performance-section-heading h2,#consulting .heading h2,#research .heading h2{font-size:13px;font-weight:900;line-height:1.5;letter-spacing:0}
 @media(max-width:760px){.performance-section-heading .kicker,#consulting .heading .kicker,#research .heading .kicker{font-size:clamp(26px,7.4vw,34px)}}
+/* 제품 라인업: 큰 제목은 히어로 "시뮬레이션 전문 기업"과 같은 크기·두께, 태그는 설명 글자보다 약간 크게 */
+#solutions .solution-title{font-size:clamp(32px,3.2vw,42px);font-weight:700;line-height:1.1}
+#solutions .card .tags span{font-size:17px}
+@media(max-width:760px){#solutions .card .tags span{font-size:16px}}
