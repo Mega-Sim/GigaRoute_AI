@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Getting Started | GigaRoute AI Help</title>
-<meta name="description" content="GRS reference: Getting Started (10 entries).">
+<meta name="description" content="GRS Help: Getting Started (14 entries).">
 <link rel="canonical" href="https://gigaroute.ai/help/getting-started.html">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
@@ -16,8 +16,19 @@
 <body>
 <header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
 <script src="/site-nav.js"></script>
-<main><div class="wrap">
-<p class="crumbs"><a href="/help/">Help</a> / Getting Started</p><h1>Getting Started</h1><p class="lead">10 entries, for example: Studio model modules, Studio Station binding, GRS file, Vehicle runtime type, Vehicle asset, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><article class="topic" id="studio-model-modules" data-search="studio model modules runs newly authored oht, amr and conveyor modules together, including conveyor-only models."><h3><a href="#studio-model-modules">Studio model modules</a></h3><dl><dt>Purpose</dt><dd>Runs newly authored OHT, AMR and Conveyor modules together, including Conveyor-only models.</dd><dt>Syntax</dt><dd><pre>begin model.module event
+<main><div class="wrap"><p class="crumbs"><a href="/help/">Help</a> / Getting Started</p><h1>Getting Started</h1><p class="lead">14 reference entries, updated from current product main (2026-10-19). Newly added examples are not claimed compiler-checked until separately tested.</p><div class="note"><b>For new models:</b> start with Automatic model binding. Explicit model.module settings below remain available for existing and advanced models.</div><article class="topic" id="grs-file" data-search="grs file simulation studio model logic source file."><h3><a href="#grs-file">GRS file</a></h3><dl><dt>Purpose</dt><dd>Simulation Studio Model Logic source file.</dd><dt>Syntax</dt><dd><pre>*.grs</pre></dd><dt>Example</dt><dd><pre>begin model.init event
+    print(&quot;ready&quot;);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>GRS uses UTF-8 text. Both native { } blocks and the supported begin &lt;name&gt; event ... end surface compile to the same GRS event model; legacy engine event bindings are retained for existing GRS projects.</dd><dt>Related</dt><dd>event, Model Logic</dd></dl></article><article class="topic" id="studio-station-binding" data-search="studio station binding connects each declared module to its own physical domain before run."><h3><a href="#studio-station-binding">Studio Station binding</a></h3><dl><dt>Purpose</dt><dd>Connects each declared module to its own physical domain before Run.</dd><dt>Syntax</dt><dd><pre>entry_station / exit_station / level_id / elevation_mm</pre></dd><dt>Example</dt><dd><pre>set(entry_station, &quot;Input_A&quot;);
+set(exit_station, &quot;Output_A&quot;);
+set(level_id, 0);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>OHT requires Rail-attached Stations. Conveyor requires Stations on one uniquely connected nonbranching LINE path; curves and ambiguous routes are rejected. AMR requires floor Stations, not overhead Rail Stations. Use the existing Station menu&#39;s AMR floor Station action to create Level 0 ground-plane Stations. File names, print text and demo Station prefixes do not select equipment. Cross-module logical Load handoff uses call_transport(target_module, load_id, from_station, to_station).</dd><dt>Related</dt><dd>Studio model modules, Workspace Station</dd></dl></article><article class="topic" id="vehicle-runtime-type" data-search="vehicle runtime type declares which physical vehicle runtime owns this grs model."><h3><a href="#vehicle-runtime-type">Vehicle runtime type</a></h3><dl><dt>Purpose</dt><dd>Declares which physical Vehicle runtime owns this GRS model.</dd><dt>Syntax</dt><dd><pre>begin model.vehicle_type.oht event
+end
+begin model.vehicle_type.amr event
+end</pre></dd><dt>Example</dt><dd><pre>begin model.vehicle_type.oht event
+end
+
+begin model.init event
+    print(&quot;OHT model ready&quot;);
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Declare exactly one marker for a typed model. OHT selects SimulationRuntime on Rail; AMR selects AmrSimulationRuntime in Autonomous Area. Legacy Rail and Auto Simulation runs preserve Fleet Mode. Studio blocks an untyped GRS when the saved Fleet Mode is AMR; declare the intended type explicitly.</dd><dt>Related</dt><dd>Simulation Setup, Fleet Mode, model.init</dd></dl></article><article class="topic" id="actual-from-to-csv" data-search="actual from-to csv defines recurring from-to job releases used by auto simulation and static analysis."><h3><a href="#actual-from-to-csv">Actual From-To CSV</a></h3><dl><dt>Purpose</dt><dd>Defines recurring From-To job releases used by Auto Simulation and Static Analysis.</dd><dt>Syntax</dt><dd><pre>Time Interval,From,To</pre></dd><dt>Example</dt><dd><pre>557.3752984,E0001,E0108</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Time Interval is seconds between recurring releases for that row. Static Analysis uses moves/hour = 3600 / Time Interval. Auto Simulation schedules first_due = Time Interval and then previous_due + Time Interval, so the first job is not forced at t=0.</dd><dt>Related</dt><dd>Actual From-To, Static Analysis, Auto Simulation</dd></dl></article><article class="topic" id="studio-model-modules" data-search="studio model modules runs newly authored oht, amr and conveyor modules together, including conveyor-only models."><h3><a href="#studio-model-modules">Studio model modules</a></h3><dl><dt>Purpose</dt><dd>Runs newly authored OHT, AMR and Conveyor modules together, including Conveyor-only models.</dd><dt>Syntax</dt><dd><pre>begin model.module event
     set(module_id, &quot;belt_alpha&quot;); set(runtime_kind, &quot;conveyor&quot;); ...
 end</pre></dd><dt>Example</dt><dd><pre>begin model.module event
     set(module_id, &quot;belt_alpha&quot;);
@@ -32,37 +43,18 @@ begin model.init event
 end
 begin supply event
     request from Input_A to Output_A
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Declare ownership in each source file. Same module_id combines files; different modules keep separate events. Use runtime_kind oht, amr or conveyor. One fleet per OHT/AMR kind; multiple Conveyor modules are supported. Station names must match the current drawing and carrier. Compile applies the entire valid model; any error blocks a new Run. No manifest or saved .grproj is required. Pause/Resume retains the active program; Restart uses edited sources. Existing undeclared single-runtime models retain their own execution path.</dd><dt>Related</dt><dd>model.init, request_transport, every_event, Studio Station binding</dd></dl></article>
-<article class="topic" id="studio-station-binding" data-search="studio station binding connects each declared module to its own physical domain before run."><h3><a href="#studio-station-binding">Studio Station binding</a></h3><dl><dt>Purpose</dt><dd>Connects each declared module to its own physical domain before Run.</dd><dt>Syntax</dt><dd><pre>entry_station / exit_station / level_id / elevation_mm</pre></dd><dt>Example</dt><dd><pre>set(entry_station, &quot;Input_A&quot;);
-set(exit_station, &quot;Output_A&quot;);
-set(level_id, 0);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>OHT requires Rail-attached Stations. Conveyor requires Stations on one uniquely connected nonbranching LINE path; curves and ambiguous routes are rejected. AMR requires floor Stations, not overhead Rail Stations. Use the existing Station menu&#x27;s AMR floor Station action to create Level 0 ground-plane Stations. File names, print text and demo Station prefixes do not select equipment. Cross-module logical Load handoff uses call_transport(target_module, load_id, from_station, to_station).</dd><dt>Related</dt><dd>Studio model modules, Workspace Station</dd></dl></article>
-<article class="topic" id="grs-file" data-search="grs file simulation studio model logic source file."><h3><a href="#grs-file">GRS file</a></h3><dl><dt>Purpose</dt><dd>Simulation Studio Model Logic source file.</dd><dt>Syntax</dt><dd><pre>*.grs</pre></dd><dt>Example</dt><dd><pre>begin model.init event
-    print(&quot;ready&quot;);
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>GRS uses UTF-8 text. Both native { } blocks and the supported begin &lt;name&gt; event ... end surface compile to the same GRS event model; dotted canonical event names keep their exact spelling.</dd><dt>Related</dt><dd>event, Model Logic</dd></dl></article>
-<article class="topic" id="vehicle-runtime-type" data-search="vehicle runtime type declares which physical vehicle runtime owns this grs model."><h3><a href="#vehicle-runtime-type">Vehicle runtime type</a></h3><dl><dt>Purpose</dt><dd>Declares which physical Vehicle runtime owns this GRS model.</dd><dt>Syntax</dt><dd><pre>begin model.vehicle_type.oht event
-end
-begin model.vehicle_type.amr event
-end</pre></dd><dt>Example</dt><dd><pre>begin model.vehicle_type.oht event
-end
-
-begin model.init event
-    print(&quot;OHT model ready&quot;);
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Declare exactly one marker for a typed model. Legacy Rail and Auto Simulation runs preserve Fleet Mode. Studio blocks an untyped GRS when the saved Fleet Mode is AMR; declare the intended type explicitly.</dd><dt>Related</dt><dd>Simulation Setup, Fleet Mode, model.init</dd></dl></article>
-<article class="topic" id="vehicle-asset" data-search="vehicle asset selects an oht or amr equipment instance whose embedded glb is used by the matching runtime renderer."><h3><a href="#vehicle-asset">Vehicle asset</a></h3><dl><dt>Purpose</dt><dd>Selects an OHT or AMR Equipment instance whose embedded GLB is used by the matching runtime renderer.</dd><dt>Syntax</dt><dd><pre>begin model.vehicle_type.oht event
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Declare ownership in each source file. Same module_id combines files; different modules keep separate events. Use runtime_kind oht, amr or conveyor. One fleet per OHT/AMR kind; multiple Conveyor modules are supported. Station names must match the current drawing and carrier. Compile applies the entire valid model; any error blocks a new Run. No manifest or saved .grproj is required. Optional set(run_until_seconds, 7200) in model.module overrides Studio Run Until; conflicting module declarations are rejected. Pause/Resume retains the active program; Restart uses edited sources. Existing undeclared single-runtime models retain their own execution path. For newly authored simplified GRS, see Automatic model binding: Studio selects Station/Level ownership from literal transport requests, without requiring a model declaration.</dd><dt>Related</dt><dd>model.init, request_transport, every_event, Studio Station binding</dd></dl></article><article class="topic" id="vehicle-asset" data-search="vehicle asset selects an oht or amr equipment instance whose embedded glb is used by the matching runtime renderer."><h3><a href="#vehicle-asset">Vehicle asset</a></h3><dl><dt>Purpose</dt><dd>Selects an OHT or AMR Equipment instance whose embedded GLB is used by the matching runtime renderer.</dd><dt>Syntax</dt><dd><pre>begin model.vehicle_type.oht event
 end
 begin model.vehicle_asset.&lt;project_instance_name&gt; event
 end</pre></dd><dt>Example</dt><dd><pre>begin model.vehicle_type.oht event
 end
 begin model.vehicle_asset.oht_01 event
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The selector suffix matches Equipment instance_name case-insensitively. With no selector, exactly one instance in the matching category (OHT Vehicle or AMR) is bound automatically. Zero or multiple candidates retain the legacy type-specific renderer and emit GRS_VEHICLE_ASSET_FALLBACK. A missing or wrong-type explicit selector blocks Run. The original static placement is hidden only while that View has matching runtime snapshots.</dd><dt>Related</dt><dd>Vehicle runtime type, Workspace Equipment, Simulation Studio 3D</dd></dl></article>
-<article class="topic" id="actual-from-to-csv" data-search="actual from-to csv defines recurring from-to job releases used by auto simulation and static analysis."><h3><a href="#actual-from-to-csv">Actual From-To CSV</a></h3><dl><dt>Purpose</dt><dd>Defines recurring From-To job releases used by Auto Simulation and Static Analysis.</dd><dt>Syntax</dt><dd><pre>Time Interval,From,To</pre></dd><dt>Example</dt><dd><pre>557.3752984,E0001,E0108</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Time Interval is seconds between recurring releases for that row. Static Analysis uses moves/hour = 3600 / Time Interval. Auto Simulation schedules first_due = Time Interval and then previous_due + Time Interval, so the first job is not forced at t=0.</dd><dt>Related</dt><dd>Actual From-To, Static Analysis, Auto Simulation</dd></dl></article>
-<article class="topic" id="model-module-type-name" data-search="model.module type_name declares the rail type name a module&#x27;s vehicles spawn on."><h3><a href="#model-module-type-name">model.module type_name</a></h3><dl><dt>Purpose</dt><dd>Declares the rail type name a module&#x27;s Vehicles spawn on.</dd><dt>Syntax</dt><dd><pre>begin model.module event
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The selector suffix matches Equipment instance_name case-insensitively. With no selector, exactly one instance in the matching category (OHT Vehicle or AMR) is bound automatically. Zero or multiple candidates retain the legacy type-specific renderer and emit GRS_VEHICLE_ASSET_FALLBACK. A missing or wrong-type explicit selector blocks Run. The original static placement is hidden only while that View has matching runtime snapshots.</dd><dt>Related</dt><dd>Vehicle runtime type, Workspace Equipment, Simulation Studio 3D</dd></dl></article><article class="topic" id="model-module-type-name" data-search="model.module type_name declares the rail type name a module&#39;s vehicles spawn on."><h3><a href="#model-module-type-name">model.module type_name</a></h3><dl><dt>Purpose</dt><dd>Declares the rail type name a module&#39;s Vehicles spawn on.</dd><dt>Syntax</dt><dd><pre>begin model.module event
     set(module_id, &quot;agv_a&quot;);
     set(runtime_kind, &quot;agv&quot;);
     set(type_name, &quot;LINE_A&quot;);
 end</pre></dd><dt>Example</dt><dd><pre>set(runtime_kind, &quot;oht&quot;);
-set(type_name, &quot;LINE_A&quot;);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Supported for runtime_kind oht and agv. vehicle_count Vehicles spawn on rails whose type name is LINE_A (OHT: on that rail&#x27;s Stations; AGV: on that rail). Without type_name, Workspace Vehicle objects with a Type Name, or the established placement, are used.</dd><dt>Related</dt><dd>Path type, runtime_kind, vehicle_count</dd></dl></article>
-<article class="topic" id="event-execution-model" data-search="event execution model defines the simulation studio authoring policy: native model logic is event-centered and does not introduce a separate user-facing process type."><h3><a href="#event-execution-model">Event execution model</a></h3><dl><dt>Purpose</dt><dd>Defines the Simulation Studio authoring policy: native model logic is event-centered and does not introduce a separate user-facing Process type.</dd><dt>Syntax</dt><dd><pre>begin model.init event
+set(type_name, &quot;LINE_A&quot;);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Supported for runtime_kind oht and agv. vehicle_count Vehicles spawn on rails whose type name is LINE_A (OHT: on that rail&#39;s Stations; AGV: on that rail). Without type_name, Workspace Vehicle objects with a Type Name, or the established placement, are used.</dd><dt>Related</dt><dd>Path type, runtime_kind, vehicle_count</dd></dl></article><article class="topic" id="event-execution-model" data-search="event execution model defines the simulation studio authoring policy: native model logic is event-centered and does not introduce a separate user-facing process type."><h3><a href="#event-execution-model">Event execution model</a></h3><dl><dt>Purpose</dt><dd>Defines the Simulation Studio authoring policy: native model logic is event-centered and does not introduce a separate user-facing Process type.</dd><dt>Syntax</dt><dd><pre>begin model.init event
     ...
 end
 begin vehicle.pickup event
@@ -72,8 +64,7 @@ begin dispatch.request event
     ...
 end</pre></dd><dt>Example</dt><dd><pre>begin model.init event
     print(&quot;model initialized&quot;);
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Simulation Studio Model Logic accepts native GRS source; historical model source should be translated to GRS before validation.</dd><dt>Related</dt><dd>event, model.init, vehicle.*, dispatch.request, clone, wait</dd></dl></article>
-<article class="topic" id="simulation-setup-grs-workload" data-search="simulation setup + grs workload uses the real or random from-to workload selected in simulation setup while grs adds user policy callbacks and model logic."><h3><a href="#simulation-setup-grs-workload">Simulation Setup + GRS workload</a></h3><dl><dt>Purpose</dt><dd>Uses the Real or Random From-To workload selected in Simulation Setup while GRS adds user policy callbacks and model logic.</dd><dt>Syntax</dt><dd><pre>begin model.init event
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Simulation Studio Model Logic accepts native GRS source; historical model source should be translated to GRS before validation.</dd><dt>Related</dt><dd>event, model.init, vehicle.*, dispatch.request, clone, wait</dd></dl></article><article class="topic" id="simulation-setup-grs-workload" data-search="simulation setup + grs workload uses the real or random from-to workload selected in simulation setup while grs adds user policy callbacks and model logic."><h3><a href="#simulation-setup-grs-workload">Simulation Setup + GRS workload</a></h3><dl><dt>Purpose</dt><dd>Uses the Real or Random From-To workload selected in Simulation Setup while GRS adds user policy callbacks and model logic.</dd><dt>Syntax</dt><dd><pre>begin model.init event
     ...
 end
 begin vehicle.pickup event
@@ -83,15 +74,63 @@ begin vehicle.setdown event
     ...
 end</pre></dd><dt>Example</dt><dd><pre>begin vehicle.pickup event
     vehicle_dwell(8);
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>This describes the existing single-runtime Studio path without model.module declarations. Real/Random From-To remains active even when configure_motion() is called. Declared Studio modules use their own job_source setting (script by default), independently of Auto Simulation Setup.</dd><dt>Related</dt><dd>Simulation Setup, Real From-To, Random From-To, configure_motion, disable_native_job_source</dd></dl></article>
-<article class="topic" id="readable-function-names" data-search="readable function names model functions use pascal_underscore names; equipment acronyms remain uppercase."><h3><a href="#readable-function-names">Readable function names</a></h3><dl><dt>Purpose</dt><dd>Model functions use Pascal_Underscore names; equipment acronyms remain uppercase.</dd><dt>Syntax</dt><dd><pre>call OHT_System_Initialize()
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>This describes the existing single-runtime Studio path without model.module declarations. Real/Random From-To remains active even when configure_motion() is called. Declared Studio modules use their own job_source setting (script by default), independently of Auto Simulation Setup.</dd><dt>Related</dt><dd>Simulation Setup, Real From-To, Random From-To, configure_motion, disable_native_job_source</dd></dl></article><article class="topic" id="readable-function-names" data-search="readable function names model functions use pascal_underscore names; equipment acronyms remain uppercase."><h3><a href="#readable-function-names">Readable function names</a></h3><dl><dt>Purpose</dt><dd>Model functions use Pascal_Underscore names; equipment acronyms remain uppercase.</dd><dt>Syntax</dt><dd><pre>call OHT_System_Initialize()
 call ASRS_Seed_Shelf_FOUP(101)
 call AMR_System_Initialize()
 call Conveyor_System_Initialize()
 call Process_Complete()</pre></dd><dt>Example</dt><dd><pre>begin Process_Complete event
     print &quot;process complete&quot;
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Existing camelCase model declarations/calls remain compatible through one unambiguous case/underscore-insensitive alias. Canonical dotted hooks such as model.init, vehicle.pickup_complete, conveyor.blocked and equipment.load_arrived are unchanged. Existing snake_case runtime built-ins keep their implementation names; Help displays the same callable in readable Pascal_Underscore form.</dd><dt>Related</dt><dd>Runtime Function Index, Native OHT / ASRS Functions, Example Model Functions, Model Functions (current source)</dd></dl></article>
-</div></main>
+end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Existing camelCase model declarations/calls remain compatible through one unambiguous case/underscore-insensitive alias. Canonical dotted hooks such as model.init, vehicle.pickup_complete, conveyor.blocked and equipment.load_arrived are unchanged. Existing snake_case runtime built-ins keep their implementation names; Help displays the same callable in readable Pascal_Underscore form.</dd><dt>Related</dt><dd>Runtime Function Index, Native OHT / ASRS Functions, Example Model Functions, Model Functions (current source)</dd></dl></article><article class="topic" id="global-init-default-oht-amr-humanoid" data-search="global init / default oht amr humanoid create the default oht, amr and humanoid counts directly from one global initialization event."><h3><a href="#global-init-default-oht-amr-humanoid">Global Init / default OHT AMR Humanoid</a></h3><dl><dt>Purpose</dt><dd>Create the default OHT, AMR and Humanoid counts directly from one global initialization event.</dd><dt>Syntax</dt><dd><pre>begin model.init event
+    vi_OHT = 10
+    vi_Humanoid = 3
+    vi_AMR = 3
+end</pre></dd><dt>Example</dt><dd><pre>begin model.init event
+    vi_OHT = 10
+    vi_Humanoid = 3
+    vi_AMR = 3
+end
+begin OHT.init event
+    set i = 0
+    while i &lt; vi_OHT
+    begin
+        inc i by 1
+        print &quot;OHT&quot;, i, &quot; is initialized&quot; to log
+    end
+end
+begin Humanoid.init event
+    set i = 0
+    while i &lt; vi_Humanoid
+    begin
+        inc i by 1
+        print &quot;Humanoid&quot;, i, &quot; is initialized&quot; to log
+    end
+end
+begin AMR.init event
+    set i = 0
+    while i &lt; vi_AMR
+    begin
+        inc i by 1
+        print &quot;AMR&quot;, i, &quot; is initialized&quot; to log
+    end
+end</pre></dd><dt>Notes</dt><dd>New global-init script has exactly one model.init with three positive integer vi_* values and these three typed events. At Compile the already-placed drawing supplies one OHT rail Level and one AMR floor Level (each with two distinct Stations); scripted Job Source is used with no synthetic traffic. Existing C++ Core creates vi_OHT/vi_AMR vehicles. Three-dimensional default humanoids are created at a floor Station. The typed init events run once at simulation time zero and print to the Studio message log. Other legacy and previously declared auto-bound scripts retain their existing behavior. All five previous helper initializers are NOT required for this opt-in.</dd><dt>Related</dt><dd>model.init, OHT.init, AMR.init, Humanoid.init, print to log</dd></dl></article><article class="topic" id="automatic-model-binding" data-search="automatic model binding studio automatically connects literal grs from-to station requests to the workspace oht, amr, agv or conveyor runtime at compile. no explicit module-binding declaration is required for this form."><h3><a href="#automatic-model-binding">Automatic model binding</a></h3><dl><dt>Purpose</dt><dd>Studio automatically connects literal GRS From-To Station requests to the Workspace OHT, AMR, AGV or Conveyor Runtime at Compile. No explicit module-binding declaration is required for this form.</dd><dt>Syntax</dt><dd><pre>begin model.init event
+    every 20 sec call supply
+end
+begin supply event
+    request from Ceiling_Pick to Ceiling_Drop
+end</pre></dd><dt>Example</dt><dd><pre>begin model.init event
+    every 20 sec call supply
+end
+begin supply event
+    request from Ceiling_Pick to Ceiling_Drop
+end</pre></dd><dt>Notes</dt><dd>Define real transport events; Studio determines Station carrier and Level once during Compile and keeps the original Runtime, scheduler and FOUP identity. Different Station owners can share one source when event ownership is unambiguous. Unknown/cross-Level Station pairs and multi-owner control flow reject Compile instead of guessing. Dynamic Station expressions and native-only models still require explicit ownership information in existing compatible projects until an internal owner-selection path is available. Existing Simulation Setup supplies fleet count/speed/pickup/setdown defaults. Saved explicit module declarations and older auto configuration files continue loading for compatibility; new GRS code should not author a module-binding event. An optional single model.init may call OHT_Init/AMR_Init/Humanoid_Init/ASRS_Init/Conveyor_Init and those typed routines are dispatched to matching physical runtimes.</dd><dt>Related</dt><dd>model.init, request_transport, every_event, Station binding, Simulation Setup</dd></dl></article><article class="topic" id="common-color-off" data-search="common color_off keeps original model colors by switching off phase or pose colors for matching oht, amr, agv and humanoid runtimes in the current studio session."><h3><a href="#common-color-off">Common color_off</a></h3><dl><dt>Purpose</dt><dd>Keeps original model colors by switching off phase or pose colors for matching OHT, AMR, AGV and Humanoid runtimes in the current Studio session.</dd><dt>Syntax</dt><dd><pre>color_off()
+color_off(&quot;oht&quot;)
+color_off(&quot;amr&quot;)
+color_off(&quot;agv&quot;)
+color_off(&quot;humanoid&quot;)</pre></dd><dt>Example</dt><dd><pre>begin model.init event
+    color_off()
+end</pre></dd><dt>Notes</dt><dd>Available in a declared Studio model session. With no argument all matching runtimes are affected, regardless of which module owns the call. One quoted type limits the scope; AMR and AGV are distinct. A missing target or unsupported argument fails with a GRS_COLOR_OFF diagnostic. Motion, Job timing and FOUP ownership are unchanged. Legacy oht.color_fixed / amr.color_fixed / humanoid.color_fixed remain accepted. Auto/legacy undeclared execution is unchanged.</dd><dt>Related</dt><dd>Studio model modules, oht.color_fixed, amr.color_fixed, humanoid.color_fixed</dd></dl></article><article class="topic" id="automatic-transfer-target" data-search="automatic transfer target hands a logical load to the one existing prepared runtime that owns the destination station route, with no explicit target module name."><h3><a href="#automatic-transfer-target">Automatic transfer target</a></h3><dl><dt>Purpose</dt><dd>Hands a logical Load to the one existing prepared runtime that owns the destination Station route, with no explicit target module name.</dd><dt>Syntax</dt><dd><pre>call_transport(load_id, &quot;Floor_Pick&quot;, &quot;Floor_Drop&quot;)</pre></dd><dt>Example</dt><dd><pre>begin conveyor.exit event
+    call_transport(load_id, &quot;Floor_Pick&quot;, &quot;Floor_Drop&quot;)
+end</pre></dd><dt>Notes</dt><dd>Three arguments select a destination only when exactly one non-source runtime validates both Station endpoints. An unknown or ambiguous target is rejected with GRS_TRANSFER_NO_TARGET or GRS_TRANSFER_AMBIGUOUS_TARGET. The previous four-argument call_transport(target_module,load_id,from,to) remains unchanged. Source Setdown and destination capacity, event timing, and Load ownership all use the existing physical transfer protocol; no new polling or Load ID namespace is introduced.</dd><dt>Related</dt><dd>call_transport, Studio model modules, Station binding</dd></dl></article></div></main>
 <footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
 </body>
 </html>

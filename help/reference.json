@@ -1,7 +1,7 @@
 {
  "schema": 1,
- "generated": "2026-10-12",
- "count": 344,
+ "generated": "2026-10-19",
+ "count": 379,
  "language_basics": [
   {
    "title": "Source files",
@@ -157,13 +157,13 @@
   {
    "category": "Getting Started",
    "subcategory": "",
-   "title": "Studio model modules",
-   "purpose": "Runs newly authored OHT, AMR and Conveyor modules together, including Conveyor-only models.",
-   "syntax": "begin model.module event\n    set(module_id, \"belt_alpha\"); set(runtime_kind, \"conveyor\"); ...\nend",
-   "example": "begin model.module event\n    set(module_id, \"belt_alpha\");\n    set(runtime_kind, \"conveyor\");\n    set(entry_station, \"Input_A\");\n    set(exit_station, \"Output_A\");\n    set(job_source, \"script\");\n    set(speed_mps, 1);\nend\nbegin model.init event\n    every 8 sec call supply\nend\nbegin supply event\n    request from Input_A to Output_A\nend",
+   "title": "GRS file",
+   "purpose": "Simulation Studio Model Logic source file.",
+   "syntax": "*.grs",
+   "example": "begin model.init event\n    print(\"ready\");\nend",
    "example_status": "compiles",
-   "notes": "Declare ownership in each source file. Same module_id combines files; different modules keep separate events. Use runtime_kind oht, amr or conveyor. One fleet per OHT/AMR kind; multiple Conveyor modules are supported. Station names must match the current drawing and carrier. Compile applies the entire valid model; any error blocks a new Run. No manifest or saved .grproj is required. Pause/Resume retains the active program; Restart uses edited sources. Existing undeclared single-runtime models retain their own execution path.",
-   "related": "model.init, request_transport, every_event, Studio Station binding"
+   "notes": "GRS uses UTF-8 text. Both native { } blocks and the supported begin <name> event ... end surface compile to the same GRS event model; legacy engine event bindings are retained for existing GRS projects.",
+   "related": "event, Model Logic"
   },
   {
    "category": "Getting Started",
@@ -175,6 +175,39 @@
    "example_status": "compiles",
    "notes": "OHT requires Rail-attached Stations. Conveyor requires Stations on one uniquely connected nonbranching LINE path; curves and ambiguous routes are rejected. AMR requires floor Stations, not overhead Rail Stations. Use the existing Station menu's AMR floor Station action to create Level 0 ground-plane Stations. File names, print text and demo Station prefixes do not select equipment. Cross-module logical Load handoff uses call_transport(target_module, load_id, from_station, to_station).",
    "related": "Studio model modules, Workspace Station"
+  },
+  {
+   "category": "Getting Started",
+   "subcategory": "",
+   "title": "Vehicle runtime type",
+   "purpose": "Declares which physical Vehicle runtime owns this GRS model.",
+   "syntax": "begin model.vehicle_type.oht event\nend\nbegin model.vehicle_type.amr event\nend",
+   "example": "begin model.vehicle_type.oht event\nend\n\nbegin model.init event\n    print(\"OHT model ready\");\nend",
+   "example_status": "compiles",
+   "notes": "Declare exactly one marker for a typed model. OHT selects SimulationRuntime on Rail; AMR selects AmrSimulationRuntime in Autonomous Area. Legacy Rail and Auto Simulation runs preserve Fleet Mode. Studio blocks an untyped GRS when the saved Fleet Mode is AMR; declare the intended type explicitly.",
+   "related": "Simulation Setup, Fleet Mode, model.init"
+  },
+  {
+   "category": "Getting Started",
+   "subcategory": "",
+   "title": "Actual From-To CSV",
+   "purpose": "Defines recurring From-To job releases used by Auto Simulation and Static Analysis.",
+   "syntax": "Time Interval,From,To",
+   "example": "557.3752984,E0001,E0108",
+   "example_status": "compiles",
+   "notes": "Time Interval is seconds between recurring releases for that row. Static Analysis uses moves/hour = 3600 / Time Interval. Auto Simulation schedules first_due = Time Interval and then previous_due + Time Interval, so the first job is not forced at t=0.",
+   "related": "Actual From-To, Static Analysis, Auto Simulation"
+  },
+  {
+   "category": "Getting Started",
+   "subcategory": "",
+   "title": "Studio model modules",
+   "purpose": "Runs newly authored OHT, AMR and Conveyor modules together, including Conveyor-only models.",
+   "syntax": "begin model.module event\n    set(module_id, \"belt_alpha\"); set(runtime_kind, \"conveyor\"); ...\nend",
+   "example": "begin model.module event\n    set(module_id, \"belt_alpha\");\n    set(runtime_kind, \"conveyor\");\n    set(entry_station, \"Input_A\");\n    set(exit_station, \"Output_A\");\n    set(job_source, \"script\");\n    set(speed_mps, 1);\nend\nbegin model.init event\n    every 8 sec call supply\nend\nbegin supply event\n    request from Input_A to Output_A\nend",
+   "example_status": "compiles",
+   "notes": "Declare ownership in each source file. Same module_id combines files; different modules keep separate events. Use runtime_kind oht, amr or conveyor. One fleet per OHT/AMR kind; multiple Conveyor modules are supported. Station names must match the current drawing and carrier. Compile applies the entire valid model; any error blocks a new Run. No manifest or saved .grproj is required. Optional set(run_until_seconds, 7200) in model.module overrides Studio Run Until; conflicting module declarations are rejected. Pause/Resume retains the active program; Restart uses edited sources. Existing undeclared single-runtime models retain their own execution path. For newly authored simplified GRS, see Automatic model binding: Studio selects Station/Level ownership from literal transport requests, without requiring a model declaration.",
+   "related": "model.init, request_transport, every_event, Studio Station binding"
   },
   {
    "category": "Events",
@@ -190,28 +223,6 @@
   {
    "category": "Getting Started",
    "subcategory": "",
-   "title": "GRS file",
-   "purpose": "Simulation Studio Model Logic source file.",
-   "syntax": "*.grs",
-   "example": "begin model.init event\n    print(\"ready\");\nend",
-   "example_status": "compiles",
-   "notes": "GRS uses UTF-8 text. Both native { } blocks and the supported begin <name> event ... end surface compile to the same GRS event model; dotted canonical event names keep their exact spelling.",
-   "related": "event, Model Logic"
-  },
-  {
-   "category": "Getting Started",
-   "subcategory": "",
-   "title": "Vehicle runtime type",
-   "purpose": "Declares which physical Vehicle runtime owns this GRS model.",
-   "syntax": "begin model.vehicle_type.oht event\nend\nbegin model.vehicle_type.amr event\nend",
-   "example": "begin model.vehicle_type.oht event\nend\n\nbegin model.init event\n    print(\"OHT model ready\");\nend",
-   "example_status": "compiles",
-   "notes": "Declare exactly one marker for a typed model. Legacy Rail and Auto Simulation runs preserve Fleet Mode. Studio blocks an untyped GRS when the saved Fleet Mode is AMR; declare the intended type explicitly.",
-   "related": "Simulation Setup, Fleet Mode, model.init"
-  },
-  {
-   "category": "Getting Started",
-   "subcategory": "",
    "title": "Vehicle asset",
    "purpose": "Selects an OHT or AMR Equipment instance whose embedded GLB is used by the matching runtime renderer.",
    "syntax": "begin model.vehicle_type.oht event\nend\nbegin model.vehicle_asset.<project_instance_name> event\nend",
@@ -221,24 +232,13 @@
    "related": "Vehicle runtime type, Workspace Equipment, Simulation Studio 3D"
   },
   {
-   "category": "Getting Started",
-   "subcategory": "",
-   "title": "Actual From-To CSV",
-   "purpose": "Defines recurring From-To job releases used by Auto Simulation and Static Analysis.",
-   "syntax": "Time Interval,From,To",
-   "example": "557.3752984,E0001,E0108",
-   "example_status": "compiles",
-   "notes": "Time Interval is seconds between recurring releases for that row. Static Analysis uses moves/hour = 3600 / Time Interval. Auto Simulation schedules first_due = Time Interval and then previous_due + Time Interval, so the first job is not forced at t=0.",
-   "related": "Actual From-To, Static Analysis, Auto Simulation"
-  },
-  {
    "category": "Declarations",
    "subcategory": "",
    "title": "event",
    "purpose": "Declares unified GRS logic. Canonical engine events and user-defined callable events use the same declaration kind.",
    "syntax": "begin name(args) event\n    ...\nend",
-   "example": "begin calc.double(x) event\n    return(x * 2);\nend",
-   "example_status": "compiles",
+   "example": "begin Calc_Double(x) event\n    return(x * 2);\nend",
+   "example_status": "none",
    "notes": "Parameters are comma-separated identifiers. __gigaroute.* is reserved.",
    "related": "on, routine, function, call, return"
   },
@@ -259,8 +259,8 @@
    "title": "routine / function",
    "purpose": "Compatibility aliases lowered to the same unified event implementation.",
    "syntax": "routine name { ... }\nfunction name(args) { ... }",
-   "example": "function calc.tax(v) {\n    return(v * 0.1);\n}",
-   "example_status": "compiles",
+   "example": "function Calc_Tax(v) {\n    return(v * 0.1);\n}",
+   "example_status": "none",
    "notes": "New Studio templates use begin NAME event ... end. The older event NAME { } form and these aliases remain accepted for compatibility.",
    "related": "event, call, return"
   },
@@ -270,9 +270,9 @@
    "title": "call / direct event call",
    "purpose": "Invokes a user-defined GRS event. Expression-position calls return the event's return value.",
    "syntax": "call(eventName(args))\neventName(args)",
-   "example": "begin calc.double(x) event\n    return(x * 2);\nend\n\nbegin model.init event\n    set(result, calc.double(4));\nend",
-   "example_status": "compiles",
-   "notes": "Parameters are positional.",
+   "example": "begin Calc_Double(x) event\n    return(x * 2);\nend\n\nbegin model.init event\n    set(result, Calc_Double(4));\nend",
+   "example_status": "none",
+   "notes": "Routine lookup has priority over generic Host action lookup. Parameters are positional.",
    "related": "event, return, parameters"
   },
   {
@@ -360,8 +360,8 @@
    "syntax": "wait(seconds)",
    "example": "wait(0.25);",
    "example_status": "compiles",
-   "notes": "",
-   "related": "wait_until"
+   "notes": "Uses Scheduler timed wait; it does not busy-poll.",
+   "related": "wait_until, scheduler"
   },
   {
    "category": "Core Actions",
@@ -382,7 +382,7 @@
    "syntax": "set(target, value)",
    "example": "set(vehicle.current_schedjob, job);",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "Physical Vehicle pose/route/speed remains SimulationEngine-owned.",
    "related": "inc, dec, ScheduleJob"
   },
   {
@@ -393,7 +393,7 @@
    "syntax": "inc(target, amount)",
    "example": "inc(counter, 1);",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "Local loop values and Host-backed values use the same compiled arithmetic semantics.",
    "related": "set, dec"
   },
   {
@@ -404,7 +404,7 @@
    "syntax": "dec(target, amount)",
    "example": "dec(counter, 1);",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "Local loop values and Host-backed values use the same compiled arithmetic semantics.",
    "related": "set, inc"
   },
   {
@@ -437,7 +437,7 @@
    "syntax": "tabulate(tableName, value)",
    "example": "tabulate(\"cycle\", elapsed);",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "Table data is script/runtime-owned modeling data, not SimulationEngine KPI state.",
    "related": "Table, collection size"
   },
   {
@@ -481,7 +481,7 @@
    "syntax": "dispatch(vehicle, station)",
    "example": "dispatch(vehicle, \"ST01\");",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "Uses the existing RouteCatalog/SimulationEngine physical movement path; no runtime Dijkstra/A* is added.",
    "related": "ScheduleJob, preempt, cancel"
   },
   {
@@ -532,7 +532,7 @@
    "category": "Resources",
    "subcategory": "",
    "title": "use / get / reserve",
-   "purpose": "Acquires a named Resource. If it is at capacity, the current process waits until capacity becomes available.",
+   "purpose": "Acquires a named Resource. If it is at capacity, the current process waits on the Resource's targeted scheduler channel.",
    "syntax": "use(resource)\nget(resource)\nreserve(resource)",
    "example": "get(R_MACHINE);",
    "example_status": "compiles",
@@ -547,7 +547,7 @@
    "syntax": "free(resource)\nrelease(resource)",
    "example": "free(R_MACHINE);",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "Wake-up is targeted through the Resource scheduler channel; there is no fleet polling.",
    "related": "use, get, reserve"
   },
   {
@@ -569,7 +569,7 @@
    "syntax": "order(count)",
    "example": "order(1);",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "Uses targeted scheduler wake-up rather than a periodic scan.",
    "related": "wait_ordered, OrderList"
   },
   {
@@ -585,7 +585,7 @@
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "vehicle.init",
    "purpose": "Runs once for each Vehicle when the scripted run is activated.",
    "syntax": "begin vehicle.init event\n    ...\nend",
@@ -596,7 +596,7 @@
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "dispatch.request",
    "purpose": "Runs at an Idle dispatch-request boundary, including initial activation.",
    "syntax": "begin dispatch.request event\n    ...\nend",
@@ -607,95 +607,95 @@
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "job.selected",
    "purpose": "Runs once when a live ScheduleJob becomes a Vehicle's current_schedjob.",
    "syntax": "begin job.selected event\n    ...\nend",
    "example": "begin job.selected event\n    print(this.id, this.type, this.vehicle, this.location);\nend",
    "example_status": "compiles",
-   "notes": "Implemented. The event actor is the ScheduleJob handle. Re-setting the same current job does not fire again. preempt() fires only when it actually changes the current job.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT job selection event`. This callback was not removed. Implemented. The event actor is the ScheduleJob handle. Re-setting the same current job does not fire again. preempt() fires only when it actually changes the current job.",
    "related": "ScheduleJob, vehicle.current_schedjob, preempt, job.finished"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "job.finished",
    "purpose": "Runs when the committed physical job has fully completed and the Vehicle reaches the authoritative Idle handoff.",
    "syntax": "begin job.finished event\n    ...\nend",
    "example": "begin job.finished event\n    print(this.id, this.type, this.vehicle, this.load);\nend",
    "example_status": "compiles",
-   "notes": "Implemented. This is later than vehicle.setdown: configured Setdown dwell must finish first. The event actor is the completed ScheduleJob handle.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT job finished event`. This callback was not removed. Implemented. This is later than vehicle.setdown: configured Setdown dwell must finish first. The event actor is the completed ScheduleJob handle.",
    "related": "vehicle.setdown, ScheduleJob, Load, job.selected"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "vehicle.pickup",
    "purpose": "Fires when a Vehicle reaches the physical Pickup boundary.",
    "syntax": "begin vehicle.pickup event\n    ...\nend",
    "example": "begin vehicle.pickup event\n    print(vehicle.station);\nend",
    "example_status": "compiles",
-   "notes": "A claimed Load becomes onboard at physical Pickup.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT pickup event`. This callback was not removed. A claimed Load becomes onboard at physical Pickup.",
    "related": "vehicle.setdown, Load"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "vehicle.setdown",
    "purpose": "Fires when a Vehicle reaches the Setdown arrival boundary.",
    "syntax": "begin vehicle.setdown event\n    ...\nend",
    "example": "begin vehicle.setdown event\n    print(vehicle.destination);\nend",
    "example_status": "compiles",
-   "notes": "The Load remains onboard through configured Setdown dwell and unloads at the following Idle handoff.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT setdown event`. This callback was not removed. The Load remains onboard through configured Setdown dwell and unloads at the following Idle handoff.",
    "related": "vehicle.pickup, Load, job.finished"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "vehicle.start_move",
    "purpose": "Fires at the first real linear movement in Retrieving/Moving after speed exceeds the meaningful threshold.",
    "syntax": "begin vehicle.start_move event\n    ...\nend",
    "example": "begin vehicle.start_move event\n    print(vehicle.id);\nend",
    "example_status": "compiles",
-   "notes": "The internal 0.001 mm/s wake probe is excluded; the event threshold is >0.01 mm/s.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT start to move event`. This callback was not removed. The internal 0.001 mm/s wake probe is excluded; the event threshold is >0.01 mm/s.",
    "related": "vehicle.speed_change, vehicle.resume"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "vehicle.speed_change",
    "purpose": "Fires when physical motion speed changes meaningfully, including acceleration/deceleration, Sensor BRAKE/STOP and curve-speed transitions.",
    "syntax": "begin vehicle.speed_change event\n    ...\nend",
    "example": "begin vehicle.speed_change event\n    print(vehicle.phase);\nend",
    "example_status": "compiles",
-   "notes": "First-class physical event. Empty handlers are optimized out of the physical hot path.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT speed change event`. This callback was not removed. First-class physical event. Empty handlers are optimized out of the physical hot path.",
    "related": "vehicle.start_move, vehicle.resume"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "vehicle.resume",
    "purpose": "Fires when a Vehicle that previously moved resumes real movement after stopping.",
    "syntax": "begin vehicle.resume event\n    ...\nend",
    "example": "begin vehicle.resume event\n    print(vehicle.id);\nend",
    "example_status": "compiles",
-   "notes": "Uses an authoritative physical speed transition.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT resume to drive event`. This callback was not removed. Uses an authoritative physical speed transition.",
    "related": "vehicle.start_move, vehicle.speed_change"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "vehicle.approach_destination",
    "purpose": "Fires on the first real movement within the final route segment toward the destination.",
    "syntax": "begin vehicle.approach_destination event\n    ...\nend",
    "example": "begin vehicle.approach_destination event\n    print(vehicle.destination);\nend",
    "example_status": "compiles",
-   "notes": "No arbitrary distance polling threshold is used.",
+   "notes": "Existing engine callback name, kept for saved-model compatibility. For new OHT GRS use `begin Def_OHT decelerate to destination event`. This callback was not removed. No arbitrary distance polling threshold is used.",
    "related": "station.pass.<station>"
   },
   {
    "category": "Events",
-   "subcategory": "",
+   "subcategory": "Existing callback names (compatibility)",
    "title": "station.pass.<station>",
    "purpose": "Fires when a Vehicle physically crosses the named Station control point.",
    "syntax": "begin station.pass.ST01 event\n    ...\nend",
@@ -719,7 +719,7 @@
    "category": "Vehicle Attributes",
    "subcategory": "",
    "title": "vehicle.station / from / destination",
-   "purpose": "Reads the current Station, job source and job destination of the Vehicle.",
+   "purpose": "Reads the current Station, job source and job destination from the SimulationEngine snapshot.",
    "syntax": "vehicle.station\nvehicle.from\nvehicle.destination",
    "example": "print(vehicle.station, vehicle.destination);",
    "example_status": "compiles",
@@ -734,7 +734,7 @@
    "syntax": "vehicle.phase\nvehicle.status",
    "example": "if (vehicle.phase == \"idle\") { ... }",
    "example_status": "template",
-   "notes": "",
+   "notes": "SimulationEngine remains the physical truth owner.",
    "related": "vehicle.station"
   },
   {
@@ -776,8 +776,8 @@
    "title": "ScheduleJob attributes",
    "purpose": "Reads stable script ScheduleJob metadata.",
    "syntax": "job.id\njob.type\njob.vehicle\njob.load\njob.location\njob.released_us\njob.alive\njob.current",
-   "example": "",
-   "example_status": "dropped",
+   "example": "if (job.type == \"retrieve\") { print(job.location); }",
+   "example_status": "none",
    "notes": "Current transport lifecycle types include move, retrieve and deliver.",
    "related": "dispatch, claim, cancel, preempt, job.selected, job.finished"
   },
@@ -800,7 +800,7 @@
    "syntax": "text.length\ntext.substring(start, length)",
    "example": "print(name.substring(0, 4));",
    "example_status": "compiles",
-   "notes": "",
+   "notes": "substring uses a zero-based start index in the current Host implementation.",
    "related": "String"
   },
   {
@@ -811,7 +811,7 @@
    "syntax": "+ - * /\n== != < <= > >=\n&& || !",
    "example": "if (vehicle.id >= 0 && !done) { ... }",
    "example_status": "template",
-   "notes": "",
+   "notes": "Native operators are compile-time lowered to the existing bytecode expression engine.",
    "related": "if, while"
   },
   {
@@ -932,7 +932,7 @@
    "syntax": "begin Work_Accept(vehicle, load, pickup) event\n    ...\nend",
    "example": "begin Work_Accept(vehicle, load, pickup) event\n    return(pickup != null);\nend",
    "example_status": "compiles",
-   "notes": "Runs synchronously immediately before a new explicit script claim mutates Load/ScheduleJob state. It must return Bool. If absent, claim() behavior is unchanged. Native Random/Real dispatch and easy transport do not synthesize a Load just to call this predicate.",
+   "notes": "Runs synchronously immediately before a new explicit script claim mutates Load/ScheduleJob state. It must return Bool. State writes, waits, clone, RNG, transport/resource mutation and unknown Host actions are rejected before execution. If absent, claim() behavior is unchanged. Native Random/Real dispatch and easy transport do not synthesize a Load just to call this predicate.",
    "related": "claim, Load, ScheduleJob, read-only evaluation"
   },
   {
@@ -941,20 +941,20 @@
    "title": "WIP / Traffic capacity pattern",
    "purpose": "Models endpoint/WIP capacity with the existing Resource acquire/release and targeted wake path.",
    "syntax": "get(WIP_RESOURCE)\n...\nfree(WIP_RESOURCE)",
-   "example": "get(R_ST01_WIP);\nfree(R_ST01_WIP);",
-   "example_status": "compiles",
-   "notes": "Resource capacity is the authoritative capacity in this pattern. Station occupancy/reservation is physical Vehicle occupancy and is intentionally not treated as the same value.",
+   "example": "get(R_ST01_WIP);\n// process work\nfree(R_ST01_WIP);",
+   "example_status": "none",
+   "notes": "Resource capacity is the authoritative capacity in this pattern. Station occupancy/reservation is physical Vehicle occupancy and is intentionally not treated as the same value. Capacity waits use targeted scheduler wake, not polling.",
    "related": "use, get, reserve, free, resource.capacity, station_occupancy_count"
   },
   {
    "category": "Not Implemented",
    "subcategory": "",
    "title": "catalog-only actions",
-   "purpose": "These statement forms are not executable in the current Simulation Studio product. Use the implemented function forms instead.",
-   "syntax": "terminate / remove / add / delete\nopen / read / write / close\nschedule / choose (statement form)",
-   "example": "choose(list, \"min\", \"released_us\");\nschedule_in(\"my.event\", 5);\nterminate_load(load);\nfile_read_lines(\"data.txt\");",
-   "example_status": "compiles",
-   "notes": "",
+   "purpose": "These words may exist in parser/action-catalog infrastructure, but the current product EngineScriptHost does not provide executable Simulation Studio semantics for them as statements.",
+   "syntax": "terminate / remove / add / delete\nopen / read / write / close\nschedule / choose (AutoMod statement form)",
+   "example": "// Use the implemented function forms instead:\nchoose(list, \"min\", \"released_us\");\nschedule_in(\"my.event\", 5);\nterminate_load(load);\nfile_read_lines(\"data.txt\");",
+   "example_status": "none",
+   "notes": "Issue #30: the function forms choose(list [, mode, ...]), schedule_in(event, seconds) and schedule_at(event, seconds) ARE implemented (OHT) and listed in the callable index. Only the AutoMod-style statement keywords above remain parser-recognized without runtime meaning. Help must follow actual runtime support, not parser recognition alone.",
    "related": "choose, schedule_in, schedule_at, terminate_load, file_read_lines, Action Catalog"
   },
   {
@@ -3937,6 +3937,391 @@
    "example_status": "none",
    "notes": "Call after asrs_stocker_initialize and before asrs_request_first_outbound, once per Cell. Lane mode only. A Load set down on an In Lane Station by any other OHT job is accepted by that Lane automatically.",
    "related": ""
+  },
+  {
+   "category": "Getting Started",
+   "subcategory": "",
+   "title": "Global Init / default OHT AMR Humanoid",
+   "purpose": "Create the default OHT, AMR and Humanoid counts directly from one global initialization event.",
+   "syntax": "begin model.init event\n    vi_OHT = 10\n    vi_Humanoid = 3\n    vi_AMR = 3\nend",
+   "example": "begin model.init event\n    vi_OHT = 10\n    vi_Humanoid = 3\n    vi_AMR = 3\nend\nbegin OHT.init event\n    set i = 0\n    while i < vi_OHT\n    begin\n        inc i by 1\n        print \"OHT\", i, \" is initialized\" to log\n    end\nend\nbegin Humanoid.init event\n    set i = 0\n    while i < vi_Humanoid\n    begin\n        inc i by 1\n        print \"Humanoid\", i, \" is initialized\" to log\n    end\nend\nbegin AMR.init event\n    set i = 0\n    while i < vi_AMR\n    begin\n        inc i by 1\n        print \"AMR\", i, \" is initialized\" to log\n    end\nend",
+   "example_status": "none",
+   "notes": "New global-init script has exactly one model.init with three positive integer vi_* values and these three typed events. At Compile the already-placed drawing supplies one OHT rail Level and one AMR floor Level (each with two distinct Stations); scripted Job Source is used with no synthetic traffic. Existing C++ Core creates vi_OHT/vi_AMR vehicles. Three-dimensional default humanoids are created at a floor Station. The typed init events run once at simulation time zero and print to the Studio message log. Other legacy and previously declared auto-bound scripts retain their existing behavior. All five previous helper initializers are NOT required for this opt-in.",
+   "related": "model.init, OHT.init, AMR.init, Humanoid.init, print to log"
+  },
+  {
+   "category": "Humanoid",
+   "subcategory": "",
+   "title": "Humanoid walk events (two-file global init)",
+   "purpose": "Run starts OHT 10, AMR 3 and Humanoid 3 and drives Humanoid 1 and 2 back and forth through physical floor Stations.",
+   "syntax": "model_init.grs + humanoid_logic.grs",
+   "example": "begin Def_Humanoid walk resume event\n    wait for 0.5 sec\nend\nbegin Def_Humanoid walk start event\n    print this humanoid, \" walk start now\" to log\nend\nbegin Def_Humanoid arrived at station event\n    if (current station = humanoid_1)\n        dispatch this humanoid to humanoid_2\n    else if (current station = humanoid_2)\n        dispatch this humanoid to humanoid_1\nend",
+   "example_status": "none",
+   "notes": "Opt-in requires two GRS files: model_init.grs with vi_OHT, vi_AMR, vi_Humanoid and OHT.init, AMR.init, Humanoid.init; and humanoid_logic.grs with walk resume/start/arrived at station events. All three Init callbacks must complete across all modules before any regular t=0 event or initial humanoid walk begins. A waiting/failed Init rejects Run before simulation time advances. In model_init.grs the authored spwan Def_Humanoid(1 or 2) to humanoid_1 or humanoid_2 is accepted as compatibility syntax. These compile to native humanoid_create, humanoid_walk_to, humanoid.arrived and a suspended 0.5-second wait. Each physical arrival triggers the next leg, without every-event polling. Humanoid 3 remains idle until explicitly dispatched; Job flows removed from this project are not auto restored. Existing auto-bound and explicitly declared module behavior is unchanged.",
+   "related": "Humanoid.init, humanoid.arrived, humanoid_create, humanoid_walk_to, print to log"
+  },
+  {
+   "category": "Getting Started",
+   "subcategory": "",
+   "title": "Automatic model binding",
+   "purpose": "Studio automatically connects literal GRS From-To Station requests to the Workspace OHT, AMR, AGV or Conveyor Runtime at Compile. No explicit module-binding declaration is required for this form.",
+   "syntax": "begin model.init event\n    every 20 sec call supply\nend\nbegin supply event\n    request from Ceiling_Pick to Ceiling_Drop\nend",
+   "example": "begin model.init event\n    every 20 sec call supply\nend\nbegin supply event\n    request from Ceiling_Pick to Ceiling_Drop\nend",
+   "example_status": "none",
+   "notes": "Define real transport events; Studio determines Station carrier and Level once during Compile and keeps the original Runtime, scheduler and FOUP identity. Different Station owners can share one source when event ownership is unambiguous. Unknown/cross-Level Station pairs and multi-owner control flow reject Compile instead of guessing. Dynamic Station expressions and native-only models still require explicit ownership information in existing compatible projects until an internal owner-selection path is available. Existing Simulation Setup supplies fleet count/speed/pickup/setdown defaults. Saved explicit module declarations and older auto configuration files continue loading for compatibility; new GRS code should not author a module-binding event. An optional single model.init may call OHT_Init/AMR_Init/Humanoid_Init/ASRS_Init/Conveyor_Init and those typed routines are dispatched to matching physical runtimes.",
+   "related": "model.init, request_transport, every_event, Station binding, Simulation Setup"
+  },
+  {
+   "category": "Getting Started",
+   "subcategory": "",
+   "title": "Common color_off",
+   "purpose": "Keeps original model colors by switching off phase or pose colors for matching OHT, AMR, AGV and Humanoid runtimes in the current Studio session.",
+   "syntax": "color_off()\ncolor_off(\"oht\")\ncolor_off(\"amr\")\ncolor_off(\"agv\")\ncolor_off(\"humanoid\")",
+   "example": "begin model.init event\n    color_off()\nend",
+   "example_status": "none",
+   "notes": "Available in a declared Studio model session. With no argument all matching runtimes are affected, regardless of which module owns the call. One quoted type limits the scope; AMR and AGV are distinct. A missing target or unsupported argument fails with a GRS_COLOR_OFF diagnostic. Motion, Job timing and FOUP ownership are unchanged. Legacy oht.color_fixed / amr.color_fixed / humanoid.color_fixed remain accepted. Auto/legacy undeclared execution is unchanged.",
+   "related": "Studio model modules, oht.color_fixed, amr.color_fixed, humanoid.color_fixed"
+  },
+  {
+   "category": "Getting Started",
+   "subcategory": "",
+   "title": "Automatic transfer target",
+   "purpose": "Hands a logical Load to the one existing prepared runtime that owns the destination Station route, with no explicit target module name.",
+   "syntax": "call_transport(load_id, \"Floor_Pick\", \"Floor_Drop\")",
+   "example": "begin conveyor.exit event\n    call_transport(load_id, \"Floor_Pick\", \"Floor_Drop\")\nend",
+   "example_status": "none",
+   "notes": "Three arguments select a destination only when exactly one non-source runtime validates both Station endpoints. An unknown or ambiguous target is rejected with GRS_TRANSFER_NO_TARGET or GRS_TRANSFER_AMBIGUOUS_TARGET. The previous four-argument call_transport(target_module,load_id,from,to) remains unchanged. Source Setdown and destination capacity, event timing, and Load ownership all use the existing physical transfer protocol; no new polling or Load ID namespace is introduced.",
+   "related": "call_transport, Studio model modules, Station binding"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT event syntax",
+   "purpose": "Public OHT event syntax. Write readable event phrases instead of authoring the engine's dotted callback identifiers.",
+   "syntax": "begin Def_OHT <event name> event\n    ...\nend",
+   "example": "begin Def_OHT job assigned event\n    print \"job assigned\" to log\nend",
+   "example_status": "none",
+   "notes": "The GRS compiler lowers these event declarations to the engine's existing internal callbacks. Existing project event keys still load for compatibility. OHT actor is available as this OHT when applicable.",
+   "related": "Def_OHT, OHT, GRS Events"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT pickup",
+   "purpose": "Arrives at the physical pickup boundary.",
+   "syntax": "begin Def_OHT pickup event\n    ...\nend",
+   "example": "begin Def_OHT pickup event\n    print \"Def_OHT pickup\" to log\nend",
+   "example_status": "none",
+   "notes": "The Load is loaded at the existing physical pickup boundary. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT setdown",
+   "purpose": "Arrives at the physical setdown boundary.",
+   "syntax": "begin Def_OHT setdown event\n    ...\nend",
+   "example": "begin Def_OHT setdown event\n    print \"Def_OHT setdown\" to log\nend",
+   "example_status": "none",
+   "notes": "The unloading completion occurs after the configured setdown dwell. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT speed change",
+   "purpose": "Physical Vehicle speed changes.",
+   "syntax": "begin Def_OHT speed change event\n    ...\nend",
+   "example": "begin Def_OHT speed change event\n    print \"Def_OHT speed change\" to log\nend",
+   "example_status": "none",
+   "notes": "Uses existing engine speed transitions, not polling. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT resume to drive",
+   "purpose": "A stopped Vehicle starts driving again.",
+   "syntax": "begin Def_OHT resume to drive event\n    ...\nend",
+   "example": "begin Def_OHT resume to drive event\n    print \"Def_OHT resume to drive\" to log\nend",
+   "example_status": "none",
+   "notes": "Uses a real resume transition. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT start to move",
+   "purpose": "The Vehicle starts actual travel.",
+   "syntax": "begin Def_OHT start to move event\n    ...\nend",
+   "example": "begin Def_OHT start to move event\n    print \"Def_OHT start to move\" to log\nend",
+   "example_status": "none",
+   "notes": "Ignores the internal near-zero wake probe. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT job finished",
+   "purpose": "A physical ScheduleJob reaches its completed handoff.",
+   "syntax": "begin Def_OHT job finished event\n    ...\nend",
+   "example": "begin Def_OHT job finished event\n    print \"Def_OHT job finished\" to log\nend",
+   "example_status": "none",
+   "notes": "Fires after setdown dwell; actor is the completed ScheduleJob. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT job selection",
+   "purpose": "A live ScheduleJob becomes selected.",
+   "syntax": "begin Def_OHT job selection event\n    ...\nend",
+   "example": "begin Def_OHT job selection event\n    print \"Def_OHT job selection\" to log\nend",
+   "example_status": "none",
+   "notes": "Actor is the selected ScheduleJob; unchanged selection does not re-fire. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT decelerate to destination",
+   "purpose": "The Vehicle reaches the final prepared travel span.",
+   "syntax": "begin Def_OHT decelerate to destination event\n    ...\nend",
+   "example": "begin Def_OHT decelerate to destination event\n    print \"Def_OHT decelerate to destination\" to log\nend",
+   "example_status": "none",
+   "notes": "Fires on actual movement in the final span. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT arrived at station",
+   "purpose": "The Vehicle reaches its pickup or setdown Station.",
+   "syntax": "begin Def_OHT arrived at station event\n    ...\nend",
+   "example": "begin Def_OHT arrived at station event\n    print \"Def_OHT arrived at station\" to log\nend",
+   "example_status": "none",
+   "notes": "Fires once at the arrival boundary before the pickup/setdown event. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT job assigned",
+   "purpose": "An idle OHT begins its next Job or explicit travel.",
+   "syntax": "begin Def_OHT job assigned event\n    ...\nend",
+   "example": "begin Def_OHT job assigned event\n    print \"Def_OHT job assigned\" to log\nend",
+   "example_status": "none",
+   "notes": "2026-10-17: fires on Idle-to-travel/Pickup transition; actor is the assigned Vehicle. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT passing station",
+   "purpose": "The OHT passes a Station on its route.",
+   "syntax": "begin Def_OHT passing station event\n    ...\nend",
+   "example": "begin Def_OHT passing station event\n    print \"Def_OHT passing station\" to log\nend",
+   "example_status": "none",
+   "notes": "2026-10-17: fires for each physically crossed Station, excluding departure; no fleet-wide polling. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT steer change",
+   "purpose": "The OHT starts a discrete heading change at a corner.",
+   "syntax": "begin Def_OHT steer change event\n    ...\nend",
+   "example": "begin Def_OHT steer change event\n    print \"Def_OHT steer change\" to log\nend",
+   "example_status": "none",
+   "notes": "2026-10-17: fires on a meaningful turn even with in-place rotation disabled; continuous arc steering is excluded. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_OHT destination change",
+   "purpose": "The OHT starts a new travel leg toward its destination.",
+   "syntax": "begin Def_OHT destination change event\n    ...\nend",
+   "example": "begin Def_OHT destination change event\n    print \"Def_OHT destination change\" to log\nend",
+   "example_status": "none",
+   "notes": "2026-10-17: fires at travel-leg start (initial travel or post-pickup delivery), up to twice per Job. The engine uses an internal callback key; write the Def_OHT event header in new GRS models.",
+   "related": "Def_OHT, print to log"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_AMR / Def_AGV event syntax",
+   "purpose": "AMR and AGV (AMR Core Fixed Path) use the same 12 event phrases as Def_OHT: pickup, setdown, speed change, resume to drive, start to move, job finished, job selection, decelerate to destination, arrived at station, job assigned, passing station, destination change.",
+   "syntax": "begin Def_AMR <event name> event\n    ...\nend",
+   "example": "begin Def_AMR passing station event\n    print \"passing \", vehicle.passing_station_name to log\nend",
+   "example_status": "none",
+   "notes": "Def_AGV and Def_AMR lower to the same events. steer change is OHT only. Observation is enabled only for events you implement and never changes physics. This AMR / this AGV is the actor Vehicle. passing station radius is max(250 mm, body radius); vehicle.passing_station_name reads the station just passed.",
+   "related": "Def_AMR, Def_AGV, AMR, AGV, GRS Events"
+  },
+  {
+   "category": "Events",
+   "subcategory": "",
+   "title": "Def_Humanoid event syntax",
+   "purpose": "Humanoid uses the same 12 event phrases. Job means humanoid_transfer; pickup/setdown fire when humanoid_pick/humanoid_place start.",
+   "syntax": "begin Def_Humanoid <event name> event\n    ...\nend",
+   "example": "begin Def_Humanoid job finished event\n    print \"done \", this Humanoid to log\nend",
+   "example_status": "none",
+   "notes": "this Humanoid is humanoid_self(); humanoid_event_place() reads the place just passed (within 400 mm) inside passing station. resume to drive occurs only in live walking. steer change is OHT only.",
+   "related": "Def_Humanoid, Humanoid, GRS Events"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Array_Get(list_name, index [, index ...])",
+   "purpose": "Compatibility helper for reading an AutoMod-style indexed List variable.",
+   "syntax": "call Array_Get(list_name, index [, index ...])",
+   "example": "",
+   "example_status": "none",
+   "notes": "Preferred GRS syntax is ListName(1) / Matrix(1, 2). Indices are 1-based positive integers; rank is inferred automatically. Implementation spelling: array_get().",
+   "related": "Collections"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Array_Set(list_name, index [, index ...], value)",
+   "purpose": "Compatibility helper for writing an AutoMod-style indexed List variable.",
+   "syntax": "call Array_Set(list_name, index [, index ...], value)",
+   "example": "",
+   "example_status": "none",
+   "notes": "Preferred GRS syntax is 'set ListName(1) = value'. Element type and rank are inferred from GRS source; no separate Variable declaration is required. Implementation spelling: array_set().",
+   "related": "Collections"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Automod_Uniform(mean, half_range)",
+   "purpose": "Returns a uniform random value in [mean-half_range, mean+half_range].",
+   "syntax": "call Automod_Uniform(mean, half_range)",
+   "example": "",
+   "example_status": "none",
+   "notes": "This preserves the imported-model mean/half-range contract; it is not a min/max signature. Implementation spelling: automod_uniform().",
+   "related": "Text / Conversion"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Choose(list [, mode [, attribute [, value]]])",
+   "purpose": "Selects one candidate from a List. mode: \"first\" (default) returns the first entity; \"random\" draws uniformly via the existing automod RNG stream; \"min\"/\"max\" pick by numeric attribute (deterministic tie-break: lowest List index wins); \"where\" returns the first entity whose named attribute equals value.",
+   "syntax": "call Choose(list [, mode [, attribute [, value]]])",
+   "example": "",
+   "example_status": "none",
+   "notes": "#30 P6: OHT only for now -- weighted_choice/automod_uniform and this whole general call-utility surface are not yet wired into the AMR Host. Returns null when the list is empty or no candidate matches; never guesses at a dependency chain or root cause. Implementation spelling: choose().",
+   "related": "Collections"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Color_Off([\"oht\" | \"amr\" | \"agv\" | \"humanoid\"])",
+   "purpose": "Keeps the original model colors across matching Studio OHT, AMR, AGV and Humanoid runtimes.",
+   "syntax": "call Color_Off([\"oht\" | \"amr\" | \"agv\" | \"humanoid\"])",
+   "example": "",
+   "example_status": "none",
+   "notes": "Studio declared-model sessions only. With no argument, applies to all matching runtimes; with a type, only to that type. Does not change Jobs, timing or motion. Existing type-specific color_fixed calls remain supported. Implementation spelling: color_off().",
+   "related": "Simulation"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "amr.color_fixed()",
+   "purpose": "Turns off the Vehicle-phase color change so the AMR keeps its original model color.",
+   "syntax": "call amr.color_fixed()",
+   "example": "",
+   "example_status": "none",
+   "notes": "Call from model.init. Only the display color changes; travel, pickup/setdown time and results are unchanged. Implementation spelling: amr.color_fixed().",
+   "related": "Simulation"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "humanoid.color_fixed()",
+   "purpose": "Turns off the pose color change so every Humanoid keeps its original model color.",
+   "syntax": "call humanoid.color_fixed()",
+   "example": "",
+   "example_status": "none",
+   "notes": "Call from model.init. Only the display color changes; motion, timing and results are unchanged. Implementation spelling: humanoid.color_fixed().",
+   "related": "Humanoid"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "OHT_Vehicle_List()",
+   "purpose": "Returns every OHT Vehicle of this module as a list. `for each v in Def_OHT` lowers to it.",
+   "syntax": "call OHT_Vehicle_List()",
+   "example": "",
+   "example_status": "none",
+   "notes": "Implemented runtime callable. Implementation spelling: oht_vehicle_list().",
+   "related": "Transport / Routing"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Humanoid_Dispatch_Async(robot, place)",
+   "purpose": "Starts a walk to a Station/defined place without suspending the caller. Returns seconds.",
+   "syntax": "call Humanoid_Dispatch_Async(robot, place)",
+   "example": "",
+   "example_status": "none",
+   "notes": "Same physical walk as humanoid_walk_to, but the calling GRS process continues; the next leg is driven by humanoid.arrived. Implementation spelling: humanoid_dispatch_async().",
+   "related": "Humanoid"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Humanoid_Queue_Initial_Dispatch(robot, place)",
+   "purpose": "Registers an initial walk during Humanoid.init. Returns true.",
+   "syntax": "call Humanoid_Queue_Initial_Dispatch(robot, place)",
+   "example": "",
+   "example_status": "none",
+   "notes": "Started at t=0 only after every OHT.init, AMR.init and Humanoid.init has completed (global Init barrier). Implementation spelling: humanoid_queue_initial_dispatch().",
+   "related": "Humanoid"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Humanoid_Face(robot, place)",
+   "purpose": "Turns in place to face a place or Station (absolute heading, shortest turn). Returns seconds.",
+   "syntax": "call Humanoid_Face(robot, place)",
+   "example": "",
+   "example_status": "none",
+   "notes": "Implemented runtime callable. Implementation spelling: humanoid_face().",
+   "related": "Humanoid"
+  },
+  {
+   "category": "Runtime Function Index",
+   "subcategory": "",
+   "title": "Humanoid_Event_Place()",
+   "purpose": "Inside a Def_Humanoid passing station event returns the place name that was just passed (lower case).",
+   "syntax": "call Humanoid_Event_Place()",
+   "example": "",
+   "example_status": "none",
+   "notes": "Implemented runtime callable. Implementation spelling: humanoid_event_place().",
+   "related": "Humanoid"
+  },
+  {
+   "category": "Attribute Reference",
+   "subcategory": "",
+   "title": "job.physical_committed [OHT]",
+   "purpose": "Returns true once SimulationEngine already owns the physical route for this ScheduleJob.",
+   "syntax": "job.physical_committed",
+   "example": "print(job.physical_committed);",
+   "example_status": "none",
+   "notes": "Type: Bool. Access: read-only. Modules: OHT. #30 P4: source/destination Station, assigned/pickup/setdown/completed timestamps, and cancel state/reason are Not Implemented as ScheduleJob Attributes -- the current ScheduleJob struct does not own that state, and this Issue does not fabricate a sidecar owner for it.",
+   "related": "OHT"
+  },
+  {
+   "category": "Attribute Reference",
+   "subcategory": "",
+   "title": "text.length [OHT, AMR]",
+   "purpose": "Returns UTF-8 byte length of the current Host String.",
+   "syntax": "text.length",
+   "example": "print(name.length);",
+   "example_status": "none",
+   "notes": "Type: Number. Access: read-only. Modules: OHT, AMR. ",
+   "related": "OHT, AMR"
   }
  ]
 }

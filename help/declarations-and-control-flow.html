@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Declarations and Control Flow | GigaRoute AI Help</title>
-<meta name="description" content="GRS reference: Declarations and Control Flow (11 entries).">
+<meta name="description" content="GRS Help: Declarations and Control Flow (11 entries).">
 <link rel="canonical" href="https://gigaroute.ai/help/declarations-and-control-flow.html">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
@@ -16,50 +16,38 @@
 <body>
 <header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
 <script src="/site-nav.js"></script>
-<main><div class="wrap">
-<p class="crumbs"><a href="/help/">Help</a> / Declarations and Control Flow</p><h1>Declarations and Control Flow</h1><p class="lead">11 entries, for example: event, on, routine / function, call / direct event call, if / else if / else, and more. Text is generated from the Help window of GigaRoute Simulation Studio.</p><p class="sub">Declarations</p><article class="topic" id="event" data-search="event declares unified grs logic. canonical engine events and user-defined callable events use the same declaration kind."><h3><a href="#event">event</a></h3><dl><dt>Purpose</dt><dd>Declares unified GRS logic. Canonical engine events and user-defined callable events use the same declaration kind.</dd><dt>Syntax</dt><dd><pre>begin name(args) event
+<main><div class="wrap"><p class="crumbs"><a href="/help/">Help</a> / Declarations and Control Flow</p><h1>Declarations and Control Flow</h1><p class="lead">11 reference entries, updated from current product main (2026-10-19). Newly added examples are not claimed compiler-checked until separately tested.</p><p class="sub">Declarations</p><article class="topic" id="event" data-search="event declares unified grs logic. canonical engine events and user-defined callable events use the same declaration kind."><h3><a href="#event">event</a></h3><dl><dt>Purpose</dt><dd>Declares unified GRS logic. Canonical engine events and user-defined callable events use the same declaration kind.</dd><dt>Syntax</dt><dd><pre>begin name(args) event
     ...
-end</pre></dd><dt>Example</dt><dd><pre>begin calc.double(x) event
+end</pre></dd><dt>Example</dt><dd><pre>begin Calc_Double(x) event
     return(x * 2);
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Parameters are comma-separated identifiers. __gigaroute.* is reserved.</dd><dt>Related</dt><dd>on, routine, function, call, return</dd></dl></article>
-<article class="topic" id="on" data-search="on compatibility declaration for a canonical engine-bound event."><h3><a href="#on">on</a></h3><dl><dt>Purpose</dt><dd>Compatibility declaration for a canonical engine-bound event.</dd><dt>Syntax</dt><dd><pre>on &lt;canonical-event&gt; { ... }</pre></dd><dt>Example</dt><dd><pre>on vehicle.pickup {
+end</pre></dd><dt>Notes</dt><dd>Parameters are comma-separated identifiers. __gigaroute.* is reserved.</dd><dt>Related</dt><dd>on, routine, function, call, return</dd></dl></article><article class="topic" id="on" data-search="on compatibility declaration for a canonical engine-bound event."><h3><a href="#on">on</a></h3><dl><dt>Purpose</dt><dd>Compatibility declaration for a canonical engine-bound event.</dd><dt>Syntax</dt><dd><pre>on &lt;canonical-event&gt; { ... }</pre></dd><dt>Example</dt><dd><pre>on vehicle.pickup {
     print(vehicle.id);
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Use event for new code. on accepts canonical events only and cannot declare parameters.</dd><dt>Related</dt><dd>event, canonical events</dd></dl></article>
-<article class="topic" id="routine-function" data-search="routine / function compatibility aliases lowered to the same unified event implementation."><h3><a href="#routine-function">routine / function</a></h3><dl><dt>Purpose</dt><dd>Compatibility aliases lowered to the same unified event implementation.</dd><dt>Syntax</dt><dd><pre>routine name { ... }
-function name(args) { ... }</pre></dd><dt>Example</dt><dd><pre>function calc.tax(v) {
+}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Use event for new code. on accepts canonical events only and cannot declare parameters.</dd><dt>Related</dt><dd>event, canonical events</dd></dl></article><article class="topic" id="routine-function" data-search="routine / function compatibility aliases lowered to the same unified event implementation."><h3><a href="#routine-function">routine / function</a></h3><dl><dt>Purpose</dt><dd>Compatibility aliases lowered to the same unified event implementation.</dd><dt>Syntax</dt><dd><pre>routine name { ... }
+function name(args) { ... }</pre></dd><dt>Example</dt><dd><pre>function Calc_Tax(v) {
     return(v * 0.1);
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>New Studio templates use begin NAME event ... end. The older event NAME { } form and these aliases remain accepted for compatibility.</dd><dt>Related</dt><dd>event, call, return</dd></dl></article>
-<article class="topic" id="call-direct-event-call" data-search="call / direct event call invokes a user-defined grs event. expression-position calls return the event&#x27;s return value."><h3><a href="#call-direct-event-call">call / direct event call</a></h3><dl><dt>Purpose</dt><dd>Invokes a user-defined GRS event. Expression-position calls return the event&#x27;s return value.</dd><dt>Syntax</dt><dd><pre>call(eventName(args))
-eventName(args)</pre></dd><dt>Example</dt><dd><pre>begin calc.double(x) event
+}</pre></dd><dt>Notes</dt><dd>New Studio templates use begin NAME event ... end. The older event NAME { } form and these aliases remain accepted for compatibility.</dd><dt>Related</dt><dd>event, call, return</dd></dl></article><article class="topic" id="call-direct-event-call" data-search="call / direct event call invokes a user-defined grs event. expression-position calls return the event&#39;s return value."><h3><a href="#call-direct-event-call">call / direct event call</a></h3><dl><dt>Purpose</dt><dd>Invokes a user-defined GRS event. Expression-position calls return the event&#39;s return value.</dd><dt>Syntax</dt><dd><pre>call(eventName(args))
+eventName(args)</pre></dd><dt>Example</dt><dd><pre>begin Calc_Double(x) event
     return(x * 2);
 end
 
 begin model.init event
-    set(result, calc.double(4));
-end</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Parameters are positional.</dd><dt>Related</dt><dd>event, return, parameters</dd></dl></article>
-<p class="sub">Control Flow</p><article class="topic" id="if-else-if-else" data-search="if / else if / else executes conditional branches."><h3><a href="#if-else-if-else">if / else if / else</a></h3><dl><dt>Purpose</dt><dd>Executes conditional branches.</dd><dt>Syntax</dt><dd><pre>if (&lt;condition&gt;) { ... }
+    set(result, Calc_Double(4));
+end</pre></dd><dt>Notes</dt><dd>Routine lookup has priority over generic Host action lookup. Parameters are positional.</dd><dt>Related</dt><dd>event, return, parameters</dd></dl></article><p class="sub">Control Flow</p><article class="topic" id="if-else-if-else" data-search="if / else if / else executes conditional branches."><h3><a href="#if-else-if-else">if / else if / else</a></h3><dl><dt>Purpose</dt><dd>Executes conditional branches.</dd><dt>Syntax</dt><dd><pre>if (&lt;condition&gt;) { ... }
 } else if (&lt;condition&gt;) { ... }
 } else { ... }</pre></dd><dt>Example</dt><dd><pre>if (vehicle.phase == &quot;idle&quot;) {
     print(&quot;idle&quot;);
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Conditions use the GRS expression surface.</dd><dt>Related</dt><dd>comparison operators, &amp;&amp;, ||, !</dd></dl></article>
-<article class="topic" id="while" data-search="while repeats a block while its condition is true."><h3><a href="#while">while</a></h3><dl><dt>Purpose</dt><dd>Repeats a block while its condition is true.</dd><dt>Syntax</dt><dd><pre>while (&lt;condition&gt;) { ... }</pre></dd><dt>Example</dt><dd><pre>while (count &lt; 5) {
+}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Conditions use the GRS expression surface.</dd><dt>Related</dt><dd>comparison operators, &amp;&amp;, ||, !</dd></dl></article><article class="topic" id="while" data-search="while repeats a block while its condition is true."><h3><a href="#while">while</a></h3><dl><dt>Purpose</dt><dd>Repeats a block while its condition is true.</dd><dt>Syntax</dt><dd><pre>while (&lt;condition&gt;) { ... }</pre></dd><dt>Example</dt><dd><pre>while (count &lt; 5) {
     inc(count, 1);
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Use wait/resource/order-list coordination when model time must advance.</dd><dt>Related</dt><dd>break, continue, wait</dd></dl></article>
-<article class="topic" id="for" data-search="for iterates a snapshot list such as vehicle.schedjobs."><h3><a href="#for">for</a></h3><dl><dt>Purpose</dt><dd>Iterates a snapshot list such as vehicle.schedjobs.</dd><dt>Syntax</dt><dd><pre>for (&lt;item&gt; in &lt;iterable&gt;) { ... }</pre></dd><dt>Example</dt><dd><pre>for (job in vehicle.schedjobs) {
+}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Use wait/resource/order-list coordination when model time must advance.</dd><dt>Related</dt><dd>break, continue, wait</dd></dl></article><article class="topic" id="for" data-search="for iterates a snapshot list such as vehicle.schedjobs."><h3><a href="#for">for</a></h3><dl><dt>Purpose</dt><dd>Iterates a snapshot list such as vehicle.schedjobs.</dd><dt>Syntax</dt><dd><pre>for (&lt;item&gt; in &lt;iterable&gt;) { ... }</pre></dd><dt>Example</dt><dd><pre>for (job in vehicle.schedjobs) {
     print(job.type);
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The iterable is evaluated once when the loop begins.</dd><dt>Related</dt><dd>vehicle.schedjobs, break, continue</dd></dl></article>
-<article class="topic" id="break" data-search="break leaves the innermost while/for loop."><h3><a href="#break">break</a></h3><dl><dt>Purpose</dt><dd>Leaves the innermost while/for loop.</dd><dt>Syntax</dt><dd><pre>break</pre></dd><dt>Example</dt><dd><pre>if (job.type == &quot;move&quot;) {
+}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The iterable is evaluated once when the loop begins.</dd><dt>Related</dt><dd>vehicle.schedjobs, break, continue</dd></dl></article><article class="topic" id="break" data-search="break leaves the innermost while/for loop."><h3><a href="#break">break</a></h3><dl><dt>Purpose</dt><dd>Leaves the innermost while/for loop.</dd><dt>Syntax</dt><dd><pre>break</pre></dd><dt>Example</dt><dd><pre>if (job.type == &quot;move&quot;) {
     break
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Only valid inside a loop.</dd><dt>Related</dt><dd>while, for, continue</dd></dl></article>
-<article class="topic" id="continue" data-search="continue skips to the next iteration of the innermost loop."><h3><a href="#continue">continue</a></h3><dl><dt>Purpose</dt><dd>Skips to the next iteration of the innermost loop.</dd><dt>Syntax</dt><dd><pre>continue</pre></dd><dt>Example</dt><dd><pre>if (job.alive == false) {
+}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Only valid inside a loop.</dd><dt>Related</dt><dd>while, for, continue</dd></dl></article><article class="topic" id="continue" data-search="continue skips to the next iteration of the innermost loop."><h3><a href="#continue">continue</a></h3><dl><dt>Purpose</dt><dd>Skips to the next iteration of the innermost loop.</dd><dt>Syntax</dt><dd><pre>continue</pre></dd><dt>Example</dt><dd><pre>if (job.alive == false) {
     continue
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Only valid inside a loop.</dd><dt>Related</dt><dd>while, for, break</dd></dl></article>
-<article class="topic" id="return" data-search="return returns a value from the current user-defined event/call."><h3><a href="#return">return</a></h3><dl><dt>Purpose</dt><dd>Returns a value from the current user-defined event/call.</dd><dt>Syntax</dt><dd><pre>return(value)</pre></dd><dt>Example</dt><dd><pre>return(vehicle.id);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The compiled runtime also has a null return at the natural end of an event.</dd><dt>Related</dt><dd>event, call</dd></dl></article>
-<article class="topic" id="return-no-value" data-search="return (no value) returns from the current user-defined event without a value."><h3><a href="#return-no-value">return (no value)</a></h3><dl><dt>Purpose</dt><dd>Returns from the current user-defined event without a value.</dd><dt>Syntax</dt><dd><pre>return
+}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Only valid inside a loop.</dd><dt>Related</dt><dd>while, for, break</dd></dl></article><article class="topic" id="return" data-search="return returns a value from the current user-defined event/call."><h3><a href="#return">return</a></h3><dl><dt>Purpose</dt><dd>Returns a value from the current user-defined event/call.</dd><dt>Syntax</dt><dd><pre>return(value)</pre></dd><dt>Example</dt><dd><pre>return(vehicle.id);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>The compiled runtime also has a null return at the natural end of an event.</dd><dt>Related</dt><dd>event, call</dd></dl></article><article class="topic" id="return-no-value" data-search="return (no value) returns from the current user-defined event without a value."><h3><a href="#return-no-value">return (no value)</a></h3><dl><dt>Purpose</dt><dd>Returns from the current user-defined event without a value.</dd><dt>Syntax</dt><dd><pre>return
 return(value)</pre></dd><dt>Example</dt><dd><pre>if (done) {
     return
-}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>A bare return produces null. return(value) preserves the existing return-value behavior.</dd><dt>Related</dt><dd>event, call, return(value)</dd></dl></article>
-</div></main>
+}</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>A bare return produces null. return(value) preserves the existing return-value behavior.</dd><dt>Related</dt><dd>event, call, return(value)</dd></dl></article></div></main>
 <footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
 </body>
 </html>

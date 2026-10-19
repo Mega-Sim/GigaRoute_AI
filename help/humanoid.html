@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Humanoid | GigaRoute AI Help</title>
+<meta name="description" content="GRS Help: Humanoid (1 entries).">
+<link rel="canonical" href="https://gigaroute.ai/help/humanoid.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="alternate" type="text/markdown" href="/help/syntax.md">
+<link rel="stylesheet" href="/help/help.css?v=20261013-3">
+<script src="/help/help.js?v=20261013-3" defer></script>
+<link rel="stylesheet" href="/site-nav.css?v=20261016-1">
+</head>
+<body>
+<header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
+<script src="/site-nav.js"></script>
+<main><div class="wrap"><p class="crumbs"><a href="/help/">Help</a> / Humanoid</p><h1>Humanoid</h1><p class="lead">1 reference entries, updated from current product main (2026-10-19). Newly added examples are not claimed compiler-checked until separately tested.</p><article class="topic" id="humanoid-walk-events-two-file-global-init" data-search="humanoid walk events (two-file global init) run starts oht 10, amr 3 and humanoid 3 and drives humanoid 1 and 2 back and forth through physical floor stations."><h3><a href="#humanoid-walk-events-two-file-global-init">Humanoid walk events (two-file global init)</a></h3><dl><dt>Purpose</dt><dd>Run starts OHT 10, AMR 3 and Humanoid 3 and drives Humanoid 1 and 2 back and forth through physical floor Stations.</dd><dt>Syntax</dt><dd><pre>model_init.grs + humanoid_logic.grs</pre></dd><dt>Example</dt><dd><pre>begin Def_Humanoid walk resume event
+    wait for 0.5 sec
+end
+begin Def_Humanoid walk start event
+    print this humanoid, &quot; walk start now&quot; to log
+end
+begin Def_Humanoid arrived at station event
+    if (current station = humanoid_1)
+        dispatch this humanoid to humanoid_2
+    else if (current station = humanoid_2)
+        dispatch this humanoid to humanoid_1
+end</pre></dd><dt>Notes</dt><dd>Opt-in requires two GRS files: model_init.grs with vi_OHT, vi_AMR, vi_Humanoid and OHT.init, AMR.init, Humanoid.init; and humanoid_logic.grs with walk resume/start/arrived at station events. All three Init callbacks must complete across all modules before any regular t=0 event or initial humanoid walk begins. A waiting/failed Init rejects Run before simulation time advances. In model_init.grs the authored spwan Def_Humanoid(1 or 2) to humanoid_1 or humanoid_2 is accepted as compatibility syntax. These compile to native humanoid_create, humanoid_walk_to, humanoid.arrived and a suspended 0.5-second wait. Each physical arrival triggers the next leg, without every-event polling. Humanoid 3 remains idle until explicitly dispatched; Job flows removed from this project are not auto restored. Existing auto-bound and explicitly declared module behavior is unchanged.</dd><dt>Related</dt><dd>Humanoid.init, humanoid.arrived, humanoid_create, humanoid_walk_to, print to log</dd></dl></article></div></main>
+<footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
+</body>
+</html>

@@ -69,6 +69,12 @@ Issue #81부터 모든 언어 홈페이지의 Research 논문 카드는 개인 �
 - `/help/` 파일은 GigaRoute 제품 저장소의 Help 소스에서 스크립트로 생성한 결과물이며, 이 저장소에는 생성 스크립트와 소스 경로를 두지 않습니다. 직접 수정하지 말고 Help 내용이 바뀌면 다시 생성해 교체합니다.
 - 배포 워크플로의 `paths` 목록에 `help/**`, `llms.txt`, `robots.txt`, `sitemap.xml`을 추가했습니다.
 
+### Help GRS 문법 최신화 (2026-10-19, Issue #122)
+
+- 실제 제품 `Mega-Sim/GigaRoute` 최신 main의 GRS Help와 Callable Catalog에 맞춰 공식 Help를 **344→379개 항목**으로 동기화했습니다. 신규 `Def_OHT`·`Def_AMR`·`Def_AGV`·`Def_Humanoid`, 자동 바인딩, 전역 초기화, 추가 함수/속성을 반영했습니다.
+- 기존 `vehicle.*` 및 `job.*` 이벤트 콜백은 저장 모델 호환용으로 표시합니다. `model.init`과 점 표기 속성(`vehicle.id` 등)은 현재 유효하며, 점 표기만으로 삭제됐다고 판단하지 않습니다. 실제 삭제된 `print ... to message`는 `print ... to log`로 안내합니다.
+- JSON/검색 색인/Markdown/HTML 항목 개수와 기존 344개 URL 앵커 정합성 검사를 수행했습니다. 홈페이지 공통 메뉴/CSS/JS 및 제품 소스는 변경하지 않았습니다. 새 예제는 컴파일 재검증 전 `compiler-checked`로 표시하지 않습니다.
+
 ## 홈페이지 제품 메시지
 
 Issue #45부터 상단 `Platform` 메뉴와 별도 Platform 소개 섹션을 제거하고, 제품 영역을 **기업 맞춤형 AMHS 시뮬레이션 소프트웨어** 중심으로 단순화합니다.

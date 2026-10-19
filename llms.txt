@@ -20,3 +20,4 @@
 - [Runtime Function Index](https://gigaroute.ai/help/runtime-function-index.html)
 - [Native OHT / ASRS Functions](https://gigaroute.ai/help/native-oht-asrs-functions.html)
 - [Reserved, Not Implemented and Removed](https://gigaroute.ai/help/reserved-not-implemented-and-removed.html)
+- [Humanoid GRS events](https://gigaroute.ai/help/humanoid.html): current movement and event reference
