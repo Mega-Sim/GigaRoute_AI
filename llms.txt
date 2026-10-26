@@ -2,22 +2,20 @@
 
 > GigaRoute AI is manufacturing-logistics (AMHS) simulation software. GRS (GigaRoute Script) is the script language used for Model Logic in GR Simulation Studio.
 
-## GRS reference (static pages, no JavaScript required)
+## Current GRS reference
 
-- [Help index](https://gigaroute.ai/help/): entry point with links to every section
-- [Language basics](https://gigaroute.ai/help/language.html): blocks, statements, expressions, loops, common compile errors (all samples compiler-checked)
-- [Complete reference in Markdown](https://gigaroute.ai/help/syntax.md): every event, action, function and attribute in one file
-- [Structured reference (JSON)](https://gigaroute.ai/help/reference.json): same content as data
+- [Help index](https://gigaroute.ai/help/): 135 entries synchronized from product main commit 25f0729 on 2026-10-26
+- [Complete reference in Markdown](https://gigaroute.ai/help/syntax.md)
+- [Structured reference (JSON)](https://gigaroute.ai/help/reference.json)
 
-## Optional
+## Sections
 
+- [GRS Language](https://gigaroute.ai/help/language.html)
 - [Getting Started](https://gigaroute.ai/help/getting-started.html)
-- [Declarations and Control Flow](https://gigaroute.ai/help/declarations-and-control-flow.html)
-- [Actions](https://gigaroute.ai/help/actions.html)
+- [Control Flow](https://gigaroute.ai/help/declarations-and-control-flow.html)
+- [Core Actions](https://gigaroute.ai/help/actions.html)
 - [Events](https://gigaroute.ai/help/events.html)
-- [Attributes and Expressions](https://gigaroute.ai/help/attributes-and-expressions.html)
+- [Vehicle Attributes and Expressions](https://gigaroute.ai/help/attributes-and-expressions.html)
 - [Attribute Reference](https://gigaroute.ai/help/attribute-reference.html)
-- [Runtime Function Index](https://gigaroute.ai/help/runtime-function-index.html)
-- [Native OHT / ASRS Functions](https://gigaroute.ai/help/native-oht-asrs-functions.html)
-- [Reserved, Not Implemented and Removed](https://gigaroute.ai/help/reserved-not-implemented-and-removed.html)
-- [Humanoid GRS events](https://gigaroute.ai/help/humanoid.html): current movement and event reference
+- [Humanoid Functions](https://gigaroute.ai/help/runtime-function-index.html)
+- [Humanoid](https://gigaroute.ai/help/humanoid.html)
