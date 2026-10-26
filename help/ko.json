@@ -67,6 +67,5 @@
     "/llms.txt – index for language-model crawlers": "<a href=\"/llms.txt\">/llms.txt</a> – 언어 모델 크롤러용 색인",
     "Examples marked compiler-checked were compiled with the GRS compiler front end. A successful compile does not guarantee that a model behaves as intended when run.": "<b>compiler-checked</b>로 표시된 예제는 GRS 컴파일러 프런트엔드로 컴파일했습니다. 컴파일에 성공했다고 해서 실행 시 모델이 의도대로 동작한다는 보장은 아닙니다."
   },
-  "generated": "2026-10-26",
-  "source_commit": "25f07294ae6de035e01db824a6d8d92fc5731610"
+  "generated": "2026-10-26"
 }

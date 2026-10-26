@@ -1,7 +1,5 @@
 # GigaRoute Script (GRS) Help
 
-> Synchronized from `Mega-Sim/GigaRoute` `main` commit `25f07294ae6de035e01db824a6d8d92fc5731610` on 2026-10-26.
-
 Current reference entries: **135**.
 
 ## GRS Language

@@ -70,7 +70,7 @@ Issue #81부터 모든 언어 홈페이지의 Research 논문 카드는 개인 �
 
 ### Help GRS 문법 최신화 (2026-10-26)
 
-- 실제 제품 `Mega-Sim/GigaRoute` `main`의 GRS Help 및 Callable/Attribute Catalog(`25f0729`)를 기준으로 공식 Help를 **379→135개 항목**으로 동기화했습니다.
+- GRS Help 및 Callable/Attribute Catalog를 기준으로 공식 Help를 **379→135개 항목**으로 동기화했습니다.
 - 2026-10-20 제품 문법 재정비를 반영해 `model.init`, `model.snap`, `vehicle.<event_name>`, 현재 제어문·핵심 동작, Vehicle/Load/Job 속성, Humanoid 함수만 현재 문법으로 게시합니다. 별도 `Def_OHT`·`Def_AMR`·`Def_AGV` 헤더와 제거된 동작·함수는 현재 지원 문법으로 노출하지 않습니다.
 - JSON·검색 색인·Markdown·분류별 HTML을 같은 135개 원본 항목에서 생성했습니다. 기존 URL 중 최신 Help에 대응하는 분류가 없는 두 페이지는 오래된 내용을 제거하고 현재 Help 목차로 안내합니다. 홈페이지 공통 메뉴와 스타일은 변경하지 않았습니다.
 

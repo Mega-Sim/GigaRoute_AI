@@ -4,7 +4,7 @@
 
 ## Current GRS reference
 
-- [Help index](https://gigaroute.ai/help/): 135 entries synchronized from product main commit 25f0729 on 2026-10-26
+- [Help index](https://gigaroute.ai/help/): 135 GRS reference entries
 - [Complete reference in Markdown](https://gigaroute.ai/help/syntax.md)
 - [Structured reference (JSON)](https://gigaroute.ai/help/reference.json)
 
