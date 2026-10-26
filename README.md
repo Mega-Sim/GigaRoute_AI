@@ -61,19 +61,18 @@ Issue #81부터 모든 언어 홈페이지의 Research 논문 카드는 개인 �
 - 2026-10-12: 모든 언어 페이지의 상단 `문의`(영어 `Contact` 등 각 언어 표기) 메뉴를 `Help`로 바꾸고 `/help/`로 이동하는 일반 링크로 연결했습니다. `Help`는 전체 언어에서 같은 표기입니다.
 - 문의 창(모달)은 삭제하지 않았습니다. `영업 문의` 버튼과 푸터의 `support@gigaroute.ai` 링크가 기존과 같이 문의 창을 엽니다. 상단 메뉴의 링크만 `contact.js`에서 `/help/` 링크 생성으로 바뀌었고, 같은 링크를 각 언어 HTML의 정적 메뉴에도 넣어 JavaScript 없이도 보이게 했습니다(검색엔진·AI 크롤러용).
 - `/help/`는 GigaRoute Simulation Studio의 Help 창 내용(GRS 언어 기본, 이벤트·동작·함수·속성 전체)을 영어 원문으로 공개하는 정적 페이지입니다. `index.html`(목차), `language.html`(문법 요약), 분류별 HTML, 전체를 한 파일로 모은 `syntax.md`, 구조화 데이터 `reference.json`으로 구성됩니다. JavaScript 없이 읽을 수 있습니다.
-- 문법 요약의 모든 코드 샘플과 `compiler-checked` 표시 예제는 GRS 컴파일러 프런트엔드로 직접 컴파일해 확인했습니다. 컴파일 통과가 실행 결과를 보증하지는 않으며 페이지에도 그렇게 안내합니다.
-- 내부 구현 정보(클래스·파일 구조, 이슈 번호 등)는 공개 금지어 필터로 제외했습니다. 필터에 걸린 7개 항목은 게시하지 않았습니다.
+- 공개 예제는 최신 제품 Help 소스에 포함된 내용을 그대로 사용합니다. 이번 동기화에서 별도 컴파일을 다시 수행하지 않은 예제에는 `compiler-checked` 표시를 붙이지 않습니다.
 - 2026-10-12: Help 페이지는 기기의 다크 모드와 관계없이 메인 홈페이지와 같은 밝은 배경(동일 그라데이션)과 로고(`Simulation LAB`)로 고정합니다(`color-scheme: light`, 다크 모드 자동 전환 없음).
-- 2026-10-12: `/help/` 첫 페이지에 전체 항목 검색창을 두고, 다른 Help 페이지는 상단 헤더에 검색창을 둡니다. 검색은 브라우저에서 `search-index.json`(현재 379개 항목; 2026-10-12 최초 344개)을 읽어 처리하며(서버 없음), 제목·설명·형식·관련 항목을 찾고 일부 항목은 한글 검색어(화면에 표시되지 않는 검색 전용 단어)로도 찾습니다. `/` 키로 검색창에 이동하고 방향키와 Enter로 결과를 엽니다. JavaScript가 없으면 분류 목록과 `syntax.md`를 사용합니다.
+- 2026-10-12: `/help/` 첫 페이지에 전체 항목 검색창을 두고, 다른 Help 페이지는 상단 헤더에 검색창을 둡니다. 검색은 브라우저에서 `search-index.json`(현재 135개 항목)을 읽어 처리하며(서버 없음), 제목·설명·형식·관련 항목을 찾습니다. `/` 키로 검색창에 이동하고 방향키와 Enter로 결과를 엽니다. JavaScript가 없으면 분류 목록과 `syntax.md`를 사용합니다.
 - AI가 읽기 쉽도록 루트에 `llms.txt`, `robots.txt`(전체 허용), `sitemap.xml`을 추가했습니다.
 - `/help/` 파일은 GigaRoute 제품 저장소의 Help 소스에서 스크립트로 생성한 결과물이며, 이 저장소에는 생성 스크립트와 소스 경로를 두지 않습니다. 직접 수정하지 말고 Help 내용이 바뀌면 다시 생성해 교체합니다.
 - 배포 워크플로의 `paths` 목록에 `help/**`, `llms.txt`, `robots.txt`, `sitemap.xml`을 추가했습니다.
 
-### Help GRS 문법 최신화 (2026-10-19, Issue #122)
+### Help GRS 문법 최신화 (2026-10-26)
 
-- 실제 제품 `Mega-Sim/GigaRoute` 최신 main의 GRS Help와 Callable Catalog에 맞춰 공식 Help를 **344→379개 항목**으로 동기화했습니다. 신규 `Def_OHT`·`Def_AMR`·`Def_AGV`·`Def_Humanoid`, 자동 바인딩, 전역 초기화, 추가 함수/속성을 반영했습니다.
-- 기존 `vehicle.*` 및 `job.*` 이벤트 콜백은 저장 모델 호환용으로 표시합니다. `model.init`과 점 표기 속성(`vehicle.id` 등)은 현재 유효하며, 점 표기만으로 삭제됐다고 판단하지 않습니다. 실제 삭제된 `print ... to message`는 `print ... to log`로 안내합니다.
-- JSON/검색 색인/Markdown/HTML 항목 개수와 기존 344개 URL 앵커 정합성 검사를 수행했습니다. 홈페이지 공통 메뉴/CSS/JS 및 제품 소스는 변경하지 않았습니다. 새 예제는 컴파일 재검증 전 `compiler-checked`로 표시하지 않습니다.
+- 실제 제품 `Mega-Sim/GigaRoute` `main`의 GRS Help 및 Callable/Attribute Catalog(`25f0729`)를 기준으로 공식 Help를 **379→135개 항목**으로 동기화했습니다.
+- 2026-10-20 제품 문법 재정비를 반영해 `model.init`, `model.snap`, `vehicle.<event_name>`, 현재 제어문·핵심 동작, Vehicle/Load/Job 속성, Humanoid 함수만 현재 문법으로 게시합니다. 별도 `Def_OHT`·`Def_AMR`·`Def_AGV` 헤더와 제거된 동작·함수는 현재 지원 문법으로 노출하지 않습니다.
+- JSON·검색 색인·Markdown·분류별 HTML을 같은 135개 원본 항목에서 생성했습니다. 기존 URL 중 최신 Help에 대응하는 분류가 없는 두 페이지는 오래된 내용을 제거하고 현재 Help 목차로 안내합니다. 홈페이지 공통 메뉴와 스타일은 변경하지 않았습니다.
 
 ## 홈페이지 제품 메시지
 

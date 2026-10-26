@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://gigaroute.ai/</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/language.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/getting-started.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/declarations-and-control-flow.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/actions.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/events.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/attributes-and-expressions.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/attribute-reference.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/runtime-function-index.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/native-oht-asrs-functions.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/reserved-not-implemented-and-removed.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/syntax.md</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://gigaroute.ai/help/reference.json</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/language.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/getting-started.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/declarations-and-control-flow.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/actions.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/events.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/attributes-and-expressions.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/attribute-reference.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/runtime-function-index.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/humanoid.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/syntax.md</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://gigaroute.ai/help/reference.json</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://gigaroute.ai/history/</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://gigaroute.ai/history/index-en.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://gigaroute.ai/history/index-zh.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://gigaroute.ai/history/index-es.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://gigaroute.ai/history/index-ja.html</loc><lastmod>2026-10-15</lastmod></url>
-<url><loc>https://gigaroute.ai/help/humanoid.html</loc></url>
 </urlset>

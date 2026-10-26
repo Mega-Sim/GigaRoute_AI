@@ -5,38 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Reserved, Not Implemented and Removed | GigaRoute AI Help</title>
-<meta name="description" content="GRS Help: Reserved, Not Implemented and Removed (7 entries).">
+<meta name="description" content="This legacy Help section is not part of the current product Help.">
 <link rel="canonical" href="https://gigaroute.ai/help/reserved-not-implemented-and-removed.html">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
 <link rel="stylesheet" href="/help/help.css?v=20261013-3">
-<script src="/help/help.js?v=20261013-3" defer></script>
+<script src="/help/help.js?v=20261026-1" defer></script>
 <link rel="stylesheet" href="/site-nav.css?v=20261016-1">
 </head>
 <body>
 <header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
 <script src="/site-nav.js"></script>
-<main><div class="wrap"><p class="crumbs"><a href="/help/">Help</a> / Reserved, Not Implemented and Removed</p><h1>Reserved, Not Implemented and Removed</h1><p class="lead">7 reference entries, updated from current product main (2026-10-19). Newly added examples are not claimed compiler-checked until separately tested.</p><p class="sub">Reserved / Not Active</p><article class="topic" id="vehicle-work-check-vehicle-park-check" data-search="vehicle.work_check / vehicle.park_check names are reserved in the canonical event namespace but are not physically wired yet."><h3><a href="#vehicle-work-check-vehicle-park-check">vehicle.work_check / vehicle.park_check</a></h3><dl><dt>Purpose</dt><dd>Names are reserved in the canonical event namespace but are not physically wired yet.</dd><dt>Syntax</dt><dd><pre>begin vehicle.work_check event
-    ...
-end
-begin vehicle.park_check event
-    ...
-end</pre></dd><dt>Example</dt><dd>No separately checked example.</dd><dt>Notes</dt><dd></dd><dt>Related</dt><dd>canonical events</dd></dl></article><article class="topic" id="conveyor-enter" data-search="conveyor.enter reserved for a load entering an integrated workspace conveyor."><h3><a href="#conveyor-enter">conveyor.enter</a></h3><dl><dt>Purpose</dt><dd>Reserved for a Load entering an integrated Workspace Conveyor.</dd><dt>Syntax</dt><dd><pre>begin conveyor.enter event
-    ...
-end</pre></dd><dt>Example</dt><dd>No separately checked example.</dd><dt>Notes</dt><dd></dd><dt>Related</dt><dd>Workspace Conveyor, Load, future Conveyor material runtime</dd></dl></article><article class="topic" id="conveyor-transfer" data-search="conveyor.transfer reserved for an authoritative conveyor-to-conveyor material transfer."><h3><a href="#conveyor-transfer">conveyor.transfer</a></h3><dl><dt>Purpose</dt><dd>Reserved for an authoritative Conveyor-to-Conveyor material transfer.</dd><dt>Syntax</dt><dd><pre>begin conveyor.transfer event
-    ...
-end</pre></dd><dt>Example</dt><dd>No separately checked example.</dd><dt>Notes</dt><dd>No dedicated conveyor.transfer callback is wired. Cross-module logical handoff currently uses conveyor.exit / conveyor.released with call_transport.</dd><dt>Related</dt><dd>Workspace Conveyor, transfer, future Conveyor material runtime</dd></dl></article><article class="topic" id="conveyor-sensor-on" data-search="conveyor.sensor.on reserved for a real conveyor sensor on transition."><h3><a href="#conveyor-sensor-on">conveyor.sensor.on</a></h3><dl><dt>Purpose</dt><dd>Reserved for a real Conveyor sensor ON transition.</dd><dt>Syntax</dt><dd><pre>begin conveyor.sensor.on event
-    ...
-end</pre></dd><dt>Example</dt><dd>No separately checked example.</dd><dt>Notes</dt><dd>Conveyor Job movement does not implement a physical sensor state; this event remains reserved.</dd><dt>Related</dt><dd>Workspace Conveyor, sensor, future Conveyor material runtime</dd></dl></article><article class="topic" id="conveyor-sensor-off" data-search="conveyor.sensor.off reserved for a real conveyor sensor off transition."><h3><a href="#conveyor-sensor-off">conveyor.sensor.off</a></h3><dl><dt>Purpose</dt><dd>Reserved for a real Conveyor sensor OFF transition.</dd><dt>Syntax</dt><dd><pre>begin conveyor.sensor.off event
-    ...
-end</pre></dd><dt>Example</dt><dd>No separately checked example.</dd><dt>Notes</dt><dd>Conveyor Job movement does not implement a physical sensor state; this event remains reserved.</dd><dt>Related</dt><dd>Workspace Conveyor, sensor, future Conveyor material runtime</dd></dl></article><p class="sub">Removed Syntax</p><article class="topic" id="travel-move-into" data-search="travel / move_into historical subsystem-specific movement verbs are intentionally removed from product grs."><h3><a href="#travel-move-into">travel / move_into</a></h3><dl><dt>Purpose</dt><dd>Historical subsystem-specific movement verbs are intentionally removed from product GRS.</dd><dt>Syntax</dt><dd><pre>travel(...)  // removed
-move_into(...)  // removed</pre></dd><dt>Example</dt><dd><pre>move_to(&quot;ST01&quot;);</pre><span class="badge">compiler-checked</span></dd><dt>Notes</dt><dd>Compiler emits GRS_SURFACE_REMOVED_ACTION and directs users to move_to().</dd><dt>Related</dt><dd>move_to</dd></dl></article><p class="sub">Not Implemented</p><article class="topic" id="catalog-only-actions" data-search="catalog-only actions these words may exist in parser/action-catalog infrastructure, but the current product enginescripthost does not provide executable simulation studio semantics for them as statements."><h3><a href="#catalog-only-actions">catalog-only actions</a></h3><dl><dt>Purpose</dt><dd>These words may exist in parser/action-catalog infrastructure, but the current product EngineScriptHost does not provide executable Simulation Studio semantics for them as statements.</dd><dt>Syntax</dt><dd><pre>terminate / remove / add / delete
-open / read / write / close
-schedule / choose (AutoMod statement form)</pre></dd><dt>Example</dt><dd><pre>// Use the implemented function forms instead:
-choose(list, &quot;min&quot;, &quot;released_us&quot;);
-schedule_in(&quot;my.event&quot;, 5);
-terminate_load(load);
-file_read_lines(&quot;data.txt&quot;);</pre></dd><dt>Notes</dt><dd>Issue #30: the function forms choose(list [, mode, ...]), schedule_in(event, seconds) and schedule_at(event, seconds) ARE implemented (OHT) and listed in the callable index. Only the AutoMod-style statement keywords above remain parser-recognized without runtime meaning. Help must follow actual runtime support, not parser recognition alone.</dd><dt>Related</dt><dd>choose, schedule_in, schedule_at, terminate_load, file_read_lines, Action Catalog</dd></dl></article></div></main>
-<footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
+<main><div class="wrap"><p class="crumbs"><a href="/help/">Help</a> / Reserved, Not Implemented and Removed</p><h1>Reserved, Not Implemented and Removed</h1><p class="lead">This separate section is not present in the current GigaRoute product Help synchronized on 2026-10-26.</p><div class="note">Open the <a href="/help/">current Help index</a> or search the current reference. Legacy entries are not presented as supported syntax.</div></div></main><footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
 </body>
 </html>

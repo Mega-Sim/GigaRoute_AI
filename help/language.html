@@ -4,79 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>GRS language basics | GigaRoute AI Help</title>
-<meta name="description" content="How a GRS program is structured: blocks, statements, expressions, loops and common compile errors.">
+<title>GRS Language | GigaRoute AI Help</title>
+<meta name="description" content="GRS Help: GRS Language (1 entries).">
 <link rel="canonical" href="https://gigaroute.ai/help/language.html">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="alternate" type="text/markdown" href="/help/syntax.md">
 <link rel="stylesheet" href="/help/help.css?v=20261013-3">
-<script src="/help/help.js?v=20261013-3" defer></script>
+<script src="/help/help.js?v=20261026-1" defer></script>
 <link rel="stylesheet" href="/site-nav.css?v=20261016-1">
 </head>
 <body>
 <header data-site-nav data-site-nav-home="/"><div class="searchbox"><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the reference" aria-label="Search the GRS reference"><div class="results" role="listbox" hidden></div></div></header>
 <script src="/site-nav.js"></script>
-<main><div class="wrap">
-<p class="crumbs"><a href="/help/">Help</a> / Language basics</p><h1>GRS language basics</h1><p class="lead">GRS (GigaRoute Script) is the script language of GigaRoute Simulation Studio Model Logic. Every code sample on this page was run through the GRS compiler front end; the samples marked as errors are rejected by it.</p><div class="note"><b>Current events:</b> New OHT, AMR, AGV and Humanoid event scripts use <code>Def_OHT</code>, <code>Def_AMR</code>, <code>Def_AGV</code> and <code>Def_Humanoid</code> headers. Older dotted callbacks are retained for compatibility. <code>model.init</code> is supported. Removed: <code>print ... to message</code>; use <code>print ... to log</code>.</div><h2>Source files</h2><p>GRS source files use the .grs extension and UTF-8 text. A program is a set of event blocks; a Studio Model Logic file is plain GRS source.</p><h2>Two block styles</h2><p>Logic is declared with events. A block is written either with braces or with begin ... end; both compile to the same event model. Blocks must span several lines: the compiler rejects a block written on one line.</p><p class="sub">Brace style &mdash; compiles</p><pre>event model.init {
-    print(&quot;hello&quot;);
-}</pre><p class="sub">begin ... end style (no parentheses or semicolons needed) &mdash; compiles</p><pre>begin model.init event
-    print &quot;hello&quot;
-end</pre><p class="sub">One-line block: rejected (GRS_SURFACE_NATIVE_STRUCTURE_REQUIRED) &mdash; rejected by the compiler</p><pre>event model.init { print(&quot;hello&quot;); }</pre><p class="lead">Compiler message: <code>GRS_SURFACE_NATIVE_STRUCTURE_REQUIRED: GRS source must declare logic with event (or on/routine/function compatibility) { } blocks, or with native &#x27;begin &lt;name&gt; event ... end&#x27; blocks</code></p><h2>Statements and variables</h2><p>Statements are written like function calls, one per line, usually ending with a semicolon. set assigns a value to a symbol or attribute; inc and dec change a number.</p><p class="sub">set / inc / dec / print &mdash; compiles</p><pre>event model.init {
-    set(counter, 0);
-    inc(counter, 1);
-    dec(counter, 1);
-    print(&quot;counter&quot;, counter);
-}</pre><h2>Literals and operators</h2><p>Numbers, strings in double quotes, true, false and null are literals. Operators: + - * / == != &lt; &lt;= &gt; &gt;= &amp;&amp; || !</p><p class="sub">Arithmetic, comparison, boolean, literals &mdash; compiles</p><pre>event model.init {
-    set(ok, 1 + 2 * 3 &gt;= 7 &amp;&amp; !(4 == 5));
-    set(name, &quot;BOX01&quot;);
-    set(flag, true);
-    set(none, null);
-}</pre><h2>Comments</h2><p>Line comments start with // and block comments are written /* ... */.</p><p class="sub">Comments &mdash; compiles</p><pre>event model.init {
-    // line comment
-    /* block
-       comment */
-    print(&quot;x&quot;);
-}</pre><h2>Conditions</h2><p>if / else if / else choose a branch from a condition.</p><p class="sub">if / else if / else &mdash; compiles</p><pre>event model.init {
-    if (counter &gt; 10) {
-        print(&quot;big&quot;);
-    } else if (counter &gt; 5) {
-        print(&quot;medium&quot;);
-    } else {
-        print(&quot;small&quot;);
-    }
-}</pre><h2>Loops</h2><p>while repeats while its condition is true; for iterates a list; break leaves a loop; continue skips to the next iteration.</p><p class="sub">while with continue and break &mdash; compiles</p><pre>event model.init {
-    set(count, 0);
-    while (count &lt; 5) {
-        inc(count, 1);
-        if (count == 3) {
-            continue;
-        }
-        if (count == 4) {
-            break;
-        }
-    }
-}</pre><p class="sub">for over a list &mdash; compiles</p><pre>event model.init {
-    for (job in vehicle.schedjobs) {
-        print(job.type);
-    }
-}</pre><h2>User events and calls</h2><p>An event with parameters can be called like a function and can return a value. Parameters are positional.</p><p class="sub">Declare and call an event &mdash; compiles</p><pre>event calc.double(x) {
-    return(x * 2);
-}
-
-event model.init {
-    set(result, calc.double(4));
-    print(result);
-}</pre><h2>Compatibility forms</h2><p>on, routine and function are accepted for compatibility and compile to the same event; new code should use event.</p><p class="sub">on &lt;canonical-event&gt; &mdash; compiles</p><pre>on vehicle.pickup {
-    print(vehicle.id);
-}</pre><p class="sub">function &mdash; compiles</p><pre>function calc.tax(v) {
-    return(v * 0.1);
-}</pre><h2>Compile errors you will see</h2><p>These diagnostics come from the GRS compiler. A program with any error cannot be run.</p><p class="sub">Unclosed block (GRS_SURFACE_UNCLOSED_BLOCK) &mdash; rejected by the compiler</p><pre>event model.init {
-    print(&quot;a&quot;);
-</pre><p class="lead">Compiler message: <code>GRS_SURFACE_UNCLOSED_BLOCK: one or more GRS &#x27;{&#x27; or &#x27;begin&#x27; blocks are not closed</code></p><p class="sub">Removed verb (GRS_SURFACE_REMOVED_ACTION): use move_to(target) &mdash; rejected by the compiler</p><pre>event model.init {
-    travel(ST01);
-}</pre><p class="lead">Compiler message: <code>GRS_SURFACE_REMOVED_ACTION: travel() was removed; GigaRoute has a single movement verb -- use move_to(&lt;target&gt;)</code></p><p class="sub">Wrong argument count (GRS_SURFACE_ARGUMENT_COUNT) &mdash; rejected by the compiler</p><pre>event model.init {
-    wait();
-}</pre><p class="lead">Compiler message: <code>GRS_SURFACE_ARGUMENT_COUNT: wait expects 1 argument(s)</code></p><div class="note"><b>Compile check is not a run check.</b> The compiler checks structure and argument counts. For example, calling a function name that does not exist still compiles; problems of that kind appear when the model is run.</div></div></main>
-<footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
+<main><div class="wrap"><p class="crumbs"><a href="/help/">Help</a> / GRS Language</p><h1>GRS Language</h1><p class="lead">1 reference entries synchronized with GigaRoute product main commit 25f0729 (2026-10-26).</p><article class="topic" id="time-duration" data-search="Time duration Time represents an elapsed simulation duration, stored as signed integer microseconds. &lt;number&gt; sec | &lt;number&gt; min | &lt;number&gt; hour Variable, set, print to log Time is different from Integer/Real. Time + Time and Time - Time yield Time; Time multiplied or divided by a number yields Time; Time / Time yields a ratio. Comparisons require two Time values. Logs render durations in seconds. Unit aliases sec/secs/second(s), min/mins/minute(s), hr/hrs/hour(s), day(s) are accepted. Plain numbers remain Integer/Real. Ordinary user-authored wait statements remain restricted by the current GRS syntax policy."><h3><a href="#time-duration">Time duration</a></h3><dl><dt>Purpose</dt><dd>Time represents an elapsed simulation duration, stored as signed integer microseconds.</dd><dt>Syntax</dt><dd><pre>&lt;number&gt; sec | &lt;number&gt; min | &lt;number&gt; hour</pre></dd><dt>Example</dt><dd><pre>begin model.init event
+    set pickupTime = 10 sec
+    set cycleTime = 2 hour + 30 min
+    set halfTime = cycleTime / 2
+    print cycleTime to log
+end</pre></dd><dt>Notes</dt><dd>Time is different from Integer/Real. Time + Time and Time - Time yield Time; Time multiplied or divided by a number yields Time; Time / Time yields a ratio. Comparisons require two Time values. Logs render durations in seconds. Unit aliases sec/secs/second(s), min/mins/minute(s), hr/hrs/hour(s), day(s) are accepted. Plain numbers remain Integer/Real. Ordinary user-authored wait statements remain restricted by the current GRS syntax policy.</dd><dt>Related</dt><dd>Variable, set, print to log</dd></dl></article></div></main><footer><div class="wrap">GigaRoute AI Help &middot; GRS (GigaRoute Script) reference &middot; Machine-readable: <a href="/help/syntax.md">syntax.md</a>, <a href="/help/reference.json">reference.json</a>, <a href="/llms.txt">llms.txt</a></div></footer>
 </body>
 </html>
