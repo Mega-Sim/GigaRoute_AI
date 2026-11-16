@@ -104,8 +104,8 @@
 
   const applyPlatformLinks = () => {
     document.querySelectorAll('.actions a.github').forEach(link => {
-      const trial = makePlatformLink('Free Trial', HEADER_FREE_TRIAL, 'free-trial');
-      trial.setAttribute('aria-label', 'Free Trial');
+      const trial = makePlatformLink('Download', HEADER_FREE_TRIAL, 'free-trial');
+      trial.setAttribute('aria-label', 'Download');
       link.before(trial);
       link.remove();
     });
