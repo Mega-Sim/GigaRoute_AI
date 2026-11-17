@@ -1,7 +1,8 @@
 (() => {
   const EMAIL = 'support@gigaroute.ai';
   const DEMO_REPO = 'https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo';
-  const HEADER_FREE_TRIAL = `${DEMO_REPO}/releases`;
+  // 상단 Download: 새 GigaSim Windows 설치 파일(최신 버전). 하단 Windows/Linux 버튼은 기존 Public Preview 릴리스 유지.
+  const HEADER_FREE_TRIAL = 'https://updates.gigaroute.ai/stable/GigaSim_Setup_latest.exe';
   const WINDOWS_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-windows`;
   const LINUX_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-linux`;
   const FAVICON = '/favicon.png?v=20260818-2';
