@@ -1,6 +1,6 @@
-# Cloudflare Pages GitHub 연동 — 병행 구축 및 전환 절차
+# Cloudflare Workers Git 연동 현황 및 Pages 선택 전환 절차
 
-> 상태(2026-11-19 KST): **연동 준비 완료 / Cloudflare 대시보드 승인 및 실제 Pages 프로젝트 생성 미확인**.
+> 상태(2026-11-19 KST): **Cloudflare Workers Git 연결·최초 배포 확인 / main Push 자동 재배포 검증 중 / 공식 도메인은 GitHub Pages 유지**. Cloudflare Pages 프로젝트는 생성 확인되지 않았습니다.
 > 이 문서는 기존 공식 홈페이지를 변경하지 않는 실행 지침입니다. Cloudflare 계정의 비밀번호, 세션 쿠키, API 토큰은 GitHub나 이 문서에 기록하지 않습니다.
 
 ## 0. 현재 운영 구성 (실측)
@@ -15,6 +15,20 @@
 - 현재 배포물의 `index.html`에서 `contact.js?v=20261117-1` 존재 확인
 
 위 DNS와 HTTP 점검은 2026-11-19에 수행했습니다. 전환할 때 다시 확인하십시오.
+
+
+## 0-A. 실제 생성된 Cloudflare Workers 프리뷰 (2026-11-19)
+
+- Workers 프리뷰: `https://gigaroute-ai.sik1093.workers.dev/`
+- 대시보드 배포 로그의 Initializing / Cloning / Installing / Deploying 및 Build completed 성공 화면 확인
+- GitHub 저장소 `Mega-Sim/GigaRoute_AI`, Production branch `main`: 계정 소유자가 대시보드에서 직접 확인
+- Windows 원격 PC에서 프리뷰와 공식 사이트에 직접 HTTP 요청: 메인, 영어, Help, YouTube, History, 중국어, 스페인어, 일본어, `contact.js`, `site.css`, `site-fixes.css`, `favicon.png`, Help JSON 2개 모두 HTTP 200 및 원본 바이트 SHA-256 일치
+- `/index-ko.html`은 Cloudflare Workers에서 HTTP 307 → `/index-ko` (HTTP 200)으로 정규화됨. 기존 GitHub Pages는 `/index-ko.html`에 직접 HTTP 200을 반환. 도메인 전환 전 링크·SEO 정책과 호환성 재점검 필요
+- HTML의 `Content-Type`은 Worker가 `text/html`로 응답하고 기존 GitHub Pages는 `text/html; charset=utf-8`로 응답함. HTML 문서 내 `<meta charset="utf-8">` 확인; 브라우저 한글 렌더링 정상
+- **자동 재배포 검증용 문서 마커:** `WORKERS_GIT_SYNC_20261119_A`
+- 이 마커를 포함한 문서 전용 `main` 커밋으로 GitHub Push → Workers 배포 반영 여부를 별도 확인하며, 기존 홈페이지 HTML/CSS/JS 및 DNS는 변경하지 않음
+
+> 아래 1~4장은 **Pages로 별도 전환하는 경우의 선택 가이드**입니다. 현재 연결된 서비스는 Pages가 아닌 Workers입니다. Pages 추가 프로젝트 생성은 당장 필요하지 않습니다.
 
 ## 1. Cloudflare Pages 별도 프로젝트 생성 (사이트 전환 금지)
 
