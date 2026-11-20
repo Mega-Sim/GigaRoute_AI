@@ -1,10 +1,8 @@
 (() => {
   const EMAIL = 'support@gigaroute.ai';
   const DEMO_REPO = 'https://github.com/Mega-Sim/GigaRoute_AI_Simulation_Demo';
-  // 상단 Download: 실제 배포 버전이 파일명에 보이도록 버전별 불변 Installer를 연결합니다.
-  // 정식 버전 발행 시 이 버전 값도 Release Manager 배포 단계에서 갱신해야 합니다.
-  const CURRENT_WINDOWS_INSTALLER_VERSION = '1.0.2';
-  const HEADER_FREE_TRIAL = `https://updates.gigaroute.ai/stable/GigaSim_Setup_${CURRENT_WINDOWS_INSTALLER_VERSION}.exe`;
+  // 상단 Download: URL은 고정하고, R2 Content-Disposition에서 실제 버전 파일명을 지정합니다.
+  const HEADER_FREE_TRIAL = 'https://updates.gigaroute.ai/stable/GigaSim_Setup_latest.exe';
   const WINDOWS_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-windows`;
   const LINUX_DOWNLOAD = `${DEMO_REPO}/releases/tag/public-preview-526-linux`;
   const FAVICON = '/favicon.png?v=20260818-2';
