@@ -19,21 +19,10 @@
 .sample-main{max-width:960px;padding:66px 0 96px}
 .sample-kicker{color:var(--brand);font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:850}
 .sample-main h1{font-size:clamp(32px,5vw,53px);line-height:1.13;letter-spacing:-.045em;margin:16px 0}
-.sample-lead{max-width:740px;font-size:16px;line-height:1.8;color:var(--muted)}
+.sample-lead{font-size:16px;line-height:1.8;color:var(--muted)}
 .sample-card{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:30px;margin-top:34px}
-.sample-card h2{font-size:22px;margin:0 0 16px}
-.sample-filename{font-size:17px;font-weight:850;overflow-wrap:anywhere}
-.sample-meta{font-size:13px;line-height:1.9;color:var(--muted);margin:18px 0 25px;overflow-wrap:anywhere}
-.sample-meta strong{color:var(--ink)}
-.sample-meta code{font-size:11px}
-.sample-action{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.sample-action .btn{min-width:225px}
-.sample-action .btn[aria-disabled=true]{opacity:.5;cursor:not-allowed}
-.sample-status{font-size:13px;color:var(--muted)}
-.sample-guide{margin-top:28px;font-size:14px;line-height:1.9;color:var(--muted)}
-.sample-guide h2{font-size:19px;color:var(--ink)}
-.sample-guide ol{padding-left:23px}
-@media(max-width:600px){.sample-main{padding:42px 0 70px}.sample-card{padding:20px}.sample-action .btn{width:100%}}
+.sample-file-link{font-size:17px;font-weight:750;overflow-wrap:anywhere;word-break:break-word;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:600px){.sample-main{padding:42px 0 70px}.sample-card{padding:20px}}
 </style>
 </head>
 <body>
@@ -42,52 +31,22 @@
 <main class="wrap sample-main">
 <p class="sample-kicker">GigaRoute AI · Sample Model</p>
 <h1 id="sample-title">Dual Floor OHT 샘플 모델</h1>
-<p class="sample-lead" id="sample-lead">GigaSim에서 열어볼 수 있는 2층 OHT 시뮬레이션 프로젝트입니다. 설치 프로그램과 별도로 제공합니다.</p>
-<section class="sample-card" aria-labelledby="sample-heading">
-<h2 id="sample-heading">샘플 프로젝트 파일</h2>
-<div class="sample-filename">GigaRoute_DualFloor_OHT.grproj</div>
-<div class="sample-meta">
-<div><strong id="sample-size-label">파일 크기</strong>: 1,135,272 bytes (1.08 MiB) · .grproj</div>
-<div><strong>SHA-256</strong>: <code>79093f31678222c0e22bc3cf0f19e56d15114445885c602a98320a71ec0ffcd8</code></div>
-</div>
-<div class="sample-action">
-<a id="sample-download" class="btn primary" aria-disabled="true" tabindex="-1" aria-describedby="sample-status">샘플 모델 다운로드</a>
-<span id="sample-status" class="sample-status" role="status" aria-live="polite">파일 게시 상태를 확인하고 있습니다.</span>
-</div>
-</section>
-<section class="sample-guide">
-<h2 id="sample-guide-heading">사용 방법</h2>
-<ol>
-<li id="sample-step-1">GigaSim Installer를 설치합니다.</li>
-<li id="sample-step-2">.grproj 샘플 파일을 내려받습니다.</li>
-<li id="sample-step-3">GigaSim에서 프로젝트를 열어 확인합니다.</li>
-</ol>
+<p class="sample-lead" id="sample-lead">GigaSim 프로젝트 파일 (.grproj)</p>
+<section class="sample-card" aria-label="샘플 파일">
+<a id="sample-download" class="sample-file-link" href="/downloads/GigaRoute_DualFloor_OHT.grproj" download="GigaRoute_DualFloor_OHT.grproj">GigaRoute_DualFloor_OHT.grproj</a>
 </section>
 </main>
 <script>
 (() => {
-  const translations={
-    ko:['Dual Floor OHT 샘플 모델','GigaSim에서 열어볼 수 있는 2층 OHT 시뮬레이션 프로젝트입니다. 설치 프로그램과 별도로 제공합니다.','샘플 프로젝트 파일','파일 크기','샘플 모델 다운로드','파일 게시 상태를 확인하고 있습니다.','샘플 파일은 아직 다운로드 준비 중입니다.','사용 방법','GigaSim Installer를 설치합니다.','.grproj 샘플 파일을 내려받습니다.','GigaSim에서 프로젝트를 열어 확인합니다.'],
-    en:['Dual Floor OHT Sample Model','A two-floor OHT simulation project for GigaSim, available separately from the installer.','Sample project file','File size','Download Sample Model','Checking file availability.','The sample model is not yet available for download.','How to use','Install GigaSim.','Download the sample .grproj file.','Open the project in GigaSim.'],
-    'zh-CN':['双层 OHT 示例模型','适用于 GigaSim 的双层 OHT 仿真项目，与安装程序分开提供。','示例项目文件','文件大小','下载示例模型','正在检查文件状态。','示例文件尚未发布。','使用方法','安装 GigaSim。','下载 .grproj 示例文件。','在 GigaSim 中打开项目。'],
-    es:['Modelo OHT de dos plantas','Proyecto de simulación OHT de dos plantas para GigaSim, disponible por separado del instalador.','Archivo del proyecto','Tamaño del archivo','Descargar modelo de ejemplo','Comprobando disponibilidad.','El archivo aún no está disponible.','Cómo utilizarlo','Instale GigaSim.','Descargue el archivo .grproj.','Abra el proyecto en GigaSim.'],
-    ja:['2フロア OHT サンプルモデル','GigaSim用の2フロアOHTシミュレーションプロジェクトです。インストーラーとは別に配布します。','サンプルプロジェクト','ファイルサイズ','サンプルモデルをダウンロード','ファイルを確認しています。','サンプルファイルはまだ公開されていません。','使い方','GigaSimをインストールします。','.grprojファイルをダウンロードします。','GigaSimでプロジェクトを開きます。']
-  };
-  const t=translations[document.documentElement.lang]||translations.ko;
-  ['sample-title','sample-lead','sample-heading','sample-size-label','sample-download','sample-status'].forEach((id,i)=>document.getElementById(id).textContent=t[i]);
-  ['sample-guide-heading','sample-step-1','sample-step-2','sample-step-3'].forEach((id,i)=>document.getElementById(id).textContent=t[i+7]);
-  const button=document.getElementById('sample-download');
-  const status=document.getElementById('sample-status');
-  const path='/downloads/GigaRoute_DualFloor_OHT.grproj';
-  fetch(path,{method:'HEAD',cache:'no-store'}).then(response=>{
-    const size=Number(response.headers.get('content-length')||0);
-    if(!response.ok||(size&&size!==1135272))throw new Error('missing or incomplete asset');
-    button.href=path;
-    button.download='GigaRoute_DualFloor_OHT.grproj';
-    button.removeAttribute('aria-disabled');
-    button.removeAttribute('tabindex');
-    status.textContent='';
-  }).catch(()=>{status.textContent=t[6]});
+  const t = {
+    ko:['Dual Floor OHT 샘플 모델','GigaSim 프로젝트 파일 (.grproj)'],
+    en:['Dual Floor OHT Sample Model','GigaSim project file (.grproj)'],
+    'zh-CN':['双层 OHT 示例模型','GigaSim 项目文件 (.grproj)'],
+    es:['Modelo OHT de dos plantas','Archivo de proyecto GigaSim (.grproj)'],
+    ja:['2フロア OHT サンプルモデル','GigaSim プロジェクトファイル (.grproj)']
+  }[document.documentElement.lang] || ['Dual Floor OHT 샘플 모델','GigaSim 프로젝트 파일 (.grproj)'];
+  document.getElementById('sample-title').textContent=t[0];
+  document.getElementById('sample-lead').textContent=t[1];
 })();
 </script>
 </body>
