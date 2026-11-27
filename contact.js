@@ -106,7 +106,7 @@
   const applyPlatformLinks = () => {
     document.querySelectorAll('.actions a.github').forEach(link => {
       const labels = {
-        ko: ['Windows Installer 다운로드'],
+        ko: ['GigaSim 다운로드'],
         en: ['Windows Installer Download'],
         'zh-CN': ['下载 Windows 安装程序'],
         es: ['Descargar instalador de Windows'],
