@@ -106,12 +106,12 @@
   const applyPlatformLinks = () => {
     document.querySelectorAll('.actions a.github').forEach(link => {
       const labels = {
-        ko: ['GigaSim 다운로드'],
-        en: ['Windows Installer Download'],
-        'zh-CN': ['下载 Windows 安装程序'],
-        es: ['Descargar instalador de Windows'],
-        ja: ['Windows インストーラーをダウンロード']
-      }[locale] || ['Windows Installer Download'];
+        ko: ['GigaSim 다운로드', 'Sample Model 다운로드'],
+        en: ['Windows Installer Download', 'Sample Model Download'],
+        'zh-CN': ['下载 Windows 安装程序', '下载示例模型'],
+        es: ['Descargar instalador de Windows', 'Descargar modelo de ejemplo'],
+        ja: ['Windows インストーラーをダウンロード', 'サンプルモデルをダウンロード']
+      }[locale] || ['Windows Installer Download', 'Sample Model Download'];
       const wrapper = document.createElement('div');
       wrapper.className = 'download-nav';
       const toggle = document.createElement('button');
@@ -131,6 +131,10 @@
       installer.rel = 'noopener noreferrer';
       installer.textContent = labels[0];
       menu.append(installer);
+      const sample = document.createElement('a');
+      sample.href = '/sample-model/?lang=' + encodeURIComponent(locale);
+      sample.textContent = labels[1];
+      menu.append(sample);
       const setOpen = open => {
         menu.hidden = !open;
         toggle.setAttribute('aria-expanded', String(open));
